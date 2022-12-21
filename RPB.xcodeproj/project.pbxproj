@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09283D2229531B8A00256FD8 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09283D2129531B8A00256FD8 /* ServerConfig.swift */; };
+		09283D2429531CCB00256FD8 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09283D2329531CCB00256FD8 /* Montserrat-SemiBold.otf */; };
+		09283D2529531CCF00256FD8 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09283D1F29531A9700256FD8 /* Montserrat-Regular.otf */; };
+		09283D2629531CD100256FD8 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09283D1E29531A8C00256FD8 /* Montserrat-Bold.otf */; };
 		3695504229519A9E009AEB62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504129519A9E009AEB62 /* AppDelegate.swift */; };
 		3695504429519A9E009AEB62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504329519A9E009AEB62 /* SceneDelegate.swift */; };
 		3695504629519A9E009AEB62 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504529519A9E009AEB62 /* LoginViewController.swift */; };
@@ -19,12 +23,8 @@
 		3695507C2951A1D3009AEB62 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695507B2951A1D3009AEB62 /* CustomColor.swift */; };
 		3695507F2951A411009AEB62 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695507E2951A411009AEB62 /* CustomFont.swift */; };
 		369550822951A8FE009AEB62 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369550812951A8FE009AEB62 /* UIView.swift */; };
-		369550A12951CFBB009AEB62 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369550A02951CFBB009AEB62 /* ServerConfig.swift */; };
 		369550A72951EF14009AEB62 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369550A62951EF14009AEB62 /* UIButton.swift */; };
 		36C775E72952E14500CD4A17 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C775E62952E14500CD4A17 /* BaseURL.swift */; };
-		36C775EA2952FBB500CD4A17 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36C775E92952FBB500CD4A17 /* Montserrat-Bold.otf */; };
-		36C775EC2952FBC800CD4A17 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36C775EB2952FBC800CD4A17 /* Montserrat-Regular.otf */; };
-		36C775EE2952FBD900CD4A17 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36C775ED2952FBD900CD4A17 /* Montserrat-SemiBold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09283D1E29531A8C00256FD8 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
+		09283D1F29531A9700256FD8 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
+		09283D2129531B8A00256FD8 /* ServerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
+		09283D2329531CCB00256FD8 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
 		3695503E29519A9E009AEB62 /* RPB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3695504129519A9E009AEB62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3695504329519A9E009AEB62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,12 +65,8 @@
 		3695507B2951A1D3009AEB62 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		3695507E2951A411009AEB62 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		369550812951A8FE009AEB62 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		369550A02951CFBB009AEB62 /* ServerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerConfig.swift; path = ../../../../../BuildVariantsIOS/BuildVariantsIOS/ServersVariants/ServerConfig.swift; sourceTree = "<group>"; };
 		369550A62951EF14009AEB62 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		36C775E62952E14500CD4A17 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
-		36C775E92952FBB500CD4A17 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.otf"; path = "../../../../../../Downloads/montserrat/Montserrat-Bold.otf"; sourceTree = "<group>"; };
-		36C775EB2952FBC800CD4A17 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.otf"; path = "../../../../../../Downloads/montserrat/Montserrat-Regular.otf"; sourceTree = "<group>"; };
-		36C775ED2952FBD900CD4A17 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-SemiBold.otf"; path = "../../../../../../Downloads/montserrat/Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,7 +243,7 @@
 		3695509F2951CF6B009AEB62 /* ServersVariants */ = {
 			isa = PBXGroup;
 			children = (
-				369550A02951CFBB009AEB62 /* ServerConfig.swift */,
+				09283D2129531B8A00256FD8 /* ServerConfig.swift */,
 			);
 			path = ServersVariants;
 			sourceTree = "<group>";
@@ -267,9 +267,9 @@
 		36C775E82952FB7F00CD4A17 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				36C775ED2952FBD900CD4A17 /* Montserrat-SemiBold.otf */,
-				36C775E92952FBB500CD4A17 /* Montserrat-Bold.otf */,
-				36C775EB2952FBC800CD4A17 /* Montserrat-Regular.otf */,
+				09283D2329531CCB00256FD8 /* Montserrat-SemiBold.otf */,
+				09283D1F29531A9700256FD8 /* Montserrat-Regular.otf */,
+				09283D1E29531A8C00256FD8 /* Montserrat-Bold.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -379,11 +379,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3695504E29519AA0009AEB62 /* LaunchScreen.storyboard in Resources */,
+				09283D2429531CCB00256FD8 /* Montserrat-SemiBold.otf in Resources */,
 				3695504B29519AA0009AEB62 /* Assets.xcassets in Resources */,
+				09283D2529531CCF00256FD8 /* Montserrat-Regular.otf in Resources */,
 				3695504929519A9E009AEB62 /* Main.storyboard in Resources */,
-				36C775EE2952FBD900CD4A17 /* Montserrat-SemiBold.otf in Resources */,
-				36C775EC2952FBC800CD4A17 /* Montserrat-Regular.otf in Resources */,
-				36C775EA2952FBB500CD4A17 /* Montserrat-Bold.otf in Resources */,
+				09283D2629531CD100256FD8 /* Montserrat-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,11 +408,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				369550A12951CFBB009AEB62 /* ServerConfig.swift in Sources */,
 				3695507F2951A411009AEB62 /* CustomFont.swift in Sources */,
 				3695504629519A9E009AEB62 /* LoginViewController.swift in Sources */,
 				3695504229519A9E009AEB62 /* AppDelegate.swift in Sources */,
 				3695507C2951A1D3009AEB62 /* CustomColor.swift in Sources */,
+				09283D2229531B8A00256FD8 /* ServerConfig.swift in Sources */,
 				369550822951A8FE009AEB62 /* UIView.swift in Sources */,
 				3695504429519A9E009AEB62 /* SceneDelegate.swift in Sources */,
 				369550A72951EF14009AEB62 /* UIButton.swift in Sources */,
@@ -601,6 +601,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -630,6 +631,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -795,6 +797,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -916,6 +919,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1043,6 +1047,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1164,6 +1169,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1291,6 +1297,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1412,6 +1419,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
