@@ -39,3 +39,11 @@ extension UIButton {
         }
     }
 }
+
+extension UIButton {
+    
+    @discardableResult func cornerRadius(_ size: CGFloat) -> CGFloat{
+        self.layer.cornerRadius = size
+        return self.layer.cornerRadius
+    }
+}

@@ -26,6 +26,10 @@ extension UIFont {
     static func MontserratBold(_ size: Int) -> UIFont {
         return customFont(name: "Montserrat-Bold", size: CGFloat(size))
     }
+    
+    static func MontserratMedium(_ size: Int) -> UIFont {
+        return customFont(name: "Montserrat-Medium", size: CGFloat(size))
+    }
 }
 
 // Example
