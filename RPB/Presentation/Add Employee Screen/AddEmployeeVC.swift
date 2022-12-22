@@ -67,7 +67,7 @@ class AddEmployeeVC: UIViewController {
     
     //MARK: Configure Picker for Department
     func configurePicker() {
-        department_picker.delegate = self
+        self.department_picker.delegate = self
         self.txtDepartment.inputView = department_picker
         self.txtDOB.setInputViewDatePicker(target: self, selector: #selector(tapDone))
     }
@@ -82,9 +82,6 @@ class AddEmployeeVC: UIViewController {
     
     @objc func tapDone() {
         if let datePicker = self.txtDOB.inputView as? UIDatePicker {
-            if #available(iOS 15, *) {
-                datePicker.maximumDate = .now
-            }
             var date = Date()
             date = datePicker.date
             self.txtDOB.text = date.getFormattedDate(format: "dd-MM-yy")
