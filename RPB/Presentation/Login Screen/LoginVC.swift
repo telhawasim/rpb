@@ -7,13 +7,16 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginVC: UIViewController {
     
     //MARK: IBOutlets
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var lbldescription: UILabel!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var lblLogin: UILabel!
+    @IBOutlet weak var lblEmail: UILabel!
+    @IBOutlet weak var lblPassword: UILabel!
+    @IBOutlet weak var btnLogin: UIButton!
     
     //MARK: Variables
     
@@ -24,6 +27,14 @@ class LoginViewController: UIViewController {
         self.configureFonts()
     }
     
+    //MARK: Login Button
+    @IBAction func tappedLoginButton(_ sender: Any) {
+        
+    }
+}
+
+//MARK: Functions
+extension LoginVC{
     //MARK: Set Colors
     func setColors(){
         lbldescription.textColor = UIColor.customBlack
@@ -33,11 +44,8 @@ class LoginViewController: UIViewController {
     func configureFonts(){
         lbldescription.font = UIFont.MontserratRegular(16)
         lblLogin.font = UIFont.MontserratBold(32)
-    }
-    
-    //MARK: Login Button
-    @IBAction func tappedLoginButton(_ sender: Any) {
-        
+        lblEmail.font = UIFont.MontserratSemiBold(16)
+        lblPassword.font = UIFont.MontserratSemiBold(16)
     }
 }
 
