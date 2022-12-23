@@ -62,6 +62,8 @@ extension UIView {
         layer.shadowOpacity = shadowOpacity
         layer.shadowRadius = CGFloat(shadowRaduis)
         clipsToBounds = false
+    }
+    
     @discardableResult func isCircularView() -> CGFloat {
         self.layer.cornerRadius = self.frame.height / 2
         return self.layer.cornerRadius
