@@ -64,7 +64,7 @@ class AddEmployeeVC: BaseVC {
     
     //MARK: Configure Profile Picture
     func configureProfilePciture() {
-        self.profileImage.isCircular()
+        self.profileImage.isCircularImage()
     }
     
     //MARK: Configure Picker for Department

@@ -17,6 +17,7 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblDesignation: UILabel!
     @IBOutlet weak var lblEmail: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     //MARK: Variables
     
@@ -26,12 +27,20 @@ class ProfileVC: UIViewController {
         super.viewDidLoad()
         self.configureButtons()
         self.configureFonts()
+        self.configureTableView()
+    }
+    
+    //MARK: Configure TableView
+    func configureTableView() {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.register(ProfileTVCell.className)
     }
     
     //MARK: Configure Buttons
     func configureButtons() {
-        self.btnback.isCircular()
-        self.btnAddCV.isCircular()
+        self.btnback.isCircularButton()
+        self.btnAddCV.isCircularButton()
     }
     
     //MARK: Configure Fonts
@@ -41,4 +50,19 @@ class ProfileVC: UIViewController {
         self.lblEmail.font = UIFont.MontserratRegular(16)
         self.lblProfiles.font = UIFont.MontserratSemiBold(24)
     }
+}
+
+extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTVCell", for: indexPath) as! ProfileTVCell
+        cell.configLabel()
+        cell.configView()
+        return cell
+    }
+    
+    
 }

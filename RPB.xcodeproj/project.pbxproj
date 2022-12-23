@@ -26,7 +26,10 @@
 		09283D2229531B8A00256FD8 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09283D2129531B8A00256FD8 /* ServerConfig.swift */; };
 		0941311C2955B3E8008AC5CA /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941311B2955B3E8008AC5CA /* BaseVC.swift */; };
 		0941311F2955B55F008AC5CA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941311E2955B55F008AC5CA /* String.swift */; };
+		0941312E2955DDB8008AC5CA /* ProfileTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941312C2955DDB8008AC5CA /* ProfileTVCell.swift */; };
+		0941312F2955DDB8008AC5CA /* ProfileTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0941312D2955DDB8008AC5CA /* ProfileTVCell.xib */; };
 		1E0F5AE415C68827862027C1 /* Pods_RPBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0030AEB3D599A76D912D1DB1 /* Pods_RPBTests.framework */; };
+		2E18A825836F0D81F77A3E51 /* Pods_RPB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3D06738362C369E89B8B28 /* Pods_RPB.framework */; };
 		3636F30529547728001D886A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F30429547728001D886A /* HomeVC.swift */; };
 		3636F3092954818E001D886A /* EmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F3082954818E001D886A /* EmployeeVC.swift */; };
 		3636F30B295481A8001D886A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F30A295481A8001D886A /* ProfileVC.swift */; };
@@ -40,7 +43,9 @@
 		3695506529519AA0009AEB62 /* RPBUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695506429519AA0009AEB62 /* RPBUITestsLaunchTests.swift */; };
 		36FE65FB2954A0A3003E9CC0 /* EmployeesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FE65F92954A0A3003E9CC0 /* EmployeesTableViewCell.swift */; };
 		3F0F1D65E73AE1B85A423E82 /* Pods_RPB_RPBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E218803E30E91E4A4876825 /* Pods_RPB_RPBUITests.framework */; };
+		42461DF572A33293AAF14395 /* Pods_RPBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40216E1D4D4C2D5D685E6CF /* Pods_RPBTests.framework */; };
 		76B1DC4A73604A1B6BB3E5B3 /* Pods_RPB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BFDAA95C620E9BF5FE14B71 /* Pods_RPB.framework */; };
+		888933B9EC43727F25FCCE67 /* Pods_RPB_RPBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FD77DEDA03678A73A25717 /* Pods_RPB_RPBUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,11 +81,10 @@
 		09283D1F29531A9700256FD8 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
 		09283D2129531B8A00256FD8 /* ServerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
 		09283D2329531CCB00256FD8 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
-		094131172955ACE4008AC5CA /* RPB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPB.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		094131182955ACE4008AC5CA /* RPBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		094131192955ACE4008AC5CA /* RPBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0941311B2955B3E8008AC5CA /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		0941311E2955B55F008AC5CA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		0941312C2955DDB8008AC5CA /* ProfileTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTVCell.swift; sourceTree = "<group>"; };
+		0941312D2955DDB8008AC5CA /* ProfileTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTVCell.xib; sourceTree = "<group>"; };
 		0BA2D4D5F79B27C1E0242BBE /* Pods-RPBTests.debugdev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPBTests.debugdev.xcconfig"; path = "Target Support Files/Pods-RPBTests/Pods-RPBTests.debugdev.xcconfig"; sourceTree = "<group>"; };
 		0E218803E30E91E4A4876825 /* Pods_RPB_RPBUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RPB_RPBUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F2344F2CFF9BCBC3CA03F8E /* Pods-RPB-RPBUITests.releaseproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB-RPBUITests.releaseproduction.xcconfig"; path = "Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests.releaseproduction.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 		3695506429519AA0009AEB62 /* RPBUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPBUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		36FE65F92954A0A3003E9CC0 /* EmployeesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesTableViewCell.swift; sourceTree = "<group>"; };
 		36FE65FA2954A0A3003E9CC0 /* EmployeesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeesTableViewCell.xib; sourceTree = "<group>"; };
+		37FD77DEDA03678A73A25717 /* Pods_RPB_RPBUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RPB_RPBUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		528A5F1F077A0B4A66C97555 /* Pods-RPBTests.debugqa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPBTests.debugqa.xcconfig"; path = "Target Support Files/Pods-RPBTests/Pods-RPBTests.debugqa.xcconfig"; sourceTree = "<group>"; };
 		5BFDAA95C620E9BF5FE14B71 /* Pods_RPB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RPB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		649667B6685AABB7DD3C367E /* Pods-RPB-RPBUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB-RPBUITests.debug.xcconfig"; path = "Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,7 +129,9 @@
 		C6C0C5525FC4D04E02FA0300 /* Pods-RPB.debugdev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB.debugdev.xcconfig"; path = "Target Support Files/Pods-RPB/Pods-RPB.debugdev.xcconfig"; sourceTree = "<group>"; };
 		C9F385A334A13631DDAC0E80 /* Pods-RPB.releaseqa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB.releaseqa.xcconfig"; path = "Target Support Files/Pods-RPB/Pods-RPB.releaseqa.xcconfig"; sourceTree = "<group>"; };
 		D342C2691682769EFA5BD3B8 /* Pods-RPB-RPBUITests.releasedev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB-RPBUITests.releasedev.xcconfig"; path = "Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests.releasedev.xcconfig"; sourceTree = "<group>"; };
+		D40216E1D4D4C2D5D685E6CF /* Pods_RPBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RPBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84A088DB002AA2061848332 /* Pods-RPB-RPBUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB-RPBUITests.release.xcconfig"; path = "Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DD3D06738362C369E89B8B28 /* Pods_RPB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RPB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9325897EDA257A3E760FFDC /* Pods-RPBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPBTests.debug.xcconfig"; path = "Target Support Files/Pods-RPBTests/Pods-RPBTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F9487A1BECA925D6A328A62F /* Pods-RPBTests.releaseproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPBTests.releaseproduction.xcconfig"; path = "Target Support Files/Pods-RPBTests/Pods-RPBTests.releaseproduction.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76B1DC4A73604A1B6BB3E5B3 /* Pods_RPB.framework in Frameworks */,
+				2E18A825836F0D81F77A3E51 /* Pods_RPB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E0F5AE415C68827862027C1 /* Pods_RPBTests.framework in Frameworks */,
+				42461DF572A33293AAF14395 /* Pods_RPBTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F0F1D65E73AE1B85A423E82 /* Pods_RPB_RPBUITests.framework in Frameworks */,
+				888933B9EC43727F25FCCE67 /* Pods_RPB_RPBUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,14 +278,23 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
-		296AF95A0EF787BBF4AEF92B /* Frameworks */ = {
+		094131262955DB6F008AC5CA /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
 				5BFDAA95C620E9BF5FE14B71 /* Pods_RPB.framework */,
-				0E218803E30E91E4A4876825 /* Pods_RPB_RPBUITests.framework */,
 				0030AEB3D599A76D912D1DB1 /* Pods_RPBTests.framework */,
+				0E218803E30E91E4A4876825 /* Pods_RPB_RPBUITests.framework */,
 			);
-			name = Frameworks;
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		094131272955DD4B008AC5CA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0941312C2955DDB8008AC5CA /* ProfileTVCell.swift */,
+				0941312D2955DDB8008AC5CA /* ProfileTVCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		3636F3032954770B001D886A /* HomeVC */ = {
@@ -298,6 +317,7 @@
 		3636F30729548170001D886A /* Profile VC */ = {
 			isa = PBXGroup;
 			children = (
+				094131272955DD4B008AC5CA /* Cells */,
 				3636F30A295481A8001D886A /* ProfileVC.swift */,
 			);
 			path = "Profile VC";
@@ -337,6 +357,8 @@
 				365010D42955A3D4003F3262 /* RPB.app */,
 				365010D52955A3D4003F3262 /* RPBTests.xctest */,
 				365010D62955A3D4003F3262 /* RPBUITests.xctest */,
+				CE7EB7E665947BC5C78A64AA /* Frameworks */,
+				094131262955DB6F008AC5CA /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -496,6 +518,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE7EB7E665947BC5C78A64AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD3D06738362C369E89B8B28 /* Pods_RPB.framework */,
+				37FD77DEDA03678A73A25717 /* Pods_RPB_RPBUITests.framework */,
+				D40216E1D4D4C2D5D685E6CF /* Pods_RPBTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -608,6 +640,7 @@
 				090441CE295595D90088941F /* Montserrat-Regular.otf in Resources */,
 				090441CF295595DB0088941F /* Montserrat-Bold.otf in Resources */,
 				090441D0295595F70088941F /* Assets.xcassets in Resources */,
+				0941312F2955DDB8008AC5CA /* ProfileTVCell.xib in Resources */,
 				090441D9295599F50088941F /* Montserrat-Medium.otf in Resources */,
 				090441D5295597980088941F /* EmployeesTableViewCell.xib in Resources */,
 			);
@@ -724,6 +757,7 @@
 				3695504429519A9E009AEB62 /* SceneDelegate.swift in Sources */,
 				090441B42955920E0088941F /* UIButton.swift in Sources */,
 				365010DD2955CBD2003F3262 /* TableView.swift in Sources */,
+				0941312E2955DDB8008AC5CA /* ProfileTVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
