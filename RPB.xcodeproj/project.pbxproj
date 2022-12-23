@@ -7,34 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0904418929549CA40088941F /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0904418829549CA40088941F /* UITextField.swift */; };
-		0904418C2954A2070088941F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0904418B2954A2070088941F /* Date.swift */; };
+		0904419829558E920088941F /* AddEmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0904419229558DEE0088941F /* AddEmployeeVC.swift */; };
+		090441B22955920E0088941F /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090441A42955920E0088941F /* CustomColor.swift */; };
+		090441B32955920E0088941F /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090441A52955920E0088941F /* CustomFont.swift */; };
+		090441B42955920E0088941F /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090441A72955920E0088941F /* UIButton.swift */; };
+		090441B52955920E0088941F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090441A92955920E0088941F /* UIView.swift */; };
+		090441B62955920E0088941F /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090441AA2955920E0088941F /* BaseURL.swift */; };
+		090441B72955920E0088941F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090441AC2955920E0088941F /* Date.swift */; };
+		090441B82955920E0088941F /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090441AE2955920E0088941F /* UIImageView.swift */; };
+		090441B92955920E0088941F /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090441B12955920E0088941F /* UITextField.swift */; };
+		090441CC295595BF0088941F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3695504729519A9E009AEB62 /* Main.storyboard */; };
+		090441CD295595D60088941F /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09283D2329531CCB00256FD8 /* Montserrat-SemiBold.otf */; };
+		090441CE295595D90088941F /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09283D1F29531A9700256FD8 /* Montserrat-Regular.otf */; };
+		090441CF295595DB0088941F /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09283D1E29531A8C00256FD8 /* Montserrat-Bold.otf */; };
+		090441D0295595F70088941F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3695504A29519AA0009AEB62 /* Assets.xcassets */; };
+		090441D5295597980088941F /* EmployeesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36FE65FA2954A0A3003E9CC0 /* EmployeesTableViewCell.xib */; };
+		090441D9295599F50088941F /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 090441D8295599F50088941F /* Montserrat-Medium.otf */; };
 		09283D2229531B8A00256FD8 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09283D2129531B8A00256FD8 /* ServerConfig.swift */; };
-		09283D2429531CCB00256FD8 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09283D2329531CCB00256FD8 /* Montserrat-SemiBold.otf */; };
-		09283D2529531CCF00256FD8 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09283D1F29531A9700256FD8 /* Montserrat-Regular.otf */; };
-		09283D2629531CD100256FD8 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09283D1E29531A8C00256FD8 /* Montserrat-Bold.otf */; };
 		3636F30529547728001D886A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F30429547728001D886A /* HomeVC.swift */; };
 		3636F3092954818E001D886A /* EmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F3082954818E001D886A /* EmployeeVC.swift */; };
 		3636F30B295481A8001D886A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F30A295481A8001D886A /* ProfileVC.swift */; };
 		3695504229519A9E009AEB62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504129519A9E009AEB62 /* AppDelegate.swift */; };
 		3695504429519A9E009AEB62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504329519A9E009AEB62 /* SceneDelegate.swift */; };
 		3695504629519A9E009AEB62 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504529519A9E009AEB62 /* LoginVC.swift */; };
-		3695504929519A9E009AEB62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3695504729519A9E009AEB62 /* Main.storyboard */; };
-		3695504B29519AA0009AEB62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3695504A29519AA0009AEB62 /* Assets.xcassets */; };
-		3695504E29519AA0009AEB62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3695504C29519AA0009AEB62 /* LaunchScreen.storyboard */; };
 		3695505929519AA0009AEB62 /* RPBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695505829519AA0009AEB62 /* RPBTests.swift */; };
 		3695506329519AA0009AEB62 /* RPBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695506229519AA0009AEB62 /* RPBUITests.swift */; };
 		3695506529519AA0009AEB62 /* RPBUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695506429519AA0009AEB62 /* RPBUITestsLaunchTests.swift */; };
-		3695507C2951A1D3009AEB62 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695507B2951A1D3009AEB62 /* CustomColor.swift */; };
-		3695507F2951A411009AEB62 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695507E2951A411009AEB62 /* CustomFont.swift */; };
-		369550822951A8FE009AEB62 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369550812951A8FE009AEB62 /* UIView.swift */; };
-		369550A72951EF14009AEB62 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369550A62951EF14009AEB62 /* UIButton.swift */; };
-		36C775E72952E14500CD4A17 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C775E62952E14500CD4A17 /* BaseURL.swift */; };
 		36FE65FB2954A0A3003E9CC0 /* EmployeesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FE65F92954A0A3003E9CC0 /* EmployeesTableViewCell.swift */; };
-		36FE65FC2954A0A3003E9CC0 /* EmployeesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36FE65FA2954A0A3003E9CC0 /* EmployeesTableViewCell.xib */; };
-		4DB95625F5AD989E7A93A71E /* Pods_RPB_RPBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 289610C8D71761C091B0E852 /* Pods_RPB_RPBUITests.framework */; };
-		716906BC7CCBDBACB17E3304 /* Pods_RPB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6581F84532C422F846C5E4E6 /* Pods_RPB.framework */; };
-		A96561BB19CF7BEA061ED445 /* Pods_RPBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B7E943DAB3FFC4B24EF1209 /* Pods_RPBTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +54,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0904418829549CA40088941F /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
-		0904418B2954A2070088941F /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		0904419229558DEE0088941F /* AddEmployeeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEmployeeVC.swift; sourceTree = "<group>"; };
+		090441A42955920E0088941F /* CustomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		090441A52955920E0088941F /* CustomFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
+		090441A72955920E0088941F /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		090441A92955920E0088941F /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		090441AA2955920E0088941F /* BaseURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
+		090441AC2955920E0088941F /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		090441AE2955920E0088941F /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		090441B12955920E0088941F /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		090441D8295599F50088941F /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
 		09283D1E29531A8C00256FD8 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
 		09283D1F29531A9700256FD8 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
 		09283D2129531B8A00256FD8 /* ServerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
@@ -67,12 +74,10 @@
 		22EF633B9F77D99322A1835A /* Pods-RPBTests.releasedev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPBTests.releasedev.xcconfig"; path = "Target Support Files/Pods-RPBTests/Pods-RPBTests.releasedev.xcconfig"; sourceTree = "<group>"; };
 		2324538490149D208DA077A6 /* Pods-RPBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPBTests.release.xcconfig"; path = "Target Support Files/Pods-RPBTests/Pods-RPBTests.release.xcconfig"; sourceTree = "<group>"; };
 		23B2FDCDEFCA66A6888B49DA /* Pods-RPB.debugqa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB.debugqa.xcconfig"; path = "Target Support Files/Pods-RPB/Pods-RPB.debugqa.xcconfig"; sourceTree = "<group>"; };
-		289610C8D71761C091B0E852 /* Pods_RPB_RPBUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RPB_RPBUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B7E943DAB3FFC4B24EF1209 /* Pods_RPBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RPBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3636F30429547728001D886A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		3636F3082954818E001D886A /* EmployeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeVC.swift; sourceTree = "<group>"; };
 		3636F30A295481A8001D886A /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		3695503E29519A9E009AEB62 /* RPB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3695503E29519A9E009AEB62 /* RPB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = RPB.app; path = "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/Debug-iphoneos/RPB.app"; sourceTree = "<absolute>"; };
 		3695504129519A9E009AEB62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3695504329519A9E009AEB62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3695504529519A9E009AEB62 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -80,21 +85,15 @@
 		3695504A29519AA0009AEB62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3695504D29519AA0009AEB62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3695504F29519AA0009AEB62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3695505429519AA0009AEB62 /* RPBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3695505429519AA0009AEB62 /* RPBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = RPBTests.xctest; path = "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/Debug-iphoneos/RPBTests.xctest"; sourceTree = "<absolute>"; };
 		3695505829519AA0009AEB62 /* RPBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPBTests.swift; sourceTree = "<group>"; };
-		3695505E29519AA0009AEB62 /* RPBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3695505E29519AA0009AEB62 /* RPBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = RPBUITests.xctest; path = "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/Debug-iphoneos/RPBUITests.xctest"; sourceTree = "<absolute>"; };
 		3695506229519AA0009AEB62 /* RPBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPBUITests.swift; sourceTree = "<group>"; };
 		3695506429519AA0009AEB62 /* RPBUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPBUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		3695507B2951A1D3009AEB62 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
-		3695507E2951A411009AEB62 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
-		369550812951A8FE009AEB62 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		369550A62951EF14009AEB62 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
-		36C775E62952E14500CD4A17 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		36FE65F92954A0A3003E9CC0 /* EmployeesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesTableViewCell.swift; sourceTree = "<group>"; };
 		36FE65FA2954A0A3003E9CC0 /* EmployeesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeesTableViewCell.xib; sourceTree = "<group>"; };
 		528A5F1F077A0B4A66C97555 /* Pods-RPBTests.debugqa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPBTests.debugqa.xcconfig"; path = "Target Support Files/Pods-RPBTests/Pods-RPBTests.debugqa.xcconfig"; sourceTree = "<group>"; };
 		649667B6685AABB7DD3C367E /* Pods-RPB-RPBUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB-RPBUITests.debug.xcconfig"; path = "Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		6581F84532C422F846C5E4E6 /* Pods_RPB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RPB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6682F80CBA3D63ABEF27E473 /* Pods-RPBTests.releaseqa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPBTests.releaseqa.xcconfig"; path = "Target Support Files/Pods-RPBTests/Pods-RPBTests.releaseqa.xcconfig"; sourceTree = "<group>"; };
 		741F81B5D147D9485B4B2614 /* Pods-RPB-RPBUITests.debugproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB-RPBUITests.debugproduction.xcconfig"; path = "Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests.debugproduction.xcconfig"; sourceTree = "<group>"; };
 		8A89843F7C276D4C05914EC5 /* Pods-RPB.releasedev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB.releasedev.xcconfig"; path = "Target Support Files/Pods-RPB/Pods-RPB.releasedev.xcconfig"; sourceTree = "<group>"; };
@@ -118,7 +117,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				716906BC7CCBDBACB17E3304 /* Pods_RPB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +124,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A96561BB19CF7BEA061ED445 /* Pods_RPBTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,13 +131,98 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DB95625F5AD989E7A93A71E /* Pods_RPB_RPBUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0904419129558DEE0088941F /* Add Employee Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0904419229558DEE0088941F /* AddEmployeeVC.swift */,
+			);
+			path = "Add Employee Screen";
+			sourceTree = "<group>";
+		};
+		090441A12955920E0088941F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				090441A22955920E0088941F /* ServerBaseURLS */,
+				090441A32955920E0088941F /* Color  */,
+				090441A62955920E0088941F /* UIButton */,
+				090441A82955920E0088941F /* UIView */,
+				090441AB2955920E0088941F /* Date */,
+				090441AD2955920E0088941F /* UIImageView */,
+				090441B02955920E0088941F /* UITextField */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		090441A22955920E0088941F /* ServerBaseURLS */ = {
+			isa = PBXGroup;
+			children = (
+				090441AA2955920E0088941F /* BaseURL.swift */,
+			);
+			name = ServerBaseURLS;
+			path = Utils/Extensions/ServerBaseURLS;
+			sourceTree = "<group>";
+		};
+		090441A32955920E0088941F /* Color  */ = {
+			isa = PBXGroup;
+			children = (
+				090441A42955920E0088941F /* CustomColor.swift */,
+				090441A52955920E0088941F /* CustomFont.swift */,
+			);
+			name = "Color ";
+			path = "Utils/Extensions/Color ";
+			sourceTree = "<group>";
+		};
+		090441A62955920E0088941F /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				090441A72955920E0088941F /* UIButton.swift */,
+			);
+			name = UIButton;
+			path = Utils/Extensions/UIButton;
+			sourceTree = "<group>";
+		};
+		090441A82955920E0088941F /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				090441A92955920E0088941F /* UIView.swift */,
+			);
+			name = UIView;
+			path = Utils/Extensions/UIView;
+			sourceTree = "<group>";
+		};
+		090441AB2955920E0088941F /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				090441AC2955920E0088941F /* Date.swift */,
+			);
+			name = Date;
+			path = Utils/Extensions/Date;
+			sourceTree = "<group>";
+		};
+		090441AD2955920E0088941F /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				090441AE2955920E0088941F /* UIImageView.swift */,
+			);
+			name = UIImageView;
+			path = Utils/Extensions/UIImageView;
+			sourceTree = "<group>";
+		};
+		090441B02955920E0088941F /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				090441B12955920E0088941F /* UITextField.swift */,
+			);
+			name = UITextField;
+			path = Utils/Extensions/UITextField;
+			sourceTree = "<group>";
+		};
 		3636F3032954770B001D886A /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,20 +254,8 @@
 				3695504029519A9E009AEB62 /* RPB */,
 				3695505729519AA0009AEB62 /* RPBTests */,
 				3695506129519AA0009AEB62 /* RPBUITests */,
-				3695503F29519A9E009AEB62 /* Products */,
 				6CE2B86402C41ADD0A1285C8 /* Pods */,
-				A4438781F6CC19E2B9FEC677 /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		3695503F29519A9E009AEB62 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3695503E29519A9E009AEB62 /* RPB.app */,
-				3695505429519AA0009AEB62 /* RPBTests.xctest */,
-				3695505E29519AA0009AEB62 /* RPBUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		3695504029519A9E009AEB62 /* RPB */ = {
@@ -231,10 +301,12 @@
 				3636F30729548170001D886A /* Profile VC */,
 				3636F30629548165001D886A /* Employee VC */,
 				3636F3032954770B001D886A /* HomeVC */,
+				0904419129558DEE0088941F /* Add Employee Screen */,
 				3695507829519E01009AEB62 /* Splash Screen */,
 				3695507929519E17009AEB62 /* Login Screen */,
 				3695507729519D88009AEB62 /* Views */,
 				3695507529519CDF009AEB62 /* Utils */,
+				090441A12955920E0088941F /* Extensions */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -252,24 +324,8 @@
 			children = (
 				36C775E82952FB7F00CD4A17 /* Fonts */,
 				3695509F2951CF6B009AEB62 /* ServersVariants */,
-				3695507629519CF2009AEB62 /* Extensions */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		3695507629519CF2009AEB62 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				0904418A2954A1FA0088941F /* Date */,
-				0904418729549C920088941F /* UITextField */,
-				0947C018295445CE00BA5DBC /* UIImageView */,
-				369550A52951EEFF009AEB62 /* UIButton */,
-				369550A22951CFD8009AEB62 /* ServerBaseURLS */,
-				369550802951A8EA009AEB62 /* UIView */,
-				3695507D2951A3F0009AEB62 /* Fonts */,
-				3695507A2951A19B009AEB62 /* Color  */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		3695507729519D88009AEB62 /* Views */ = {
@@ -296,30 +352,6 @@
 			path = "Login Screen";
 			sourceTree = "<group>";
 		};
-		3695507A2951A19B009AEB62 /* Color  */ = {
-			isa = PBXGroup;
-			children = (
-				3695507B2951A1D3009AEB62 /* CustomColor.swift */,
-			);
-			path = "Color ";
-			sourceTree = "<group>";
-		};
-		3695507D2951A3F0009AEB62 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				3695507E2951A411009AEB62 /* CustomFont.swift */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
-		369550802951A8EA009AEB62 /* UIView */ = {
-			isa = PBXGroup;
-			children = (
-				369550812951A8FE009AEB62 /* UIView.swift */,
-			);
-			path = UIView;
-			sourceTree = "<group>";
-		};
 		3695509F2951CF6B009AEB62 /* ServersVariants */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,26 +360,10 @@
 			path = ServersVariants;
 			sourceTree = "<group>";
 		};
-		369550A22951CFD8009AEB62 /* ServerBaseURLS */ = {
-			isa = PBXGroup;
-			children = (
-				36C775E62952E14500CD4A17 /* BaseURL.swift */,
-			);
-			path = ServerBaseURLS;
-			sourceTree = "<group>";
-		};
-		369550A52951EEFF009AEB62 /* UIButton */ = {
-			isa = PBXGroup;
-			children = (
-				369550A62951EF14009AEB62 /* UIButton.swift */,
-			);
-			path = UIButton;
-			sourceTree = "<group>";
-		};
 		36C775E82952FB7F00CD4A17 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				0947C0162954418900BA5DBC /* Montserrat-Medium.ttf */,
+				090441D8295599F50088941F /* Montserrat-Medium.otf */,
 				09283D2329531CCB00256FD8 /* Montserrat-SemiBold.otf */,
 				09283D1F29531A9700256FD8 /* Montserrat-Regular.otf */,
 				09283D1E29531A8C00256FD8 /* Montserrat-Bold.otf */,
@@ -393,16 +409,6 @@
 				6682F80CBA3D63ABEF27E473 /* Pods-RPBTests.releaseqa.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		A4438781F6CC19E2B9FEC677 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6581F84532C422F846C5E4E6 /* Pods_RPB.framework */,
-				289610C8D71761C091B0E852 /* Pods_RPB_RPBUITests.framework */,
-				2B7E943DAB3FFC4B24EF1209 /* Pods_RPBTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -496,7 +502,7 @@
 				Base,
 			);
 			mainGroup = 3695503529519A9E009AEB62;
-			productRefGroup = 3695503F29519A9E009AEB62 /* Products */;
+			productRefGroup = 3695503529519A9E009AEB62;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -512,14 +518,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36FE65FC2954A0A3003E9CC0 /* EmployeesTableViewCell.xib in Resources */,
-				3695504E29519AA0009AEB62 /* LaunchScreen.storyboard in Resources */,
-				09283D2429531CCB00256FD8 /* Montserrat-SemiBold.otf in Resources */,
-				0947C0172954418900BA5DBC /* Montserrat-Medium.ttf in Resources */,
-				3695504B29519AA0009AEB62 /* Assets.xcassets in Resources */,
-				09283D2529531CCF00256FD8 /* Montserrat-Regular.otf in Resources */,
-				3695504929519A9E009AEB62 /* Main.storyboard in Resources */,
-				09283D2629531CD100256FD8 /* Montserrat-Bold.otf in Resources */,
+				090441CC295595BF0088941F /* Main.storyboard in Resources */,
+				090441CD295595D60088941F /* Montserrat-SemiBold.otf in Resources */,
+				090441CE295595D90088941F /* Montserrat-Regular.otf in Resources */,
+				090441CF295595DB0088941F /* Montserrat-Bold.otf in Resources */,
+				090441D0295595F70088941F /* Assets.xcassets in Resources */,
+				090441D9295599F50088941F /* Montserrat-Medium.otf in Resources */,
+				090441D5295597980088941F /* EmployeesTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,22 +619,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				3636F30B295481A8001D886A /* ProfileVC.swift in Sources */,
-				3695507F2951A411009AEB62 /* CustomFont.swift in Sources */,
+				0904419829558E920088941F /* AddEmployeeVC.swift in Sources */,
+				090441B22955920E0088941F /* CustomColor.swift in Sources */,
+				090441B32955920E0088941F /* CustomFont.swift in Sources */,
 				3636F30529547728001D886A /* HomeVC.swift in Sources */,
 				36FE65FB2954A0A3003E9CC0 /* EmployeesTableViewCell.swift in Sources */,
+				090441B72955920E0088941F /* Date.swift in Sources */,
+				090441B62955920E0088941F /* BaseURL.swift in Sources */,
 				3695504629519A9E009AEB62 /* LoginVC.swift in Sources */,
 				3695504229519A9E009AEB62 /* AppDelegate.swift in Sources */,
-				3695507C2951A1D3009AEB62 /* CustomColor.swift in Sources */,
+				090441B92955920E0088941F /* UITextField.swift in Sources */,
+				090441B82955920E0088941F /* UIImageView.swift in Sources */,
 				3636F3092954818E001D886A /* EmployeeVC.swift in Sources */,
 				09283D2229531B8A00256FD8 /* ServerConfig.swift in Sources */,
-				369550822951A8FE009AEB62 /* UIView.swift in Sources */,
-				0947C01A2954469700BA5DBC /* UIImageView.swift in Sources */,
+				090441B52955920E0088941F /* UIView.swift in Sources */,
 				3695504429519A9E009AEB62 /* SceneDelegate.swift in Sources */,
-				369550A72951EF14009AEB62 /* UIButton.swift in Sources */,
-				0947C015295438F100BA5DBC /* AddEmployeeVC.swift in Sources */,
-				36C775E72952E14500CD4A17 /* BaseURL.swift in Sources */,
-				0904418C2954A2070088941F /* Date.swift in Sources */,
-				0904418929549CA40088941F /* UITextField.swift in Sources */,
+				090441B42955920E0088941F /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

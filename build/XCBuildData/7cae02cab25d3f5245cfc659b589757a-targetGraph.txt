@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+Pods-RPB in Pods, no dependencies
+RPB in RPB, depends on:
+Pods-RPB in Pods (implicit dependency via file 'Pods_RPB.framework' in build phase 'Link Binary')
