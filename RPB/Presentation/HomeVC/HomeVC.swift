@@ -30,46 +30,25 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCell()
-        tabbarView.layer.shadowColor = UIColor.red.cgColor
-        tabbarView.layer.shadowOpacity = 0.5
-        tabbarView.layer.shadowOffset = CGSize.zero
-        tabbarView.layer.shadowRadius = 5
+        
     }
     
     @IBAction func tappedHomeButton(_ sender: Any) {
-        self.homeView.backgroundColor = #colorLiteral(red: 0.3333333333, green: 0.3411764706, blue: 0.831372549, alpha: 1)
-        self.employeeView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.profileView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.btnHome.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.btnEmployee.tintColor = #colorLiteral(red: 0.3333333333, green: 0.3411764706, blue: 0.831372549, alpha: 1)
-        self.btnProfile.tintColor = #colorLiteral(red: 0.3333333333, green: 0.3411764706, blue: 0.831372549, alpha: 1)
         self.homeTabbar()
     }
     
     @IBAction func tappedEmplooyesButton(_ sender: Any) {
-        self.homeView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.employeeView.backgroundColor = #colorLiteral(red: 0.3333333333, green: 0.3411764706, blue: 0.831372549, alpha: 1)
-        self.profileView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.btnHome.tintColor = #colorLiteral(red: 0.3333333333, green: 0.3411764706, blue: 0.831372549, alpha: 1)
-        self.btnEmployee.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.btnProfile.tintColor = #colorLiteral(red: 0.3333333333, green: 0.3411764706, blue: 0.831372549, alpha: 1)
         self.employeeTabbar()
     }
     
     @IBAction func taappedProfile(_ sender: Any) {
-        self.homeView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.employeeView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.profileView.backgroundColor = #colorLiteral(red: 0.3333333333, green: 0.3411764706, blue: 0.831372549, alpha: 1)
-        self.btnHome.tintColor = #colorLiteral(red: 0.3333333333, green: 0.3411764706, blue: 0.831372549, alpha: 1)
-        self.btnEmployee.tintColor = #colorLiteral(red: 0.3333333333, green: 0.3411764706, blue: 0.831372549, alpha: 1)
-        self.btnProfile.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.profileTabbar()
     }
 }
 
 //MARK: Functions
 extension HomeVC {
-   
+    //MARK: Register Cell
     func registerCell(){
         tableView.delegate = self
         tableView.dataSource = self
@@ -81,8 +60,8 @@ extension HomeVC {
         let HomeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as? HomeVC
         HomeVC!.willMove(toParent: self)
         self.containerView.addSubview(HomeVC!.view)
-        self.addChild(HomeVC!)
         HomeVC!.didMove(toParent: self)
+        self.homeColor()
     }
     
     //MARK: Employee Tabbar
@@ -91,8 +70,8 @@ extension HomeVC {
         
         EmployeeVC!.willMove(toParent: self)
         self.containerView.addSubview(EmployeeVC!.view)
-        self.addChild(EmployeeVC!)
         EmployeeVC!.didMove(toParent: self)
+        self.employeeColor()
     }
     
     //MARK: Profile Tabbar
@@ -101,8 +80,51 @@ extension HomeVC {
         
         ProfileVC!.willMove(toParent: self)
         self.containerView.addSubview(ProfileVC!.view)
-        self.addChild(ProfileVC!)
         ProfileVC!.didMove(toParent: self)
+        self.ProfileColor()
+    }
+    
+    //MARK: Set Colors
+    func setColors(){
+        lblEmployeeCount.textColor = UIColor.white
+        lblName.textColor = UIColor.customBlack
+        lblEmployee.textColor = UIColor.customBlack
+    }
+    
+    //MARK: Set Colors
+    func configureFonts(){
+        lblName.font = UIFont.MontserratBold(32)
+        lblEmployee.font = UIFont.MontserratSemiBold(24)
+    }
+    
+    //MARK: Home Tabbar Color
+    func homeColor(){
+        self.homeView.backgroundColor = UIColor.customBlue
+        self.employeeView.backgroundColor = UIColor.white
+        self.profileView.backgroundColor = UIColor.white
+        self.btnHome.tintColor = UIColor.white
+        self.btnEmployee.tintColor = UIColor.customBlue
+        self.btnProfile.tintColor = UIColor.customBlue
+    }
+    
+    //MARK: Employee Tabbar Color
+    func employeeColor(){
+        self.homeView.backgroundColor = UIColor.white
+        self.employeeView.backgroundColor = UIColor.customBlue
+        self.profileView.backgroundColor = UIColor.white
+        self.btnHome.tintColor = UIColor.customBlue
+        self.btnEmployee.tintColor = UIColor.white
+        self.btnProfile.tintColor = UIColor.customBlue
+    }
+    
+    //MARK: Profile Tabbar Color
+    func ProfileColor(){
+        self.homeView.backgroundColor = UIColor.white
+        self.employeeView.backgroundColor = UIColor.white
+        self.profileView.backgroundColor = UIColor.customBlue
+        self.btnHome.tintColor = UIColor.customBlue
+        self.btnEmployee.tintColor = UIColor.customBlue
+        self.btnProfile.tintColor = UIColor.white
     }
 }
 
@@ -114,6 +136,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EmployeesTableViewCell")!
-            return cell
+        return cell
     }
 }
