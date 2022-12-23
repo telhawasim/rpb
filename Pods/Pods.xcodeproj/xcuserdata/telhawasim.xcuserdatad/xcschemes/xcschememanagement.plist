@@ -4,21 +4,23 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-RPB-RPBUITests.xcscheme_^#shared#^_</key>
+		<key>Pods-RPB-RPBUITests.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>6</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>Pods-RPB.xcscheme_^#shared#^_</key>
+		<key>Pods-RPB.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>Pods-RPBTests.xcscheme_^#shared#^_</key>
+		<key>Pods-RPBTests.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict/>
 </dict>
 </plist>

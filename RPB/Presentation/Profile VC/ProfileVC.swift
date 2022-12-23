@@ -8,22 +8,37 @@
 import UIKit
 
 class ProfileVC: UIViewController {
+    
+    //MARK: Outlet
+    @IBOutlet weak var btnback: UIButton!
+    @IBOutlet weak var btnAddCV: UIButton!
+    @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var lblProfiles: UILabel!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblDesignation: UILabel!
+    @IBOutlet weak var lblEmail: UILabel!
+    
+    //MARK: Variables
+    
+    //MARK: Lifecylce
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.configureButtons()
+        self.configureFonts()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: Configure Buttons
+    func configureButtons() {
+        self.btnback.isCircular()
+        self.btnAddCV.isCircular()
     }
-    */
-
+    
+    //MARK: Configure Fonts
+    func configureFonts() {
+        self.lblName.font = UIFont.MontserratBold(20)
+        self.lblDesignation.font = UIFont.MontserratMedium(14)
+        self.lblEmail.font = UIFont.MontserratRegular(16)
+        self.lblProfiles.font = UIFont.MontserratSemiBold(24)
+    }
 }
