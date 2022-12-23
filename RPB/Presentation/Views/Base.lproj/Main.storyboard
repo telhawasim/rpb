@@ -239,11 +239,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CaA-a8-tfu">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="672"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="706"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPU-d4-0kJ">
-                                <rect key="frame" x="15" y="682" width="345" height="72"/>
+                                <rect key="frame" x="15" y="716" width="345" height="72"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="yho-7m-bEL">
                                         <rect key="frame" x="40" y="12" width="264" height="48"/>
@@ -361,10 +361,10 @@
                             <constraint firstItem="CaA-a8-tfu" firstAttribute="trailing" secondItem="lcX-rt-0hq" secondAttribute="trailing" id="CWD-BH-Cp2"/>
                             <constraint firstItem="JPU-d4-0kJ" firstAttribute="top" secondItem="CaA-a8-tfu" secondAttribute="bottom" constant="10" id="Tsy-7H-5Kr"/>
                             <constraint firstItem="CaA-a8-tfu" firstAttribute="top" secondItem="LRD-sf-4eZ" secondAttribute="top" id="WiG-m8-aB5"/>
-                            <constraint firstItem="lcX-rt-0hq" firstAttribute="bottom" secondItem="JPU-d4-0kJ" secondAttribute="bottom" constant="24" id="Xq4-kX-B90"/>
                             <constraint firstItem="lcX-rt-0hq" firstAttribute="trailing" secondItem="JPU-d4-0kJ" secondAttribute="trailing" constant="15" id="a7z-TQ-8rs"/>
                             <constraint firstItem="CaA-a8-tfu" firstAttribute="leading" secondItem="lcX-rt-0hq" secondAttribute="leading" id="fre-xr-56X"/>
                             <constraint firstItem="CaA-a8-tfu" firstAttribute="leading" secondItem="lcX-rt-0hq" secondAttribute="leading" id="lAq-EV-YEX"/>
+                            <constraint firstAttribute="bottom" secondItem="JPU-d4-0kJ" secondAttribute="bottom" constant="24" id="mlb-gZ-fT1"/>
                             <constraint firstItem="JPU-d4-0kJ" firstAttribute="leading" secondItem="lcX-rt-0hq" secondAttribute="leading" constant="15" id="vcO-7a-8pZ"/>
                         </constraints>
                     </view>
