@@ -30,6 +30,8 @@
 		3636F30529547728001D886A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F30429547728001D886A /* HomeVC.swift */; };
 		3636F3092954818E001D886A /* EmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F3082954818E001D886A /* EmployeeVC.swift */; };
 		3636F30B295481A8001D886A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F30A295481A8001D886A /* ProfileVC.swift */; };
+		365010DA2955ADE1003F3262 /* TabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365010D92955ADE1003F3262 /* TabbarVC.swift */; };
+		365010DD2955CBD2003F3262 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365010DC2955CBD2003F3262 /* TableView.swift */; };
 		3695504229519A9E009AEB62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504129519A9E009AEB62 /* AppDelegate.swift */; };
 		3695504429519A9E009AEB62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504329519A9E009AEB62 /* SceneDelegate.swift */; };
 		3695504629519A9E009AEB62 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504529519A9E009AEB62 /* LoginVC.swift */; };
@@ -89,6 +91,11 @@
 		3636F30429547728001D886A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		3636F3082954818E001D886A /* EmployeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeVC.swift; sourceTree = "<group>"; };
 		3636F30A295481A8001D886A /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		365010D42955A3D4003F3262 /* RPB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		365010D52955A3D4003F3262 /* RPBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		365010D62955A3D4003F3262 /* RPBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		365010D92955ADE1003F3262 /* TabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarVC.swift; sourceTree = "<group>"; };
+		365010DC2955CBD2003F3262 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		3695504129519A9E009AEB62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3695504329519A9E009AEB62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3695504529519A9E009AEB62 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -162,7 +169,9 @@
 			isa = PBXGroup;
 			children = (
 				0941311D2955B554008AC5CA /* String */,
+				365010DB2955CBBF003F3262 /* TableView */,
 				090441A22955920E0088941F /* ServerBaseURLS */,
+				365010D72955A84D003F3262 /* Custom Fonts */,
 				090441A32955920E0088941F /* Color  */,
 				090441A62955920E0088941F /* UIButton */,
 				090441A82955920E0088941F /* UIView */,
@@ -186,7 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				090441A42955920E0088941F /* CustomColor.swift */,
-				090441A52955920E0088941F /* CustomFont.swift */,
 			);
 			name = "Color ";
 			path = "Utils/Extensions/Color ";
@@ -295,6 +303,30 @@
 			path = "Profile VC";
 			sourceTree = "<group>";
 		};
+		365010D72955A84D003F3262 /* Custom Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				090441A52955920E0088941F /* CustomFont.swift */,
+			);
+			path = "Custom Fonts";
+			sourceTree = "<group>";
+		};
+		365010D82955ADC2003F3262 /* Tabbar  */ = {
+			isa = PBXGroup;
+			children = (
+				365010D92955ADE1003F3262 /* TabbarVC.swift */,
+			);
+			path = "Tabbar ";
+			sourceTree = "<group>";
+		};
+		365010DB2955CBBF003F3262 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				365010DC2955CBD2003F3262 /* TableView.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		3695503529519A9E009AEB62 = {
 			isa = PBXGroup;
 			children = (
@@ -302,10 +334,9 @@
 				3695505729519AA0009AEB62 /* RPBTests */,
 				3695506129519AA0009AEB62 /* RPBUITests */,
 				6CE2B86402C41ADD0A1285C8 /* Pods */,
-				296AF95A0EF787BBF4AEF92B /* Frameworks */,
-				094131172955ACE4008AC5CA /* RPB.app */,
-				094131182955ACE4008AC5CA /* RPBTests.xctest */,
-				094131192955ACE4008AC5CA /* RPBUITests.xctest */,
+				365010D42955A3D4003F3262 /* RPB.app */,
+				365010D52955A3D4003F3262 /* RPBTests.xctest */,
+				365010D62955A3D4003F3262 /* RPBUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -351,6 +382,7 @@
 			children = (
 				094131202955CF50008AC5CA /* New Group */,
 				0941311A2955B3CD008AC5CA /* BaseVC */,
+				365010D82955ADC2003F3262 /* Tabbar  */,
 				3636F30729548170001D886A /* Profile VC */,
 				3636F30629548165001D886A /* Employee VC */,
 				3636F3032954770B001D886A /* HomeVC */,
@@ -482,7 +514,7 @@
 			);
 			name = RPB;
 			productName = RPB;
-			productReference = 094131172955ACE4008AC5CA /* RPB.app */;
+			productReference = 365010D42955A3D4003F3262 /* RPB.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3695505329519AA0009AEB62 /* RPBTests */ = {
@@ -501,7 +533,7 @@
 			);
 			name = RPBTests;
 			productName = RPBTests;
-			productReference = 094131182955ACE4008AC5CA /* RPBTests.xctest */;
+			productReference = 365010D52955A3D4003F3262 /* RPBTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		3695505D29519AA0009AEB62 /* RPBUITests */ = {
@@ -520,7 +552,7 @@
 			);
 			name = RPBUITests;
 			productName = RPBUITests;
-			productReference = 094131192955ACE4008AC5CA /* RPBUITests.xctest */;
+			productReference = 365010D62955A3D4003F3262 /* RPBUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -674,6 +706,7 @@
 				0941311F2955B55F008AC5CA /* String.swift in Sources */,
 				3636F30B295481A8001D886A /* ProfileVC.swift in Sources */,
 				0904419829558E920088941F /* AddEmployeeVC.swift in Sources */,
+				365010DA2955ADE1003F3262 /* TabbarVC.swift in Sources */,
 				090441B22955920E0088941F /* CustomColor.swift in Sources */,
 				090441B32955920E0088941F /* CustomFont.swift in Sources */,
 				3636F30529547728001D886A /* HomeVC.swift in Sources */,
@@ -690,6 +723,7 @@
 				090441B52955920E0088941F /* UIView.swift in Sources */,
 				3695504429519A9E009AEB62 /* SceneDelegate.swift in Sources */,
 				090441B42955920E0088941F /* UIButton.swift in Sources */,
+				365010DD2955CBD2003F3262 /* TableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
