@@ -35,6 +35,7 @@
 		3636F30B295481A8001D886A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F30A295481A8001D886A /* ProfileVC.swift */; };
 		365010DA2955ADE1003F3262 /* TabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365010D92955ADE1003F3262 /* TabbarVC.swift */; };
 		365010DD2955CBD2003F3262 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365010DC2955CBD2003F3262 /* TableView.swift */; };
+		365010E42955EC33003F3262 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365010E32955EC33003F3262 /* SettingVC.swift */; };
 		3695504229519A9E009AEB62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504129519A9E009AEB62 /* AppDelegate.swift */; };
 		3695504429519A9E009AEB62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504329519A9E009AEB62 /* SceneDelegate.swift */; };
 		3695504629519A9E009AEB62 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504529519A9E009AEB62 /* LoginVC.swift */; };
@@ -100,6 +101,7 @@
 		365010D62955A3D4003F3262 /* RPBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		365010D92955ADE1003F3262 /* TabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarVC.swift; sourceTree = "<group>"; };
 		365010DC2955CBD2003F3262 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		365010E32955EC33003F3262 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		3695504129519A9E009AEB62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3695504329519A9E009AEB62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3695504529519A9E009AEB62 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -271,32 +273,6 @@
 			path = String;
 			sourceTree = "<group>";
 		};
-		094131202955CF50008AC5CA /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
-		094131262955DB6F008AC5CA /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				5BFDAA95C620E9BF5FE14B71 /* Pods_RPB.framework */,
-				0030AEB3D599A76D912D1DB1 /* Pods_RPBTests.framework */,
-				0E218803E30E91E4A4876825 /* Pods_RPB_RPBUITests.framework */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
-		094131272955DD4B008AC5CA /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				0941312C2955DDB8008AC5CA /* ProfileTVCell.swift */,
-				0941312D2955DDB8008AC5CA /* ProfileTVCell.xib */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
 		3636F3032954770B001D886A /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +321,24 @@
 				365010DC2955CBD2003F3262 /* TableView.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		365010E12955DEA6003F3262 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				5BFDAA95C620E9BF5FE14B71 /* Pods_RPB.framework */,
+				0030AEB3D599A76D912D1DB1 /* Pods_RPBTests.framework */,
+				0E218803E30E91E4A4876825 /* Pods_RPB_RPBUITests.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		365010E22955EC03003F3262 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				365010E32955EC33003F3262 /* SettingVC.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		3695503529519A9E009AEB62 = {
@@ -402,7 +396,7 @@
 		3695507329519BED009AEB62 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				094131202955CF50008AC5CA /* New Group */,
+				365010E22955EC03003F3262 /* Setting */,
 				0941311A2955B3CD008AC5CA /* BaseVC */,
 				365010D82955ADC2003F3262 /* Tabbar  */,
 				3636F30729548170001D886A /* Profile VC */,
@@ -743,6 +737,7 @@
 				090441B22955920E0088941F /* CustomColor.swift in Sources */,
 				090441B32955920E0088941F /* CustomFont.swift in Sources */,
 				3636F30529547728001D886A /* HomeVC.swift in Sources */,
+				365010E42955EC33003F3262 /* SettingVC.swift in Sources */,
 				36FE65FB2954A0A3003E9CC0 /* EmployeesTableViewCell.swift in Sources */,
 				090441B72955920E0088941F /* Date.swift in Sources */,
 				090441B62955920E0088941F /* BaseURL.swift in Sources */,

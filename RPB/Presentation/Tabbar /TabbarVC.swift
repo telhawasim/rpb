@@ -27,6 +27,7 @@ class TabbarVC: UIViewController {
         super.viewDidLoad()
         self.btnHome.tintColor = UIColor.white
         self.homeView.backgroundColor = UIColor.customBlue
+        self.tabbarView.addShadow()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,7 +72,7 @@ extension TabbarVC {
     
     //MARK: Profile Tabbar
     func profileTabbar(){
-        let ProfileVC = self.storyboard?.instantiateViewController(withIdentifier: "ProfileVC") as? ProfileVC
+        let ProfileVC = self.storyboard?.instantiateViewController(withIdentifier: "SettingVC") as? SettingVC
         
         ProfileVC!.willMove(toParent: self)
         self.containerView.addSubview(ProfileVC!.view)
