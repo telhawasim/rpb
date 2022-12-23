@@ -348,9 +348,6 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="35"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -447,7 +444,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oyp-4C-9jx">
-                                <rect key="frame" x="0.0" y="204" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="204" width="375" height="504"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -455,7 +452,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="oyp-4C-9jx" firstAttribute="leading" secondItem="3HR-f6-JeF" secondAttribute="leading" id="Mr9-Gj-UPS"/>
-                            <constraint firstItem="3HR-f6-JeF" firstAttribute="bottom" secondItem="oyp-4C-9jx" secondAttribute="bottom" id="Wkd-R1-XiQ"/>
+                            <constraint firstItem="3HR-f6-JeF" firstAttribute="bottom" secondItem="oyp-4C-9jx" secondAttribute="bottom" constant="70" id="Wkd-R1-XiQ"/>
                             <constraint firstItem="nvA-Ls-lG2" firstAttribute="top" secondItem="lHZ-ne-Ugb" secondAttribute="top" constant="70" id="Y44-Um-4Y6"/>
                             <constraint firstItem="3HR-f6-JeF" firstAttribute="trailing" secondItem="1Mu-S5-13c" secondAttribute="trailing" constant="20" id="bWv-Dr-1Rw"/>
                             <constraint firstItem="AC2-xi-l1q" firstAttribute="centerY" secondItem="nvA-Ls-lG2" secondAttribute="centerY" id="fp4-an-2ed"/>
@@ -476,10 +473,10 @@
             </objects>
             <point key="canvasLocation" x="2565.5999999999999" y="-35.467980295566505"/>
         </scene>
-        <!--ProfileVC-->
+        <!--SettingVC-->
         <scene sceneID="gMb-g3-vRg">
             <objects>
-                <viewController storyboardIdentifier="ProfileVC" id="9Jd-nJ-4qC" customClass="ProfileVC" customModule="RPB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingVC" id="9Jd-nJ-4qC" customClass="SettingVC" customModule="RPB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KgS-hh-EZB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -932,7 +929,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0K4-gg-7PE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3302" y="36"/>
+            <point key="canvasLocation" x="4623" y="38"/>
         </scene>
         <!--ProfileVC-->
         <scene sceneID="kLR-ku-f2x">
@@ -1052,8 +1049,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcK-rd-WAD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4029.5999999999999" y="-31.03448275862069"/>
-            <point key="canvasLocation" x="3959" y="-35"/>
+            <point key="canvasLocation" x="3932" y="-31"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="nST-Vl-5Pi">
@@ -1209,6 +1205,9 @@
         <namedColor name="Color F7F7F7">
             <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
