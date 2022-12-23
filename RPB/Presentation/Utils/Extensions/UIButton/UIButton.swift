@@ -46,4 +46,9 @@ extension UIButton {
         self.layer.cornerRadius = size
         return self.layer.cornerRadius
     }
+    
+    @discardableResult func isCircular() -> CGFloat {
+        self.layer.cornerRadius = self.frame.height / 2
+        return self.layer.cornerRadius
+    }
 }

@@ -24,6 +24,8 @@
 		090441D5295597980088941F /* EmployeesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36FE65FA2954A0A3003E9CC0 /* EmployeesTableViewCell.xib */; };
 		090441D9295599F50088941F /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 090441D8295599F50088941F /* Montserrat-Medium.otf */; };
 		09283D2229531B8A00256FD8 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09283D2129531B8A00256FD8 /* ServerConfig.swift */; };
+		0941311C2955B3E8008AC5CA /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941311B2955B3E8008AC5CA /* BaseVC.swift */; };
+		0941311F2955B55F008AC5CA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941311E2955B55F008AC5CA /* String.swift */; };
 		1E0F5AE415C68827862027C1 /* Pods_RPBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0030AEB3D599A76D912D1DB1 /* Pods_RPBTests.framework */; };
 		3636F30529547728001D886A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F30429547728001D886A /* HomeVC.swift */; };
 		3636F3092954818E001D886A /* EmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F3082954818E001D886A /* EmployeeVC.swift */; };
@@ -72,6 +74,11 @@
 		09283D1F29531A9700256FD8 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
 		09283D2129531B8A00256FD8 /* ServerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
 		09283D2329531CCB00256FD8 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
+		094131172955ACE4008AC5CA /* RPB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		094131182955ACE4008AC5CA /* RPBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		094131192955ACE4008AC5CA /* RPBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0941311B2955B3E8008AC5CA /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		0941311E2955B55F008AC5CA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		0BA2D4D5F79B27C1E0242BBE /* Pods-RPBTests.debugdev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPBTests.debugdev.xcconfig"; path = "Target Support Files/Pods-RPBTests/Pods-RPBTests.debugdev.xcconfig"; sourceTree = "<group>"; };
 		0E218803E30E91E4A4876825 /* Pods_RPB_RPBUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RPB_RPBUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F2344F2CFF9BCBC3CA03F8E /* Pods-RPB-RPBUITests.releaseproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB-RPBUITests.releaseproduction.xcconfig"; path = "Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests.releaseproduction.xcconfig"; sourceTree = "<group>"; };
@@ -82,7 +89,6 @@
 		3636F30429547728001D886A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		3636F3082954818E001D886A /* EmployeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeVC.swift; sourceTree = "<group>"; };
 		3636F30A295481A8001D886A /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		3695503E29519A9E009AEB62 /* RPB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = RPB.app; path = "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/Debug-iphoneos/RPB.app"; sourceTree = "<absolute>"; };
 		3695504129519A9E009AEB62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3695504329519A9E009AEB62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3695504529519A9E009AEB62 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -90,9 +96,7 @@
 		3695504A29519AA0009AEB62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3695504D29519AA0009AEB62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3695504F29519AA0009AEB62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3695505429519AA0009AEB62 /* RPBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = RPBTests.xctest; path = "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/Debug-iphoneos/RPBTests.xctest"; sourceTree = "<absolute>"; };
 		3695505829519AA0009AEB62 /* RPBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPBTests.swift; sourceTree = "<group>"; };
-		3695505E29519AA0009AEB62 /* RPBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = RPBUITests.xctest; path = "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/Debug-iphoneos/RPBUITests.xctest"; sourceTree = "<absolute>"; };
 		3695506229519AA0009AEB62 /* RPBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPBUITests.swift; sourceTree = "<group>"; };
 		3695506429519AA0009AEB62 /* RPBUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPBUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		36FE65F92954A0A3003E9CC0 /* EmployeesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesTableViewCell.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 		090441A12955920E0088941F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0941311D2955B554008AC5CA /* String */,
 				090441A22955920E0088941F /* ServerBaseURLS */,
 				090441A32955920E0088941F /* Color  */,
 				090441A62955920E0088941F /* UIButton */,
@@ -232,6 +237,29 @@
 			path = Utils/Extensions/UITextField;
 			sourceTree = "<group>";
 		};
+		0941311A2955B3CD008AC5CA /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				0941311B2955B3E8008AC5CA /* BaseVC.swift */,
+			);
+			path = BaseVC;
+			sourceTree = "<group>";
+		};
+		0941311D2955B554008AC5CA /* String */ = {
+			isa = PBXGroup;
+			children = (
+				0941311E2955B55F008AC5CA /* String.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		094131202955CF50008AC5CA /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		296AF95A0EF787BBF4AEF92B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +303,9 @@
 				3695506129519AA0009AEB62 /* RPBUITests */,
 				6CE2B86402C41ADD0A1285C8 /* Pods */,
 				296AF95A0EF787BBF4AEF92B /* Frameworks */,
+				094131172955ACE4008AC5CA /* RPB.app */,
+				094131182955ACE4008AC5CA /* RPBTests.xctest */,
+				094131192955ACE4008AC5CA /* RPBUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -318,6 +349,8 @@
 		3695507329519BED009AEB62 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				094131202955CF50008AC5CA /* New Group */,
+				0941311A2955B3CD008AC5CA /* BaseVC */,
 				3636F30729548170001D886A /* Profile VC */,
 				3636F30629548165001D886A /* Employee VC */,
 				3636F3032954770B001D886A /* HomeVC */,
@@ -449,7 +482,7 @@
 			);
 			name = RPB;
 			productName = RPB;
-			productReference = 3695503E29519A9E009AEB62 /* RPB.app */;
+			productReference = 094131172955ACE4008AC5CA /* RPB.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3695505329519AA0009AEB62 /* RPBTests */ = {
@@ -468,7 +501,7 @@
 			);
 			name = RPBTests;
 			productName = RPBTests;
-			productReference = 3695505429519AA0009AEB62 /* RPBTests.xctest */;
+			productReference = 094131182955ACE4008AC5CA /* RPBTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		3695505D29519AA0009AEB62 /* RPBUITests */ = {
@@ -487,7 +520,7 @@
 			);
 			name = RPBUITests;
 			productName = RPBUITests;
-			productReference = 3695505E29519AA0009AEB62 /* RPBUITests.xctest */;
+			productReference = 094131192955ACE4008AC5CA /* RPBUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -638,6 +671,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0941311F2955B55F008AC5CA /* String.swift in Sources */,
 				3636F30B295481A8001D886A /* ProfileVC.swift in Sources */,
 				0904419829558E920088941F /* AddEmployeeVC.swift in Sources */,
 				090441B22955920E0088941F /* CustomColor.swift in Sources */,
@@ -651,6 +685,7 @@
 				090441B92955920E0088941F /* UITextField.swift in Sources */,
 				090441B82955920E0088941F /* UIImageView.swift in Sources */,
 				3636F3092954818E001D886A /* EmployeeVC.swift in Sources */,
+				0941311C2955B3E8008AC5CA /* BaseVC.swift in Sources */,
 				09283D2229531B8A00256FD8 /* ServerConfig.swift in Sources */,
 				090441B52955920E0088941F /* UIView.swift in Sources */,
 				3695504429519A9E009AEB62 /* SceneDelegate.swift in Sources */,
