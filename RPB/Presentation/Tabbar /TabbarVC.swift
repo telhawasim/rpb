@@ -72,13 +72,13 @@ extension TabbarVC {
     
     //MARK: Profile Tabbar
     func profileTabbar(){
-        let ProfileVC = self.storyboard?.instantiateViewController(withIdentifier: "SettingVC") as? SettingVC
+        let SettingVC = self.storyboard?.instantiateViewController(withIdentifier: "SettingVC") as? SettingVC
         
-        ProfileVC!.willMove(toParent: self)
-        self.containerView.addSubview(ProfileVC!.view)
-        self.addChild(ProfileVC!)
-        ProfileVC!.didMove(toParent: self)
-        self.ProfileColor()
+        SettingVC!.willMove(toParent: self)
+        self.containerView.addSubview(SettingVC!.view)
+        self.addChild(SettingVC!)
+        SettingVC!.didMove(toParent: self)
+        self.SettingColor()
     }
     
     //MARK: Home Tabbar Color
@@ -101,8 +101,8 @@ extension TabbarVC {
         self.btnProfile.tintColor = UIColor.customBlue
     }
     
-    //MARK: Profile Tabbar Color
-    func ProfileColor(){
+    //MARK: Setting Tabbar Color
+    func SettingColor(){
         self.homeView.backgroundColor = UIColor.white
         self.employeeView.backgroundColor = UIColor.white
         self.profileView.backgroundColor = UIColor.customBlue

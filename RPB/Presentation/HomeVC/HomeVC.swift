@@ -25,6 +25,14 @@ class HomeVC: UIViewController {
         self.setColors()
         self.configureFonts()
     }
+    
+    //MARK: Add Employee
+    @IBAction func btnAddEmployee(_ sender: Any) {
+        let vc = ProfileVC()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 }
 
 //MARK: Functions
@@ -42,7 +50,7 @@ extension HomeVC {
         lblEmployee.textColor = UIColor.customBlack
     }
     
-    //MARK: Set Colors
+    //MARK: Set Fonts
     func configureFonts(){
         lblName.font = UIFont.MontserratBold(32)
         lblEmployee.font = UIFont.MontserratSemiBold(24)

@@ -522,6 +522,7 @@
 				3695503A29519A9E009AEB62 /* Sources */,
 				3695503B29519A9E009AEB62 /* Frameworks */,
 				3695503C29519A9E009AEB62 /* Resources */,
+				098FA589196C502630323D46 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -559,6 +560,7 @@
 				3695505A29519AA0009AEB62 /* Sources */,
 				3695505B29519AA0009AEB62 /* Frameworks */,
 				3695505C29519AA0009AEB62 /* Resources */,
+				53B8D287AD8062B06B2BEDAA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -646,6 +648,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		098FA589196C502630323D46 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RPB/Pods-RPB-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RPB/Pods-RPB-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RPB/Pods-RPB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53B8D287AD8062B06B2BEDAA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		67AE28030CE036B0D88F9BAA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -919,7 +955,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C39L2R9YT;
+				DEVELOPMENT_TEAM = 8GKH78N8MS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -950,7 +986,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C39L2R9YT;
+				DEVELOPMENT_TEAM = 8GKH78N8MS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1121,7 +1157,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C39L2R9YT;
+				DEVELOPMENT_TEAM = 8GKH78N8MS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1246,7 +1282,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C39L2R9YT;
+				DEVELOPMENT_TEAM = 8GKH78N8MS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1377,7 +1413,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C39L2R9YT;
+				DEVELOPMENT_TEAM = 8GKH78N8MS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1502,7 +1538,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C39L2R9YT;
+				DEVELOPMENT_TEAM = 8GKH78N8MS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1633,7 +1669,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C39L2R9YT;
+				DEVELOPMENT_TEAM = 8GKH78N8MS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1758,7 +1794,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C39L2R9YT;
+				DEVELOPMENT_TEAM = 8GKH78N8MS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

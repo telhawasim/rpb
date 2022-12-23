@@ -365,6 +365,7 @@
                             <constraint firstItem="JPU-d4-0kJ" firstAttribute="leading" secondItem="lcX-rt-0hq" secondAttribute="leading" constant="15" id="vcO-7a-8pZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="KJh-Mv-EEb"/>
                     <connections>
                         <outlet property="btnEmployee" destination="C1J-9r-pcn" id="j4c-KV-Bag"/>
                         <outlet property="btnHome" destination="goj-Rh-hwI" id="nGp-9q-ucG"/>
@@ -378,7 +379,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bj7-XY-NwP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1168.8" y="-31.03448275862069"/>
+            <point key="canvasLocation" x="2111.1999999999998" y="-31.03448275862069"/>
         </scene>
         <!--EmployeeVC-->
         <scene sceneID="y8Q-Tw-X7V">
@@ -471,7 +472,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFg-Hy-SsX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2565.5999999999999" y="-35.467980295566505"/>
+            <point key="canvasLocation" x="3508" y="-35.467980295566505"/>
         </scene>
         <!--SettingVC-->
         <scene sceneID="gMb-g3-vRg">
@@ -486,7 +487,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="omc-Ja-Ljg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3247" y="-35"/>
+            <point key="canvasLocation" x="4188" y="-35.467980295566505"/>
         </scene>
         <!--Add EmployeeVC-->
         <scene sceneID="LVN-d0-hQa">
@@ -867,6 +868,9 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="addBtnPressed:" destination="73V-24-KI5" eventType="touchUpInside" id="AyX-H9-lw6"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -916,7 +920,7 @@
                         <outlet property="lblEmail" destination="2cd-yn-d2c" id="yIR-XJ-rG5"/>
                         <outlet property="lblName" destination="geM-uF-ICX" id="MZF-w9-QoO"/>
                         <outlet property="lblPhone" destination="H0i-ta-mkH" id="BK6-KV-Xgo"/>
-                        <outlet property="lblTitle" destination="LOc-P2-Xro" id="nq9-Y3-4xf"/>
+                        <outlet property="lblTitle" destination="LOc-P2-Xro" id="oKG-eh-r2M"/>
                         <outlet property="profileImage" destination="Her-OF-jdd" id="4ac-Vj-rLe"/>
                         <outlet property="txtDOB" destination="8Af-bl-mUc" id="AiY-Nh-REN"/>
                         <outlet property="txtDateOfJoining" destination="YWS-Rf-UV6" id="Ebb-wp-Fbf"/>
@@ -929,7 +933,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0K4-gg-7PE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4623" y="38"/>
+            <point key="canvasLocation" x="5564" y="37.684729064039409"/>
         </scene>
         <!--ProfileVC-->
         <scene sceneID="kLR-ku-f2x">
@@ -1050,7 +1054,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcK-rd-WAD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4668" y="-35"/>
+            <point key="canvasLocation" x="6319.1999999999998" y="-31.03448275862069"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="nST-Vl-5Pi">
@@ -1074,6 +1078,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <buttonConfiguration key="configuration" style="plain" image="AddEmployee"/>
+                                <connections>
+                                    <action selector="btnAddEmployee:" destination="8vd-JO-qTQ" eventType="touchUpInside" id="smP-7X-s4z"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y3P-Fu-ABS">
                                 <rect key="frame" x="20" y="127.66666666666669" width="335" height="214"/>
@@ -1176,7 +1183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T0M-nc-Vji" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1866" y="-31"/>
+            <point key="canvasLocation" x="2807.1999999999998" y="-31.03448275862069"/>
         </scene>
     </scenes>
     <resources>
