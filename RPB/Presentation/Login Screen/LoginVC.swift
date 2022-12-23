@@ -40,7 +40,7 @@ extension LoginVC{
         lbldescription.textColor = UIColor.customBlack
     }
     
-    //MARK: Set Colors
+    //MARK: Configure Fonts
     func configureFonts(){
         lbldescription.font = UIFont.MontserratRegular(16)
         lblLogin.font = UIFont.MontserratBold(32)
