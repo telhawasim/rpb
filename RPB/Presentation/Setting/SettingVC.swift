@@ -39,10 +39,10 @@ extension SettingVC{
     
     //MARK: Configure Fonts
     func configureFonts() {
-        self.lblAppNotification.font = UIFont.MontserratMedium(16)
-        self.lblSetting.font = UIFont.MontserratMedium(24)
-        self.lblEditProfile.font = UIFont.MontserratMedium(16)
-        self.lblAccount.font = UIFont.MontserratSemiBold(20)
-        self.lblNotification.font = UIFont.MontserratSemiBold(20)
+        self.lblAppNotification.font = UIFont.MontserratMedium(14)
+        self.lblSetting.font = UIFont.MontserratMedium(22)
+        self.lblEditProfile.font = UIFont.MontserratMedium(14)
+        self.lblAccount.font = UIFont.MontserratRegular(18)
+        self.lblNotification.font = UIFont.MontserratRegular(18)
     }
 }

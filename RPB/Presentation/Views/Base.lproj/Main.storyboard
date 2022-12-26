@@ -228,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jcy-hh-IBY" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="481" y="-33"/>
+            <point key="canvasLocation" x="1367" y="-30"/>
         </scene>
         <!--TabbarVC-->
         <scene sceneID="DZR-uQ-iqP">
@@ -918,7 +918,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0K4-gg-7PE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5564" y="37.684729064039409"/>
+            <point key="canvasLocation" x="4911" y="33"/>
         </scene>
         <!--ProfileVC-->
         <scene sceneID="kLR-ku-f2x">
@@ -1039,7 +1039,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcK-rd-WAD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6319.1999999999998" y="-31.03448275862069"/>
+            <point key="canvasLocation" x="5604" y="-31"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="nST-Vl-5Pi">
@@ -1182,7 +1182,7 @@
                                 <rect key="frame" x="0.0" y="47" width="375" height="733"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOC-lK-AXf">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="696.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="704.33333333333337"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xi0-b0-99c">
                                                 <rect key="frame" x="20" y="69.333333333333329" width="73" height="24"/>
@@ -1215,12 +1215,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tD9-XX-eEE">
-                                                <rect key="frame" x="20" y="606.33333333333337" width="335" height="60"/>
+                                                <rect key="frame" x="20" y="626.33333333333337" width="335" height="48"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="hrU-pV-cdv"/>
+                                                    <constraint firstAttribute="height" constant="48" id="hrU-pV-cdv"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Logout">
@@ -1228,7 +1228,7 @@
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusButton">
-                                                        <real key="value" value="30"/>
+                                                        <real key="value" value="22"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColorButton">
                                                         <color key="value" name=" Color 5557D4"/>
@@ -1254,10 +1254,10 @@
                                             <constraint firstItem="wJ9-rF-kTi" firstAttribute="top" secondItem="HOC-lK-AXf" secondAttribute="top" constant="20" id="XUw-dt-8se"/>
                                             <constraint firstItem="Hku-f3-wzp" firstAttribute="top" secondItem="xVR-0o-TM1" secondAttribute="bottom" constant="20" id="YbS-VZ-8dv"/>
                                             <constraint firstAttribute="trailing" secondItem="tD9-XX-eEE" secondAttribute="trailing" constant="20" id="am1-by-89z"/>
-                                            <constraint firstAttribute="bottom" secondItem="tD9-XX-eEE" secondAttribute="bottom" constant="30" id="e48-iw-2SG"/>
-                                            <constraint firstItem="tD9-XX-eEE" firstAttribute="top" secondItem="Hku-f3-wzp" secondAttribute="bottom" constant="380" id="hL8-RE-KGQ"/>
+                                            <constraint firstItem="tD9-XX-eEE" firstAttribute="top" secondItem="Hku-f3-wzp" secondAttribute="bottom" constant="400" id="hL8-RE-KGQ"/>
                                             <constraint firstItem="xi0-b0-99c" firstAttribute="leading" secondItem="wJ9-rF-kTi" secondAttribute="leading" id="o39-uf-WBt"/>
                                             <constraint firstItem="xVR-0o-TM1" firstAttribute="leading" secondItem="wJ9-rF-kTi" secondAttribute="leading" id="rW2-54-9TS"/>
+                                            <constraint firstAttribute="bottom" secondItem="tD9-XX-eEE" secondAttribute="bottom" constant="30" id="sBb-la-KMk"/>
                                             <constraint firstAttribute="trailing" secondItem="zyF-Eh-4To" secondAttribute="trailing" constant="20" id="usy-1N-4Wg"/>
                                             <constraint firstItem="wJ9-rF-kTi" firstAttribute="leading" secondItem="HOC-lK-AXf" secondAttribute="leading" constant="20" id="xDt-sY-q2b"/>
                                         </constraints>
