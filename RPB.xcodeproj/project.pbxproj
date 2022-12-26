@@ -28,6 +28,7 @@
 		0941311F2955B55F008AC5CA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941311E2955B55F008AC5CA /* String.swift */; };
 		094131362955F0F0008AC5CA /* ProfileTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094131342955F0F0008AC5CA /* ProfileTVCell.swift */; };
 		094131372955F0F0008AC5CA /* ProfileTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 094131352955F0F0008AC5CA /* ProfileTVCell.xib */; };
+		098D04F829598065001C2F05 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098D04F729598065001C2F05 /* CameraHandler.swift */; };
 		2E18A825836F0D81F77A3E51 /* Pods_RPB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3D06738362C369E89B8B28 /* Pods_RPB.framework */; };
 		3636F30529547728001D886A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F30429547728001D886A /* HomeVC.swift */; };
 		3636F3092954818E001D886A /* EmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F3082954818E001D886A /* EmployeeVC.swift */; };
@@ -82,6 +83,7 @@
 		0941311E2955B55F008AC5CA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		094131342955F0F0008AC5CA /* ProfileTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTVCell.swift; sourceTree = "<group>"; };
 		094131352955F0F0008AC5CA /* ProfileTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileTVCell.xib; sourceTree = "<group>"; };
+		098D04F729598065001C2F05 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
 		0BA2D4D5F79B27C1E0242BBE /* Pods-RPBTests.debugdev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPBTests.debugdev.xcconfig"; path = "Target Support Files/Pods-RPBTests/Pods-RPBTests.debugdev.xcconfig"; sourceTree = "<group>"; };
 		0F2344F2CFF9BCBC3CA03F8E /* Pods-RPB-RPBUITests.releaseproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB-RPBUITests.releaseproduction.xcconfig"; path = "Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests.releaseproduction.xcconfig"; sourceTree = "<group>"; };
 		164528275600028EE2EE589C /* Pods-RPB-RPBUITests.debugqa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB-RPBUITests.debugqa.xcconfig"; path = "Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests.debugqa.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		090441A12955920E0088941F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				098D04F629598054001C2F05 /* Add Image */,
 				0941311D2955B554008AC5CA /* String */,
 				365010DB2955CBBF003F3262 /* TableView */,
 				090441A22955920E0088941F /* ServerBaseURLS */,
@@ -271,6 +274,14 @@
 				094131352955F0F0008AC5CA /* ProfileTVCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		098D04F629598054001C2F05 /* Add Image */ = {
+			isa = PBXGroup;
+			children = (
+				098D04F729598065001C2F05 /* CameraHandler.swift */,
+			);
+			path = "Add Image";
 			sourceTree = "<group>";
 		};
 		3636F3032954770B001D886A /* HomeVC */ = {
@@ -768,6 +779,7 @@
 				090441B62955920E0088941F /* BaseURL.swift in Sources */,
 				3695504629519A9E009AEB62 /* LoginVC.swift in Sources */,
 				3695504229519A9E009AEB62 /* AppDelegate.swift in Sources */,
+				098D04F829598065001C2F05 /* CameraHandler.swift in Sources */,
 				090441B92955920E0088941F /* UITextField.swift in Sources */,
 				090441B82955920E0088941F /* UIImageView.swift in Sources */,
 				3636F3092954818E001D886A /* EmployeeVC.swift in Sources */,

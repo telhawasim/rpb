@@ -86,6 +86,7 @@ class AddEmployeeVC: BaseVC {
     //MARK: Configure TextField
     func configureTextField() {
         txtDepartment.delegate = self
+        txtPhone.delegate = self
     }
     
     func checkValidation() -> Bool {
@@ -155,6 +156,12 @@ class AddEmployeeVC: BaseVC {
         }
     }
     
+    @IBAction func addBtnImage(_ sender: Any) {
+        CameraHandler.shared.showActionSheet(vc: self)
+        CameraHandler.shared.imagePickedBlock = { (image) in
+            self.profileImage.image = image
+        }
+    }
     
 }
 
@@ -175,13 +182,27 @@ extension AddEmployeeVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         txtDepartment.text = department_data[row]
         self.view.endEditing(true)
-        dropDown.image = UIImage(named: "arrow_down")
     }
 }
 
 //MARK: TextField Methods
 extension AddEmployeeVC: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-//        dropDown.image = UIImage(named: "arrow_up")
+        dropDown.image = UIImage(named: "arrow_up")
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        dropDown.image = UIImage(named: "arrow_down")
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == txtPhone {
+            let maxLength = 11
+                let currentString = (textField.text ?? "") as NSString
+                let newString = currentString.replacingCharacters(in: range, with: string)
+
+                return newString.count <= maxLength
+        } else {
+            return Bool()
+        }
     }
 }
