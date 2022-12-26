@@ -15,5 +15,7 @@ target 'RPB' do
   target 'RPBUITests' do
     # Pods for testing
   end
+  
+  pod 'IQKeyboardManagerSwift'
 
 end
