@@ -32,8 +32,8 @@ class EmployeesTableViewCell: UITableViewCell {
     //MARK: Configure Fonts
     func configureFonts(){
         lblName.font = UIFont.MontserratBold(18)
-        lblSkills.font = UIFont.MontserratMedium(16)
-        lblEmail.font = UIFont.MontserratRegular(16)
+        lblSkills.font = UIFont.MontserratMedium(14)
+        lblEmail.font = UIFont.MontserratMedium(14)
         self.setColors()
     }
 }

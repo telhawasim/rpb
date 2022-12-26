@@ -41,7 +41,7 @@ extension EmployeeVC {
     
     //MARK: Set Colors
     func configureFonts(){
-        lblEmployee.font = UIFont.MontserratSemiBold(24)
+        lblEmployee.font = UIFont.MontserratMedium(24)
     }
 }
 
