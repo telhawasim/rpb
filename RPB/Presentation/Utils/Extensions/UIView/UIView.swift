@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIView {
-    
+
     @IBInspectable
     var cornerRadius: CGFloat {
         get {
@@ -20,7 +20,7 @@ extension UIView {
             layer.masksToBounds = newValue > 0
         }
     }
-    
+
     @IBInspectable
     var borderWidth: CGFloat {
         get {
@@ -30,7 +30,7 @@ extension UIView {
             layer.borderWidth = newValue
         }
     }
-    
+
     @IBInspectable
     var borderColor: UIColor? {
         get {
@@ -41,7 +41,7 @@ extension UIView {
             layer.borderColor = newValue?.cgColor
         }
     }
-    
+
     @IBInspectable
     var shadowRadius: CGFloat {
         get {
@@ -54,22 +54,22 @@ extension UIView {
             layer.shadowRadius = newValue
         }
     }
-    
-    func addShadow(shadowOpacity : Float = 0.5, shadowRaduis : Float = 10,shadowColor : CGColor = UIColor.lightGray.cgColor) {
-        
+
+    func addShadow(shadowOpacity: Float = 0.5, shadowRaduis: Float = 10, shadowColor: CGColor = UIColor.lightGray.cgColor) {
+
         layer.shadowColor = shadowColor
         layer.shadowOffset = CGSize(width: 0, height: 0)
         layer.shadowOpacity = shadowOpacity
         layer.shadowRadius = CGFloat(shadowRaduis)
         clipsToBounds = false
     }
-    
+
     @discardableResult func isCircularView() -> CGFloat {
         self.layer.cornerRadius = self.frame.height / 2
         return self.layer.cornerRadius
     }
-    
-    @discardableResult func cornerRadius(_ size: CGFloat) -> CGFloat{
+
+    @discardableResult func cornerRadius(_ size: CGFloat) -> CGFloat {
         self.layer.cornerRadius = size
         return self.layer.cornerRadius
     }

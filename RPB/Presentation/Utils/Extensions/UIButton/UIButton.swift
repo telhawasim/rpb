@@ -11,42 +11,44 @@ import UIKit
 extension UIButton {
 
     @IBInspectable var borderWidthButton: CGFloat {
-        set {
-            layer.borderWidth = newValue
-        }
         get {
             return layer.borderWidth
+        }
+
+        set {
+            layer.borderWidth = newValue
         }
     }
 
     @IBInspectable var cornerRadiusButton: CGFloat {
-        set {
-            layer.cornerRadius = newValue
-        }
         get {
             return layer.cornerRadius
+        }
+
+        set {
+            layer.cornerRadius = newValue
         }
     }
 
     @IBInspectable var borderColorButton: UIColor? {
-        set {
-            guard let uiColor = newValue else { return }
-            layer.borderColor = uiColor.cgColor
-        }
         get {
             guard let color = layer.borderColor else { return nil }
             return UIColor(cgColor: color)
+        }
+
+        set {
+            guard let uiColor = newValue else { return }
+            layer.borderColor = uiColor.cgColor
         }
     }
 }
 
 extension UIButton {
-    
-    @discardableResult func cornerRadiusButton(_ size: CGFloat) -> CGFloat{
+    @discardableResult func cornerRadiusButton(_ size: CGFloat) -> CGFloat {
         self.layer.cornerRadius = size
         return self.layer.cornerRadius
     }
-    
+
     @discardableResult func isCircularButton() -> CGFloat {
         self.layer.cornerRadius = self.frame.height / 2
         return self.layer.cornerRadius

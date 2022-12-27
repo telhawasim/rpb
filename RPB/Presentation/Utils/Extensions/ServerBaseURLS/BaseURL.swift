@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum BaseUrl:String {
+enum BaseUrl: String {
     case LOCAL = "https:\\xyz-local.com"
     case DEV = "https:\\xyz-dev.com"
     case QA = "https:\\xyz-qa.com"

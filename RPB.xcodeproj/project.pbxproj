@@ -30,6 +30,7 @@
 		094131372955F0F0008AC5CA /* ProfileTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 094131352955F0F0008AC5CA /* ProfileTVCell.xib */; };
 		098D04F829598065001C2F05 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098D04F729598065001C2F05 /* CameraHandler.swift */; };
 		2E18A825836F0D81F77A3E51 /* Pods_RPB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3D06738362C369E89B8B28 /* Pods_RPB.framework */; };
+		36187A6F2959C10F001CAB2B /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36187A6E2959C10F001CAB2B /* Storyboard.swift */; };
 		3636F30529547728001D886A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F30429547728001D886A /* HomeVC.swift */; };
 		3636F3092954818E001D886A /* EmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F3082954818E001D886A /* EmployeeVC.swift */; };
 		3636F30B295481A8001D886A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F30A295481A8001D886A /* ProfileVC.swift */; };
@@ -42,6 +43,11 @@
 		3695505929519AA0009AEB62 /* RPBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695505829519AA0009AEB62 /* RPBTests.swift */; };
 		3695506329519AA0009AEB62 /* RPBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695506229519AA0009AEB62 /* RPBUITests.swift */; };
 		3695506529519AA0009AEB62 /* RPBUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695506429519AA0009AEB62 /* RPBUITestsLaunchTests.swift */; };
+		36F8AB6E295AE90500CA9CFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36F8AB6D295AE90500CA9CFA /* LaunchScreen.storyboard */; };
+		36F8AB71295AF7D400CA9CFA /* CVPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F8AB70295AF7D400CA9CFA /* CVPreviewVC.swift */; };
+		36F8AB75295B0B8D00CA9CFA /* TagsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F8AB73295B0B8D00CA9CFA /* TagsCollectionViewCell.swift */; };
+		36F8AB76295B0B8D00CA9CFA /* TagsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36F8AB74295B0B8D00CA9CFA /* TagsCollectionViewCell.xib */; };
+		36F8AB7A295B29A100CA9CFA /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F8AB79295B29A100CA9CFA /* CollectionView.swift */; };
 		36FE65FB2954A0A3003E9CC0 /* EmployeesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FE65F92954A0A3003E9CC0 /* EmployeesTableViewCell.swift */; };
 		42461DF572A33293AAF14395 /* Pods_RPBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40216E1D4D4C2D5D685E6CF /* Pods_RPBTests.framework */; };
 		888933B9EC43727F25FCCE67 /* Pods_RPB_RPBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FD77DEDA03678A73A25717 /* Pods_RPB_RPBUITests.framework */; };
@@ -90,6 +96,7 @@
 		22EF633B9F77D99322A1835A /* Pods-RPBTests.releasedev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPBTests.releasedev.xcconfig"; path = "Target Support Files/Pods-RPBTests/Pods-RPBTests.releasedev.xcconfig"; sourceTree = "<group>"; };
 		2324538490149D208DA077A6 /* Pods-RPBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPBTests.release.xcconfig"; path = "Target Support Files/Pods-RPBTests/Pods-RPBTests.release.xcconfig"; sourceTree = "<group>"; };
 		23B2FDCDEFCA66A6888B49DA /* Pods-RPB.debugqa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB.debugqa.xcconfig"; path = "Target Support Files/Pods-RPB/Pods-RPB.debugqa.xcconfig"; sourceTree = "<group>"; };
+		36187A6E2959C10F001CAB2B /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		3636F30429547728001D886A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		3636F3082954818E001D886A /* EmployeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeVC.swift; sourceTree = "<group>"; };
 		3636F30A295481A8001D886A /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
@@ -104,11 +111,15 @@
 		3695504529519A9E009AEB62 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		3695504829519A9E009AEB62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3695504A29519AA0009AEB62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3695504D29519AA0009AEB62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3695504F29519AA0009AEB62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3695505829519AA0009AEB62 /* RPBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPBTests.swift; sourceTree = "<group>"; };
 		3695506229519AA0009AEB62 /* RPBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPBUITests.swift; sourceTree = "<group>"; };
 		3695506429519AA0009AEB62 /* RPBUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPBUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		36F8AB6D295AE90500CA9CFA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		36F8AB70295AF7D400CA9CFA /* CVPreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPreviewVC.swift; sourceTree = "<group>"; };
+		36F8AB73295B0B8D00CA9CFA /* TagsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewCell.swift; sourceTree = "<group>"; };
+		36F8AB74295B0B8D00CA9CFA /* TagsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsCollectionViewCell.xib; sourceTree = "<group>"; };
+		36F8AB79295B29A100CA9CFA /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		36FE65F92954A0A3003E9CC0 /* EmployeesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesTableViewCell.swift; sourceTree = "<group>"; };
 		36FE65FA2954A0A3003E9CC0 /* EmployeesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeesTableViewCell.xib; sourceTree = "<group>"; };
 		37FD77DEDA03678A73A25717 /* Pods_RPB_RPBUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RPB_RPBUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +184,8 @@
 		090441A12955920E0088941F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				36F8AB78295B298800CA9CFA /* CollectionView */,
+				36187A6D2959C0EC001CAB2B /* Storyboard */,
 				098D04F629598054001C2F05 /* Add Image */,
 				0941311D2955B554008AC5CA /* String */,
 				365010DB2955CBBF003F3262 /* TableView */,
@@ -282,6 +295,14 @@
 				098D04F729598065001C2F05 /* CameraHandler.swift */,
 			);
 			path = "Add Image";
+			sourceTree = "<group>";
+		};
+		36187A6D2959C0EC001CAB2B /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				36187A6E2959C10F001CAB2B /* Storyboard.swift */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		3636F3032954770B001D886A /* HomeVC */ = {
@@ -396,6 +417,7 @@
 		3695507329519BED009AEB62 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				36F8AB6F295AF78000CA9CFA /* CV Perview  */,
 				365010E22955EC03003F3262 /* Setting */,
 				0941311A2955B3CD008AC5CA /* BaseVC */,
 				365010D82955ADC2003F3262 /* Tabbar  */,
@@ -440,7 +462,7 @@
 		3695507829519E01009AEB62 /* Splash Screen */ = {
 			isa = PBXGroup;
 			children = (
-				3695504C29519AA0009AEB62 /* LaunchScreen.storyboard */,
+				36F8AB6D295AE90500CA9CFA /* LaunchScreen.storyboard */,
 			);
 			path = "Splash Screen";
 			sourceTree = "<group>";
@@ -470,6 +492,32 @@
 				09283D1E29531A8C00256FD8 /* Montserrat-Bold.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		36F8AB6F295AF78000CA9CFA /* CV Perview  */ = {
+			isa = PBXGroup;
+			children = (
+				36F8AB70295AF7D400CA9CFA /* CVPreviewVC.swift */,
+				36F8AB72295B0B6100CA9CFA /* Cells */,
+			);
+			path = "CV Perview ";
+			sourceTree = "<group>";
+		};
+		36F8AB72295B0B6100CA9CFA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				36F8AB73295B0B8D00CA9CFA /* TagsCollectionViewCell.swift */,
+				36F8AB74295B0B8D00CA9CFA /* TagsCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		36F8AB78295B298800CA9CFA /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				36F8AB79295B29A100CA9CFA /* CollectionView.swift */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		36FE65F82954A07F003E9CC0 /* Cells */ = {
@@ -530,6 +578,7 @@
 			buildConfigurationList = 3695506829519AA0009AEB62 /* Build configuration list for PBXNativeTarget "RPB" */;
 			buildPhases = (
 				A615A86D0334442B756D4CD0 /* [CP] Check Pods Manifest.lock */,
+				36187A702959CC70001CAB2B /* ShellScript */,
 				3695503A29519A9E009AEB62 /* Sources */,
 				3695503B29519A9E009AEB62 /* Frameworks */,
 				3695503C29519A9E009AEB62 /* Resources */,
@@ -631,6 +680,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36F8AB6E295AE90500CA9CFA /* LaunchScreen.storyboard in Resources */,
+				36F8AB76295B0B8D00CA9CFA /* TagsCollectionViewCell.xib in Resources */,
 				090441CC295595BF0088941F /* Main.storyboard in Resources */,
 				090441CD295595D60088941F /* Montserrat-SemiBold.otf in Resources */,
 				090441CE295595D90088941F /* Montserrat-Regular.otf in Resources */,
@@ -675,6 +726,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RPB/Pods-RPB-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		36187A702959CC70001CAB2B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		53B8D287AD8062B06B2BEDAA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -768,12 +836,15 @@
 			files = (
 				0941311F2955B55F008AC5CA /* String.swift in Sources */,
 				3636F30B295481A8001D886A /* ProfileVC.swift in Sources */,
+				36F8AB7A295B29A100CA9CFA /* CollectionView.swift in Sources */,
 				0904419829558E920088941F /* AddEmployeeVC.swift in Sources */,
 				365010DA2955ADE1003F3262 /* TabbarVC.swift in Sources */,
 				090441B22955920E0088941F /* CustomColor.swift in Sources */,
 				090441B32955920E0088941F /* CustomFont.swift in Sources */,
 				3636F30529547728001D886A /* HomeVC.swift in Sources */,
+				36F8AB75295B0B8D00CA9CFA /* TagsCollectionViewCell.swift in Sources */,
 				365010E42955EC33003F3262 /* SettingVC.swift in Sources */,
+				36F8AB71295AF7D400CA9CFA /* CVPreviewVC.swift in Sources */,
 				36FE65FB2954A0A3003E9CC0 /* EmployeesTableViewCell.swift in Sources */,
 				090441B72955920E0088941F /* Date.swift in Sources */,
 				090441B62955920E0088941F /* BaseURL.swift in Sources */,
@@ -787,6 +858,7 @@
 				094131362955F0F0008AC5CA /* ProfileTVCell.swift in Sources */,
 				09283D2229531B8A00256FD8 /* ServerConfig.swift in Sources */,
 				090441B52955920E0088941F /* UIView.swift in Sources */,
+				36187A6F2959C10F001CAB2B /* Storyboard.swift in Sources */,
 				3695504429519A9E009AEB62 /* SceneDelegate.swift in Sources */,
 				090441B42955920E0088941F /* UIButton.swift in Sources */,
 				365010DD2955CBD2003F3262 /* TableView.swift in Sources */,
@@ -832,14 +904,6 @@
 				3695504829519A9E009AEB62 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		3695504C29519AA0009AEB62 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3695504D29519AA0009AEB62 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -970,8 +1034,10 @@
 				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow access to select a photo for your profile ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1001,8 +1067,10 @@
 				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow access to select a photo for your profile ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1172,8 +1240,10 @@
 				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow access to select a photo for your profile ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1297,8 +1367,10 @@
 				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow access to select a photo for your profile ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1428,8 +1500,10 @@
 				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow access to select a photo for your profile ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1553,8 +1627,10 @@
 				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow access to select a photo for your profile ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1684,8 +1760,10 @@
 				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow access to select a photo for your profile ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1809,8 +1887,10 @@
 				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow access to select a photo for your profile ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

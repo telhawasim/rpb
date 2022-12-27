@@ -8,8 +8,8 @@
 import UIKit
 
 class AddEmployeeVC: BaseVC {
-    
-    //MARK: Outlet
+
+    // MARK: Outlet
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var lblName: UILabel!
@@ -28,12 +28,12 @@ class AddEmployeeVC: BaseVC {
     @IBOutlet weak var txtDepartment: UITextField!
     @IBOutlet weak var txtDateOfJoining: UITextField!
     @IBOutlet weak var dropDown: UIImageView!
-    
-    //MARK: Variables
-    let department_picker = UIPickerView()
-    let department_data = [String](arrayLiteral: "", "Development", "Testing", "Creative", "Management")
-    
-    //MARK: Lifecylce
+
+    // MARK: Variables
+    let departmentpicker = UIPickerView()
+    let departmentdata = [String](arrayLiteral: "", "Development", "Testing", "Creative", "Management")
+
+    // MARK: Lifecylce
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureFont()
@@ -42,53 +42,53 @@ class AddEmployeeVC: BaseVC {
         self.configurePicker()
         self.configureTextField()
     }
-    
-    //MARK: Configure Font
+
+    // MARK: Configure Font
     func configureFont() {
-        self.lblTitle.font = UIFont.MontserratMedium(24)
-        self.lblName.font = UIFont.MontserratSemiBold(16)
-        self.lblDesignation.font = UIFont.MontserratSemiBold(16)
-        self.lblDepartment.font = UIFont.MontserratSemiBold(16)
-        self.lblDOB.font = UIFont.MontserratSemiBold(16)
-        self.lblEmail.font = UIFont.MontserratSemiBold(16)
-        self.lblPhone.font = UIFont.MontserratSemiBold(16)
-        self.lblDateOfJoining.font = UIFont.MontserratSemiBold(16)
-        self.txtName.font = UIFont.MontserratMedium(16)
-        self.txtDesignation.font = UIFont.MontserratMedium(16)
-        self.txtDOB.font = UIFont.MontserratMedium(16)
-        self.txtEmail.font = UIFont.MontserratMedium(16)
-        self.txtPhone.font = UIFont.MontserratMedium(16)
-        self.txtDepartment.font = UIFont.MontserratMedium(16)
-        self.txtDateOfJoining.font = UIFont.MontserratMedium(16)
+        self.lblTitle.font = UIFont.montserratMedium(24)
+        self.lblName.font = UIFont.montserratSemiBold(16)
+        self.lblDesignation.font = UIFont.montserratSemiBold(16)
+        self.lblDepartment.font = UIFont.montserratSemiBold(16)
+        self.lblDOB.font = UIFont.montserratSemiBold(16)
+        self.lblEmail.font = UIFont.montserratSemiBold(16)
+        self.lblPhone.font = UIFont.montserratSemiBold(16)
+        self.lblDateOfJoining.font = UIFont.montserratSemiBold(16)
+        self.txtName.font = UIFont.montserratMedium(16)
+        self.txtDesignation.font = UIFont.montserratMedium(16)
+        self.txtDOB.font = UIFont.montserratMedium(16)
+        self.txtEmail.font = UIFont.montserratMedium(16)
+        self.txtPhone.font = UIFont.montserratMedium(16)
+        self.txtDepartment.font = UIFont.montserratMedium(16)
+        self.txtDateOfJoining.font = UIFont.montserratMedium(16)
     }
-    
-    //MARK: Configure Profile Picture
+
+    // MARK: Configure Profile Picture
     func configureProfilePciture() {
         self.profileImage.isCircularImage()
     }
-    
-    //MARK: Configure Picker for Department
+
+    // MARK: Configure Picker for Department
     func configurePicker() {
-        self.department_picker.delegate = self
-        self.txtDepartment.inputView = department_picker
+        self.departmentpicker.delegate = self
+        self.txtDepartment.inputView = departmentpicker
         self.txtDOB.setInputViewDatePicker(target: self, selector: #selector(tapDoneDOB))
         self.txtDateOfJoining.setInputViewDatePicker(target: self, selector: #selector(tabDoneJoining))
     }
-    
-    //MARK: Configure Add Button
+
+    // MARK: Configure Add Button
     func configureAddButton() {
         self.btnAdd.cornerRadius(30)
         self.btnAdd.backgroundColor = UIColor.customBlue
         self.btnAdd.setTitleColor(UIColor.white, for: .normal)
         self.btnAdd.setTitle("Add", for: .normal)
     }
-    
-    //MARK: Configure TextField
+
+    // MARK: Configure TextField
     func configureTextField() {
         txtDepartment.delegate = self
         txtPhone.delegate = self
     }
-    
+
     func checkValidation() -> Bool {
         guard let name = txtName.text,
               let designation = txtDesignation.text,
@@ -99,8 +99,8 @@ class AddEmployeeVC: BaseVC {
               let dateOfJoining = txtDateOfJoining.text else {
             return false
         }
-        var errorMessage : String?
-        
+        var errorMessage: String?
+
         if name.isEmpty {
             errorMessage = "Please enter name"
         } else if designation.isEmpty {
@@ -118,14 +118,14 @@ class AddEmployeeVC: BaseVC {
         } else if dateOfJoining.isEmpty {
             errorMessage = "Please enter date of joining"
         }
-        
+
         if let errorMsg = errorMessage {
             self.alert(message: errorMsg)
             return false
         }
         return true
     }
-    
+
     @objc func tapDoneDOB() {
         if let datePicker = self.txtDOB.inputView as? UIDatePicker {
             var date = Date()
@@ -140,7 +140,7 @@ class AddEmployeeVC: BaseVC {
         }
         self.txtDOB.resignFirstResponder()
     }
-    
+
     @objc func tabDoneJoining() {
         if let datePicker = self.txtDateOfJoining.inputView as? UIDatePicker {
             var date = Date()
@@ -149,52 +149,52 @@ class AddEmployeeVC: BaseVC {
         }
         self.txtDateOfJoining.resignFirstResponder()
     }
-    
+
     @IBAction func addBtnPressed(_ sender: Any) {
         if checkValidation() {
             print("Registered Successfully")
         }
     }
-    
+
     @IBAction func addBtnImage(_ sender: Any) {
-        CameraHandler.shared.showActionSheet(vc: self)
+        CameraHandler.shared.showActionSheet(viewC: self)
         CameraHandler.shared.imagePickedBlock = { (image) in
             self.profileImage.image = image
         }
     }
-    
 }
 
-//MARK: UIPicker Methods
+// MARK: UIPicker Methods
 extension AddEmployeeVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return department_data.count
+        return departmentdata.count
     }
-    
+
     func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return department_data[row]
+        return departmentdata[row]
     }
-    
+
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        txtDepartment.text = department_data[row]
+        txtDepartment.text = departmentdata[row]
         self.view.endEditing(true)
     }
 }
 
-//MARK: TextField Methods
+// MARK: TextField Methods
 extension AddEmployeeVC: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         dropDown.image = UIImage(named: "arrow_up")
     }
+
     func textFieldDidEndEditing(_ textField: UITextField) {
         dropDown.image = UIImage(named: "arrow_down")
     }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == txtPhone {
             let maxLength = 11
                 let currentString = (textField.text ?? "") as NSString

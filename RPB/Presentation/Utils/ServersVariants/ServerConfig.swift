@@ -4,12 +4,12 @@ import Foundation
 
 class ServerConfig {
 
-    //MARK: Variable
+    // MARK: Variable
     static let shared: ServerConfig = ServerConfig()
-    var baseurls : BaseUrl = .QA
-    
-    //MARK: Server Config
-    func setUpServerConfig(){
+    var baseurls: BaseUrl = .QA
+
+    // MARK: Server Config
+    func setUpServerConfig() {
         #if LOCAL
         self.baseurls = .LOCAL
         #elseif QA

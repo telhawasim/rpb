@@ -14,20 +14,20 @@ extension UIFont {
         assert(font != nil, "Can't load font: \(name)")
         return font ?? UIFont.systemFont(ofSize: size)
     }
-    
-    static func MontserratRegular(_ size: Int) -> UIFont {
+
+    static func montserratRegular(_ size: Int) -> UIFont {
         return customFont(name: "Montserrat-Regular", size: CGFloat(size))
     }
-    
-    static func MontserratSemiBold(_ size: Int) -> UIFont {
+
+    static func montserratSemiBold(_ size: Int) -> UIFont {
         return customFont(name: "Montserrat-SemiBold", size: CGFloat(size))
     }
-    
-    static func MontserratBold(_ size: Int) -> UIFont {
+
+    static func montserratBold(_ size: Int) -> UIFont {
         return customFont(name: "Montserrat-Bold", size: CGFloat(size))
     }
-    
-    static func MontserratMedium(_ size: Int) -> UIFont {
+
+    static func montserratMedium(_ size: Int) -> UIFont {
         return customFont(name: "Montserrat-Medium", size: CGFloat(size))
     }
 }

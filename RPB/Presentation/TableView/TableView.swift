@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 
-extension UITableView{
-    func register(_ name: String){
+extension UITableView {
+    func register(_ name: String) {
         self.register(UINib(nibName: name, bundle: nil), forCellReuseIdentifier: name)
     }
     
-    func registerHeaderFooter(_ name: String){
+    func registerHeaderFooter(_ name: String) {
         self.register(UINib(nibName: name, bundle: nil), forHeaderFooterViewReuseIdentifier: name)
     }
 }

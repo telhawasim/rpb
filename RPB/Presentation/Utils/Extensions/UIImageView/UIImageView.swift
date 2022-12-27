@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIImageView {
-    
+
     @discardableResult func isCircularImage() -> CGFloat {
         self.layer.cornerRadius = self.frame.height / 2
         return self.layer.cornerRadius

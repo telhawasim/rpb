@@ -14,8 +14,8 @@ extension UIColor {
     static let customYellow = UIColor(red: 238.0/255.0, green: 243.0/255.0, blue: 106.0/255.0, alpha: 1.0)
     static let customGrey = UIColor(red: 241.0/255.0, green: 244.0/255.0, blue: 245.0/255.0, alpha: 1.0)
     static let greyE2E2E2 = UIColor(red: 226.0/255.0, green: 226.0/255.0, blue: 226.0/255.0, alpha: 1.0)
+    
 }
 
 // Example
 // myLabel.textColor = UIColor.customGreen
-

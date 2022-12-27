@@ -8,24 +8,24 @@
 import UIKit
 
 class EmployeeVC: UIViewController {
-    
-    //MARK: IBOutlets
+
+    // MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblEmployee: UILabel!
-    
-    //MARK: Variables
-    
-    //MARK: Life Cycle
+
+    // MARK: Variables
+
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCell()
     }
 }
 
-//MARK: Functions
+// MARK: Functions
 extension EmployeeVC {
-    //MARK: Register Cell
-    func registerCell(){
+    // MARK: Register Cell
+    func registerCell() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(EmployeesTableViewCell.className)
@@ -33,27 +33,28 @@ extension EmployeeVC {
         self.setColors()
         self.configureFonts()
     }
-    
-    //MARK: Set Colors
-    func setColors(){
+
+    // MARK: Set Colors
+    func setColors() {
         lblEmployee.textColor = UIColor.customBlack
     }
-    
-    //MARK: Set Colors
-    func configureFonts(){
-        lblEmployee.font = UIFont.MontserratMedium(24)
+
+    // MARK: Set Colors
+    func configureFonts() {
+        lblEmployee.font = UIFont.montserratMedium(24)
     }
 }
 
-//MARK: TableView Methods
-extension EmployeeVC: UITableViewDelegate, UITableViewDataSource{
+// MARK: TableView Methods
+extension EmployeeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: EmployeesTableViewCell.className, for: indexPath) as! EmployeesTableViewCell
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: EmployeesTableViewCell.className, for: indexPath) as? EmployeesTableViewCell else {
+        fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
+        }
         return cell
     }
 }
-

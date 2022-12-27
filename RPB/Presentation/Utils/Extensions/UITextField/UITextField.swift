@@ -21,7 +21,7 @@ extension UITextField {
             datePicker.maximumDate = .now
         }
         self.inputView = datePicker
-        
+
         // Create a toolbar and assign it to inputAccessoryView
         let toolBar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: screenWidth, height: 44.0))
         let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -30,7 +30,7 @@ extension UITextField {
         toolBar.setItems([cancel, flexible, barButton], animated: false)
         self.inputAccessoryView = toolBar
     }
-    
+
     @objc func tapCancel() {
         self.resignFirstResponder()
     }

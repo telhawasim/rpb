@@ -8,8 +8,8 @@
 import UIKit
 
 class LoginVC: UIViewController {
-    
-    //MARK: IBOutlets
+
+    // MARK: IBOutlets
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var lbldescription: UILabel!
     @IBOutlet weak var txtPassword: UITextField!
@@ -17,35 +17,40 @@ class LoginVC: UIViewController {
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var lblPassword: UILabel!
     @IBOutlet weak var btnLogin: UIButton!
-    
-    //MARK: Variables
-    
-    //MARK: Life Cycle
+
+    // MARK: Variables
+
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setColors()
         self.configureFonts()
     }
-    
-    //MARK: Login Button
+
+    // MARK: Login Button
     @IBAction func tappedLoginButton(_ sender: Any) {
-        
+        self.goToHome()
     }
 }
 
-//MARK: Functions
-extension LoginVC{
-    //MARK: Set Colors
-    func setColors(){
+// MARK: Functions
+extension LoginVC {
+    // MARK: Set Colors
+    func setColors() {
         lbldescription.textColor = UIColor.customBlack
     }
-    
-    //MARK: Configure Fonts
-    func configureFonts(){
-        lbldescription.font = UIFont.MontserratRegular(16)
-        lblLogin.font = UIFont.MontserratBold(32)
-        lblEmail.font = UIFont.MontserratSemiBold(16)
-        lblPassword.font = UIFont.MontserratSemiBold(16)
+
+    // MARK: Configure Fonts
+    func configureFonts() {
+        lbldescription.font = UIFont.montserratRegular(16)
+        lblLogin.font = UIFont.montserratBold(32)
+        lblEmail.font = UIFont.montserratSemiBold(16)
+        lblPassword.font = UIFont.montserratSemiBold(16)
+    }
+
+    // MARK: Navigation
+    func goToHome() {
+        let tabbarVC  = UIStoryboard.getVC(from: .main, TabbarVC.className)
+        self.navigationController?.pushViewController(tabbarVC, animated: true)
     }
 }
-
