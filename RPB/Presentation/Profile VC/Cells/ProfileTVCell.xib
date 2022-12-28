@@ -25,7 +25,7 @@
                                 <rect key="frame" x="20" y="21.666666666666671" width="58" height="58"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_icon" translatesAutoresizingMaskIntoConstraints="NO" id="H8N-pq-AX1">
-                                        <rect key="frame" x="18.666666666666657" y="14.333333333333329" width="21" height="28.999999999999996"/>
+                                        <rect key="frame" x="18.666666666666664" y="14.333333333333332" width="21" height="28.999999999999996"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -59,12 +59,19 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYI-7V-upF">
+                                <rect key="frame" x="294" y="39.666666666666664" width="6" height="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="ic_dots"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WYI-7V-upF" secondAttribute="trailing" constant="20" id="3Pa-79-BUU"/>
                             <constraint firstItem="yua-Wq-73l" firstAttribute="leading" secondItem="pMj-9V-zM5" secondAttribute="trailing" constant="15" id="4bL-f2-z8o"/>
                             <constraint firstAttribute="height" constant="101" id="Fhg-e4-5DG"/>
                             <constraint firstItem="pMj-9V-zM5" firstAttribute="leading" secondItem="VFM-AB-PI2" secondAttribute="leading" constant="20" id="HH4-PE-evX"/>
+                            <constraint firstItem="WYI-7V-upF" firstAttribute="centerY" secondItem="VFM-AB-PI2" secondAttribute="centerY" id="RMc-aG-PN2"/>
                             <constraint firstItem="yua-Wq-73l" firstAttribute="centerY" secondItem="pMj-9V-zM5" secondAttribute="centerY" id="jFh-Kb-icU"/>
                             <constraint firstItem="pMj-9V-zM5" firstAttribute="centerY" secondItem="VFM-AB-PI2" secondAttribute="centerY" id="kdW-Qu-2Uu"/>
                         </constraints>
@@ -89,6 +96,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="ic_dots" width="6" height="22"/>
         <image name="profile_icon" width="21" height="29"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

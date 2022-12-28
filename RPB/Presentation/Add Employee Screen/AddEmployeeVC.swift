@@ -41,6 +41,8 @@ class AddEmployeeVC: BaseVC {
         self.configureProfilePciture()
         self.configurePicker()
         self.configureTextField()
+        self.swipeToPop()
+        
     }
 
     // MARK: Configure Font
@@ -87,6 +89,11 @@ class AddEmployeeVC: BaseVC {
     func configureTextField() {
         txtDepartment.delegate = self
         txtPhone.delegate = self
+    }
+    
+    func swipeToPop() {
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
 
     func checkValidation() -> Bool {

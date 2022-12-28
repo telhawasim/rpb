@@ -150,7 +150,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ti1-ca-g4D">
-                                        <rect key="frame" x="26.000000000000007" y="238.99999999999997" width="89.666666666666686" height="38.666666666666657"/>
+                                        <rect key="frame" x="25.999999999999993" y="238.99999999999997" width="98.333333333333314" height="38.666666666666657"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -520,7 +520,7 @@
                                             <constraint firstItem="LOc-P2-Xro" firstAttribute="leading" secondItem="6qY-Ti-WNT" secondAttribute="leading" constant="20" id="ulN-jx-ZWY"/>
                                         </constraints>
                                     </view>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy-image" translatesAutoresizingMaskIntoConstraints="NO" id="Her-OF-jdd">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy-image" translatesAutoresizingMaskIntoConstraints="NO" id="Her-OF-jdd">
                                         <rect key="frame" x="116.66666666666669" y="58.666666666666686" width="142" height="142"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="142" id="QWO-ok-BAS"/>

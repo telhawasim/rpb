@@ -25,6 +25,10 @@ class HomeVC: UIViewController {
         self.setColors()
         self.configureFonts()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+    }
 
     // MARK: Add Employee
     @IBAction func btnAddEmployee(_ sender: Any) {
