@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftPopup
 
 class AddEmployeeVC: BaseVC {
 
@@ -33,7 +32,6 @@ class AddEmployeeVC: BaseVC {
     // MARK: Variables
     let departmentpicker = UIPickerView()
     let departmentdata = [String](arrayLiteral: "", "Development", "Testing", "Creative", "Management")
-    var popUpShow = CancelPopViewController()
     
     // MARK: Lifecylce
     override func viewDidLoad() {
@@ -166,7 +164,7 @@ class AddEmployeeVC: BaseVC {
     }
     
     @IBAction func tappedShowPopUp(_ sender: Any) {
-        self.popUpShow.show()
+        PopupView.shared.presentPopup(self, popupType: .discardInformation)
     }
 }
 

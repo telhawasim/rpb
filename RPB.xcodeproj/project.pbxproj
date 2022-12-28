@@ -29,6 +29,9 @@
 		094131362955F0F0008AC5CA /* ProfileTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094131342955F0F0008AC5CA /* ProfileTVCell.swift */; };
 		094131372955F0F0008AC5CA /* ProfileTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 094131352955F0F0008AC5CA /* ProfileTVCell.xib */; };
 		098D04F829598065001C2F05 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098D04F729598065001C2F05 /* CameraHandler.swift */; };
+		0994122A295C365100C39E5A /* CancelPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09941228295C365100C39E5A /* CancelPopViewController.swift */; };
+		0994122B295C365100C39E5A /* CancelPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09941229295C365100C39E5A /* CancelPopViewController.xib */; };
+		0994122E295C3BA900C39E5A /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0994122D295C3BA900C39E5A /* PopUpView.swift */; };
 		2E18A825836F0D81F77A3E51 /* Pods_RPB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3D06738362C369E89B8B28 /* Pods_RPB.framework */; };
 		36187A6F2959C10F001CAB2B /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36187A6E2959C10F001CAB2B /* Storyboard.swift */; };
 		3636F30529547728001D886A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F30429547728001D886A /* HomeVC.swift */; };
@@ -49,8 +52,6 @@
 		3669A4EA295C1A07005015ED /* BasicInfoTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3669A4DF295C1A07005015ED /* BasicInfoTVCell.xib */; };
 		3669A4EB295C1A07005015ED /* ResumeCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3669A4E0295C1A07005015ED /* ResumeCV.swift */; };
 		3669A4EE295C1BF7005015ED /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3669A4ED295C1BF7005015ED /* TextView.swift */; };
-		3669A4F6295C31B9005015ED /* CancelPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3669A4F4295C31B9005015ED /* CancelPopViewController.swift */; };
-		3669A4F7295C31B9005015ED /* CancelPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3669A4F5295C31B9005015ED /* CancelPopViewController.xib */; };
 		3695504229519A9E009AEB62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504129519A9E009AEB62 /* AppDelegate.swift */; };
 		3695504429519A9E009AEB62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504329519A9E009AEB62 /* SceneDelegate.swift */; };
 		3695504629519A9E009AEB62 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504529519A9E009AEB62 /* LoginVC.swift */; };
@@ -104,6 +105,9 @@
 		094131342955F0F0008AC5CA /* ProfileTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTVCell.swift; sourceTree = "<group>"; };
 		094131352955F0F0008AC5CA /* ProfileTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileTVCell.xib; sourceTree = "<group>"; };
 		098D04F729598065001C2F05 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
+		09941228295C365100C39E5A /* CancelPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelPopViewController.swift; sourceTree = "<group>"; };
+		09941229295C365100C39E5A /* CancelPopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CancelPopViewController.xib; sourceTree = "<group>"; };
+		0994122D295C3BA900C39E5A /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		0BA2D4D5F79B27C1E0242BBE /* Pods-RPBTests.debugdev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPBTests.debugdev.xcconfig"; path = "Target Support Files/Pods-RPBTests/Pods-RPBTests.debugdev.xcconfig"; sourceTree = "<group>"; };
 		0F2344F2CFF9BCBC3CA03F8E /* Pods-RPB-RPBUITests.releaseproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB-RPBUITests.releaseproduction.xcconfig"; path = "Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests.releaseproduction.xcconfig"; sourceTree = "<group>"; };
 		164528275600028EE2EE589C /* Pods-RPB-RPBUITests.debugqa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB-RPBUITests.debugqa.xcconfig"; path = "Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests.debugqa.xcconfig"; sourceTree = "<group>"; };
@@ -132,8 +136,6 @@
 		3669A4DF295C1A07005015ED /* BasicInfoTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicInfoTVCell.xib; sourceTree = "<group>"; };
 		3669A4E0295C1A07005015ED /* ResumeCV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResumeCV.swift; sourceTree = "<group>"; };
 		3669A4ED295C1BF7005015ED /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
-		3669A4F4295C31B9005015ED /* CancelPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelPopViewController.swift; sourceTree = "<group>"; };
-		3669A4F5295C31B9005015ED /* CancelPopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CancelPopViewController.xib; sourceTree = "<group>"; };
 		3695504129519A9E009AEB62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3695504329519A9E009AEB62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3695504529519A9E009AEB62 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 		090441A12955920E0088941F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0994122C295C3B6400C39E5A /* PopUpView */,
 				3669A4EC295C1BF7005015ED /* TextView */,
 				36F8AB78295B298800CA9CFA /* CollectionView */,
 				36187A6D2959C0EC001CAB2B /* Storyboard */,
@@ -326,13 +329,21 @@
 			path = "Add Image";
 			sourceTree = "<group>";
 		};
-		09941220295C1EAD00C39E5A /* PopUp */ = {
+		09941227295C365100C39E5A /* PopUp */ = {
 			isa = PBXGroup;
 			children = (
-				3669A4F4295C31B9005015ED /* CancelPopViewController.swift */,
-				3669A4F5295C31B9005015ED /* CancelPopViewController.xib */,
+				09941228295C365100C39E5A /* CancelPopViewController.swift */,
+				09941229295C365100C39E5A /* CancelPopViewController.xib */,
 			);
 			path = PopUp;
+			sourceTree = "<group>";
+		};
+		0994122C295C3B6400C39E5A /* PopUpView */ = {
+			isa = PBXGroup;
+			children = (
+				0994122D295C3BA900C39E5A /* PopUpView.swift */,
+			);
+			path = PopUpView;
 			sourceTree = "<group>";
 		};
 		36187A6D2959C0EC001CAB2B /* Storyboard */ = {
@@ -529,6 +540,7 @@
 		3695507329519BED009AEB62 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				09941227295C365100C39E5A /* PopUp */,
 				3669A4CF295C1A07005015ED /* Create CV */,
 				36F8AB6F295AF78000CA9CFA /* CV Perview  */,
 				365010E22955EC03003F3262 /* Setting */,
@@ -793,7 +805,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3669A4F7295C31B9005015ED /* CancelPopViewController.xib in Resources */,
 				3669A4EA295C1A07005015ED /* BasicInfoTVCell.xib in Resources */,
 				36F8AB6E295AE90500CA9CFA /* LaunchScreen.storyboard in Resources */,
 				36F8AB76295B0B8D00CA9CFA /* TagsCollectionViewCell.xib in Resources */,
@@ -807,6 +818,7 @@
 				3669A4E7295C1A07005015ED /* DobTVCell.xib in Resources */,
 				3669A4E2295C1A07005015ED /* SummaryTVCell.xib in Resources */,
 				090441D0295595F70088941F /* Assets.xcassets in Resources */,
+				0994122B295C365100C39E5A /* CancelPopViewController.xib in Resources */,
 				090441D9295599F50088941F /* Montserrat-Medium.otf in Resources */,
 				090441D5295597980088941F /* EmployeesTableViewCell.xib in Resources */,
 			);
@@ -955,7 +967,7 @@
 			files = (
 				0941311F2955B55F008AC5CA /* String.swift in Sources */,
 				3636F30B295481A8001D886A /* ProfileVC.swift in Sources */,
-				3669A4F6295C31B9005015ED /* CancelPopViewController.swift in Sources */,
+				0994122A295C365100C39E5A /* CancelPopViewController.swift in Sources */,
 				36F8AB7A295B29A100CA9CFA /* CollectionView.swift in Sources */,
 				3669A4E9295C1A07005015ED /* BasicInfoTVCell.swift in Sources */,
 				0904419829558E920088941F /* AddEmployeeVC.swift in Sources */,
@@ -982,6 +994,7 @@
 				3636F3092954818E001D886A /* EmployeeVC.swift in Sources */,
 				0941311C2955B3E8008AC5CA /* BaseVC.swift in Sources */,
 				094131362955F0F0008AC5CA /* ProfileTVCell.swift in Sources */,
+				0994122E295C3BA900C39E5A /* PopUpView.swift in Sources */,
 				09283D2229531B8A00256FD8 /* ServerConfig.swift in Sources */,
 				090441B52955920E0088941F /* UIView.swift in Sources */,
 				3669A4EB295C1A07005015ED /* ResumeCV.swift in Sources */,
@@ -1158,7 +1171,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C39L2R9YT;
+				DEVELOPMENT_TEAM = 8GKH78N8MS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -1191,7 +1204,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C39L2R9YT;
+				DEVELOPMENT_TEAM = 8GKH78N8MS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -1364,7 +1377,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C39L2R9YT;
+				DEVELOPMENT_TEAM = 8GKH78N8MS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -1491,7 +1504,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C39L2R9YT;
+				DEVELOPMENT_TEAM = 8GKH78N8MS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -1624,7 +1637,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C39L2R9YT;
+				DEVELOPMENT_TEAM = 8GKH78N8MS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -1751,7 +1764,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C39L2R9YT;
+				DEVELOPMENT_TEAM = 8GKH78N8MS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -1884,7 +1897,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C39L2R9YT;
+				DEVELOPMENT_TEAM = 8GKH78N8MS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -2011,7 +2024,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C39L2R9YT;
+				DEVELOPMENT_TEAM = 8GKH78N8MS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";

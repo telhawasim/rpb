@@ -23,7 +23,7 @@ class EmployeeVC: UIViewController {
     }
     
     @IBAction func tappedShowPopUp(_ sender: UIButton) {
-        self.popUpShow.show()
+//        self.popUpShow.show()
     }
 }
 
