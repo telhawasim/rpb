@@ -33,7 +33,7 @@ class AddEmployeeVC: BaseVC {
     // MARK: Variables
     let departmentpicker = UIPickerView()
     let departmentdata = [String](arrayLiteral: "", "Development", "Testing", "Creative", "Management")
-    var popUp = PopUpVC()
+    var popUpShow = CancelPopViewController()
     
     // MARK: Lifecylce
     override func viewDidLoad() {
@@ -166,7 +166,7 @@ class AddEmployeeVC: BaseVC {
     }
     
     @IBAction func tappedShowPopUp(_ sender: Any) {
-        self.popUp.show()
+        self.popUpShow.show()
     }
 }
 

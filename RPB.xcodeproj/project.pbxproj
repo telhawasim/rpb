@@ -49,6 +49,8 @@
 		3669A4EA295C1A07005015ED /* BasicInfoTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3669A4DF295C1A07005015ED /* BasicInfoTVCell.xib */; };
 		3669A4EB295C1A07005015ED /* ResumeCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3669A4E0295C1A07005015ED /* ResumeCV.swift */; };
 		3669A4EE295C1BF7005015ED /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3669A4ED295C1BF7005015ED /* TextView.swift */; };
+		3669A4F6295C31B9005015ED /* CancelPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3669A4F4295C31B9005015ED /* CancelPopViewController.swift */; };
+		3669A4F7295C31B9005015ED /* CancelPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3669A4F5295C31B9005015ED /* CancelPopViewController.xib */; };
 		3695504229519A9E009AEB62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504129519A9E009AEB62 /* AppDelegate.swift */; };
 		3695504429519A9E009AEB62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504329519A9E009AEB62 /* SceneDelegate.swift */; };
 		3695504629519A9E009AEB62 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504529519A9E009AEB62 /* LoginVC.swift */; };
@@ -130,6 +132,8 @@
 		3669A4DF295C1A07005015ED /* BasicInfoTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicInfoTVCell.xib; sourceTree = "<group>"; };
 		3669A4E0295C1A07005015ED /* ResumeCV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResumeCV.swift; sourceTree = "<group>"; };
 		3669A4ED295C1BF7005015ED /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		3669A4F4295C31B9005015ED /* CancelPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelPopViewController.swift; sourceTree = "<group>"; };
+		3669A4F5295C31B9005015ED /* CancelPopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CancelPopViewController.xib; sourceTree = "<group>"; };
 		3695504129519A9E009AEB62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3695504329519A9E009AEB62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3695504529519A9E009AEB62 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -320,6 +324,15 @@
 				098D04F729598065001C2F05 /* CameraHandler.swift */,
 			);
 			path = "Add Image";
+			sourceTree = "<group>";
+		};
+		09941220295C1EAD00C39E5A /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				3669A4F4295C31B9005015ED /* CancelPopViewController.swift */,
+				3669A4F5295C31B9005015ED /* CancelPopViewController.xib */,
+			);
+			path = PopUp;
 			sourceTree = "<group>";
 		};
 		36187A6D2959C0EC001CAB2B /* Storyboard */ = {
@@ -780,6 +793,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3669A4F7295C31B9005015ED /* CancelPopViewController.xib in Resources */,
 				3669A4EA295C1A07005015ED /* BasicInfoTVCell.xib in Resources */,
 				36F8AB6E295AE90500CA9CFA /* LaunchScreen.storyboard in Resources */,
 				36F8AB76295B0B8D00CA9CFA /* TagsCollectionViewCell.xib in Resources */,
@@ -941,6 +955,7 @@
 			files = (
 				0941311F2955B55F008AC5CA /* String.swift in Sources */,
 				3636F30B295481A8001D886A /* ProfileVC.swift in Sources */,
+				3669A4F6295C31B9005015ED /* CancelPopViewController.swift in Sources */,
 				36F8AB7A295B29A100CA9CFA /* CollectionView.swift in Sources */,
 				3669A4E9295C1A07005015ED /* BasicInfoTVCell.swift in Sources */,
 				0904419829558E920088941F /* AddEmployeeVC.swift in Sources */,
