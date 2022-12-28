@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftPopup
 
 class AddEmployeeVC: BaseVC {
 
@@ -32,7 +33,8 @@ class AddEmployeeVC: BaseVC {
     // MARK: Variables
     let departmentpicker = UIPickerView()
     let departmentdata = [String](arrayLiteral: "", "Development", "Testing", "Creative", "Management")
-
+    var popUp = PopUpVC()
+    
     // MARK: Lifecylce
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -161,6 +163,10 @@ class AddEmployeeVC: BaseVC {
         CameraHandler.shared.imagePickedBlock = { (image) in
             self.profileImage.image = image
         }
+    }
+    
+    @IBAction func tappedShowPopUp(_ sender: Any) {
+        self.popUp.show()
     }
 }
 

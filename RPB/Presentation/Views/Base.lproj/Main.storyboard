@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1tl-FA-Ee7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b39-M8-GbV">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -425,7 +425,7 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWj-b6-tCe">
-                                        <rect key="frame" x="49" y="15.666666666666659" width="237" height="18.666666666666679"/>
+                                        <rect key="frame" x="49" y="15.666666666666659" width="237" height="18.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -505,6 +505,9 @@
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="cross_20x20"/>
+                                                <connections>
+                                                    <action selector="tappedShowPopUp:" destination="73V-24-KI5" eventType="touchUpInside" id="3Q8-rh-Fzg"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1047,6 +1050,114 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcK-rd-WAD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6551" y="-35"/>
+        </scene>
+        <!--Pop UpVC-->
+        <scene sceneID="hzs-bE-OA4">
+            <objects>
+                <viewController id="rTN-O5-LsD" customClass="PopUpVC" customModule="RPB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Qg-rR-dMH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RU0-4A-nPM">
+                                <rect key="frame" x="41" y="245" width="293" height="322"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSs-0W-A0i">
+                                        <rect key="frame" x="248" y="23" width="22" height="22"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="cross_20x20"/>
+                                        <connections>
+                                            <action selector="btnCrossPressed:" destination="rTN-O5-LsD" eventType="touchUpInside" id="gcq-Xd-BSI"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_popup" translatesAutoresizingMaskIntoConstraints="NO" id="5g1-9V-HgY">
+                                        <rect key="frame" x="106.66666666666666" y="43" width="80" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="jdO-mX-HKL"/>
+                                            <constraint firstAttribute="height" constant="70" id="zm6-d8-mjs"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="OhS-T3-Y1n">
+                                        <rect key="frame" x="31.666666666666686" y="143" width="230" height="58.666666666666657"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQB-LE-ned">
+                                                <rect key="frame" x="62.999999999999986" y="0.0" width="104.00000000000001" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You want to delete this Profile." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3b-J4-ahG">
+                                                <rect key="frame" x="0.0" y="38.333333333333314" width="230" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="eXp-d8-s5g">
+                                        <rect key="frame" x="40" y="231.66666666666669" width="213" height="49"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7G-EQ-KDP">
+                                                <rect key="frame" x="0.0" y="0.0" width="100.66666666666667" height="49"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Yes"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusButton">
+                                                        <real key="value" value="25"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwP-bi-KRj">
+                                                <rect key="frame" x="112.66666666666666" y="0.0" width="100.33333333333334" height="49"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="No"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusButton">
+                                                        <real key="value" value="25"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="DUb-6y-UcF"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="eXp-d8-s5g" secondAttribute="trailing" constant="40" id="Pef-4E-NZ5"/>
+                                    <constraint firstItem="pSs-0W-A0i" firstAttribute="top" secondItem="RU0-4A-nPM" secondAttribute="top" constant="23" id="Woa-wv-ba2"/>
+                                    <constraint firstItem="OhS-T3-Y1n" firstAttribute="centerX" secondItem="RU0-4A-nPM" secondAttribute="centerX" id="Z2D-YC-o6I"/>
+                                    <constraint firstItem="OhS-T3-Y1n" firstAttribute="top" secondItem="5g1-9V-HgY" secondAttribute="bottom" constant="30" id="abs-ik-Awz"/>
+                                    <constraint firstAttribute="height" constant="322" id="h4s-kb-qZV"/>
+                                    <constraint firstItem="5g1-9V-HgY" firstAttribute="top" secondItem="RU0-4A-nPM" secondAttribute="top" constant="43" id="hIa-TV-44D"/>
+                                    <constraint firstItem="eXp-d8-s5g" firstAttribute="top" secondItem="OhS-T3-Y1n" secondAttribute="bottom" constant="30" id="p5m-sP-WLX"/>
+                                    <constraint firstItem="eXp-d8-s5g" firstAttribute="leading" secondItem="RU0-4A-nPM" secondAttribute="leading" constant="40" id="phe-q9-cWP"/>
+                                    <constraint firstAttribute="trailing" secondItem="pSs-0W-A0i" secondAttribute="trailing" constant="23" id="x97-hh-XJ0"/>
+                                    <constraint firstItem="5g1-9V-HgY" firstAttribute="centerX" secondItem="RU0-4A-nPM" secondAttribute="centerX" id="yUj-6h-axU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4VJ-Rs-V3r"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RU0-4A-nPM" firstAttribute="centerY" secondItem="8Qg-rR-dMH" secondAttribute="centerY" id="Hyr-17-LvS"/>
+                            <constraint firstItem="RU0-4A-nPM" firstAttribute="centerX" secondItem="8Qg-rR-dMH" secondAttribute="centerX" id="PkQ-Lc-mcf"/>
+                            <constraint firstItem="4VJ-Rs-V3r" firstAttribute="trailing" secondItem="RU0-4A-nPM" secondAttribute="trailing" constant="41" id="fqF-eQ-K9h"/>
+                            <constraint firstItem="RU0-4A-nPM" firstAttribute="leading" secondItem="4VJ-Rs-V3r" secondAttribute="leading" constant="41" id="iDd-tp-eWk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnNo" destination="qwP-bi-KRj" id="bxm-rg-UBa"/>
+                        <outlet property="btnYes" destination="F7G-EQ-KDP" id="bfY-1e-I1x"/>
+                        <outlet property="lblDescription" destination="z3b-J4-ahG" id="iWE-lq-2LZ"/>
+                        <outlet property="lblTitle" destination="cQB-LE-ned" id="Gdt-iC-YQ8"/>
+                        <outlet property="popUpView" destination="RU0-4A-nPM" id="Rdx-tt-lxS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EgI-SH-mVl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6744.8000000000002" y="646.55172413793105"/>
         </scene>
         <!--PreviewVC-->
         <scene sceneID="otw-p0-QhG">
@@ -1969,6 +2080,7 @@
         <image name="cross_20x20" width="22" height="21"/>
         <image name="dummy-image" width="452" height="449"/>
         <image name="gradient" width="428" height="333"/>
+        <image name="ic_popup" width="80" height="70"/>
         <namedColor name=" Color 5557D4">
             <color red="0.33333333333333331" green="0.3411764705882353" blue="0.83137254901960789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
