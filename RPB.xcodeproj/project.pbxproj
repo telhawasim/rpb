@@ -29,7 +29,6 @@
 		094131362955F0F0008AC5CA /* ProfileTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094131342955F0F0008AC5CA /* ProfileTVCell.swift */; };
 		094131372955F0F0008AC5CA /* ProfileTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 094131352955F0F0008AC5CA /* ProfileTVCell.xib */; };
 		098D04F829598065001C2F05 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098D04F729598065001C2F05 /* CameraHandler.swift */; };
-		09941222295C21AB00C39E5A /* PopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09941221295C21AB00C39E5A /* PopUpVC.swift */; };
 		2E18A825836F0D81F77A3E51 /* Pods_RPB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3D06738362C369E89B8B28 /* Pods_RPB.framework */; };
 		36187A6F2959C10F001CAB2B /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36187A6E2959C10F001CAB2B /* Storyboard.swift */; };
 		3636F30529547728001D886A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F30429547728001D886A /* HomeVC.swift */; };
@@ -50,6 +49,8 @@
 		3669A4EA295C1A07005015ED /* BasicInfoTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3669A4DF295C1A07005015ED /* BasicInfoTVCell.xib */; };
 		3669A4EB295C1A07005015ED /* ResumeCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3669A4E0295C1A07005015ED /* ResumeCV.swift */; };
 		3669A4EE295C1BF7005015ED /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3669A4ED295C1BF7005015ED /* TextView.swift */; };
+		3669A4F6295C31B9005015ED /* CancelPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3669A4F4295C31B9005015ED /* CancelPopViewController.swift */; };
+		3669A4F7295C31B9005015ED /* CancelPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3669A4F5295C31B9005015ED /* CancelPopViewController.xib */; };
 		3695504229519A9E009AEB62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504129519A9E009AEB62 /* AppDelegate.swift */; };
 		3695504429519A9E009AEB62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504329519A9E009AEB62 /* SceneDelegate.swift */; };
 		3695504629519A9E009AEB62 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504529519A9E009AEB62 /* LoginVC.swift */; };
@@ -103,7 +104,6 @@
 		094131342955F0F0008AC5CA /* ProfileTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTVCell.swift; sourceTree = "<group>"; };
 		094131352955F0F0008AC5CA /* ProfileTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileTVCell.xib; sourceTree = "<group>"; };
 		098D04F729598065001C2F05 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
-		09941221295C21AB00C39E5A /* PopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpVC.swift; sourceTree = "<group>"; };
 		0BA2D4D5F79B27C1E0242BBE /* Pods-RPBTests.debugdev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPBTests.debugdev.xcconfig"; path = "Target Support Files/Pods-RPBTests/Pods-RPBTests.debugdev.xcconfig"; sourceTree = "<group>"; };
 		0F2344F2CFF9BCBC3CA03F8E /* Pods-RPB-RPBUITests.releaseproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB-RPBUITests.releaseproduction.xcconfig"; path = "Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests.releaseproduction.xcconfig"; sourceTree = "<group>"; };
 		164528275600028EE2EE589C /* Pods-RPB-RPBUITests.debugqa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB-RPBUITests.debugqa.xcconfig"; path = "Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests.debugqa.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +132,8 @@
 		3669A4DF295C1A07005015ED /* BasicInfoTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicInfoTVCell.xib; sourceTree = "<group>"; };
 		3669A4E0295C1A07005015ED /* ResumeCV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResumeCV.swift; sourceTree = "<group>"; };
 		3669A4ED295C1BF7005015ED /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		3669A4F4295C31B9005015ED /* CancelPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelPopViewController.swift; sourceTree = "<group>"; };
+		3669A4F5295C31B9005015ED /* CancelPopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CancelPopViewController.xib; sourceTree = "<group>"; };
 		3695504129519A9E009AEB62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3695504329519A9E009AEB62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3695504529519A9E009AEB62 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -327,7 +329,8 @@
 		09941220295C1EAD00C39E5A /* PopUp */ = {
 			isa = PBXGroup;
 			children = (
-				09941221295C21AB00C39E5A /* PopUpVC.swift */,
+				3669A4F4295C31B9005015ED /* CancelPopViewController.swift */,
+				3669A4F5295C31B9005015ED /* CancelPopViewController.xib */,
 			);
 			path = PopUp;
 			sourceTree = "<group>";
@@ -791,6 +794,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3669A4F7295C31B9005015ED /* CancelPopViewController.xib in Resources */,
 				3669A4EA295C1A07005015ED /* BasicInfoTVCell.xib in Resources */,
 				36F8AB6E295AE90500CA9CFA /* LaunchScreen.storyboard in Resources */,
 				36F8AB76295B0B8D00CA9CFA /* TagsCollectionViewCell.xib in Resources */,
@@ -952,6 +956,7 @@
 			files = (
 				0941311F2955B55F008AC5CA /* String.swift in Sources */,
 				3636F30B295481A8001D886A /* ProfileVC.swift in Sources */,
+				3669A4F6295C31B9005015ED /* CancelPopViewController.swift in Sources */,
 				36F8AB7A295B29A100CA9CFA /* CollectionView.swift in Sources */,
 				3669A4E9295C1A07005015ED /* BasicInfoTVCell.swift in Sources */,
 				0904419829558E920088941F /* AddEmployeeVC.swift in Sources */,
@@ -959,7 +964,6 @@
 				090441B22955920E0088941F /* CustomColor.swift in Sources */,
 				090441B32955920E0088941F /* CustomFont.swift in Sources */,
 				3669A4E4295C1A07005015ED /* ResumeHeaderCell.swift in Sources */,
-				09941222295C21AB00C39E5A /* PopUpVC.swift in Sources */,
 				3636F30529547728001D886A /* HomeVC.swift in Sources */,
 				3669A4E8295C1A07005015ED /* DobTVCell.swift in Sources */,
 				36F8AB75295B0B8D00CA9CFA /* TagsCollectionViewCell.swift in Sources */,

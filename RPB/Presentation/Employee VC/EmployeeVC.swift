@@ -14,11 +14,16 @@ class EmployeeVC: UIViewController {
     @IBOutlet weak var lblEmployee: UILabel!
 
     // MARK: Variables
+    var popUpShow = CancelPopViewController()
 
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCell()
+    }
+    
+    @IBAction func tappedShowPopUp(_ sender: UIButton) {
+        self.popUpShow.show()
     }
 }
 
