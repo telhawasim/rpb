@@ -62,4 +62,10 @@ extension EmployeeVC: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let tabbarVC  = UIStoryboard.getVC(from: .main, ProfileVC.className)
+        self.navigationController?.pushViewController(tabbarVC, animated: true)
+
+    }
 }

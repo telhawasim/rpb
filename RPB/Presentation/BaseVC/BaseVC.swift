@@ -33,4 +33,9 @@ class BaseVC: UIViewController {
     func dismissVC(completion: (() -> Void)?) {
         dismiss(animated: true, completion: completion)
     }
+    
+    //MARK: Go Back
+    func goBack() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
