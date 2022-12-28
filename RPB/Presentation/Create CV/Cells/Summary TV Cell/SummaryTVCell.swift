@@ -1,0 +1,53 @@
+//
+//  SummaryTVCell.swift
+//  RPB
+//
+//  Created by Telha Wasim on 27/12/2022.
+//
+
+import UIKit
+
+class SummaryTVCell: UITableViewCell {
+    //MARK: Outlet
+    @IBOutlet weak var summaryView: UIView!
+    @IBOutlet weak var textView: UITextView!
+    
+    
+    //MARK: Variables
+    
+    //MARK: Lifecylce
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.configureView()
+        self.configureTextView()
+    }
+    
+    func configureView() {
+        self.summaryView.borderColor = UIColor.greyE2E2E2
+        self.summaryView.borderWidth = 1
+        self.summaryView.cornerRadius(10)
+    }
+    
+    func configureTextView() {
+        self.textView.delegate = self
+        textView.addPadding(size: 10)
+        textView.text = "Description"
+        textView.textColor = UIColor.lightGray
+    }
+}
+
+extension SummaryTVCell: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Description"
+            textView.textColor = UIColor.lightGray
+        }
+    }
+}

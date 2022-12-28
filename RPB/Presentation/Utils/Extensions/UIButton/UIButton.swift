@@ -53,4 +53,21 @@ extension UIButton {
         self.layer.cornerRadius = self.frame.height / 2
         return self.layer.cornerRadius
     }
+    
+    func configureButton(text: String, borderWidth: CGFloat, borderColor: UIColor) {
+        self.setTitle(text, for: .normal)
+        self.borderWidth = borderWidth
+        self.borderColor = borderColor
+        self.titleLabel?.font = UIFont.montserratRegular(14)
+    }
+    
+    func inSelectedResumeCV() {
+        self.backgroundColor = UIColor.customBlue
+        self.setTitleColor(UIColor.white, for: .normal)
+    }
+    
+    func isNotSelectedResumeCV() {
+        self.backgroundColor = UIColor.white
+        self.setTitleColor(UIColor.black, for: .normal)
+    }
 }
