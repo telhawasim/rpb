@@ -4,24 +4,31 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CancelPopViewController" customModule="RPB" customModuleProvider="target">
             <connections>
+                <outlet property="btnNo" destination="FmS-Q5-Xc9" id="fd2-HE-7vV"/>
+                <outlet property="btnYes" destination="1im-mV-Ehi" id="zH1-pD-LKF"/>
+                <outlet property="lblDescription" destination="dQw-LC-Vry" id="Qz5-x8-p9f"/>
+                <outlet property="lblTitle" destination="Ti2-Gl-3uS" id="4Ul-wy-LRy"/>
+                <outlet property="popUpView" destination="NbK-U3-EoA" id="Fxr-dc-WiI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NbK-U3-EoA">
-                    <rect key="frame" x="41" y="265" width="311" height="322"/>
+                <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Atk-bf-mO9">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NbK-U3-EoA">
+                    <rect key="frame" x="41" y="254" width="311" height="344"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTR-cr-Jp7">
                             <rect key="frame" x="266" y="23" width="22" height="22"/>
@@ -39,16 +46,16 @@
                             </constraints>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="qvD-cN-wA7">
-                            <rect key="frame" x="40.666666666666686" y="143" width="230" height="58.666666666666657"/>
+                            <rect key="frame" x="0.0" y="143" width="311" height="79"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ti2-Gl-3uS">
-                                    <rect key="frame" x="62.999999999999986" y="0.0" width="104.00000000000001" height="20.333333333333332"/>
+                                    <rect key="frame" x="103.66666666666666" y="0.0" width="104" height="20.333333333333332"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You want to delete this Profile." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQw-LC-Vry">
-                                    <rect key="frame" x="0.0" y="38.333333333333314" width="230" height="20.333333333333329"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to discard this information" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQw-LC-Vry">
+                                    <rect key="frame" x="13.333333333333343" y="38.333333333333314" width="284.66666666666663" height="40.666666666666657"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -56,7 +63,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Vmk-Ne-2y4">
-                            <rect key="frame" x="40" y="231.66666666666669" width="231" height="49"/>
+                            <rect key="frame" x="40" y="252" width="231" height="49"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1im-mV-Ehi">
                                     <rect key="frame" x="0.0" y="0.0" width="109.66666666666667" height="49"/>
@@ -67,6 +74,9 @@
                                             <real key="value" value="25"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="tappedYesButton:" destination="-1" eventType="touchUpInside" id="Jb1-Jm-XJR"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmS-Q5-Xc9">
                                     <rect key="frame" x="121.66666666666666" y="0.0" width="109.33333333333334" height="49"/>
@@ -77,6 +87,9 @@
                                             <real key="value" value="25"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="tappedNoButton:" destination="-1" eventType="touchUpInside" id="eVV-ag-5ba"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
@@ -93,30 +106,25 @@
                         <constraint firstItem="feD-g1-YSa" firstAttribute="top" secondItem="NbK-U3-EoA" secondAttribute="top" constant="43" id="LqV-17-53k"/>
                         <constraint firstAttribute="trailing" secondItem="mTR-cr-Jp7" secondAttribute="trailing" constant="23" id="NA0-lP-m71"/>
                         <constraint firstItem="Vmk-Ne-2y4" firstAttribute="top" secondItem="qvD-cN-wA7" secondAttribute="bottom" constant="30" id="OYS-WH-JT7"/>
-                        <constraint firstAttribute="height" constant="322" id="bnS-y4-bZk"/>
+                        <constraint firstAttribute="trailing" secondItem="qvD-cN-wA7" secondAttribute="trailing" id="Oh6-lm-Gfv"/>
+                        <constraint firstAttribute="bottom" secondItem="Vmk-Ne-2y4" secondAttribute="bottom" constant="43" id="R52-x9-88E"/>
                         <constraint firstItem="Vmk-Ne-2y4" firstAttribute="leading" secondItem="NbK-U3-EoA" secondAttribute="leading" constant="40" id="dZ8-Z6-pGy"/>
                         <constraint firstAttribute="trailing" secondItem="Vmk-Ne-2y4" secondAttribute="trailing" constant="40" id="neR-NG-VjW"/>
+                        <constraint firstItem="qvD-cN-wA7" firstAttribute="leading" secondItem="NbK-U3-EoA" secondAttribute="leading" id="tLP-Hb-mRq"/>
                     </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="10"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" name=" Color 5557D4"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                            <real key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="Atk-bf-mO9" secondAttribute="bottom" id="9fe-V8-UIf"/>
                 <constraint firstItem="NbK-U3-EoA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="41" id="E59-0b-17K"/>
                 <constraint firstItem="NbK-U3-EoA" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="QiJ-5a-nmQ"/>
+                <constraint firstItem="Atk-bf-mO9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="c12-AM-asQ"/>
                 <constraint firstItem="NbK-U3-EoA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dQK-3B-AKA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NbK-U3-EoA" secondAttribute="trailing" constant="41" id="dbw-Hu-QSi"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Atk-bf-mO9" secondAttribute="trailing" id="kl7-hY-OMf"/>
+                <constraint firstItem="Atk-bf-mO9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pfS-1A-73h"/>
             </constraints>
             <point key="canvasLocation" x="65" y="20"/>
         </view>
@@ -124,11 +132,5 @@
     <resources>
         <image name="cross_20x20" width="22" height="21"/>
         <image name="ic_popup" width="80" height="70"/>
-        <namedColor name=" Color 5557D4">
-            <color red="0.33333333333333331" green="0.3411764705882353" blue="0.83137254901960789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

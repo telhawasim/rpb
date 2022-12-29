@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileVC: UIViewController {
+class ProfileVC: BaseVC {
 
     // MARK: Outlet
     @IBOutlet weak var btnback: UIButton!
@@ -50,8 +50,14 @@ class ProfileVC: UIViewController {
         self.lblEmail.font = UIFont.montserratRegular(16)
         self.lblProfiles.font = UIFont.montserratSemiBold(24)
     }
+    
+    @IBAction func btnBack(_ sender: Any) {
+        self.goBack()
+    }
+    
 }
 
+//MARK: TableView Methods
 extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
@@ -62,6 +68,12 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
    guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTVCell.className, for: indexPath) as? ProfileTVCell else {
             fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `ProfileTVCell`")
         }
+        cell.selectionStyle = .none
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let tabbarVC  = UIStoryboard.getVC(from: .main, CVPreviewVC.className)
+        self.navigationController?.pushViewController(tabbarVC, animated: true)
     }
 }

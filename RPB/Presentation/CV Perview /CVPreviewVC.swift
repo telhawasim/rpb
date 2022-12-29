@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CVPreviewVC: UIViewController {
+class CVPreviewVC: BaseVC {
     
     //MARK: IBOutlets
     @IBOutlet weak var softSkillCollectionView: UICollectionView!
@@ -56,6 +56,11 @@ class CVPreviewVC: UIViewController {
         hardSkillCollectionView.delegate = self
         hardSkillCollectionView.dataSource = self
         hardSkillCollectionView.register(TagsCollectionViewCell.className)
+    }
+    
+    
+    @IBAction func btnBack(_ sender: Any) {
+        self.goBack()
     }
 }
 

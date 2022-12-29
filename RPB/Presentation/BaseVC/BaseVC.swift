@@ -28,4 +28,14 @@ class BaseVC: UIViewController {
         alertController.addAction(alertAction)
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    //MARK: Dismiss ViewController
+    func dismissVC(completion: (() -> Void)?) {
+        dismiss(animated: true, completion: completion)
+    }
+    
+    //MARK: Go Back
+    func goBack() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }

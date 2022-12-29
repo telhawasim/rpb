@@ -25,6 +25,10 @@ class HomeVC: UIViewController {
         self.setColors()
         self.configureFonts()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+    }
 
     // MARK: Add Employee
     @IBAction func btnAddEmployee(_ sender: Any) {
@@ -66,5 +70,10 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let tabbarVC  = UIStoryboard.getVC(from: .main, ProfileVC.className)
+        self.navigationController?.pushViewController(tabbarVC, animated: true)
     }
 }
