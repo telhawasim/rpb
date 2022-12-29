@@ -36,10 +36,12 @@ class CancelPopViewController: BaseVC {
         self.setupUI()
     }
     
+    //MARK: Configure Views
     func configureView() {
         self.popUpView.cornerRadius(10)
     }
     
+    //MARK: Configure Fonts
     func configureFont() {
         self.lblTitle.font = UIFont.montserratMedium(32)
         self.lblDescription.font = UIFont.montserratRegular(14)
@@ -47,6 +49,7 @@ class CancelPopViewController: BaseVC {
         self.btnNo.titleLabel?.font = UIFont.montserratMedium(16)
     }
     
+    //MARK: Configure Buttons
     func configureButtons() {
         self.btnYes.backgroundColor = UIColor.customBlue
         self.btnNo.borderWidth = 1
@@ -55,6 +58,7 @@ class CancelPopViewController: BaseVC {
         self.btnNo.tintColor = UIColor.customBlue
     }
     
+    //MARK: SetupUI 
     func setupUI() {
         switch popupType {
         case .discardInformation:

@@ -39,6 +39,7 @@ class ResumeCV: UIViewController, UIGestureRecognizerDelegate {
     //MARK: Variables
     var info: InfoType = .info
     var infoModel = [Section]()
+    var skillsModel = [Section]()
     var selectedHeader = Int()
     var infoData = ["Name", "Designation", "Date of Birth", "Email Address", "Phone Number"]
     var infoPlaceholder = ["Dawid", "iOS Developer", "07-08-99", "dawid.name@gmail.com", "03350438764"]
@@ -51,18 +52,18 @@ class ResumeCV: UIViewController, UIGestureRecognizerDelegate {
         self.btnInfoPressed(0)
         self.configureLabel()
         self.configureTableView()
-        infoModel = [(Section(section: "Basic Info", rows: [1,1,1,1,1], expanded: true)),
-                     (Section(section: "Education", rows: [1,1,1,1,1], expanded: false)),
+        infoModel = [(Section(section: "Basic Info", rows: [1, 1, 1, 1, 1], expanded: true)),
+                     (Section(section: "Education", rows: [1, 1, 1, 1, 1], expanded: false)),
                      (Section(section: "Summary", rows: [1], expanded: false))]
         
     }
     
-    @objc func tapInfoSection(_ gesture : UITapGestureRecognizer){
+    @objc func tapInfoSection(_ gesture: UITapGestureRecognizer) {
         if let viewTag = gesture.view?.tag {
             selectedHeader = viewTag
             if infoModel[selectedHeader].expanded == false {
                 infoModel[selectedHeader].expanded = true
-            }else{
+            } else {
                 infoModel[selectedHeader].expanded = false
             }
         }

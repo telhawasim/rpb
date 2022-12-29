@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ProfileDelegate {
+    func openBottomSheet()
+}
+
 class ProfileTVCell: UITableViewCell {
 
     // MARK: Outlet
@@ -17,7 +21,8 @@ class ProfileTVCell: UITableViewCell {
     @IBOutlet weak var iconView: UIView!
 
     // MARK: Variables
-
+    var delegate: ProfileDelegate?
+    
     // MARK: Lifecylce
 
     override func awakeFromNib() {
@@ -44,4 +49,9 @@ class ProfileTVCell: UITableViewCell {
         self.iconView.backgroundColor = UIColor.customGrey
         self.lblDesignation.textColor = UIColor.customBlue
     }
+    
+    @IBAction func btnOpenBottomSheet(_ sender: Any) {
+        delegate?.openBottomSheet()
+    }
+    
 }
