@@ -7,38 +7,15 @@
 
 import UIKit
 
-class CVPreviewVC: BaseVC {
+class CVPreviewVC: BaseVC, UpdateCustomCell {
     
     //MARK: IBOutlets
-    @IBOutlet weak var softSkillCollectionView: UICollectionView!
-    @IBOutlet weak var hardSkillCollectionView: UICollectionView!
     @IBOutlet weak var lblViewProfile: UILabel!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblSkill: UILabel!
     @IBOutlet weak var editView: UIView!
     @IBOutlet weak var downloadView: UIView!
-    @IBOutlet weak var lblSummary: UILabel!
-    @IBOutlet weak var lblDescription: UILabel!
-    @IBOutlet weak var lblEducation: UILabel!
-    @IBOutlet weak var lblMasterDegreeText: UILabel!
-    @IBOutlet weak var lblMasterDegree: UILabel!
-    @IBOutlet weak var lblMasterSession: UILabel!
-    @IBOutlet weak var lblBachelorsDegreeText: UILabel!
-    @IBOutlet weak var lblBachelorDegree: UILabel!
-    @IBOutlet weak var lblBachelorSession: UILabel!
-    @IBOutlet weak var lblSkillsText: UILabel!
-    @IBOutlet weak var lblSoftSkillsText: UILabel!
-    @IBOutlet weak var lblHardSkillsText: UILabel!
-    @IBOutlet weak var lblExperienceText: UILabel!
-    @IBOutlet weak var lblSkillText: UILabel!
-    @IBOutlet weak var lblCompany: UILabel!
-    @IBOutlet weak var lblExperience: UILabel!
-    @IBOutlet weak var lblUIDesignerSession: UILabel!
-    @IBOutlet weak var lblContact: UILabel!
-    @IBOutlet weak var emailView: UIView!
-    @IBOutlet weak var lblEmail: UILabel!
-    @IBOutlet weak var phoneView: UIView!
-    @IBOutlet weak var lblPhone: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     //MARK: Variables
     
@@ -46,40 +23,136 @@ class CVPreviewVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCell()
+        self.updateTableView(willExpand: false)
     }
-    
-    //MARK: Register Cell
-    func registerCell() {
-        softSkillCollectionView.delegate = self
-        softSkillCollectionView.dataSource = self
-        softSkillCollectionView.register(TagsCollectionViewCell.className)
-        hardSkillCollectionView.delegate = self
-        hardSkillCollectionView.dataSource = self
-        hardSkillCollectionView.register(TagsCollectionViewCell.className)
-    }
-    
     
     @IBAction func btnBack(_ sender: Any) {
         self.goBack()
     }
 }
 
-extension CVPreviewVC: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == softSkillCollectionView {
-            return 3
-        } else {
-            return 3
-        }
+// MARK: TableView Methods
+extension CVPreviewVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 12
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == softSkillCollectionView {
-            let cell = softSkillCollectionView.dequeueReusableCell(withReuseIdentifier: TagsCollectionViewCell.className, for: indexPath) as! TagsCollectionViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: EventDescriptionTableViewCell.className, for: indexPath) as? EventDescriptionTableViewCell else {
+                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
+            }
+            cell.updateUI()
+            cell.delegate = self
+            
+            return cell
+        } else if indexPath.row == 1 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: EducationTextTableViewCell.className, for: indexPath) as? EducationTextTableViewCell else {
+                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
+            }
+           
+            return cell
+        } else if indexPath.row == 2 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: EducationTableViewCell.className, for: indexPath) as? EducationTableViewCell else {
+                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
+            }
+           
+            return cell
+        } else if indexPath.row == 3 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: EducationTableViewCell.className, for: indexPath) as? EducationTableViewCell else {
+                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
+            }
+           
+            return cell
+        } else if indexPath.row == 4 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SoftSkillTextTableViewCell.className, for: indexPath) as? SoftSkillTextTableViewCell else {
+                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
+            }
+           
+            return cell
+        } else if indexPath.row == 5 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SkillsTableViewCell.className, for: indexPath) as? SkillsTableViewCell else {
+                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
+            }
+           
+            return cell
+        } else if indexPath.row == 6 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: HardSkillsTextTableViewCell.className, for: indexPath) as? HardSkillsTextTableViewCell else {
+                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
+            }
+           
+            return cell
+        } else if indexPath.row == 7 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SkillsTableViewCell.className, for: indexPath) as? SkillsTableViewCell else {
+                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
+            }
+           
+            return cell
+            
+        } else if indexPath.row == 8 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: EducationTextTableViewCell.className, for: indexPath) as? EducationTextTableViewCell else {
+                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
+            }
+            cell.lblEducation.text = "Experience"
+            cell.topConstraint.constant = 30
+            cell.bottomConstraint.constant = 20
+            return cell
+        }else if indexPath.row == 9 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ExperienceTableViewCell.className, for: indexPath) as? ExperienceTableViewCell else {
+                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
+            }
+            
+            return cell
+        } else if indexPath.row == 10 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ExperienceTableViewCell.className, for: indexPath) as? ExperienceTableViewCell else {
+                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
+            }
             return cell
         } else {
-            let cell = hardSkillCollectionView.dequeueReusableCell(withReuseIdentifier: TagsCollectionViewCell.className, for: indexPath) as! TagsCollectionViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactTableViewCell.className, for: indexPath) as? ContactTableViewCell else {
+                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
+            }
             return cell
+        }
+    }
+}
+
+extension CVPreviewVC {
+    //MARK: Register Cell
+    func registerCell() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(EventDescriptionTableViewCell.className)
+        tableView.register(EducationTableViewCell.className)
+        tableView.register(SkillsTableViewCell.className)
+        tableView.register(ExperienceTableViewCell.className)
+        tableView.register(ContactTableViewCell.className)
+        tableView.register(HardSkillsTextTableViewCell.className)
+        tableView.register(SoftSkillTextTableViewCell.className)
+        tableView.register(EducationTextTableViewCell.className)
+
+        self.setColors()
+        self.configureFonts()
+    }
+    
+    // MARK: Colors
+    func setColors() {
+        editView.backgroundColor = UIColor.blueF1F1FF
+        downloadView.backgroundColor = UIColor.blueF1F1FF
+    }
+    
+    // MARK: Configure Fonts
+    func configureFonts() {
+        self.lblViewProfile.font = UIFont.montserratMedium(24)
+        self.lblName.font = UIFont.montserratMedium(24)
+        self.lblSkill.font = UIFont.montserratMedium(14)
+        self.lblSkill.font = UIFont.montserratMedium(14)
+    }
+    
+    func updateTableView(willExpand: Bool) {
+        self.tableView.reloadData()
+        if (!willExpand) {
+            self.tableView.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .bottom, animated: false)
         }
     }
 }

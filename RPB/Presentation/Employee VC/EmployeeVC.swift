@@ -34,17 +34,16 @@ extension EmployeeVC {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(EmployeesTableViewCell.className)
-
         self.setColors()
         self.configureFonts()
     }
 
-    // MARK: Set Colors
+    // MARK: Colors
     func setColors() {
         lblEmployee.textColor = UIColor.customBlack
     }
 
-    // MARK: Set Colors
+    // MARK: Fonts
     func configureFonts() {
         lblEmployee.font = UIFont.montserratMedium(24)
     }
@@ -66,6 +65,5 @@ extension EmployeeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tabbarVC  = UIStoryboard.getVC(from: .main, ProfileVC.className)
         self.navigationController?.pushViewController(tabbarVC, animated: true)
-
     }
 }

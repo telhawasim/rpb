@@ -33,7 +33,22 @@
 		0994122B295C365100C39E5A /* CancelPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09941229295C365100C39E5A /* CancelPopViewController.xib */; };
 		0994122E295C3BA900C39E5A /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0994122D295C3BA900C39E5A /* PopUpView.swift */; };
 		2E18A825836F0D81F77A3E51 /* Pods_RPB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3D06738362C369E89B8B28 /* Pods_RPB.framework */; };
+		3601D369295DABAA008B1F02 /* SkillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3601D367295DABAA008B1F02 /* SkillsTableViewCell.swift */; };
+		3601D36A295DABAA008B1F02 /* SkillsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3601D368295DABAA008B1F02 /* SkillsTableViewCell.xib */; };
+		3601D36D295DAC6F008B1F02 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3601D36B295DAC6F008B1F02 /* ContactTableViewCell.swift */; };
+		3601D36E295DAC6F008B1F02 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3601D36C295DAC6F008B1F02 /* ContactTableViewCell.xib */; };
+		3601D371295DB4D5008B1F02 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3601D370295DB4D5008B1F02 /* UILabel.swift */; };
+		3601D374295DC2F8008B1F02 /* HardSkillsTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3601D372295DC2F8008B1F02 /* HardSkillsTextTableViewCell.swift */; };
+		3601D375295DC2F8008B1F02 /* HardSkillsTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3601D373295DC2F8008B1F02 /* HardSkillsTextTableViewCell.xib */; };
+		3601D378295DC645008B1F02 /* EducationTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3601D376295DC645008B1F02 /* EducationTextTableViewCell.swift */; };
+		3601D379295DC645008B1F02 /* EducationTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3601D377295DC645008B1F02 /* EducationTextTableViewCell.xib */; };
 		36187A6F2959C10F001CAB2B /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36187A6E2959C10F001CAB2B /* Storyboard.swift */; };
+		36220187295D801300B2CC3D /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36220185295D801300B2CC3D /* ExperienceTableViewCell.swift */; };
+		36220188295D801300B2CC3D /* ExperienceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36220186295D801300B2CC3D /* ExperienceTableViewCell.xib */; };
+		3622018C295DA8C100B2CC3D /* EventDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3622018A295DA8C000B2CC3D /* EventDescriptionTableViewCell.swift */; };
+		3622018D295DA8C100B2CC3D /* EventDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3622018B295DA8C100B2CC3D /* EventDescriptionTableViewCell.xib */; };
+		36220190295DA96100B2CC3D /* EducationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3622018E295DA96000B2CC3D /* EducationTableViewCell.swift */; };
+		36220191295DA96100B2CC3D /* EducationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3622018F295DA96000B2CC3D /* EducationTableViewCell.xib */; };
 		3636F30529547728001D886A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F30429547728001D886A /* HomeVC.swift */; };
 		3636F3092954818E001D886A /* EmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F3082954818E001D886A /* EmployeeVC.swift */; };
 		3636F30B295481A8001D886A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F30A295481A8001D886A /* ProfileVC.swift */; };
@@ -52,6 +67,8 @@
 		3669A4EA295C1A07005015ED /* BasicInfoTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3669A4DF295C1A07005015ED /* BasicInfoTVCell.xib */; };
 		3669A4EB295C1A07005015ED /* ResumeCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3669A4E0295C1A07005015ED /* ResumeCV.swift */; };
 		3669A4EE295C1BF7005015ED /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3669A4ED295C1BF7005015ED /* TextView.swift */; };
+		3679BDCD295DC821005A532F /* SoftSkillTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3679BDCB295DC821005A532F /* SoftSkillTextTableViewCell.swift */; };
+		3679BDCE295DC821005A532F /* SoftSkillTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3679BDCC295DC821005A532F /* SoftSkillTextTableViewCell.xib */; };
 		3695504229519A9E009AEB62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504129519A9E009AEB62 /* AppDelegate.swift */; };
 		3695504429519A9E009AEB62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504329519A9E009AEB62 /* SceneDelegate.swift */; };
 		3695504629519A9E009AEB62 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504529519A9E009AEB62 /* LoginVC.swift */; };
@@ -114,7 +131,22 @@
 		22EF633B9F77D99322A1835A /* Pods-RPBTests.releasedev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPBTests.releasedev.xcconfig"; path = "Target Support Files/Pods-RPBTests/Pods-RPBTests.releasedev.xcconfig"; sourceTree = "<group>"; };
 		2324538490149D208DA077A6 /* Pods-RPBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPBTests.release.xcconfig"; path = "Target Support Files/Pods-RPBTests/Pods-RPBTests.release.xcconfig"; sourceTree = "<group>"; };
 		23B2FDCDEFCA66A6888B49DA /* Pods-RPB.debugqa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB.debugqa.xcconfig"; path = "Target Support Files/Pods-RPB/Pods-RPB.debugqa.xcconfig"; sourceTree = "<group>"; };
+		3601D367295DABAA008B1F02 /* SkillsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsTableViewCell.swift; sourceTree = "<group>"; };
+		3601D368295DABAA008B1F02 /* SkillsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkillsTableViewCell.xib; sourceTree = "<group>"; };
+		3601D36B295DAC6F008B1F02 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		3601D36C295DAC6F008B1F02 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
+		3601D370295DB4D5008B1F02 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		3601D372295DC2F8008B1F02 /* HardSkillsTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardSkillsTextTableViewCell.swift; sourceTree = "<group>"; };
+		3601D373295DC2F8008B1F02 /* HardSkillsTextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HardSkillsTextTableViewCell.xib; sourceTree = "<group>"; };
+		3601D376295DC645008B1F02 /* EducationTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationTextTableViewCell.swift; sourceTree = "<group>"; };
+		3601D377295DC645008B1F02 /* EducationTextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EducationTextTableViewCell.xib; sourceTree = "<group>"; };
 		36187A6E2959C10F001CAB2B /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		36220185295D801300B2CC3D /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
+		36220186295D801300B2CC3D /* ExperienceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceTableViewCell.xib; sourceTree = "<group>"; };
+		3622018A295DA8C000B2CC3D /* EventDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		3622018B295DA8C100B2CC3D /* EventDescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		3622018E295DA96000B2CC3D /* EducationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationTableViewCell.swift; sourceTree = "<group>"; };
+		3622018F295DA96000B2CC3D /* EducationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EducationTableViewCell.xib; sourceTree = "<group>"; };
 		3636F30429547728001D886A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		3636F3082954818E001D886A /* EmployeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeVC.swift; sourceTree = "<group>"; };
 		3636F30A295481A8001D886A /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
@@ -136,6 +168,8 @@
 		3669A4DF295C1A07005015ED /* BasicInfoTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicInfoTVCell.xib; sourceTree = "<group>"; };
 		3669A4E0295C1A07005015ED /* ResumeCV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResumeCV.swift; sourceTree = "<group>"; };
 		3669A4ED295C1BF7005015ED /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		3679BDCB295DC821005A532F /* SoftSkillTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftSkillTextTableViewCell.swift; sourceTree = "<group>"; };
+		3679BDCC295DC821005A532F /* SoftSkillTextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SoftSkillTextTableViewCell.xib; sourceTree = "<group>"; };
 		3695504129519A9E009AEB62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3695504329519A9E009AEB62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3695504529519A9E009AEB62 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -214,6 +248,7 @@
 		090441A12955920E0088941F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3601D36F295DB4C2008B1F02 /* See More */,
 				0994122C295C3B6400C39E5A /* PopUpView */,
 				3669A4EC295C1BF7005015ED /* TextView */,
 				36F8AB78295B298800CA9CFA /* CollectionView */,
@@ -344,6 +379,14 @@
 				0994122D295C3BA900C39E5A /* PopUpView.swift */,
 			);
 			path = PopUpView;
+			sourceTree = "<group>";
+		};
+		3601D36F295DB4C2008B1F02 /* See More */ = {
+			isa = PBXGroup;
+			children = (
+				3601D370295DB4D5008B1F02 /* UILabel.swift */,
+			);
+			path = "See More";
 			sourceTree = "<group>";
 		};
 		36187A6D2959C0EC001CAB2B /* Storyboard */ = {
@@ -631,8 +674,24 @@
 		36F8AB72295B0B6100CA9CFA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				3622018A295DA8C000B2CC3D /* EventDescriptionTableViewCell.swift */,
+				3622018B295DA8C100B2CC3D /* EventDescriptionTableViewCell.xib */,
 				36F8AB73295B0B8D00CA9CFA /* TagsCollectionViewCell.swift */,
 				36F8AB74295B0B8D00CA9CFA /* TagsCollectionViewCell.xib */,
+				36220185295D801300B2CC3D /* ExperienceTableViewCell.swift */,
+				36220186295D801300B2CC3D /* ExperienceTableViewCell.xib */,
+				3622018E295DA96000B2CC3D /* EducationTableViewCell.swift */,
+				3622018F295DA96000B2CC3D /* EducationTableViewCell.xib */,
+				3601D367295DABAA008B1F02 /* SkillsTableViewCell.swift */,
+				3601D368295DABAA008B1F02 /* SkillsTableViewCell.xib */,
+				3601D36B295DAC6F008B1F02 /* ContactTableViewCell.swift */,
+				3601D36C295DAC6F008B1F02 /* ContactTableViewCell.xib */,
+				3601D372295DC2F8008B1F02 /* HardSkillsTextTableViewCell.swift */,
+				3601D373295DC2F8008B1F02 /* HardSkillsTextTableViewCell.xib */,
+				3601D376295DC645008B1F02 /* EducationTextTableViewCell.swift */,
+				3601D377295DC645008B1F02 /* EducationTextTableViewCell.xib */,
+				3679BDCB295DC821005A532F /* SoftSkillTextTableViewCell.swift */,
+				3679BDCC295DC821005A532F /* SoftSkillTextTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -808,17 +867,25 @@
 				3669A4EA295C1A07005015ED /* BasicInfoTVCell.xib in Resources */,
 				36F8AB6E295AE90500CA9CFA /* LaunchScreen.storyboard in Resources */,
 				36F8AB76295B0B8D00CA9CFA /* TagsCollectionViewCell.xib in Resources */,
+				3601D375295DC2F8008B1F02 /* HardSkillsTextTableViewCell.xib in Resources */,
 				090441CC295595BF0088941F /* Main.storyboard in Resources */,
 				090441CD295595D60088941F /* Montserrat-SemiBold.otf in Resources */,
 				090441CE295595D90088941F /* Montserrat-Regular.otf in Resources */,
+				36220191295DA96100B2CC3D /* EducationTableViewCell.xib in Resources */,
 				090441CF295595DB0088941F /* Montserrat-Bold.otf in Resources */,
+				36220188295D801300B2CC3D /* ExperienceTableViewCell.xib in Resources */,
+				3679BDCE295DC821005A532F /* SoftSkillTextTableViewCell.xib in Resources */,
+				3601D36E295DAC6F008B1F02 /* ContactTableViewCell.xib in Resources */,
 				094131372955F0F0008AC5CA /* ProfileTVCell.xib in Resources */,
 				3669A4E3295C1A07005015ED /* ResumeHeaderCell.xib in Resources */,
+				3601D379295DC645008B1F02 /* EducationTextTableViewCell.xib in Resources */,
 				3669A4E5295C1A07005015ED /* EducationTVCell.xib in Resources */,
+				3622018D295DA8C100B2CC3D /* EventDescriptionTableViewCell.xib in Resources */,
 				3669A4E7295C1A07005015ED /* DobTVCell.xib in Resources */,
 				3669A4E2295C1A07005015ED /* SummaryTVCell.xib in Resources */,
 				090441D0295595F70088941F /* Assets.xcassets in Resources */,
 				0994122B295C365100C39E5A /* CancelPopViewController.xib in Resources */,
+				3601D36A295DABAA008B1F02 /* SkillsTableViewCell.xib in Resources */,
 				090441D9295599F50088941F /* Montserrat-Medium.otf in Resources */,
 				090441D5295597980088941F /* EmployeesTableViewCell.xib in Resources */,
 			);
@@ -968,6 +1035,8 @@
 				0941311F2955B55F008AC5CA /* String.swift in Sources */,
 				3636F30B295481A8001D886A /* ProfileVC.swift in Sources */,
 				0994122A295C365100C39E5A /* CancelPopViewController.swift in Sources */,
+				3601D374295DC2F8008B1F02 /* HardSkillsTextTableViewCell.swift in Sources */,
+				3679BDCD295DC821005A532F /* SoftSkillTextTableViewCell.swift in Sources */,
 				36F8AB7A295B29A100CA9CFA /* CollectionView.swift in Sources */,
 				3669A4E9295C1A07005015ED /* BasicInfoTVCell.swift in Sources */,
 				0904419829558E920088941F /* AddEmployeeVC.swift in Sources */,
@@ -976,17 +1045,24 @@
 				090441B32955920E0088941F /* CustomFont.swift in Sources */,
 				3669A4E4295C1A07005015ED /* ResumeHeaderCell.swift in Sources */,
 				3636F30529547728001D886A /* HomeVC.swift in Sources */,
+				3601D371295DB4D5008B1F02 /* UILabel.swift in Sources */,
 				3669A4E8295C1A07005015ED /* DobTVCell.swift in Sources */,
 				36F8AB75295B0B8D00CA9CFA /* TagsCollectionViewCell.swift in Sources */,
 				3669A4E1295C1A07005015ED /* SummaryTVCell.swift in Sources */,
 				365010E42955EC33003F3262 /* SettingVC.swift in Sources */,
+				3601D369295DABAA008B1F02 /* SkillsTableViewCell.swift in Sources */,
 				36F8AB71295AF7D400CA9CFA /* CVPreviewVC.swift in Sources */,
 				36FE65FB2954A0A3003E9CC0 /* EmployeesTableViewCell.swift in Sources */,
+				3601D36D295DAC6F008B1F02 /* ContactTableViewCell.swift in Sources */,
 				3669A4E6295C1A07005015ED /* EducationTVCell.swift in Sources */,
 				090441B72955920E0088941F /* Date.swift in Sources */,
+				36220187295D801300B2CC3D /* ExperienceTableViewCell.swift in Sources */,
 				090441B62955920E0088941F /* BaseURL.swift in Sources */,
 				3695504629519A9E009AEB62 /* LoginVC.swift in Sources */,
+				3601D378295DC645008B1F02 /* EducationTextTableViewCell.swift in Sources */,
+				36220190295DA96100B2CC3D /* EducationTableViewCell.swift in Sources */,
 				3695504229519A9E009AEB62 /* AppDelegate.swift in Sources */,
+				3622018C295DA8C100B2CC3D /* EventDescriptionTableViewCell.swift in Sources */,
 				098D04F829598065001C2F05 /* CameraHandler.swift in Sources */,
 				090441B92955920E0088941F /* UITextField.swift in Sources */,
 				090441B82955920E0088941F /* UIImageView.swift in Sources */,
@@ -1171,7 +1247,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -1204,7 +1280,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -1377,7 +1453,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -1504,7 +1580,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -1637,7 +1713,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -1764,7 +1840,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -1897,7 +1973,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -2024,7 +2100,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";

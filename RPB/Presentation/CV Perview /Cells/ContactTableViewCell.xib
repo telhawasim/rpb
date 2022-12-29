@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="212" id="KGk-i7-Jjw" customClass="ContactTableViewCell" customModule="RPB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="355" height="212"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="355" height="212"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtX-wF-4Jh">
+                        <rect key="frame" x="0.0" y="0.0" width="355" height="212"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ln3-xQ-Md7">
+                                <rect key="frame" x="20" y="30" width="73.333333333333329" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UkA-tV-WCc">
+                                <rect key="frame" x="20" y="84" width="40" height="40"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Email" translatesAutoresizingMaskIntoConstraints="NO" id="yCa-WP-Fn9">
+                                        <rect key="frame" x="10.666666666666668" y="10.666666666666671" width="19" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19" id="Ala-Wd-nuU"/>
+                                            <constraint firstAttribute="width" constant="19" id="p6t-Zt-i7T"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name=" Color 5557D4"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="SHD-1M-TKk"/>
+                                    <constraint firstAttribute="width" constant="40" id="aQM-VC-Zrd"/>
+                                    <constraint firstItem="yCa-WP-Fn9" firstAttribute="centerY" secondItem="UkA-tV-WCc" secondAttribute="centerY" id="iAe-hA-RXz"/>
+                                    <constraint firstItem="yCa-WP-Fn9" firstAttribute="centerX" secondItem="UkA-tV-WCc" secondAttribute="centerX" id="lRX-hT-Ymi"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eYn-Y1-pir">
+                                <rect key="frame" x="20" y="139" width="40" height="40"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Phone" translatesAutoresizingMaskIntoConstraints="NO" id="wqW-Fr-Xou">
+                                        <rect key="frame" x="10.666666666666668" y="10.666666666666657" width="19" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19" id="CQm-sJ-18Y"/>
+                                            <constraint firstAttribute="width" constant="19" id="rAL-eM-CNU"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name=" Color 5557D4"/>
+                                <constraints>
+                                    <constraint firstItem="wqW-Fr-Xou" firstAttribute="centerX" secondItem="eYn-Y1-pir" secondAttribute="centerX" id="VEh-yK-KAU"/>
+                                    <constraint firstAttribute="height" constant="40" id="VhB-ok-jWc"/>
+                                    <constraint firstAttribute="width" constant="40" id="db4-Pw-WHq"/>
+                                    <constraint firstItem="wqW-Fr-Xou" firstAttribute="centerY" secondItem="eYn-Y1-pir" secondAttribute="centerY" id="tbD-vA-5BZ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dawid.name@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMc-6e-mM9">
+                                <rect key="frame" x="72.000000000000014" y="94" width="185.33333333333337" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+233-0242742594" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHz-wf-AiP">
+                                <rect key="frame" x="72" y="149" width="148" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eYn-Y1-pir" firstAttribute="leading" secondItem="ln3-xQ-Md7" secondAttribute="leading" id="39x-kP-Zog"/>
+                            <constraint firstItem="eYn-Y1-pir" firstAttribute="top" secondItem="UkA-tV-WCc" secondAttribute="bottom" constant="15" id="87A-xK-sgS"/>
+                            <constraint firstItem="ln3-xQ-Md7" firstAttribute="leading" secondItem="gtX-wF-4Jh" secondAttribute="leading" constant="20" id="Mah-vN-0Yi"/>
+                            <constraint firstItem="UkA-tV-WCc" firstAttribute="top" secondItem="ln3-xQ-Md7" secondAttribute="bottom" constant="30" id="OX3-zb-6iJ"/>
+                            <constraint firstItem="UkA-tV-WCc" firstAttribute="leading" secondItem="gtX-wF-4Jh" secondAttribute="leading" constant="20" id="Y2I-Lg-71k"/>
+                            <constraint firstItem="CMc-6e-mM9" firstAttribute="centerY" secondItem="UkA-tV-WCc" secondAttribute="centerY" id="a1d-v3-9U1"/>
+                            <constraint firstItem="rHz-wf-AiP" firstAttribute="leading" secondItem="eYn-Y1-pir" secondAttribute="trailing" constant="12" id="fRq-JS-mo5"/>
+                            <constraint firstAttribute="bottom" secondItem="eYn-Y1-pir" secondAttribute="bottom" constant="33" id="owA-Z1-chM"/>
+                            <constraint firstItem="CMc-6e-mM9" firstAttribute="leading" secondItem="UkA-tV-WCc" secondAttribute="trailing" constant="12" id="q2d-sJ-U1F"/>
+                            <constraint firstItem="ln3-xQ-Md7" firstAttribute="top" secondItem="gtX-wF-4Jh" secondAttribute="top" constant="30" id="vNe-8l-TaZ"/>
+                            <constraint firstItem="rHz-wf-AiP" firstAttribute="centerY" secondItem="eYn-Y1-pir" secondAttribute="centerY" id="w4e-ih-QVa"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gtX-wF-4Jh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="3wy-yw-Wcs"/>
+                    <constraint firstAttribute="trailing" secondItem="gtX-wF-4Jh" secondAttribute="trailing" id="JGF-d7-M1m"/>
+                    <constraint firstItem="gtX-wF-4Jh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="L2w-a4-xjk"/>
+                    <constraint firstAttribute="bottom" secondItem="gtX-wF-4Jh" secondAttribute="bottom" id="a1N-Uj-Zcb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblContact" destination="ln3-xQ-Md7" id="Vfe-vz-cKh"/>
+                <outlet property="lblEmail" destination="CMc-6e-mM9" id="l3D-L6-gZ2"/>
+                <outlet property="lblPhone" destination="rHz-wf-AiP" id="9Fc-zb-Ubr"/>
+            </connections>
+            <point key="canvasLocation" x="216.03053435114504" y="59.154929577464792"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Email" width="19" height="16"/>
+        <image name="Phone" width="22" height="22"/>
+        <namedColor name=" Color 5557D4">
+            <color red="0.33333333333333331" green="0.3411764705882353" blue="0.83137254901960789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
