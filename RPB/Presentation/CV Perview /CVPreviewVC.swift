@@ -28,8 +28,17 @@ class CVPreviewVC: UIViewController {
     @IBOutlet weak var lblBachelorSession: UILabel!
     @IBOutlet weak var lblSkillsText: UILabel!
     @IBOutlet weak var lblSoftSkillsText: UILabel!
-    
     @IBOutlet weak var lblHardSkillsText: UILabel!
+    @IBOutlet weak var lblExperienceText: UILabel!
+    @IBOutlet weak var lblSkillText: UILabel!
+    @IBOutlet weak var lblCompany: UILabel!
+    @IBOutlet weak var lblExperience: UILabel!
+    @IBOutlet weak var lblUIDesignerSession: UILabel!
+    @IBOutlet weak var lblContact: UILabel!
+    @IBOutlet weak var emailView: UIView!
+    @IBOutlet weak var lblEmail: UILabel!
+    @IBOutlet weak var phoneView: UIView!
+    @IBOutlet weak var lblPhone: UILabel!
     
     //MARK: Variables
     
