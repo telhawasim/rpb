@@ -25,7 +25,7 @@ struct Section {
     }
 }
 
-class ResumeCV: UIViewController, UIGestureRecognizerDelegate {
+class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     
     //MARK: Outlet
     @IBOutlet weak var lblTitle: UILabel!
@@ -45,6 +45,7 @@ class ResumeCV: UIViewController, UIGestureRecognizerDelegate {
     var infoPlaceholder = ["Dawid", "iOS Developer", "07-08-99", "dawid.name@gmail.com", "03350438764"]
     var educationData = ["School / University", "Degree", "Field of Study"]
     var educationPlaceholder = ["Virtual University", "Master's Degree", "BIT"]
+    var experienceData = ["Title", "Employment Type", "Comapny Name", "Location", "Location Type"]
     
     //MARK: Lifecylce
     override func viewDidLoad() {
@@ -143,6 +144,10 @@ class ResumeCV: UIViewController, UIGestureRecognizerDelegate {
         self.infoType = .experience
         self.tableView.reloadData()
     }
+    
+    @IBAction func btnGoBack(_ sender: Any) {
+        self.goBack()
+    }
 }
 
 //MARK: TableView Methods
@@ -183,14 +188,14 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
     //MARK: View for Header in Section
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ResumeHeaderCell.className) as! ResumeHeaderCell
-        if section == 1 {
-            headerView.btnAddMore.isHidden = false
-        } else {
-            headerView.btnAddMore.isHidden = true
-        }
         
         switch infoType {
         case .info:
+            if section == 1 {
+                headerView.btnAddMore.isHidden = false
+            } else {
+                headerView.btnAddMore.isHidden = true
+            }
             headerView.lblHeading.text = infoModel[section].section
             headerView.lblHeading.font = UIFont.montserratMedium(20)
             headerView.tag = section
@@ -257,6 +262,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             if indexPath.section == 0 { // Section 1
                 if indexPath.row == 2 { // Section 1 (row 3)
                     let cell = tableView.dequeueReusableCell(withIdentifier: "DobTVCell", for: indexPath) as! DobTVCell
+                    cell.delegate = self
                     cell.lblDate.text = infoData[indexPath.row]
                     cell.txtDate.placeholder = infoPlaceholder[indexPath.row]
                     return cell
@@ -306,5 +312,13 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         
+    }
+}
+
+//MARK: DobTVCell Delegate
+extension ResumeCV: DobTVCellProtocol {
+    func showAlert() {
+        let errorMessage = "Employee must be 18+"
+        self.alert(message: errorMessage)
     }
 }

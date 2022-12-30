@@ -7,15 +7,19 @@
 
 import UIKit
 
+protocol DobTVCellProtocol {
+    func showAlert()
+}
+
 class DobTVCell: UITableViewCell {
     //MARK: Outlet
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var txtDate: UITextField!
     
     //MARK: Variables
+    var delegate: DobTVCellProtocol?
     
     //MARK: Lifecylce
-
     override func awakeFromNib() {
         super.awakeFromNib()
         self.configureFont()
@@ -39,6 +43,7 @@ class DobTVCell: UITableViewCell {
                 self.txtDate.text = date.getFormattedDate(format: "dd-MM-yy")
             } else {
                 self.txtDate.text = nil
+                delegate?.showAlert()
             }
         }
         self.txtDate.resignFirstResponder()
