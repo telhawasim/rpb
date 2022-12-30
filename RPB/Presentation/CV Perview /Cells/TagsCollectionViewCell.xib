@@ -59,6 +59,10 @@
                 <constraint firstAttribute="trailing" secondItem="dTv-eq-6Zo" secondAttribute="trailing" constant="7.5" id="lnv-6c-a1O"/>
             </constraints>
             <size key="customSize" width="163" height="50"/>
+            <connections>
+                <outlet property="lblTagsName" destination="wQg-0u-d64" id="h1g-rR-tTD"/>
+                <outlet property="tagsView" destination="dTv-eq-6Zo" id="yl3-6F-CHj"/>
+            </connections>
             <point key="canvasLocation" x="151.90839694656489" y="19.366197183098592"/>
         </collectionViewCell>
     </objects>
