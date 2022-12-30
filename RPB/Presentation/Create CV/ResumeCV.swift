@@ -308,6 +308,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         case .experience:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceTVCell", for: indexPath) as! ExperienceTVCell
+            cell.delegate = self
 //            cell.lblTitle.text = infoData[indexPath.row]
 //            cell.txtInfo.placeholder = infoPlaceholder[indexPath.row]
             return cell
@@ -321,5 +322,11 @@ extension ResumeCV: DobTVCellProtocol {
     func showAlert() {
         let errorMessage = "Employee must be 18+"
         self.alert(message: errorMessage)
+    }
+}
+
+extension ResumeCV: ExperienceTVCellProtocol {
+    func dismissPicker() {
+        self.view.endEditing(true)
     }
 }

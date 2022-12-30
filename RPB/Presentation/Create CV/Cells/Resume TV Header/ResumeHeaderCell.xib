@@ -49,14 +49,14 @@
                                 </constraints>
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyh-yw-anR">
-                                <rect key="frame" x="240" y="70" width="80" height="25"/>
+                                <rect key="frame" x="240" y="75" width="80" height="20"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="+ Add More"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dyh-yw-anR" firstAttribute="top" secondItem="EJl-uR-AsL" secondAttribute="bottom" constant="5" id="6jO-UF-u6N"/>
+                            <constraint firstItem="dyh-yw-anR" firstAttribute="top" secondItem="EJl-uR-AsL" secondAttribute="bottom" constant="10" id="6jO-UF-u6N"/>
                             <constraint firstItem="EJl-uR-AsL" firstAttribute="top" secondItem="v7g-cb-JBg" secondAttribute="top" id="Jtu-cI-8OE"/>
                             <constraint firstAttribute="bottom" secondItem="dyh-yw-anR" secondAttribute="bottom" id="WnG-th-p23"/>
                             <constraint firstAttribute="trailing" secondItem="EJl-uR-AsL" secondAttribute="trailing" id="XZo-P0-zQj"/>
@@ -84,7 +84,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="arrow_right" width="8" height="15"/>
+        <image name="arrow_right" width="8" height="14"/>
         <namedColor name=" Color 5557D4">
             <color red="0.33333333333333331" green="0.3411764705882353" blue="0.83137254901960789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
