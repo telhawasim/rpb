@@ -56,7 +56,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         infoModel = [(Section(section: "Basic Info", rows: [1, 1, 1, 1, 1], expanded: true)),
                      (Section(section: "Education", rows: [1, 1, 1, 1, 1], expanded: false)),
                      (Section(section: "Summary", rows: [1], expanded: false))]
-        experienceModel = [Section(section: "Add Experience", rows: [1, 1, 1, 1, 1, 1, 1, 1, 1], expanded: true)]
+        experienceModel = [Section(section: "Add Experience", rows: [1], expanded: true)]
         
     }
     
@@ -117,6 +117,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.tableView.register(EducationTVCell.className)
         self.tableView.register(SummaryTVCell.className)
         self.tableView.register(DobTVCell.className)
+        self.tableView.register(ExperienceTVCell.className)
         self.tableView.register(UINib(nibName: ResumeHeaderCell.className, bundle: nil), forHeaderFooterViewReuseIdentifier: ResumeHeaderCell.className)
     }
     
@@ -306,7 +307,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
         case .skills:
             return UITableViewCell()
         case .experience:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "BasicInfoTVCell", for: indexPath) as! BasicInfoTVCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceTVCell", for: indexPath) as! ExperienceTVCell
 //            cell.lblTitle.text = infoData[indexPath.row]
 //            cell.txtInfo.placeholder = infoPlaceholder[indexPath.row]
             return cell
