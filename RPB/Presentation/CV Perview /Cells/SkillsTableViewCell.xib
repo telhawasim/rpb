@@ -38,6 +38,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="collectionVewLayout" destination="jaz-AL-oh1" id="Wv5-w8-VYj"/>
                 <outlet property="tagsCollectionView" destination="RKb-xK-pAd" id="q2l-bT-niM"/>
             </connections>
             <point key="canvasLocation" x="225.95419847328245" y="33.802816901408455"/>

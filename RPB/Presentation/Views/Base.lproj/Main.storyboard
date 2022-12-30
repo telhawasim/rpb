@@ -423,7 +423,7 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWj-b6-tCe">
-                                        <rect key="frame" x="49" y="15.666666666666659" width="237" height="18.666666666666671"/>
+                                        <rect key="frame" x="49" y="15.666666666666659" width="237" height="18.666666666666679"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -1309,6 +1309,7 @@
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Edit" translatesAutoresizingMaskIntoConstraints="NO" id="lwW-iF-MX2">
                                                 <rect key="frame" x="10.666666666666686" y="10.666666666666657" width="19" height="19"/>
+                                                <color key="tintColor" name="Color 222222"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="19" id="O03-dG-E1t"/>
                                                     <constraint firstAttribute="height" constant="19" id="yzJ-H1-9go"/>
@@ -1341,6 +1342,7 @@
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DownloadPdf" translatesAutoresizingMaskIntoConstraints="NO" id="SaA-qj-A3Y">
                                                 <rect key="frame" x="10.666666666666686" y="10.666666666666657" width="19" height="19"/>
+                                                <color key="tintColor" name="Color 222222"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="19" id="3Xr-Be-mnS"/>
                                                     <constraint firstAttribute="height" constant="19" id="vTd-ik-8JM"/>
@@ -1408,148 +1410,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XX4-XJ-cK7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7894" y="-30"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="7Z4-Ha-SBf">
-            <objects>
-                <viewController id="XZP-Sa-1O3" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hUE-fm-ADp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Summary" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1c-fX-6ds">
-                                <rect key="frame" x="196" y="132" width="88.33333333333303" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Education" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48H-hP-0sb">
-                                <rect key="frame" x="160" y="476" width="92" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2013-2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qf-sD-3bv">
-                                <rect key="frame" x="279" y="263" width="81.33333333333303" height="19.333333333333314"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2008-2013" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdU-1N-nLM">
-                                <rect key="frame" x="276" y="325" width="84.33333333333303" height="19.333333333333371"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skills" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KG-1v-F74">
-                                <rect key="frame" x="26" y="386" width="48.33333333333303" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Soft Skills" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zha-xN-Qg5">
-                                <rect key="frame" x="174" y="569" width="76" height="19.333333333333371"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hard Skills" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cc0-eK-Eyh">
-                                <rect key="frame" x="91" y="657" width="81" height="19.333333333333258"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Experience" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbg-JU-e0R">
-                                <rect key="frame" x="41" y="561" width="102.33333333333303" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmq-Fy-0NQ">
-                                <rect key="frame" x="201" y="630" width="73.33333333333303" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ueS-Zk-NgS">
-                                <rect key="frame" x="207" y="744" width="40" height="40"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Email" translatesAutoresizingMaskIntoConstraints="NO" id="tbm-Ek-DXp">
-                                        <rect key="frame" x="10.666666666666664" y="10.666666666666664" width="19" height="19"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="19" id="BHg-4C-ztu"/>
-                                            <constraint firstAttribute="width" constant="19" id="xgb-VP-AFa"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" name=" Color 5557D4"/>
-                                <constraints>
-                                    <constraint firstItem="tbm-Ek-DXp" firstAttribute="centerY" secondItem="ueS-Zk-NgS" secondAttribute="centerY" id="1nN-dP-d8v"/>
-                                    <constraint firstAttribute="width" constant="40" id="aiR-ht-bC6"/>
-                                    <constraint firstAttribute="height" constant="40" id="fn5-jg-OOt"/>
-                                    <constraint firstItem="tbm-Ek-DXp" firstAttribute="centerX" secondItem="ueS-Zk-NgS" secondAttribute="centerX" id="qTZ-9c-0Ie"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NPm-7v-d9p">
-                                <rect key="frame" x="323" y="707" width="40" height="40"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Phone" translatesAutoresizingMaskIntoConstraints="NO" id="SOM-Hz-7Wi">
-                                        <rect key="frame" x="10.666666666666664" y="10.666666666666664" width="19" height="19"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="19" id="4sc-0u-yed"/>
-                                            <constraint firstAttribute="width" constant="19" id="Slv-i4-zlj"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" name=" Color 5557D4"/>
-                                <constraints>
-                                    <constraint firstItem="SOM-Hz-7Wi" firstAttribute="centerX" secondItem="NPm-7v-d9p" secondAttribute="centerX" id="1Dq-Nf-1da"/>
-                                    <constraint firstItem="SOM-Hz-7Wi" firstAttribute="centerY" secondItem="NPm-7v-d9p" secondAttribute="centerY" id="Kzj-J8-Tb7"/>
-                                    <constraint firstAttribute="width" constant="40" id="e8v-FU-wKe"/>
-                                    <constraint firstAttribute="height" constant="40" id="yZh-sh-5SG"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="dawid.name@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6GX-iX-0Rw">
-                                <rect key="frame" x="49" y="713" width="185.33333333333303" height="20.333333333333258"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+233-0242742594" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkK-XQ-4Xh">
-                                <rect key="frame" x="38" y="183" width="148" height="20.33333333333303"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="tOx-YG-ecV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Oqn-a0-lTQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="9143" y="356"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="nST-Vl-5Pi">
@@ -1982,13 +1842,11 @@
         <image name="AddEmployee" width="31" height="31"/>
         <image name="DownloadPdf" width="21" height="19"/>
         <image name="Edit" width="19" height="19"/>
-        <image name="Email" width="19" height="16"/>
         <image name="Employee" width="29" height="27"/>
         <image name="EmployeeBg" width="388" height="214"/>
         <image name="EmployeeIcon" width="63" height="63"/>
         <image name="FilterIcon" width="23" height="22"/>
         <image name="Home" width="24" height="25"/>
-        <image name="Phone" width="22" height="22"/>
         <image name="RPB" width="204" height="267"/>
         <image name="SearchIcon" width="19" height="19"/>
         <image name="TabbarProfile" width="21" height="24"/>
@@ -2004,6 +1862,9 @@
         <image name="show_password" width="24" height="24"/>
         <namedColor name=" Color 5557D4">
             <color red="0.33333333333333331" green="0.3411764705882353" blue="0.83137254901960789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Color 222222">
+            <color red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Color E1E5E8">
             <color red="0.88235294117647056" green="0.89803921568627454" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

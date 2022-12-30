@@ -11,6 +11,11 @@ class SkillsTableViewCell: UITableViewCell {
     
     //MARK: IBOutlets
     @IBOutlet weak var tagsCollectionView: UICollectionView!
+    @IBOutlet weak var collectionVewLayout: UICollectionViewFlowLayout! {
+        didSet {
+            collectionVewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
+    }
     
     //MARK: Variables
     var tagsArray =  ["Excellent Communication","Excellent","Wireframe","Design system","Prototyping","Figma","Figma"]
@@ -22,10 +27,10 @@ class SkillsTableViewCell: UITableViewCell {
     }
     
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
-          self.contentView.frame = self.bounds
-          self.layoutIfNeeded()
-          return self.tagsCollectionView.contentSize
-      }
+        self.contentView.frame = self.bounds
+        self.layoutIfNeeded()
+        return self.tagsCollectionView.contentSize
+    }
 }
 
 extension SkillsTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
