@@ -1,5 +1,4 @@
 disabled_rules:
-- vertical_whitespace
 - line_length
 - function_body_length
 - cyclomatic_complexity
@@ -11,3 +10,5 @@ disabled_rules:
 - mark
 opt_in_rules:
 - opening_brace
+- vertical_whitespace
+

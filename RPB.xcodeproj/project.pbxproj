@@ -51,6 +51,8 @@
 		3622018D295DA8C100B2CC3D /* EventDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3622018B295DA8C100B2CC3D /* EventDescriptionTableViewCell.xib */; };
 		36220190295DA96100B2CC3D /* EducationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3622018E295DA96000B2CC3D /* EducationTableViewCell.swift */; };
 		36220191295DA96100B2CC3D /* EducationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3622018F295DA96000B2CC3D /* EducationTableViewCell.xib */; };
+		362D3110295F5CB600458A97 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362D310F295F5CB600458A97 /* Constant.swift */; };
+		362D3112295F5D3D00458A97 /* EnumExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362D3111295F5D3D00458A97 /* EnumExtension.swift */; };
 		3636F30529547728001D886A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F30429547728001D886A /* HomeVC.swift */; };
 		3636F3092954818E001D886A /* EmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F3082954818E001D886A /* EmployeeVC.swift */; };
 		3636F30B295481A8001D886A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F30A295481A8001D886A /* ProfileVC.swift */; };
@@ -151,6 +153,8 @@
 		3622018B295DA8C100B2CC3D /* EventDescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDescriptionTableViewCell.xib; sourceTree = "<group>"; };
 		3622018E295DA96000B2CC3D /* EducationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationTableViewCell.swift; sourceTree = "<group>"; };
 		3622018F295DA96000B2CC3D /* EducationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EducationTableViewCell.xib; sourceTree = "<group>"; };
+		362D310F295F5CB600458A97 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		362D3111295F5D3D00458A97 /* EnumExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumExtension.swift; sourceTree = "<group>"; };
 		3636F30429547728001D886A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		3636F3082954818E001D886A /* EmployeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeVC.swift; sourceTree = "<group>"; };
 		3636F30A295481A8001D886A /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
@@ -252,6 +256,8 @@
 		090441A12955920E0088941F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				362D3113295F5D4D00458A97 /* Enums */,
+				362D310E295F5CA500458A97 /* Constant */,
 				3601D36F295DB4C2008B1F02 /* See More */,
 				0994122C295C3B6400C39E5A /* PopUpView */,
 				3669A4EC295C1BF7005015ED /* TextView */,
@@ -408,6 +414,22 @@
 				36187A6E2959C10F001CAB2B /* Storyboard.swift */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		362D310E295F5CA500458A97 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				362D310F295F5CB600458A97 /* Constant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		362D3113295F5D4D00458A97 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				362D3111295F5D3D00458A97 /* EnumExtension.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		3636F3032954770B001D886A /* HomeVC */ = {
@@ -1069,6 +1091,7 @@
 				3601D369295DABAA008B1F02 /* SkillsTableViewCell.swift in Sources */,
 				36F8AB71295AF7D400CA9CFA /* CVPreviewVC.swift in Sources */,
 				36FE65FB2954A0A3003E9CC0 /* EmployeesTableViewCell.swift in Sources */,
+				362D3112295F5D3D00458A97 /* EnumExtension.swift in Sources */,
 				3601D36D295DAC6F008B1F02 /* ContactTableViewCell.swift in Sources */,
 				3669A4E6295C1A07005015ED /* EducationTVCell.swift in Sources */,
 				090441B72955920E0088941F /* Date.swift in Sources */,
@@ -1082,6 +1105,7 @@
 				098D04F829598065001C2F05 /* CameraHandler.swift in Sources */,
 				090441B92955920E0088941F /* UITextField.swift in Sources */,
 				090441B82955920E0088941F /* UIImageView.swift in Sources */,
+				362D3110295F5CB600458A97 /* Constant.swift in Sources */,
 				3669A4EE295C1BF7005015ED /* TextView.swift in Sources */,
 				3636F3092954818E001D886A /* EmployeeVC.swift in Sources */,
 				0941311C2955B3E8008AC5CA /* BaseVC.swift in Sources */,
