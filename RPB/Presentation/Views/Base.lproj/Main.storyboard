@@ -423,7 +423,7 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWj-b6-tCe">
-                                        <rect key="frame" x="49" y="15.666666666666659" width="237" height="18.666666666666679"/>
+                                        <rect key="frame" x="49" y="15.666666666666659" width="237" height="18.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -1771,7 +1771,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1R8-aZ-7Am" customClass="CollapseTableView" customModule="CollapseTableView">
-                                <rect key="frame" x="20" y="199" width="335" height="468"/>
+                                <rect key="frame" x="20" y="199" width="335" height="478"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJu-OC-fMb">
@@ -1811,7 +1811,7 @@
                             <constraint firstItem="Bhp-0w-LcF" firstAttribute="top" secondItem="IGl-94-4eJ" secondAttribute="bottom" constant="30" id="J8r-Wo-kA9"/>
                             <constraint firstItem="1R8-aZ-7Am" firstAttribute="top" secondItem="Bhp-0w-LcF" secondAttribute="bottom" constant="30" id="LPh-bm-j2r"/>
                             <constraint firstItem="o2e-D6-CVy" firstAttribute="trailing" secondItem="1R8-aZ-7Am" secondAttribute="trailing" constant="20" id="Lyn-bh-pp7"/>
-                            <constraint firstItem="uJu-OC-fMb" firstAttribute="top" secondItem="1R8-aZ-7Am" secondAttribute="bottom" constant="10" id="NQg-ZR-gZp"/>
+                            <constraint firstItem="uJu-OC-fMb" firstAttribute="top" secondItem="1R8-aZ-7Am" secondAttribute="bottom" id="NQg-ZR-gZp"/>
                             <constraint firstItem="IGl-94-4eJ" firstAttribute="leading" secondItem="o2e-D6-CVy" secondAttribute="leading" constant="20" id="PTq-67-4sS"/>
                             <constraint firstItem="uJu-OC-fMb" firstAttribute="leading" secondItem="o2e-D6-CVy" secondAttribute="leading" id="X8g-7a-ERO"/>
                             <constraint firstItem="o2e-D6-CVy" firstAttribute="trailing" secondItem="Bhp-0w-LcF" secondAttribute="trailing" constant="20" id="fkZ-Pr-cme"/>

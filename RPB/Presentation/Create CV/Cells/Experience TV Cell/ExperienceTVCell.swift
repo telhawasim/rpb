@@ -43,6 +43,10 @@ class ExperienceTVCell: UITableViewCell {
     @IBOutlet weak var btnSwitch: UISwitch!
     // UIStackView
     @IBOutlet weak var endDateView: UIStackView!
+    // TextView
+    @IBOutlet weak var textView: UITextView!
+    // Button
+    @IBOutlet weak var btnSave: UIButton!
     
     //MARK: Variables
     var delegate: ExperienceTVCellProtocol?
@@ -65,6 +69,8 @@ class ExperienceTVCell: UITableViewCell {
         self.configurePicker()
         self.configureTextFields()
         self.configurePickerforYear()
+        self.configureButton()
+        self.configureTextView()
     }
     
     //MARK: Configure Labels
@@ -118,10 +124,29 @@ class ExperienceTVCell: UITableViewCell {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy"
         let currentYear = Int(formatter.string(from: Date())) ?? 0
-
+        
         for loop in stride(from: 2000, through: currentYear, by: 1) {
             years.append("\(loop)")
         }
+    }
+    
+    //MARK: Configure Button
+    func configureButton() {
+        self.btnSave.backgroundColor = UIColor.customBlue
+        self.btnSave.cornerRadiusButton(30)
+        self.btnSave.tintColor = UIColor.white
+        self.btnSave.titleLabel?.font = UIFont.montserratMedium(18)
+    }
+    
+    //MARK: Configure TextView
+    func configureTextView() {
+        self.textView.delegate = self
+        self.textView.addPadding(size: 10)
+        self.textView.text = "Description"
+        self.textView.textColor = UIColor.lightGray
+        self.textView.borderWidth = 1
+        self.textView.borderColor = UIColor.greyE2E2E2
+        self.textView.cornerRadius(10)
     }
     
     //MARK: Animation for DropDown Image
@@ -134,12 +159,13 @@ class ExperienceTVCell: UITableViewCell {
     //MARK: IBACTION
     @IBAction func isSwitchPressed(_ sender: Any) {
         if btnSwitch.isOn == true {
-            endDateView.isHidden = true
+            UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: { [self] in endDateView.isHidden = true })
+            
         } else {
-            txtEndDate.text = nil
-            txtEndYear.text = nil
-            UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: { [self] in endDateView.isHidden = false })
-        }
+                txtEndDate.text = nil
+                txtEndYear.text = nil
+                UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: { [self] in endDateView.isHidden = false })
+            }
     }
 }
 
@@ -213,5 +239,22 @@ extension ExperienceTVCell: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.dropDownAnimation(imageView: dropDownList, image: "arrow_down", index: textField.tag)
+    }
+}
+
+//MARK: TextView Methods
+extension ExperienceTVCell: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Description"
+            textView.textColor = UIColor.lightGray
+        }
     }
 }
