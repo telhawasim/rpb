@@ -30,11 +30,15 @@ class ExperienceTVCell: UITableViewCell {
     @IBOutlet weak var txtLocationType: UITextField!
     @IBOutlet weak var txtStartDate: UITextField!
     @IBOutlet weak var txtEndDate: UITextField!
+    @IBOutlet weak var txtStartYear: UITextField!
+    @IBOutlet weak var txtEndYear: UITextField!
     // UIImageView
     @IBOutlet weak var dropDownEmploymentType: UIImageView!
     @IBOutlet weak var dropDownLocationType: UIImageView!
     @IBOutlet weak var dropDownStartDate: UIImageView!
     @IBOutlet weak var dropDownEndDate: UIImageView!
+    @IBOutlet weak var dropDownStartYear: UIImageView!
+    @IBOutlet weak var dropDownEndYear: UIImageView!
     // Switch
     @IBOutlet weak var btnSwitch: UISwitch!
     // UIStackView
@@ -42,13 +46,17 @@ class ExperienceTVCell: UITableViewCell {
     
     //MARK: Variables
     var delegate: ExperienceTVCellProtocol?
+    var years = [String]()
     var employmentTypePicker = UIPickerView()
     var locationTypePicker = UIPickerView()
     var startDatePicker = UIPickerView()
     var endDatePicker = UIPickerView()
+    var startYearPicker = UIPickerView()
+    var endYearPicker = UIPickerView()
     var employmentType = ["", "Full-Time", "Part-Time", "Contract", "Overseas", "Trainee"]
     var locationType = ["", "On-Site", "Hybrid", "Remote"]
     var months = ["", "January", "February", "March", "April", "May", "June", "July", "August", "Spetember", "Octuber", "November", "December"]
+    lazy var dropDownList: [UIImageView] = [dropDownEmploymentType, dropDownLocationType, dropDownStartDate, dropDownStartYear, dropDownEndDate, dropDownEndYear]
     
     //MARK: Lifecylce
     override func awakeFromNib() {
@@ -56,6 +64,7 @@ class ExperienceTVCell: UITableViewCell {
         self.configureFont()
         self.configurePicker()
         self.configureTextFields()
+        self.configurePickerforYear()
     }
     
     //MARK: Configure Labels
@@ -81,21 +90,44 @@ class ExperienceTVCell: UITableViewCell {
         self.startDatePicker.delegate = self
         self.txtStartDate.inputView = startDatePicker
         self.endDatePicker.delegate = self
+        self.txtStartYear.inputView = startYearPicker
+        self.endYearPicker.delegate = self
         self.txtEndDate.inputView = endDatePicker
+        self.startYearPicker.delegate = self
+        self.txtEndYear.inputView = endYearPicker
     }
     
     //MARK: Configure TextFields
     func configureTextFields() {
         self.txtEmploymentType.delegate = self
+        self.txtEmploymentType.tag = 0
         self.txtLocationType.delegate = self
+        self.txtLocationType.tag = 1
         self.txtStartDate.delegate = self
+        self.txtStartDate.tag = 2
+        self.txtStartYear.delegate = self
+        self.txtStartYear.tag = 3
         self.txtEndDate.delegate = self
+        self.txtEndDate.tag = 4
+        self.txtEndYear.delegate = self
+        self.txtEndYear.tag = 5
+    }
+    
+    //MARK: Configure PickerView for Year
+    func configurePickerforYear() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy"
+        let currentYear = Int(formatter.string(from: Date())) ?? 0
+
+        for loop in stride(from: 2000, through: currentYear, by: 1) {
+            years.append("\(loop)")
+        }
     }
     
     //MARK: Animation for DropDown Image
-    func dropDownAnimation(imageView: UIImageView, image: String) {
+    func dropDownAnimation(imageView: [UIImageView], image: String, index: Int) {
         UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            imageView.image = UIImage(named: image)
+            imageView[index].image = UIImage(named: image)
         })
     }
     
@@ -104,6 +136,8 @@ class ExperienceTVCell: UITableViewCell {
         if btnSwitch.isOn == true {
             endDateView.isHidden = true
         } else {
+            txtEndDate.text = nil
+            txtEndYear.text = nil
             UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: { [self] in endDateView.isHidden = false })
         }
     }
@@ -125,6 +159,10 @@ extension ExperienceTVCell: UIPickerViewDelegate, UIPickerViewDataSource {
             return months.count
         case endDatePicker:
             return months.count
+        case startYearPicker:
+            return years.count
+        case endYearPicker:
+            return years.count
         default:
             return 0
         }
@@ -140,6 +178,10 @@ extension ExperienceTVCell: UIPickerViewDelegate, UIPickerViewDataSource {
             return months[row]
         case endDatePicker:
             return months[row]
+        case startYearPicker:
+            return years[row]
+        case endYearPicker:
+            return years[row]
         default:
             return ""
         }
@@ -154,6 +196,10 @@ extension ExperienceTVCell: UIPickerViewDelegate, UIPickerViewDataSource {
             txtStartDate.text = months[row]
         } else if pickerView == endDatePicker {
             txtEndDate.text = months[row]
+        } else if pickerView == startYearPicker {
+            txtStartYear.text = years[row]
+        } else if pickerView == endYearPicker {
+            txtEndYear.text = years[row]
         }
         delegate?.dismissPicker()
     }
@@ -162,26 +208,10 @@ extension ExperienceTVCell: UIPickerViewDelegate, UIPickerViewDataSource {
 // MARK: TextField Methods
 extension ExperienceTVCell: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField == txtEmploymentType {
-            self.dropDownAnimation(imageView: dropDownEmploymentType, image: "arrow_up")
-        } else if textField == txtLocationType {
-            self.dropDownAnimation(imageView: dropDownLocationType, image: "arrow_up")
-        } else if textField == txtStartDate {
-            self.dropDownAnimation(imageView: dropDownStartDate, image: "arrow_up")
-        } else if textField == txtEndDate {
-            self.dropDownAnimation(imageView: dropDownEndDate, image: "arrow_up")
-        }
+        self.dropDownAnimation(imageView: dropDownList, image: "arrow_up", index: textField.tag)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField == txtEmploymentType {
-            self.dropDownAnimation(imageView: dropDownEmploymentType, image: "arrow_down")
-        } else if textField == txtLocationType {
-            self.dropDownAnimation(imageView: dropDownLocationType, image: "arrow_down")
-        } else if textField == txtStartDate {
-            self.dropDownAnimation(imageView: dropDownStartDate, image: "arrow_down")
-        } else if textField == txtEndDate {
-            self.dropDownAnimation(imageView: dropDownEndDate, image: "arrow_down")
-        }
+        self.dropDownAnimation(imageView: dropDownList, image: "arrow_down", index: textField.tag)
     }
 }

@@ -532,8 +532,10 @@
                 <outlet property="btnSwitch" destination="Q2r-dj-xAs" id="At6-Ag-Psv"/>
                 <outlet property="dropDownEmploymentType" destination="keR-pM-jSs" id="Rxt-5w-vCp"/>
                 <outlet property="dropDownEndDate" destination="osZ-w1-ffj" id="ngk-dK-JhK"/>
+                <outlet property="dropDownEndYear" destination="k7o-6I-bdU" id="LMM-w4-tne"/>
                 <outlet property="dropDownLocationType" destination="HiE-k5-IFQ" id="wuk-cP-k12"/>
                 <outlet property="dropDownStartDate" destination="0us-sJ-Ybo" id="WZ2-ka-cId"/>
+                <outlet property="dropDownStartYear" destination="KGG-DK-h3e" id="tHB-BV-0Yi"/>
                 <outlet property="endDateView" destination="9gh-gy-cew" id="Bbr-N6-EMr"/>
                 <outlet property="lblCompanyName" destination="Cdj-Bt-zrY" id="1S2-zk-26e"/>
                 <outlet property="lblCurrentlyWorking" destination="n3L-P8-SVv" id="dPK-La-73D"/>
@@ -547,8 +549,10 @@
                 <outlet property="lblTitle" destination="JzS-0q-eVI" id="0bu-Cb-zTA"/>
                 <outlet property="txtEmploymentType" destination="uuu-LE-Q6w" id="mJq-Kr-mPY"/>
                 <outlet property="txtEndDate" destination="fBa-JS-CMt" id="RYN-oD-XVm"/>
+                <outlet property="txtEndYear" destination="aNL-uH-o6q" id="2Gi-bT-nC5"/>
                 <outlet property="txtLocationType" destination="9vA-Pt-kyu" id="Jvt-Ib-fHH"/>
                 <outlet property="txtStartDate" destination="ewV-Zu-x0f" id="VDW-63-hcr"/>
+                <outlet property="txtStartYear" destination="hgy-ja-YRl" id="vTq-CM-MHk"/>
             </connections>
             <point key="canvasLocation" x="35.114503816793892" y="261.61971830985919"/>
         </tableViewCell>
