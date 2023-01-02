@@ -304,7 +304,7 @@
                         </subviews>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="m1F-jg-6Tl">
-                        <rect key="frame" x="0.0" y="535" width="320" height="423"/>
+                        <rect key="frame" x="0.0" y="535" width="320" height="303"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="jBd-Rk-mSL">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
@@ -514,18 +514,18 @@
                                     <constraint firstAttribute="height" constant="60" id="oTw-BG-Wcg"/>
                                 </constraints>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="O8N-kw-KPq">
-                                <rect key="frame" x="0.0" y="180" width="320" height="153"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="O8N-kw-KPq">
+                                <rect key="frame" x="0.0" y="180" width="320" height="33"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="153" id="dl3-sD-WhO"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="153" id="z79-dr-a6p"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13V-EX-cNT">
-                                <rect key="frame" x="0.0" y="363" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="243" width="320" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="6Sv-sa-D4R"/>
                                 </constraints>
@@ -567,6 +567,7 @@
                 <outlet property="lblStartYear" destination="1uP-iD-fQs" id="6PZ-B9-1Wv"/>
                 <outlet property="lblTitle" destination="JzS-0q-eVI" id="0bu-Cb-zTA"/>
                 <outlet property="textView" destination="O8N-kw-KPq" id="zMa-50-mpE"/>
+                <outlet property="textViewHeight" destination="z79-dr-a6p" id="H7F-sf-VfY"/>
                 <outlet property="txtEmploymentType" destination="uuu-LE-Q6w" id="mJq-Kr-mPY"/>
                 <outlet property="txtEndDate" destination="fBa-JS-CMt" id="RYN-oD-XVm"/>
                 <outlet property="txtEndYear" destination="aNL-uH-o6q" id="2Gi-bT-nC5"/>

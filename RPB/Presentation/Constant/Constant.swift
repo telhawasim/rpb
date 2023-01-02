@@ -13,15 +13,16 @@ var infoData = ["Name", "Designation", "Date of Birth", "Email Address", "Phone 
 var infoPlaceholder = ["Dawid", "iOS Developer", "07-08-99", "dawid.name@gmail.com", "03350438764"]
 var educationData = ["School / University", "Degree", "Field of Study"]
 var educationPlaceholder = ["Virtual University", "Master's Degree", "BIT"]
-var experienceData = ["Title","Employment Type","Comapny Name","Location","Location Type"]
-var tagsArray = ["Excellent Communication","Excellent","Wireframe","Design system","Prototyping","Figma","Figma"]
+var experienceData = ["Title", "Employment Type", "Comapny Name", "Location", "Location Type"]
+var tagsArray = ["Excellent Communication", "Excellent", "Wireframe", "Design system", "Prototyping", "Figma", "Figma"]
+var months = ["", "January", "February", "March", "April", "May", "June", "July", "August", "Spetember", "Octuber", "November", "December"]
 
 struct Section {
     var section: String!
-    var rows: [Int]!
+    var rows: Int!
     var expanded: Bool!
     
-    init(section: String!, rows: [Int], expanded: Bool!) {
+    init(section: String!, rows: Int!, expanded: Bool!) {
         self.section = section
         self.rows = rows
         self.expanded = expanded

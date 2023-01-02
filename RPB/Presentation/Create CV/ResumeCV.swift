@@ -30,10 +30,10 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.btnInfoPressed(0)
         self.configureLabel()
         self.configureTableView()
-        infoModel = [(Section(section: "Basic Info", rows: [1, 1, 1, 1, 1], expanded: true)),
-                     (Section(section: "Education", rows: [1, 1, 1, 1, 1], expanded: false)),
-                     (Section(section: "Summary", rows: [1], expanded: false))]
-        experienceModel = [Section(section: "Add Experience", rows: [1], expanded: true)]
+        infoModel = [(Section(section: "Basic Info", rows: 5, expanded: true)),
+                     (Section(section: "Education", rows: 5, expanded: false)),
+                     (Section(section: "Summary", rows: 1, expanded: false))]
+        experienceModel = [Section(section: "Add Experience", rows: 1, expanded: true)]
         
     }
     
@@ -148,7 +148,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
         switch infoType {
         case .info:
             if self.infoModel[section].expanded {
-                return infoModel[section].rows.count
+                return infoModel[section].rows
             } else {
                 return 0
             }
@@ -156,7 +156,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             return 0
         case .experience:
             if self.experienceModel[section].expanded {
-                return experienceModel[section].rows.count
+                return experienceModel[section].rows
             } else {
                 return 0
             }
@@ -199,6 +199,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
         case .experience:
             headerView.lblHeading.text = experienceModel[section].section
             headerView.lblHeading.font = UIFont.montserratMedium(20)
+            headerView.btnAddMore.isHidden = true
             headerView.tag = section
             headerView.imgArrow.image = UIImage(named: "add_more")
             if self.experienceModel[section].expanded == false {
@@ -270,11 +271,17 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                     let cell = tableView.dequeueReusableCell(withIdentifier: "EducationTVCell", for: indexPath) as! EducationTVCell
                     cell.lblDate.text = "Start Date"
                     cell.lblYear.text = "Year"
+                    cell.txtDate.placeholder = "December"
+                    cell.txtYear.placeholder = "2021"
+                    cell.delegate = self
                     return cell
                 } else { // Section 2 (row 5)
                     let cell = tableView.dequeueReusableCell(withIdentifier: "EducationTVCell", for: indexPath) as! EducationTVCell
                     cell.lblDate.text = "End Date"
                     cell.lblYear.text = "Year"
+                    cell.txtDate.placeholder = "December"
+                    cell.txtYear.placeholder = "2022"
+                    cell.delegate = self
                     return cell
                 }
             } else { // Section 3

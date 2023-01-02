@@ -48,6 +48,8 @@ class ExperienceTVCell: UITableViewCell {
     // Button
     @IBOutlet weak var btnSave: UIButton!
     
+    @IBOutlet weak var textViewHeight: NSLayoutConstraint!
+    
     //MARK: Variables
     var delegate: ExperienceTVCellProtocol?
     var years = [String]()
@@ -59,7 +61,6 @@ class ExperienceTVCell: UITableViewCell {
     var endYearPicker = UIPickerView()
     var employmentType = ["", "Full-Time", "Part-Time", "Contract", "Overseas", "Trainee"]
     var locationType = ["", "On-Site", "Hybrid", "Remote"]
-    var months = ["", "January", "February", "March", "April", "May", "June", "July", "August", "Spetember", "Octuber", "November", "December"]
     lazy var dropDownList: [UIImageView] = [dropDownEmploymentType, dropDownLocationType, dropDownStartDate, dropDownStartYear, dropDownEndDate, dropDownEndYear]
     
     //MARK: Lifecylce
@@ -75,16 +76,16 @@ class ExperienceTVCell: UITableViewCell {
     
     //MARK: Configure Labels
     func configureFont() {
-        self.lblTitle.font = UIFont.montserratSemiBold(16)
-        self.lblEmploymentType.font = UIFont.montserratSemiBold(16)
-        self.lblCompanyName.font = UIFont.montserratSemiBold(16)
-        self.lblLocation.font = UIFont.montserratSemiBold(16)
-        self.lblLocationType.font = UIFont.montserratSemiBold(16)
-        self.lblCurrentlyWorking.font = UIFont.montserratMedium(16)
-        self.lblStartDate.font = UIFont.montserratSemiBold(16)
-        self.lblEndDate.font = UIFont.montserratSemiBold(16)
-        self.lblStartYear.font = UIFont.montserratSemiBold(16)
-        self.lblEndYear.font = UIFont.montserratSemiBold(16)
+        self.lblTitle.font = UIFont.montserratRegular(16)
+        self.lblEmploymentType.font = UIFont.montserratRegular(16)
+        self.lblCompanyName.font = UIFont.montserratRegular(16)
+        self.lblLocation.font = UIFont.montserratRegular(16)
+        self.lblLocationType.font = UIFont.montserratRegular(16)
+        self.lblCurrentlyWorking.font = UIFont.montserratRegular(16)
+        self.lblStartDate.font = UIFont.montserratRegular(16)
+        self.lblEndDate.font = UIFont.montserratRegular(16)
+        self.lblStartYear.font = UIFont.montserratRegular(16)
+        self.lblEndYear.font = UIFont.montserratRegular(16)
     }
     
     //MARK: Configure UIPickerView
@@ -162,10 +163,10 @@ class ExperienceTVCell: UITableViewCell {
             UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: { [self] in endDateView.isHidden = true })
             
         } else {
-                txtEndDate.text = nil
-                txtEndYear.text = nil
-                UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: { [self] in endDateView.isHidden = false })
-            }
+            txtEndDate.text = nil
+            txtEndYear.text = nil
+            UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: { [self] in endDateView.isHidden = false })
+        }
     }
 }
 
@@ -257,4 +258,11 @@ extension ExperienceTVCell: UITextViewDelegate {
             textView.textColor = UIColor.lightGray
         }
     }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        let sizeToFitIn = CGSizeMake(self.textView.bounds.size.width, CGFloat(MAXFLOAT))
+        let newSize = self.textView.sizeThatFits(sizeToFitIn)
+        self.textViewHeight.constant = newSize.height
+    }
+    
 }

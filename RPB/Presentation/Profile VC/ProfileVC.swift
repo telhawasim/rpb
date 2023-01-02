@@ -59,7 +59,7 @@ class ProfileVC: BaseVC {
         self.lblName.font = UIFont.montserratBold(20)
         self.lblDesignation.font = UIFont.montserratMedium(14)
         self.lblEmail.font = UIFont.montserratRegular(16)
-        self.lblProfiles.font = UIFont.montserratSemiBold(24)
+        self.lblProfiles.font = UIFont.montserratRegular(24)
     }
     
     //MARK: Configure Bottom Sheet

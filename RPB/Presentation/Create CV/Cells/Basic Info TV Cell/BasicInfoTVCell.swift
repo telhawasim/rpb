@@ -22,7 +22,7 @@ class BasicInfoTVCell: UITableViewCell {
     }
     
     func configureFont() {
-        self.lblTitle.font = UIFont.montserratSemiBold(16)
+        self.lblTitle.font = UIFont.montserratRegular(16)
     }
     
 }
