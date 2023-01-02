@@ -7,24 +7,6 @@
 
 import UIKit
 
-enum InfoType {
-    case info
-    case skills
-    case experience
-}
-
-struct Section {
-    var section: String!
-    var rows: [Int]!
-    var expanded: Bool!
-    
-    init(section: String!, rows: [Int], expanded: Bool!) {
-        self.section = section
-        self.rows = rows
-        self.expanded = expanded
-    }
-}
-
 class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     
     //MARK: Outlet
@@ -41,11 +23,6 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     var infoModel = [Section]()
     var experienceModel = [Section]()
     var selectedHeader = Int()
-    var infoData = ["Name", "Designation", "Date of Birth", "Email Address", "Phone Number"]
-    var infoPlaceholder = ["Dawid", "iOS Developer", "07-08-99", "dawid.name@gmail.com", "03350438764"]
-    var educationData = ["School / University", "Degree", "Field of Study"]
-    var educationPlaceholder = ["Virtual University", "Master's Degree", "BIT"]
-    var experienceData = ["Title", "Employment Type", "Comapny Name", "Location", "Location Type"]
     
     //MARK: Lifecylce
     override func viewDidLoad() {

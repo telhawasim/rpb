@@ -54,6 +54,8 @@
 		3636F30529547728001D886A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F30429547728001D886A /* HomeVC.swift */; };
 		3636F3092954818E001D886A /* EmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F3082954818E001D886A /* EmployeeVC.swift */; };
 		3636F30B295481A8001D886A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F30A295481A8001D886A /* ProfileVC.swift */; };
+		3637D7752962B5970086A699 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3637D7742962B5970086A699 /* Constant.swift */; };
+		3637D7782962B5E90086A699 /* EnumExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3637D7772962B5E90086A699 /* EnumExtension.swift */; };
 		365010DA2955ADE1003F3262 /* TabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365010D92955ADE1003F3262 /* TabbarVC.swift */; };
 		365010DD2955CBD2003F3262 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365010DC2955CBD2003F3262 /* TableView.swift */; };
 		365010E42955EC33003F3262 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365010E32955EC33003F3262 /* SettingVC.swift */; };
@@ -154,6 +156,8 @@
 		3636F30429547728001D886A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		3636F3082954818E001D886A /* EmployeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeVC.swift; sourceTree = "<group>"; };
 		3636F30A295481A8001D886A /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		3637D7742962B5970086A699 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		3637D7772962B5E90086A699 /* EnumExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumExtension.swift; sourceTree = "<group>"; };
 		365010D42955A3D4003F3262 /* RPB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		365010D52955A3D4003F3262 /* RPBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		365010D62955A3D4003F3262 /* RPBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -252,6 +256,8 @@
 		090441A12955920E0088941F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3637D7762962B5E90086A699 /* Enums */,
+				3637D7732962B5970086A699 /* Constant */,
 				3601D36F295DB4C2008B1F02 /* See More */,
 				0994122C295C3B6400C39E5A /* PopUpView */,
 				3669A4EC295C1BF7005015ED /* TextView */,
@@ -434,6 +440,22 @@
 				3636F30A295481A8001D886A /* ProfileVC.swift */,
 			);
 			path = "Profile VC";
+			sourceTree = "<group>";
+		};
+		3637D7732962B5970086A699 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				3637D7742962B5970086A699 /* Constant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		3637D7762962B5E90086A699 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				3637D7772962B5E90086A699 /* EnumExtension.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		365010D72955A84D003F3262 /* Custom Fonts */ = {
@@ -1069,6 +1091,7 @@
 				3601D369295DABAA008B1F02 /* SkillsTableViewCell.swift in Sources */,
 				36F8AB71295AF7D400CA9CFA /* CVPreviewVC.swift in Sources */,
 				36FE65FB2954A0A3003E9CC0 /* EmployeesTableViewCell.swift in Sources */,
+				3637D7782962B5E90086A699 /* EnumExtension.swift in Sources */,
 				3601D36D295DAC6F008B1F02 /* ContactTableViewCell.swift in Sources */,
 				3669A4E6295C1A07005015ED /* EducationTVCell.swift in Sources */,
 				090441B72955920E0088941F /* Date.swift in Sources */,
@@ -1082,6 +1105,7 @@
 				098D04F829598065001C2F05 /* CameraHandler.swift in Sources */,
 				090441B92955920E0088941F /* UITextField.swift in Sources */,
 				090441B82955920E0088941F /* UIImageView.swift in Sources */,
+				3637D7752962B5970086A699 /* Constant.swift in Sources */,
 				3669A4EE295C1BF7005015ED /* TextView.swift in Sources */,
 				3636F3092954818E001D886A /* EmployeeVC.swift in Sources */,
 				0941311C2955B3E8008AC5CA /* BaseVC.swift in Sources */,
