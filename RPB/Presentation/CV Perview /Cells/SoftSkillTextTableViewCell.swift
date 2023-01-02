@@ -29,8 +29,8 @@ class SoftSkillTextTableViewCell: UITableViewCell {
 
     // MARK: Fonts
     func configureFonts() {
-        lblSkills.font = UIFont.montserratSemiBold(20)
-        lblSoftSkills.font = UIFont.montserratSemiBold(16)
+        lblSkills.font = UIFont.montserratRegular(20)
+        lblSoftSkills.font = UIFont.montserratRegular(16)
         self.setColors()
     }
 }

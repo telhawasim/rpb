@@ -26,11 +26,9 @@ class TabbarVC: UIViewController {
         super.viewDidLoad()
         self.btnHome.tintColor = UIColor.white
         self.homeView.backgroundColor = UIColor.customBlue
-        self.tabbarView.addShadow()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
         self.homeTabbar()
+        self.tabbarView.addShadow()
+       
     }
 
     @IBAction func tappedHomeButton(_ sender: Any) {

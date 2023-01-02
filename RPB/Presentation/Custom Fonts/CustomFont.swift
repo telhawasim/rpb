@@ -30,7 +30,11 @@ extension UIFont {
     static func montserratMedium(_ size: Int) -> UIFont {
         return customFont(name: "Montserrat-Medium", size: CGFloat(size))
     }
+    
+    static func montserratThin(_ size: Int) -> UIFont {
+        return customFont(name: "Montserrat-Thin", size: CGFloat(size))
+    }
 }
 
 // Example
-// myLabel.text = UIFont.MontserratRegular(16)
+// myLabel.font = UIFont.MontserratRegular(16)

@@ -34,9 +34,9 @@ class ExperienceTableViewCell: UITableViewCell {
 
     // MARK: Fonts
     func configureFonts() {
-        lblSkills.font = UIFont.montserratSemiBold(16)
-        lblCompany.font = UIFont.montserratMedium(16)
-        lblExperience.font = UIFont.montserratRegular(16)
-        lblSession.font = UIFont.montserratMedium(16)
+        lblSkills.font =  UIFont.montserratRegular(16)
+        lblCompany.font = UIFont.montserratThin(16)
+        lblExperience.font = UIFont.montserratThin(16)
+        lblSession.font = UIFont.montserratRegular(14)
     }
 }

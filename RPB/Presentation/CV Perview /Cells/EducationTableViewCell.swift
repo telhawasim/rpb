@@ -31,9 +31,9 @@ class EducationTableViewCell: UITableViewCell {
 
     // MARK: Fonts
     func configureFonts() {
-        lblMasterText.font = UIFont.montserratSemiBold(16)
-        lblMasterDegree.font = UIFont.montserratRegular(16)
-        lblSession.font = UIFont.montserratMedium(16)
+        lblMasterText.font = UIFont.montserratRegular(14)
+        lblMasterDegree.font = UIFont.montserratThin(14)
+        lblSession.font = UIFont.montserratRegular(14)
         self.setColors()
     }
 }

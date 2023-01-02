@@ -8,6 +8,8 @@ disabled_rules:
 - trailing_whitespace
 - unused_closure_parameter
 - inclusive_language
+- control_statement
 - mark
+
 opt_in_rules:
 - opening_brace

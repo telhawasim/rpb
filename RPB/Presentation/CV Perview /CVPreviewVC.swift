@@ -97,7 +97,7 @@ extension CVPreviewVC: UITableViewDelegate, UITableViewDataSource {
             cell.topConstraint.constant = 30
             cell.bottomConstraint.constant = 20
             return cell
-        }else if indexPath.row == 9 {
+        } else if indexPath.row == 9 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ExperienceTableViewCell.className, for: indexPath) as? ExperienceTableViewCell else {
                 fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
             }
