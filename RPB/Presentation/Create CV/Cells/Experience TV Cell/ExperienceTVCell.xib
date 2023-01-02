@@ -518,7 +518,7 @@
                                 <rect key="frame" x="0.0" y="180" width="320" height="33"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="153" id="z79-dr-a6p"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="250" id="z79-dr-a6p"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

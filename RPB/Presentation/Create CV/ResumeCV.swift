@@ -21,6 +21,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     //MARK: Variables
     var infoType: InfoType = .info
     var infoModel = [Section]()
+    var skillsModel = [Section]()
     var experienceModel = [Section]()
     var selectedHeader = Int()
     
@@ -33,6 +34,8 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         infoModel = [(Section(section: "Basic Info", rows: 5, expanded: true)),
                      (Section(section: "Education", rows: 5, expanded: false)),
                      (Section(section: "Summary", rows: 1, expanded: false))]
+        skillsModel = [(Section(section: "Soft Skills", rows: 1, expanded: true)),
+                    (Section(section: "Hard Skills", rows: 1, expanded: false))]
         experienceModel = [Section(section: "Add Experience", rows: 1, expanded: true)]
         
     }
@@ -48,7 +51,11 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
                     infoModel[selectedHeader].expanded = false
                 }
             case .skills:
-                return
+                if skillsModel[selectedHeader].expanded == false {
+                    skillsModel[selectedHeader].expanded = true
+                } else {
+                    skillsModel[selectedHeader].expanded = false
+                }
             case .experience:
                 if experienceModel[selectedHeader].expanded == false {
                     experienceModel[selectedHeader].expanded = true
@@ -94,6 +101,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.tableView.register(EducationTVCell.className)
         self.tableView.register(SummaryTVCell.className)
         self.tableView.register(DobTVCell.className)
+        self.tableView.register(TagsTableViewCell.className)
         self.tableView.register(ExperienceTVCell.className)
         self.tableView.register(UINib(nibName: ResumeHeaderCell.className, bundle: nil), forHeaderFooterViewReuseIdentifier: ResumeHeaderCell.className)
     }
@@ -137,7 +145,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
         case .info:
             return infoModel.count
         case .skills:
-            return 0
+            return skillsModel.count
         case .experience:
             return experienceModel.count
         }
@@ -153,7 +161,11 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 return 0
             }
         case .skills:
-            return 0
+            if self.skillsModel[section].expanded {
+                return skillsModel[section].rows
+            } else {
+                return 0
+            }
         case .experience:
             if self.experienceModel[section].expanded {
                 return experienceModel[section].rows
@@ -195,7 +207,26 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                                   completion: nil)
             }
         case .skills:
-            return UIView()
+            headerView.lblHeading.text = skillsModel[section].section
+            headerView.lblHeading.font = UIFont.montserratMedium(20)
+            headerView.tag = section
+            if self.skillsModel[section].expanded == false {
+                UIView.transition(with: headerView.imgArrow,
+                                  duration: 0.3,
+                                  options: .transitionCrossDissolve,
+                                  animations: { headerView.imgArrow.image = UIImage(named: "arrow_right") },
+                                  completion: nil)
+                headerView.headerView.backgroundColor = .clear
+                headerView.headerView.borderWidth = 1
+            } else {
+                headerView.headerView.backgroundColor = UIColor.blueF1F1FF
+                headerView.headerView.borderWidth = 0
+                UIView.transition(with: headerView.imgArrow,
+                                  duration: 0.3,
+                                  options: .transitionCrossDissolve,
+                                  animations: { headerView.imgArrow.image = UIImage(named: "arrow_down") },
+                                  completion: nil)
+            }
         case .experience:
             headerView.lblHeading.text = experienceModel[section].section
             headerView.lblHeading.font = UIFont.montserratMedium(20)
@@ -227,7 +258,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 return 65
             }
         case .skills:
-            return 0
+            return 65
         case .experience:
             return 65
         }
@@ -289,7 +320,8 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 return cell
             }
         case .skills:
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TagsTableViewCell", for: indexPath) as! TagsTableViewCell
+            return cell
         case .experience:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceTVCell", for: indexPath) as! ExperienceTVCell
             cell.delegate = self
