@@ -7,6 +7,24 @@
 
 import UIKit
 
+enum InfoType {
+    case info
+    case skills
+    case experience
+}
+
+struct Section {
+    var section: String!
+    var rows: [Int]!
+    var expanded: Bool!
+    
+    init(section: String!, rows: [Int], expanded: Bool!) {
+        self.section = section
+        self.rows = rows
+        self.expanded = expanded
+    }
+}
+
 class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     
     //MARK: Outlet
@@ -22,8 +40,12 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     var infoType: InfoType = .info
     var infoModel = [Section]()
     var experienceModel = [Section]()
-    var skillsModel = [Section]()
     var selectedHeader = Int()
+    var infoData = ["Name", "Designation", "Date of Birth", "Email Address", "Phone Number"]
+    var infoPlaceholder = ["Dawid", "iOS Developer", "07-08-99", "dawid.name@gmail.com", "03350438764"]
+    var educationData = ["School / University", "Degree", "Field of Study"]
+    var educationPlaceholder = ["Virtual University", "Master's Degree", "BIT"]
+    var experienceData = ["Title", "Employment Type", "Comapny Name", "Location", "Location Type"]
     
     //MARK: Lifecylce
     override func viewDidLoad() {
@@ -35,8 +57,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
                      (Section(section: "Education", rows: [1, 1, 1, 1, 1], expanded: false)),
                      (Section(section: "Summary", rows: [1], expanded: false))]
         experienceModel = [Section(section: "Add Experience", rows: [1], expanded: true)]
-        skillsModel = [(Section(section: "Soft Skills", rows: [1], expanded: true)),
-                       (Section(section: "Hard Skills", rows: [1], expanded: false))]
+        
     }
     
     @objc func tapInfoSection(_ gesture: UITapGestureRecognizer) {
@@ -50,11 +71,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
                     infoModel[selectedHeader].expanded = false
                 }
             case .skills:
-                if skillsModel[selectedHeader].expanded == false {
-                    skillsModel[selectedHeader].expanded = true
-                } else {
-                    skillsModel[selectedHeader].expanded = false
-                }
+                return
             case .experience:
                 if experienceModel[selectedHeader].expanded == false {
                     experienceModel[selectedHeader].expanded = true
@@ -62,8 +79,8 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
                     experienceModel[selectedHeader].expanded = false
                 }
             }
+            
         }
-        
         UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {self.tableView.reloadData()}, completion: nil)
     }
     
@@ -143,7 +160,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
         case .info:
             return infoModel.count
         case .skills:
-            return skillsModel.count
+            return 0
         case .experience:
             return experienceModel.count
         }
@@ -159,11 +176,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 return 0
             }
         case .skills:
-            if self.skillsModel[section].expanded {
-                return skillsModel[section].rows.count
-            } else {
-                return 0
-            }
+            return 0
         case .experience:
             if self.experienceModel[section].expanded {
                 return experienceModel[section].rows.count
@@ -205,17 +218,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                                   completion: nil)
             }
         case .skills:
-            headerView.lblHeading.text = skillsModel[section].section
-            headerView.lblHeading.font = UIFont.montserratMedium(20)
-            headerView.tag = section
-            headerView.imgArrow.image = UIImage(named: "add_more")
-            if self.skillsModel[section].expanded == false {
-                headerView.headerView.backgroundColor = UIColor.white
-                headerView.headerView.borderWidth = 1
-            } else {
-                headerView.headerView.borderWidth = 0
-                headerView.headerView.backgroundColor = UIColor.blueF1F1FF
-            }
+            return UIView()
         case .experience:
             headerView.lblHeading.text = experienceModel[section].section
             headerView.lblHeading.font = UIFont.montserratMedium(20)
@@ -233,6 +236,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
         headerView.addGestureRecognizer(tapGesture)
         tapGesture.delegate = self
         return headerView
+        
     }
     
     //MARK: Height for Header
@@ -245,10 +249,11 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 return 65
             }
         case .skills:
-            return 65
+            return 0
         case .experience:
             return 65
         }
+        
     }
     
     //MARK: Cell for Row At
@@ -303,8 +308,8 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         case .experience:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceTVCell", for: indexPath) as! ExperienceTVCell
-            //            cell.lblTitle.text = infoData[indexPath.row]
-            //            cell.txtInfo.placeholder = infoPlaceholder[indexPath.row]
+//            cell.lblTitle.text = infoData[indexPath.row]
+//            cell.txtInfo.placeholder = infoPlaceholder[indexPath.row]
             return cell
         }
         

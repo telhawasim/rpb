@@ -18,7 +18,8 @@ class SkillsTableViewCell: UITableViewCell {
     }
     
     //MARK: Variables
-   
+    var tagsArray =  ["Excellent Communication","Excellent","Wireframe","Design system","Prototyping","Figma","Figma"]
+    
     //MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
