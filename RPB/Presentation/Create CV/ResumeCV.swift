@@ -37,7 +37,6 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         skillsModel = [(Section(section: "Soft Skills", rows: 1, expanded: true)),
                     (Section(section: "Hard Skills", rows: 1, expanded: false))]
         experienceModel = [Section(section: "Add Experience", rows: 1, expanded: true)]
-        
     }
     
     @objc func tapInfoSection(_ gesture: UITapGestureRecognizer) {
@@ -216,6 +215,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                                   options: .transitionCrossDissolve,
                                   animations: { headerView.imgArrow.image = UIImage(named: "arrow_right") },
                                   completion: nil)
+                headerView.btnAddMore.isHidden = true
                 headerView.headerView.backgroundColor = .clear
                 headerView.headerView.borderWidth = 1
             } else {

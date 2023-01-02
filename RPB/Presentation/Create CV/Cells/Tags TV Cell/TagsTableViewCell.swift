@@ -25,6 +25,7 @@ class TagsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.registerCell()
+        self.tagsTextView.addPadding(size: 10)
     }
     
     @IBAction func tappedAddButton(_ sender: Any) {
@@ -68,10 +69,8 @@ extension TagsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         
         if collectionView.numberOfItems(inSection: section) == 1 {
             let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-            return UIEdgeInsets(top: 0, left: -40, bottom: 0, right: collectionView.frame.width - flowLayout.itemSize.width)
+            return UIEdgeInsets(top: 0, left: -50, bottom: 0, right: collectionView.frame.width - flowLayout.itemSize.width)
         }
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 }
-
-
