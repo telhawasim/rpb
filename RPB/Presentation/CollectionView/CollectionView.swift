@@ -7,8 +7,8 @@
 
 import UIKit
 
-extension UICollectionView{
-    func register(_ name: String){
+extension UICollectionView {
+    func register(_ name: String) {
         self.register(UINib(nibName: name, bundle: nil), forCellWithReuseIdentifier: name)
     }
 }

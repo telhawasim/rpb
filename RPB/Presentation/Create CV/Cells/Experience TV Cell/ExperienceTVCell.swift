@@ -15,6 +15,7 @@ class ExperienceTVCell: UITableViewCell {
     @IBOutlet weak var lblCompanyName: UILabel!
     @IBOutlet weak var lblLocation: UILabel!
     @IBOutlet weak var lblLocationType: UILabel!
+    
     //MARK: Variables
     
     //MARK: Lifecylce

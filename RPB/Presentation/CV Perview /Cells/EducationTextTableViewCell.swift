@@ -29,7 +29,7 @@ class EducationTextTableViewCell: UITableViewCell {
 
     // MARK: Fonts
     func configureFonts() {
-        lblEducation.font = UIFont.montserratSemiBold(16)
+        lblEducation.font = UIFont.montserratRegular(20)
         self.setColors()
     }
 }

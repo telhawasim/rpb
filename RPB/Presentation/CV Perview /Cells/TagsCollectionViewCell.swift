@@ -14,7 +14,8 @@ class TagsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lblTagsName: UILabel!
     
     //MARK: Variables
-    
+    var addTags: (()->Void)?
+
     //MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +31,10 @@ class TagsCollectionViewCell: UICollectionViewCell {
 
     // MARK: Fonts
     func configureFonts() {
-        lblTagsName.font = UIFont.montserratMedium(15)
+        lblTagsName.font = UIFont.montserratRegular(12)
+    }
+    
+    @IBAction func tappedRemoveTag(_ sender: Any) {
+        addTags?()
     }
 }

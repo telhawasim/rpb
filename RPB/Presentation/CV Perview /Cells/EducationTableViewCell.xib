@@ -60,7 +60,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="lblMasterDegree" destination="H0Y-Np-OJv" id="oTh-EM-TCg"/>
+                <outlet property="lblMasterDegree" destination="Nxb-nr-mWk" id="iQz-bZ-qY2"/>
                 <outlet property="lblMasterText" destination="H0Y-Np-OJv" id="Br8-wf-qxC"/>
                 <outlet property="lblSession" destination="Nvq-4U-7gB" id="bS5-fu-7NA"/>
             </connections>

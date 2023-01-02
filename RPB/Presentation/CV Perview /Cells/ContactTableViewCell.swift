@@ -31,9 +31,9 @@ class ContactTableViewCell: UITableViewCell {
 
     // MARK: Fonts
     func configureFonts() {
-        lblContact.font = UIFont.montserratSemiBold(16)
-        lblEmail.font = UIFont.montserratMedium(16)
-        lblPhone.font = UIFont.montserratMedium(16)
+        lblContact.font = UIFont.montserratRegular(20)
+        lblEmail.font = UIFont.montserratRegular(14)
+        lblPhone.font = UIFont.montserratRegular(14)
         self.setColors()
     }
 }
