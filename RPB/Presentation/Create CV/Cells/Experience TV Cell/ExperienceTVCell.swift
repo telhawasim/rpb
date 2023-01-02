@@ -9,6 +9,7 @@ import UIKit
 
 protocol ExperienceTVCellProtocol {
     func dismissPicker()
+    func adjustTextViewHeight()
 }
 
 class ExperienceTVCell: UITableViewCell {
@@ -72,6 +73,8 @@ class ExperienceTVCell: UITableViewCell {
         self.configurePickerforYear()
         self.configureButton()
         self.configureTextView()
+//        self.textViewHeight = textView.heightAnchor.constraint(equalToConstant: 40)
+//        self.textViewHeight.isActive = true
     }
     
     //MARK: Configure Labels
@@ -156,6 +159,13 @@ class ExperienceTVCell: UITableViewCell {
             imageView[index].image = UIImage(named: image)
         })
     }
+    
+//    func adjustTextViewHeight() {
+//        let fixedWidth = textView.frame.size.width
+//        let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+//        self.textViewHeight.constant = newSize.height
+//        delegate?.adjustTextViewHeight()
+//    }
     
     //MARK: IBACTION
     @IBAction func isSwitchPressed(_ sender: Any) {
@@ -259,10 +269,8 @@ extension ExperienceTVCell: UITextViewDelegate {
         }
     }
     
-    func textViewDidChange(_ textView: UITextView) {
-        let sizeToFitIn = CGSizeMake(self.textView.bounds.size.width, CGFloat(MAXFLOAT))
-        let newSize = self.textView.sizeThatFits(sizeToFitIn)
-        self.textViewHeight.constant = newSize.height
-    }
+//    func textViewDidChange(_ textView: UITextView) {
+//        self.adjustTextViewHeight()
+//    }
     
 }

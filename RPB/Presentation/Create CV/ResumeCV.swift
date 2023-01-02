@@ -345,4 +345,8 @@ extension ResumeCV: ExperienceTVCellProtocol {
     func dismissPicker() {
         self.view.endEditing(true)
     }
+    
+    func adjustTextViewHeight() {
+        self.view.layoutIfNeeded()
+    }
 }
