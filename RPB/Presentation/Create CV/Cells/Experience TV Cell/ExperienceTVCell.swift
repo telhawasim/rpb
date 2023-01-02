@@ -15,6 +15,7 @@ protocol ExperienceTVCellProtocol {
 class ExperienceTVCell: UITableViewCell {
     
     //MARK: Outlet
+    
     // Labels
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblEmploymentType: UILabel!
@@ -26,6 +27,7 @@ class ExperienceTVCell: UITableViewCell {
     @IBOutlet weak var lblEndDate: UILabel!
     @IBOutlet weak var lblStartYear: UILabel!
     @IBOutlet weak var lblEndYear: UILabel!
+    
     // TextFields
     @IBOutlet weak var txtEmploymentType: UITextField!
     @IBOutlet weak var txtLocationType: UITextField!
@@ -33,6 +35,7 @@ class ExperienceTVCell: UITableViewCell {
     @IBOutlet weak var txtEndDate: UITextField!
     @IBOutlet weak var txtStartYear: UITextField!
     @IBOutlet weak var txtEndYear: UITextField!
+    
     // UIImageView
     @IBOutlet weak var dropDownEmploymentType: UIImageView!
     @IBOutlet weak var dropDownLocationType: UIImageView!
@@ -40,12 +43,16 @@ class ExperienceTVCell: UITableViewCell {
     @IBOutlet weak var dropDownEndDate: UIImageView!
     @IBOutlet weak var dropDownStartYear: UIImageView!
     @IBOutlet weak var dropDownEndYear: UIImageView!
+    
     // Switch
     @IBOutlet weak var btnSwitch: UISwitch!
+    
     // UIStackView
     @IBOutlet weak var endDateView: UIStackView!
+    
     // TextView
     @IBOutlet weak var textView: UITextView!
+    
     // Button
     @IBOutlet weak var btnSave: UIButton!
     
