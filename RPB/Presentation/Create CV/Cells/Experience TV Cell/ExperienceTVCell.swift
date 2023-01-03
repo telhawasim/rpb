@@ -10,6 +10,7 @@ import UIKit
 protocol ExperienceTVCellProtocol {
     func dismissPicker()
     func adjustTextViewHeight()
+    func showAlert(errorMessage: String)
 }
 
 class ExperienceTVCell: UITableViewCell {
@@ -29,7 +30,10 @@ class ExperienceTVCell: UITableViewCell {
     @IBOutlet weak var lblEndYear: UILabel!
     
     // TextFields
+    @IBOutlet weak var txtTitle: UITextField!
     @IBOutlet weak var txtEmploymentType: UITextField!
+    @IBOutlet weak var txtCompany: UITextField!
+    @IBOutlet weak var txtLocation: UITextField!
     @IBOutlet weak var txtLocationType: UITextField!
     @IBOutlet weak var txtStartDate: UITextField!
     @IBOutlet weak var txtEndDate: UITextField!
@@ -61,14 +65,14 @@ class ExperienceTVCell: UITableViewCell {
     //MARK: Variables
     var delegate: ExperienceTVCellProtocol?
     var years = [String]()
+    var endDate = [String]()
+    var endDateIndex = Int()
     var employmentTypePicker = UIPickerView()
     var locationTypePicker = UIPickerView()
     var startDatePicker = UIPickerView()
     var endDatePicker = UIPickerView()
     var startYearPicker = UIPickerView()
     var endYearPicker = UIPickerView()
-    var employmentType = ["", "Full-Time", "Part-Time", "Contract", "Overseas", "Trainee"]
-    var locationType = ["", "On-Site", "Hybrid", "Remote"]
     lazy var dropDownList: [UIImageView] = [dropDownEmploymentType, dropDownLocationType, dropDownStartDate, dropDownStartYear, dropDownEndDate, dropDownEndYear]
     
     //MARK: Lifecylce
@@ -80,8 +84,8 @@ class ExperienceTVCell: UITableViewCell {
         self.configurePickerforYear()
         self.configureButton()
         self.configureTextView()
-//        self.textViewHeight = textView.heightAnchor.constraint(equalToConstant: 40)
-//        self.textViewHeight.isActive = true
+        //        self.textViewHeight = textView.heightAnchor.constraint(equalToConstant: 40)
+        //        self.textViewHeight.isActive = true
     }
     
     //MARK: Configure Labels
@@ -130,15 +134,41 @@ class ExperienceTVCell: UITableViewCell {
         self.txtEndYear.tag = 5
     }
     
-    //MARK: Configure PickerView for Year
+    //MARK: Configure PickerView for StartYear
     func configurePickerforYear() {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy"
         let currentYear = Int(formatter.string(from: Date())) ?? 0
         
-        for loop in stride(from: 2000, through: currentYear, by: 1) {
+        for loop in stride(from: currentYear, through: 2000, by: -1) {
             years.append("\(loop)")
         }
+    }
+    
+    //MARK: Configure PickerView for EndYear
+    func configurePickerforEndYear() -> [String] {
+        years = []
+        let isoDate = "\(txtStartYear.text ?? "")"
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy"
+        let date = formatter.date(from: isoDate)!
+        
+        let startYear = Int(formatter.string(from: date)) ?? 0
+        let currentYear = Int(formatter.string(from: Date())) ?? 0
+        
+        for loop in stride(from: currentYear, through: startYear, by: -1) {
+            years.append("\(loop)")
+        }
+        return years
+    }
+    
+    //MARK: Configure PickerView for EndDate
+    func configureEndDate() -> [String] {
+        endDate = []
+        for num in endDateIndex ..< months.count {
+            endDate.append(months[num])
+        }
+        return endDate
     }
     
     //MARK: Configure Button
@@ -167,12 +197,56 @@ class ExperienceTVCell: UITableViewCell {
         })
     }
     
-//    func adjustTextViewHeight() {
-//        let fixedWidth = textView.frame.size.width
-//        let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-//        self.textViewHeight.constant = newSize.height
-//        delegate?.adjustTextViewHeight()
-//    }
+    //MARK: Check Fields Validation
+    func checkValidation() -> Bool {
+        guard let title = txtTitle.text,
+              let employmentType = txtEmploymentType.text,
+              let company = txtCompany.text,
+              let location = txtLocation.text,
+              let locationType = txtLocationType.text,
+              let startDate = txtStartDate.text,
+              let startYear = txtStartYear.text,
+              let endDate = txtEndDate.text,
+              let endYear = txtEndYear.text else {
+            return false
+        }
+        var errorMessage: String?
+        
+        if title.isEmpty {
+            errorMessage = "Please enter job title"
+        } else if employmentType.isEmpty {
+            errorMessage = "Please enter employment type"
+        } else if company.isEmpty {
+            errorMessage = "Please enter company name"
+        } else if location.isEmpty {
+            errorMessage = "Please enter location"
+        } else if locationType.isEmpty {
+            errorMessage = "Please enter location type"
+        } else if startDate.isEmpty {
+            errorMessage = "Please enter start date"
+        } else if startYear.isEmpty {
+            errorMessage = "Please enter start year"
+        } else if btnSwitch.isOn == false {
+            if endDate.isEmpty {
+                errorMessage = "Please enter end date"
+            } else if endYear.isEmpty {
+                errorMessage = "Please enter end year"
+            }
+        }
+        
+        if let errorMsg = errorMessage {
+            delegate?.showAlert(errorMessage: errorMsg)
+            return false
+        }
+        return true
+    }
+    
+    //    func adjustTextViewHeight() {
+    //        let fixedWidth = textView.frame.size.width
+    //        let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+    //        self.textViewHeight.constant = newSize.height
+    //        delegate?.adjustTextViewHeight()
+    //    }
     
     //MARK: IBACTION
     @IBAction func isSwitchPressed(_ sender: Any) {
@@ -183,6 +257,12 @@ class ExperienceTVCell: UITableViewCell {
             txtEndDate.text = nil
             txtEndYear.text = nil
             UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: { [self] in endDateView.isHidden = false })
+        }
+    }
+    
+    @IBAction func btnSavePressed(_ sender: Any) {
+        if checkValidation() {
+            print("Data entered successfully")
         }
     }
 }
@@ -201,12 +281,22 @@ extension ExperienceTVCell: UIPickerViewDelegate, UIPickerViewDataSource {
             return locationType.count
         case startDatePicker:
             return months.count
-        case endDatePicker:
-            return months.count
         case startYearPicker:
             return years.count
+        case endDatePicker:
+            if txtEndYear.text != "" && txtStartYear.text == txtEndYear.text {
+                return configureEndDate().count
+            } else if txtStartYear.text != txtEndYear.text {
+                return months.count
+            } else {
+                return 0
+            }
         case endYearPicker:
-            return years.count
+            if txtStartYear.text != "" {
+                return configurePickerforEndYear().count
+            } else {
+                return 0
+            }
         default:
             return 0
         }
@@ -221,7 +311,11 @@ extension ExperienceTVCell: UIPickerViewDelegate, UIPickerViewDataSource {
         case startDatePicker:
             return months[row]
         case endDatePicker:
-            return months[row]
+            if txtEndYear.text != txtStartYear.text {
+                return months[row]
+            } else {
+                return endDate[row]
+            }
         case startYearPicker:
             return years[row]
         case endYearPicker:
@@ -238,8 +332,13 @@ extension ExperienceTVCell: UIPickerViewDelegate, UIPickerViewDataSource {
             txtLocationType.text = locationType[row]
         } else if pickerView == startDatePicker {
             txtStartDate.text = months[row]
+            endDateIndex = row
         } else if pickerView == endDatePicker {
-            txtEndDate.text = months[row]
+            if txtEndYear.text != txtStartYear.text {
+                txtEndDate.text = months[row]
+            } else {
+                txtEndDate.text = endDate[row]
+            }
         } else if pickerView == startYearPicker {
             txtStartYear.text = years[row]
         } else if pickerView == endYearPicker {
@@ -276,8 +375,8 @@ extension ExperienceTVCell: UITextViewDelegate {
         }
     }
     
-//    func textViewDidChange(_ textView: UITextView) {
-//        self.adjustTextViewHeight()
-//    }
+    //    func textViewDidChange(_ textView: UITextView) {
+    //        self.adjustTextViewHeight()
+    //    }
     
 }

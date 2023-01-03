@@ -15,7 +15,9 @@ var educationData = ["School / University", "Degree", "Field of Study"]
 var educationPlaceholder = ["Virtual University", "Master's Degree", "BIT"]
 var experienceData = ["Title", "Employment Type", "Comapny Name", "Location", "Location Type"]
 var tagsArray = ["Excellent Communication", "Excellent", "Wireframe", "Design system", "Prototyping", "Figma", "Figma"]
-var months = ["", "January", "February", "March", "April", "May", "June", "July", "August", "Spetember", "Octuber", "November", "December"]
+var months = ["January", "February", "March", "April", "May", "June", "July", "August", "Spetember", "Octuber", "November", "December"]
+var employmentType = ["", "Full-Time", "Part-Time", "Contract", "Overseas", "Trainee"]
+var locationType = ["", "On-Site", "Hybrid", "Remote"]
 
 struct Section {
     var section: String!

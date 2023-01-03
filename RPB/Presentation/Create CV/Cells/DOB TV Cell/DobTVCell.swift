@@ -7,17 +7,13 @@
 
 import UIKit
 
-protocol DobTVCellProtocol {
-    func showAlert()
-}
-
 class DobTVCell: UITableViewCell {
     //MARK: Outlet
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var txtDate: UITextField!
     
     //MARK: Variables
-    var delegate: DobTVCellProtocol?
+    var delegate: ExperienceTVCellProtocol?
     
     //MARK: Lifecylce
     override func awakeFromNib() {
@@ -43,7 +39,8 @@ class DobTVCell: UITableViewCell {
                 self.txtDate.text = date.getFormattedDate(format: "dd-MM-yy")
             } else {
                 self.txtDate.text = nil
-                delegate?.showAlert()
+                let errorMessage = "Employee must be 18+"
+                delegate?.showAlert(errorMessage: errorMessage)
             }
         }
         self.txtDate.resignFirstResponder()

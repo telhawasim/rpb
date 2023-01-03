@@ -333,14 +333,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-//MARK: DobTVCell Delegate
-extension ResumeCV: DobTVCellProtocol {
-    func showAlert() {
-        let errorMessage = "Employee must be 18+"
-        self.alert(message: errorMessage)
-    }
-}
-
+//MARK: ExperienceTVCell Delegate
 extension ResumeCV: ExperienceTVCellProtocol {
     func dismissPicker() {
         self.view.endEditing(true)
@@ -348,5 +341,9 @@ extension ResumeCV: ExperienceTVCellProtocol {
     
     func adjustTextViewHeight() {
         self.view.layoutIfNeeded()
+    }
+    
+    func showAlert(errorMessage: String) {
+        self.alert(message: errorMessage)
     }
 }

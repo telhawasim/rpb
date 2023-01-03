@@ -526,6 +526,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="btnSavePressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="mC7-5i-jhF"/>
+                                </connections>
                             </button>
                         </subviews>
                     </stackView>
@@ -559,12 +562,15 @@
                 <outlet property="lblStartYear" destination="1uP-iD-fQs" id="6PZ-B9-1Wv"/>
                 <outlet property="lblTitle" destination="JzS-0q-eVI" id="0bu-Cb-zTA"/>
                 <outlet property="textView" destination="O8N-kw-KPq" id="zMa-50-mpE"/>
+                <outlet property="txtCompany" destination="tb4-5H-Wp5" id="Hp8-nL-9IX"/>
                 <outlet property="txtEmploymentType" destination="uuu-LE-Q6w" id="mJq-Kr-mPY"/>
                 <outlet property="txtEndDate" destination="fBa-JS-CMt" id="RYN-oD-XVm"/>
                 <outlet property="txtEndYear" destination="aNL-uH-o6q" id="2Gi-bT-nC5"/>
+                <outlet property="txtLocation" destination="fA3-7W-OBV" id="lVs-rT-a1n"/>
                 <outlet property="txtLocationType" destination="9vA-Pt-kyu" id="Jvt-Ib-fHH"/>
                 <outlet property="txtStartDate" destination="ewV-Zu-x0f" id="VDW-63-hcr"/>
                 <outlet property="txtStartYear" destination="hgy-ja-YRl" id="vTq-CM-MHk"/>
+                <outlet property="txtTitle" destination="qyN-yR-GKB" id="SDb-g4-xsq"/>
             </connections>
             <point key="canvasLocation" x="35.114503816793892" y="415.49295774647891"/>
         </tableViewCell>
