@@ -50,7 +50,7 @@ class EventDescriptionTableViewCell: UITableViewCell {
         eventDescription.font = UIFont.montserratThin(14)
     }
     
-    func updateUI(noOfLines: Int = 3,headingFontSize: CGFloat = 15,topMargin :CGFloat = 0, bottomMargin : CGFloat = 8) {
+    func updateUI(noOfLines: Int = 3,headingFontSize: CGFloat = 15,topMargin: CGFloat = 0, bottomMargin: CGFloat = 8) {
         self.setDescriptionText(textString: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.")
         eventDescription.setLineSpacing()
         if (isExpanded) {
@@ -69,7 +69,7 @@ class EventDescriptionTableViewCell: UITableViewCell {
         }
     }
     
-    func updateViewEventUI(noOfLines : Int = 3,headingFontSize: CGFloat = 15,topMargin :CGFloat = 0, bottomMargin : CGFloat = 8) {
+    func updateViewEventUI(noOfLines: Int = 3,headingFontSize: CGFloat = 15,topMargin: CGFloat = 0, bottomMargin: CGFloat = 8) {
         self.setDescriptionText(textString: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.")
         eventDescription.setLineSpacing()
         if (isExpanded) {

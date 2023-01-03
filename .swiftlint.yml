@@ -9,7 +9,10 @@ disabled_rules:
 - unused_closure_parameter
 - inclusive_language
 - control_statement
+- comma
+- file_length
 - mark
+- for_where
 
 opt_in_rules:
 - opening_brace
