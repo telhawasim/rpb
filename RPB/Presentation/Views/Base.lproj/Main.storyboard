@@ -413,7 +413,7 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWj-b6-tCe">
-                                        <rect key="frame" x="49" y="15.666666666666659" width="237" height="18.666666666666671"/>
+                                        <rect key="frame" x="49" y="15.666666666666659" width="237" height="18.666666666666679"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>

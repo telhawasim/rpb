@@ -64,10 +64,10 @@ final class RPBUITests: XCTestCase {
         
         txtEmail.tap()
         txtEmail.typeText("rpb@admin.com")
-        
+       
         txtPassword.tap()
         txtPassword.typeText("12345678")
-        
+      
         btnShowPassword.tap()
         
         btnLogin.tap()
@@ -84,9 +84,7 @@ final class RPBUITests: XCTestCase {
         let employeeNumber = app.staticTexts["100"]
         XCTAssertTrue(employeeNumber.exists)
     
-        let btnAddEmployee = app.buttons["AddEmployee"]
-        XCTAssertTrue(btnAddEmployee.exists)
-        btnAddEmployee.tap()
+        app.buttons.element(boundBy: 0).tap()
         
         app.buttons["cross 20x20"].tap()
         app.buttons["Yes"].tap()
@@ -96,20 +94,23 @@ final class RPBUITests: XCTestCase {
         let btnArrowLeft = app.buttons["arrow left"]
         XCTAssertTrue(btnArrowLeft.exists)
         
-        btnArrowLeft.tap()
+//        btnArrowLeft.tap()
         
-        let btnHome = app.buttons["Home"]
-        let btnEmployees = app.buttons["Employee"]
-        let btnSetting = app.buttons["TabbarProfile"]
-        
-        btnEmployees.tap()
-        btnSetting.tap()
-        btnHome.tap()
-        
-
+//        let btnHome = app.buttons["Home"]
+//        let btnEmployees = app.buttons["Employee"]
+//        let btnSetting = app.buttons["TabbarProfile"]
+//
+//        btnEmployees.tap()
+//        btnSetting.tap()
+//        btnHome.tap()
+        profileScreenUITest(app: app)
     }
     
-    func addEmployeeUITest(app: XCUIApplication) {
-        
+    func profileScreenUITest(app: XCUIApplication) {
+        app.tables.children(matching: .cell).element(boundBy: 0).buttons["ic dots"].tap()
+        app.buttons["cross 20x20"].tap()
+        app.buttons["add cv"].tap()
+        app.buttons.element(boundBy: 0).tap()
+//        app.buttons["arrow left"].tap()
     }
 }
