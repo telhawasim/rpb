@@ -22,8 +22,6 @@ final class RPBUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         loginScreenUITest(app: app)
-        
-        
     }
     
     func testLaunchPerformance() throws {
@@ -34,6 +32,7 @@ final class RPBUITests: XCTestCase {
         }
     }
     
+    //MARK: Login Screen UITest
     func loginScreenUITest(app: XCUIApplication) {
         let title = app.staticTexts["Log In"]
         XCTAssertTrue(title.exists)
@@ -71,6 +70,7 @@ final class RPBUITests: XCTestCase {
         homeScreenUITest(app: app)
     }
     
+    //MARK: Home Screen UITest
     func homeScreenUITest(app: XCUIApplication) {
         let title = app.staticTexts["Hello"]
         XCTAssertTrue(title.exists)
@@ -103,6 +103,7 @@ final class RPBUITests: XCTestCase {
         
     }
     
+    //MARK: Add Employee UITest
     func addEmployeeUITest(app: XCUIApplication) {
         let scrollViewsQuery = app.scrollViews
         let elementsQuery = scrollViewsQuery.otherElements
@@ -167,11 +168,20 @@ final class RPBUITests: XCTestCase {
         app.buttons["Yes"].tap()
     }
     
+    //MARK: Profile UITest
     func profileScreenUITest(app: XCUIApplication) {
         app.tables.children(matching: .cell).element(boundBy: 0).buttons["ic dots"].tap()
         app.buttons["cross 20x20"].tap()
         app.buttons["add cv"].tap()
         app.buttons.element(boundBy: 0).tap()
-//        app.buttons["arrow left"].tap()
+        
+        let tablesQuery = app.tables
+        tablesQuery.children(matching: .cell).element(boundBy: 0).buttons["ic dots"].tap()
+        
+        let button = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 2).children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .button).element
+        button.tap()
+        app.buttons["No"].tap()
+
+        app.buttons["cross 20x20"].tap()
     }
 }
