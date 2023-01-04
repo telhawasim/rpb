@@ -29,7 +29,7 @@ class TagsTableViewCell: UITableViewCell {
     }
     
     @IBAction func tappedAddButton(_ sender: Any) {
-        guard let tag = tagsTextView.text else  { return }
+        guard let tag = tagsTextView.text else { return }
         tagsArray.append(tag)
         tagsTextView.text = nil
         collectionView.reloadData()
@@ -69,7 +69,7 @@ extension TagsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         
         if collectionView.numberOfItems(inSection: section) == 1 {
             let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-            return UIEdgeInsets(top: 0, left: -50, bottom: 0, right: collectionView.frame.width - flowLayout.itemSize.width)
+            return UIEdgeInsets(top: 0, left: -20, bottom: 0, right: collectionView.frame.width - flowLayout.itemSize.width)
         }
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
