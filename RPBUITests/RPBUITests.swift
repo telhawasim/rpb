@@ -81,12 +81,12 @@ final class RPBUITests: XCTestCase {
         let employeeNumber = app.staticTexts["100"]
         XCTAssertTrue(employeeNumber.exists)
         
-        app.buttons["AddEmployee"].tap()
+        app.buttons.element(boundBy: 0).tap()
         addEmployeeUITest(app: app)
-        //                app.buttons["cross 20x20"].tap()
-        //                app.buttons["Yes"].tap()
         
-        //        app.tables.children(matching: .cell).element(boundBy: 0).staticTexts["iOS Developer"].tap()
+        app.tables.children(matching: .cell).element(boundBy: 0).staticTexts["iOS Developer"].tap()
+        profileScreenUITest(app: app)
+
         //
         //        app.buttons["arrow left"].tap()
         //
@@ -165,19 +165,6 @@ final class RPBUITests: XCTestCase {
         // Go Back
         app.buttons["cross 20x20"].tap()
         app.buttons["Yes"].tap()
-        let btnArrowLeft = app.buttons["arrow left"]
-        XCTAssertTrue(btnArrowLeft.exists)
-        
-//        btnArrowLeft.tap()
-        
-//        let btnHome = app.buttons["Home"]
-//        let btnEmployees = app.buttons["Employee"]
-//        let btnSetting = app.buttons["TabbarProfile"]
-//
-//        btnEmployees.tap()
-//        btnSetting.tap()
-//        btnHome.tap()
-        profileScreenUITest(app: app)
     }
     
     func profileScreenUITest(app: XCUIApplication) {
