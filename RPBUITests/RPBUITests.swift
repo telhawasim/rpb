@@ -8,29 +8,26 @@
 import XCTest
 
 final class RPBUITests: XCTestCase {
-
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        
     }
-
+    
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
     }
-
+    
     func testExample() throws {
         let app = XCUIApplication()
         app.launch()
         loginScreenUITest(app: app)
+        
+        
     }
-
+    
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
             measure(metrics: [XCTApplicationLaunchMetric()]) {
                 XCUIApplication().launch()
             }
@@ -55,10 +52,10 @@ final class RPBUITests: XCTestCase {
         
         let btnLogin = app.buttons["Log In"]
         XCTAssertTrue(btnLogin.exists)
-
+        
         let txtEmail = app.textFields["abc@gmail.com"]
         XCTAssertTrue(txtEmail.exists)
-
+        
         let txtPassword = app.secureTextFields["12345678"]
         XCTAssertTrue(txtPassword.exists)
         
@@ -83,33 +80,90 @@ final class RPBUITests: XCTestCase {
         
         let employeeNumber = app.staticTexts["100"]
         XCTAssertTrue(employeeNumber.exists)
-    
-        let btnAddEmployee = app.buttons["AddEmployee"]
-        XCTAssertTrue(btnAddEmployee.exists)
-        btnAddEmployee.tap()
         
-        app.buttons["cross 20x20"].tap()
-        app.buttons["Yes"].tap()
+        app.buttons["AddEmployee"].tap()
+        addEmployeeUITest(app: app)
+        //                app.buttons["cross 20x20"].tap()
+        //                app.buttons["Yes"].tap()
         
-        app.tables.children(matching: .cell).element(boundBy: 0).staticTexts["iOS Developer"].tap()
+        //        app.tables.children(matching: .cell).element(boundBy: 0).staticTexts["iOS Developer"].tap()
+        //
+        //        app.buttons["arrow left"].tap()
+        //
+        //        app.buttons["Home"].tap()
+        //        app.buttons["Employee"].tap()
+        //        app.buttons["TabbarProfile"].tap()
+        //
+        //        app.buttons["Home"].tap()
+        //        app.buttons.matching(identifier: "AddEmployee").element(boundBy: 0)
+        //
+        //        app.buttons["AddEmployee"].tap()
+        //        app.buttons["cross 20x20"].tap()
+        //        app.buttons["Yes"].tap()
         
-        let btnArrowLeft = app.buttons["arrow left"]
-        XCTAssertTrue(btnArrowLeft.exists)
-        
-        btnArrowLeft.tap()
-        
-        let btnHome = app.buttons["Home"]
-        let btnEmployees = app.buttons["Employee"]
-        let btnSetting = app.buttons["TabbarProfile"]
-        
-        btnEmployees.tap()
-        btnSetting.tap()
-        btnHome.tap()
-        
-
     }
     
     func addEmployeeUITest(app: XCUIApplication) {
+        let scrollViewsQuery = app.scrollViews
+        let elementsQuery = scrollViewsQuery.otherElements
         
+        //Image
+        app.buttons["add image"].tap()
+        app.buttons["Gallery"].tap()
+        app/*@START_MENU_TOKEN@*/.scrollViews.otherElements.images["Photo, March 31, 2018, 12:14 AM"]/*[[".otherElements[\"Photos\"].scrollViews.otherElements",".otherElements[\"Photo, March 31, 2018, 12:14 AM, Photo, August 09, 2012, 2:55 AM, Photo, August 09, 2012, 2:29 AM, Photo, August 08, 2012, 11:52 PM, Photo, October 10, 2009, 3:09 AM, Photo, March 13, 2011, 5:17 AM\"].images[\"Photo, March 31, 2018, 12:14 AM\"]",".images[\"Photo, March 31, 2018, 12:14 AM\"]",".scrollViews.otherElements"],[[[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0,0]]@END_MENU_TOKEN@*/.tap()
+        app.staticTexts["Choose"].tap()
+        
+        // Name
+        scrollViewsQuery.textFields.element(boundBy: 0).tap()
+        scrollViewsQuery.textFields.element(boundBy: 0).typeText("Telha Wasim")
+        
+        // Designation
+        elementsQuery.textFields.element(boundBy: 1).tap()
+        elementsQuery.textFields.element(boundBy: 1).typeText("iOS Developer")
+        
+        // Department
+        elementsQuery.containing(.button, identifier: "Add").children(matching: .other).element.children(matching: .other).element(boundBy: 2).children(matching: .other).element(boundBy: 0).children(matching: .textField).element.tap()
+        app.pickerWheels.element.adjust(toPickerWheelValue: "Development")
+        
+        // DOB
+        let element = app.scrollViews.otherElements.containing(.button, identifier: "Add").children(matching: .other).element.children(matching: .other).element(boundBy: 3)
+        element.tap()
+        element.children(matching: .other).element(boundBy: 0).children(matching: .textField).element.tap()
+        
+        let datePickerDOBQuery = app.datePickers
+        
+        datePickerDOBQuery.pickerWheels["2023"].adjust(toPickerWheelValue: "1999")
+        datePickerDOBQuery.pickerWheels["4"].adjust(toPickerWheelValue: "7")
+        datePickerDOBQuery.pickerWheels["January"].adjust(toPickerWheelValue: "August")
+        
+        app.toolbars["Toolbar"].buttons["Done"].tap()
+        
+        // Email
+        let txtEmail = elementsQuery.textFields.element(boundBy: 4)
+        txtEmail.tap()
+        txtEmail.typeText("telhawasim@gmail.com")
+        
+        // Phone number
+        let txtPhone = elementsQuery.textFields.element(boundBy: 5)
+        txtPhone.tap()
+        txtPhone.typeText("03350438764")
+        
+        // Joining Date
+        let elementJoining = app.scrollViews.otherElements.containing(.button, identifier: "Add").children(matching: .other).element.children(matching: .other).element(boundBy: 6)
+        elementJoining.tap()
+        elementJoining.children(matching: .other).element(boundBy: 0).children(matching: .textField).element.tap()
+        
+        let datePickerJoiningQuery = app.datePickers
+        
+        datePickerJoiningQuery.pickerWheels["2023"].adjust(toPickerWheelValue: "2022")
+        datePickerJoiningQuery.pickerWheels["4"].adjust(toPickerWheelValue: "9")
+        datePickerJoiningQuery.pickerWheels["January"].adjust(toPickerWheelValue: "May")
+        
+        app.toolbars["Toolbar"].buttons["Done"].tap()
+        app.buttons["Add"].tap()
+        
+        // Go Back
+        app.buttons["cross 20x20"].tap()
+        app.buttons["Yes"].tap()
     }
 }
