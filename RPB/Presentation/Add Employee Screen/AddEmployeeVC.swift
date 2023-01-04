@@ -171,7 +171,11 @@ class AddEmployeeVC: BaseVC {
     }
     
     @IBAction func tappedShowPopUp(_ sender: Any) {
-        PopupView.shared.presentPopup(self, popupType: .discardInformation)
+        PopupView.shared.presentPopup(self, popupType: .discardInformation) { value in
+            if (value != nil) {
+                self.goBack()
+            }
+        }
     }
 }
 
