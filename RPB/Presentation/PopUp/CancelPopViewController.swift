@@ -88,6 +88,9 @@ class CancelPopViewController: BaseVC {
     }
     
     @IBAction func tappedYesButton(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        dismissVC(completion: nil)
+            if completionHandler != nil {
+                completionHandler!(sender)
+            }
     }
 }
