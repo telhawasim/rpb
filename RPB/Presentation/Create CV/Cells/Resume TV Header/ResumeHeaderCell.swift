@@ -12,8 +12,6 @@ class ResumeHeaderCell: UITableViewHeaderFooterView {
     //MARK: Outlet
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var lblHeading: UILabel!
-    @IBOutlet weak var imgArrow: UIImageView!
-    @IBOutlet weak var btnAddMore: UIButton!
     
     //MARK: Variables
     
@@ -21,18 +19,16 @@ class ResumeHeaderCell: UITableViewHeaderFooterView {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.configureView()
-        self.configureButton()
+        self.configureLabel()
     }
     
     func configureView() {
-        self.headerView.borderColor = UIColor.greyE2E2E2
-        self.headerView.borderWidth = 1
+        self.headerView.backgroundColor = UIColor.blueF1F1FF
         self.headerView.cornerRadius(10)
     }
     
-    func configureButton() {
-        self.btnAddMore.titleLabel?.font = UIFont.montserratMedium(12)
-        self.btnAddMore.tintColor = UIColor.customBlue
+    func configureLabel() {
+        self.lblHeading.font = UIFont.montserratMedium(20)
     }
     
 }

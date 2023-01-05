@@ -13,3 +13,10 @@ enum InfoType {
     case skills
     case experience
 }
+
+enum Category: String, CaseIterable {
+    case info = "Info"
+    case experience = "Experience"
+    case skills = "Skills"
+    case academics = "Academics"
+}

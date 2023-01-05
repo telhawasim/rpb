@@ -11,10 +11,9 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     
     //MARK: Outlet
     @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var btnInfo: UIButton!
-    @IBOutlet weak var btnSkills: UIButton!
-    @IBOutlet weak var btnExperience: UIButton!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var buttonView: UIView!
     @IBOutlet weak var btnPreview: UIButton!
     @IBOutlet weak var btnSave: UIButton!
     
@@ -24,19 +23,28 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     var skillsModel = [Section]()
     var experienceModel = [Section]()
     var selectedHeader = Int()
+    var categoryTitle: [Category] = [.info, .experience, .skills, .academics]
+    var category: Category = .info
     
     //MARK: Lifecylce
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.btnInfoPressed(0)
         self.configureLabel()
         self.configureTableView()
+        self.configureCollectionView()
         infoModel = [(Section(section: "Basic Info", rows: 5, expanded: true)),
                      (Section(section: "Education", rows: 5, expanded: false)),
                      (Section(section: "Summary", rows: 1, expanded: false))]
         skillsModel = [(Section(section: "Soft Skills", rows: 1, expanded: true)),
-                    (Section(section: "Hard Skills", rows: 1, expanded: false))]
+                       (Section(section: "Hard Skills", rows: 1, expanded: false))]
         experienceModel = [Section(section: "Add Experience", rows: 1, expanded: true)]
+        self.configureButtons()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let selectedIndexPath = IndexPath(item: 0, section: 0)
+        collectionView.selectItem(at: selectedIndexPath, animated: false, scrollPosition: .left)
+        tableView.reloadData()
     }
     
     @objc func tapInfoSection(_ gesture: UITapGestureRecognizer) {
@@ -70,26 +78,6 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     //MARK: Configure Labels
     func configureLabel() {
         self.lblTitle.font = UIFont.montserratMedium(24)
-        self.configureButtons()
-    }
-    
-    //MARK: Configure Buttons
-    func configureButtons() {
-        self.btnInfo.configureButton(text: "Info", borderWidth: 1, borderColor: UIColor.greyE2E2E2)
-        self.btnSkills.configureButton(text: "Skills", borderWidth: 1, borderColor: UIColor.greyE2E2E2)
-        self.btnExperience.configureButton(text: "Experience", borderWidth: 1, borderColor: UIColor.greyE2E2E2)
-        self.btnInfo.cornerRadiusButton(20)
-        self.btnSkills.cornerRadiusButton(20)
-        self.btnExperience.cornerRadiusButton(20)
-        self.btnPreview.configureButton(text: "Preview", borderWidth: 1, borderColor: UIColor.customBlue)
-        self.btnSave.configureButton(text: "Save & Continue", borderWidth: 1, borderColor: UIColor.customBlue)
-        self.btnPreview.titleLabel?.font = UIFont.montserratMedium(18)
-        self.btnSave.titleLabel?.font = UIFont.montserratMedium(18)
-        self.btnPreview.tintColor = UIColor.customBlue
-        self.btnSave.tintColor = UIColor.white
-        self.btnSave.backgroundColor = UIColor.customBlue
-        self.btnSave.cornerRadiusButton(30)
-        self.btnPreview.cornerRadiusButton(30)
     }
     
     //MARK: Configure TableView
@@ -105,33 +93,62 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.tableView.register(UINib(nibName: ResumeHeaderCell.className, bundle: nil), forHeaderFooterViewReuseIdentifier: ResumeHeaderCell.className)
     }
     
-    //MARK: IBACTIONS
-    @IBAction func btnInfoPressed(_ sender: Any) {
-        self.btnInfo.inSelectedResumeCV()
-        self.btnSkills.isNotSelectedResumeCV()
-        self.btnExperience.isNotSelectedResumeCV()
-        self.infoType = .info
-        self.tableView.reloadData()
+    //MARK: Configure CollectionView
+    func configureCollectionView() {
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        self.collectionView.register(CategoryCVCell.className)
     }
     
-    @IBAction func btnSkillsPressed(_ sender: Any) {
-        self.btnInfo.isNotSelectedResumeCV()
-        self.btnSkills.inSelectedResumeCV()
-        self.btnExperience.isNotSelectedResumeCV()
-        self.infoType = .skills
-        self.tableView.reloadData()
+    //MARK: Configure Buttons
+    func configureButtons() {
+        self.btnPreview.borderWidth = 1
+        self.btnPreview.borderColor = UIColor.customBlue
+        self.btnPreview.titleLabel?.font = UIFont.montserratMedium(16)
+        self.btnPreview.titleLabel?.textColor = UIColor.customBlue
+        self.btnPreview.titleLabel?.text = "Previous"
+        self.btnPreview.cornerRadiusButton(30)
+        
+        self.btnSave.backgroundColor = UIColor.customBlue
+        self.btnSave.titleLabel?.font = UIFont.montserratMedium(16)
+        self.btnSave.titleLabel?.textColor = UIColor.white
+        self.btnSave.titleLabel?.text = "Save & Continue"
+        self.btnSave.cornerRadiusButton(30)
+        
+        self.configureShadow()
     }
     
-    @IBAction func btnExperiecePressed(_ sender: Any) {
-        self.btnInfo.isNotSelectedResumeCV()
-        self.btnSkills.isNotSelectedResumeCV()
-        self.btnExperience.inSelectedResumeCV()
-        self.infoType = .experience
-        self.tableView.reloadData()
+    //MARK: Configure Shadow for Button View
+    func configureShadow() {
+        self.buttonView.addShadow(shadowOpacity: 0.5)
     }
     
     @IBAction func btnGoBack(_ sender: Any) {
         self.goBack()
+    }
+}
+
+//MARK: CollectionView Methods
+extension ResumeCV: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return categoryTitle.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCVCell", for: indexPath) as! CategoryCVCell
+        cell.lblTitle.text = categoryTitle[indexPath.row].rawValue
+        cell.isSelected = true
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 110.0, height: 42.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        category = categoryTitle[indexPath.row]
+        UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {self.tableView.reloadData()}, completion: nil)
+
     }
 }
 
@@ -140,194 +157,76 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
     
     //MARK: Number of Sections
     func numberOfSections(in tableView: UITableView) -> Int {
-        switch infoType {
+        switch category {
         case .info:
-            return infoModel.count
-        case .skills:
-            return skillsModel.count
+            return 1
         case .experience:
-            return experienceModel.count
+            return 0
+        case .skills:
+            return 0
+        case .academics:
+            return 0
+        default:
+            return 0
         }
     }
     
     //MARK: Number of rows in Section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch infoType {
+        switch category {
         case .info:
-            if self.infoModel[section].expanded {
-                return infoModel[section].rows
-            } else {
-                return 0
-            }
-        case .skills:
-            if self.skillsModel[section].expanded {
-                return skillsModel[section].rows
-            } else {
-                return 0
-            }
+            return 6
         case .experience:
-            if self.experienceModel[section].expanded {
-                return experienceModel[section].rows
-            } else {
-                return 0
-            }
+            return 0
+        case .skills:
+            return 0
+        case .academics:
+            return 0
         }
     }
     
     //MARK: View for Header in Section
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ResumeHeaderCell.className) as! ResumeHeaderCell
+        headerView.lblHeading.text = "Basic Info"
         
-        switch infoType {
-        case .info:
-            if section == 1 {
-                headerView.btnAddMore.isHidden = false
-            } else {
-                headerView.btnAddMore.isHidden = true
-            }
-            headerView.lblHeading.text = infoModel[section].section
-            headerView.lblHeading.font = UIFont.montserratMedium(20)
-            headerView.tag = section
-            if self.infoModel[section].expanded == false {
-                UIView.transition(with: headerView.imgArrow,
-                                  duration: 0.3,
-                                  options: .transitionCrossDissolve,
-                                  animations: { headerView.imgArrow.image = UIImage(named: "arrow_right") },
-                                  completion: nil)
-                headerView.headerView.backgroundColor = .clear
-                headerView.headerView.borderWidth = 1
-            } else {
-                headerView.headerView.backgroundColor = UIColor.blueF1F1FF
-                headerView.headerView.borderWidth = 0
-                UIView.transition(with: headerView.imgArrow,
-                                  duration: 0.3,
-                                  options: .transitionCrossDissolve,
-                                  animations: { headerView.imgArrow.image = UIImage(named: "arrow_down") },
-                                  completion: nil)
-            }
-        case .skills:
-            headerView.lblHeading.text = skillsModel[section].section
-            headerView.lblHeading.font = UIFont.montserratMedium(20)
-            headerView.tag = section
-            if self.skillsModel[section].expanded == false {
-                UIView.transition(with: headerView.imgArrow,
-                                  duration: 0.3,
-                                  options: .transitionCrossDissolve,
-                                  animations: { headerView.imgArrow.image = UIImage(named: "arrow_right") },
-                                  completion: nil)
-                headerView.btnAddMore.isHidden = true
-                headerView.headerView.backgroundColor = .clear
-                headerView.headerView.borderWidth = 1
-            } else {
-                headerView.headerView.backgroundColor = UIColor.blueF1F1FF
-                headerView.headerView.borderWidth = 0
-                UIView.transition(with: headerView.imgArrow,
-                                  duration: 0.3,
-                                  options: .transitionCrossDissolve,
-                                  animations: { headerView.imgArrow.image = UIImage(named: "arrow_down") },
-                                  completion: nil)
-            }
-        case .experience:
-            headerView.lblHeading.text = experienceModel[section].section
-            headerView.lblHeading.font = UIFont.montserratMedium(20)
-            headerView.btnAddMore.isHidden = true
-            headerView.tag = section
-            headerView.imgArrow.image = UIImage(named: "add_more")
-            if self.experienceModel[section].expanded == false {
-                headerView.headerView.backgroundColor = UIColor.white
-                headerView.headerView.borderWidth = 1
-            } else {
-                headerView.headerView.borderWidth = 0
-                headerView.headerView.backgroundColor = UIColor.blueF1F1FF
-            }
-        }
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapInfoSection(_:)))
-        headerView.addGestureRecognizer(tapGesture)
-        tapGesture.delegate = self
+        //        switch category {
+        //            case .info:
+        //
+        //            case .skills:
+        //
+        //            case .experience:
+        //
+        //            case .academics:
+        //
+        //            default:
+        //        }
         return headerView
-        
     }
     
     //MARK: Height for Header
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        switch infoType {
-        case .info:
-            if section == 1 {
-                return 95
-            } else {
-                return 65
-            }
-        case .skills:
-            return 65
-        case .experience:
-            return 65
-        }
-        
+        return 65
     }
     
     //MARK: Cell for Row At
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch infoType {
+        switch category {
         case .info:
-            if indexPath.section == 0 { // Section 1
-                if indexPath.row == 2 { // Section 1 (row 3)
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "DobTVCell", for: indexPath) as! DobTVCell
-                    cell.delegate = self
-                    cell.lblDate.text = infoData[indexPath.row]
-                    cell.txtDate.placeholder = infoPlaceholder[indexPath.row]
-                    return cell
-                } else {
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "BasicInfoTVCell", for: indexPath) as! BasicInfoTVCell
-                    cell.lblTitle.text = infoData[indexPath.row]
-                    cell.txtInfo.placeholder = infoPlaceholder[indexPath.row]
-                    return cell
-                }
-            } else if indexPath.section == 1 { // Section 2
-                if indexPath.row == 0 { // Section 2 (row 1)
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "BasicInfoTVCell", for: indexPath) as! BasicInfoTVCell
-                    cell.lblTitle.text = educationData[indexPath.row]
-                    cell.txtInfo.placeholder = educationPlaceholder[indexPath.row]
-                    return cell
-                } else if indexPath.row == 1 { // Section 2 (row 2)
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "BasicInfoTVCell", for: indexPath) as! BasicInfoTVCell
-                    cell.lblTitle.text = educationData[indexPath.row]
-                    cell.txtInfo.placeholder = educationPlaceholder[indexPath.row]
-                    return cell
-                } else if indexPath.row == 2 { // Section 2 (row 3)
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "BasicInfoTVCell", for: indexPath) as! BasicInfoTVCell
-                    cell.lblTitle.text = educationData[indexPath.row]
-                    cell.txtInfo.placeholder = educationPlaceholder[indexPath.row]
-                    return cell
-                } else if indexPath.row == 3 { // Section 2 (row 4)
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "EducationTVCell", for: indexPath) as! EducationTVCell
-                    cell.lblDate.text = "Start Date"
-                    cell.lblYear.text = "Year"
-                    cell.txtDate.placeholder = "December"
-                    cell.txtYear.placeholder = "2021"
-                    cell.delegate = self
-                    return cell
-                } else { // Section 2 (row 5)
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "EducationTVCell", for: indexPath) as! EducationTVCell
-                    cell.lblDate.text = "End Date"
-                    cell.lblYear.text = "Year"
-                    cell.txtDate.placeholder = "December"
-                    cell.txtYear.placeholder = "2022"
-                    cell.delegate = self
-                    return cell
-                }
-            } else { // Section 3
-                let cell = tableView.dequeueReusableCell(withIdentifier: "SummaryTVCell", for: indexPath) as! SummaryTVCell
-                return cell
-            }
-        case .skills:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TagsTableViewCell", for: indexPath) as! TagsTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BasicInfoTVCell", for: indexPath) as! BasicInfoTVCell
+            cell.configureInfoSection(index: indexPath.row)
             return cell
         case .experience:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceTVCell", for: indexPath) as! ExperienceTVCell
-            cell.delegate = self
-//            cell.lblTitle.text = infoData[indexPath.row]
-//            cell.txtInfo.placeholder = infoPlaceholder[indexPath.row]
-            return cell
+            return UITableViewCell()
+            
+        case .skills:
+            return UITableViewCell()
+            
+        case .academics:
+            return UITableViewCell()
+            
+        default:
+            return UITableViewCell()
         }
         
     }
