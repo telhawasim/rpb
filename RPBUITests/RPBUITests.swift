@@ -134,7 +134,7 @@ final class RPBUITests: XCTestCase {
         let datePickerDOBQuery = app.datePickers
         
         datePickerDOBQuery.pickerWheels["2023"].adjust(toPickerWheelValue: "1999")
-        datePickerDOBQuery.pickerWheels["4"].adjust(toPickerWheelValue: "7")
+        datePickerDOBQuery.pickerWheels["5"].adjust(toPickerWheelValue: "7")
         datePickerDOBQuery.pickerWheels["January"].adjust(toPickerWheelValue: "August")
         
         app.toolbars["Toolbar"].buttons["Done"].tap()
@@ -157,7 +157,7 @@ final class RPBUITests: XCTestCase {
         let datePickerJoiningQuery = app.datePickers
         
         datePickerJoiningQuery.pickerWheels["2023"].adjust(toPickerWheelValue: "2022")
-        datePickerJoiningQuery.pickerWheels["4"].adjust(toPickerWheelValue: "9")
+        datePickerJoiningQuery.pickerWheels["5"].adjust(toPickerWheelValue: "9")
         datePickerJoiningQuery.pickerWheels["January"].adjust(toPickerWheelValue: "May")
         
         app.toolbars["Toolbar"].buttons["Done"].tap()
