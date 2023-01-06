@@ -49,15 +49,16 @@ extension TabbarVC {
     // MARK: Home Tabbar
     func homeTabbar() {
         let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as? HomeVC
-        homeVC!.willMove(toParent: self)
+//        homeVC!.willMove(toParent: self)
         
         UIView.transition(with: containerView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            homeVC!.willMove(toParent: self)
-            self.containerView.addSubview(homeVC!.view)
-            self.addChild(homeVC!)
-            homeVC!.didMove(toParent: self)
-            self.homeColor()
+            
         }, completion: nil)
+        homeVC!.willMove(toParent: self)
+        self.containerView.addSubview(homeVC!.view)
+        self.addChild(homeVC!)
+        homeVC!.didMove(toParent: self)
+        self.homeColor()
     }
     
     // MARK: Employee Tabbar
@@ -65,25 +66,25 @@ extension TabbarVC {
         let employeeVC = self.storyboard?.instantiateViewController(withIdentifier: "EmployeeVC") as? EmployeeVC
         
         UIView.transition(with: containerView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            employeeVC!.willMove(toParent: self)
-            self.containerView.addSubview(employeeVC!.view)
-            self.addChild(employeeVC!)
-            employeeVC!.didMove(toParent: self)
-            self.employeeColor()
+            
         }, completion: nil)
+        employeeVC!.willMove(toParent: self)
+        self.containerView.addSubview(employeeVC!.view)
+        self.addChild(employeeVC!)
+        employeeVC!.didMove(toParent: self)
+        self.employeeColor()
         
     }
     
     // MARK: Profile Tabbar
     func profileTabbar() {
         let settingVC = self.storyboard?.instantiateViewController(withIdentifier: "SettingVC") as? SettingVC
-        UIView.transition(with: containerView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            settingVC!.willMove(toParent: self)
-            self.containerView.addSubview(settingVC!.view)
-            self.addChild(settingVC!)
-            settingVC!.didMove(toParent: self)
-            self.settingColor()
-        }, completion: nil)
+        UIView.transition(with: containerView, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
+        settingVC!.willMove(toParent: self)
+        self.containerView.addSubview(settingVC!.view)
+        self.addChild(settingVC!)
+        settingVC!.didMove(toParent: self)
+        self.settingColor()
         
     }
     
