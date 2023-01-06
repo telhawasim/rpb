@@ -41,6 +41,10 @@ class ProfileVC: BaseVC {
         self.bottomSheetHeight.constant = 0
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadWithAnimation()
+    }
+    
     // MARK: Configure TableView
     func configureTableView() {
         self.tableView.delegate = self
@@ -83,8 +87,7 @@ class ProfileVC: BaseVC {
     
     //MARK: Add CV Button
     @IBAction func btnAddCVPressed(_ sender: Any) {
-        let tabbarVC  = UIStoryboard.getVC(from: .main, ResumeCV.className)
-        self.navigationController?.pushViewController(tabbarVC, animated: true)
+        self.goToResumeCV()
     }
     
     //MARK: Back button in action sheet

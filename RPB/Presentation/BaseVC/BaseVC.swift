@@ -38,4 +38,10 @@ class BaseVC: UIViewController {
     func goBack() {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    //MARK: Go to Resume CV Screen
+    func goToResumeCV() {
+        let tabbarVC  = UIStoryboard.getVC(from: .main, ResumeCV.className)
+        self.navigationController?.pushViewController(tabbarVC, animated: true)
+    }
 }

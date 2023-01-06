@@ -115,12 +115,17 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.btnSave.titleLabel?.text = "Save & Continue"
         self.btnSave.cornerRadiusButton(30)
         
-        self.configureShadow()
-    }
-    
-    //MARK: Configure Shadow for Button View
-    func configureShadow() {
         self.buttonView.addShadow(shadowOpacity: 0.5)
+        
+        if category == .info {
+            btnPreview.isHidden = true
+        } else if category == .experience {
+            btnPreview.isHidden = false
+        } else if category == .skills {
+            btnPreview.isHidden = false
+        } else {
+            btnPreview.isHidden = false
+        }
     }
     
     @IBAction func btnGoBack(_ sender: Any) {
@@ -147,8 +152,9 @@ extension ResumeCV: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         category = categoryTitle[indexPath.row]
-        UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {self.tableView.reloadData()}, completion: nil)
-
+        UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData()
+            self.configureButtons()
+        }, completion: nil)
     }
 }
 
@@ -165,8 +171,6 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
         case .skills:
             return 0
         case .academics:
-            return 0
-        default:
             return 0
         }
     }
@@ -224,11 +228,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             
         case .academics:
             return UITableViewCell()
-            
-        default:
-            return UITableViewCell()
         }
-        
     }
 }
 

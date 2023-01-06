@@ -34,19 +34,24 @@ class BasicInfoTVCell: UITableViewCell {
         switch index {
         case 0:
             self.txtInfo.autocapitalizationType = .words
+            self.txtInfo.text = ""
         case 1:
             self.txtInfo.autocapitalizationType = .words
-            self.txtInfo.text = "Hello World!"
+            self.txtInfo.text = ""
         case 2:
             self.txtInfo.keyboardType = .emailAddress
             self.txtInfo.autocapitalizationType = .none
+            self.txtInfo.text = ""
         case 3:
             self.txtInfo.keyboardType = .decimalPad
             self.txtInfo.delegate = self
+            self.txtInfo.text = ""
         case 4:
             self.txtInfo.autocapitalizationType = .words
+            self.txtInfo.text = ""
         case 5:
             self.txtInfo.autocapitalizationType = .none
+            self.txtInfo.text = ""
         default:
             print("")
         }
