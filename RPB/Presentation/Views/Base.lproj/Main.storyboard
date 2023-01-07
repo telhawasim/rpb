@@ -357,7 +357,6 @@
                             <constraint firstItem="JPU-d4-0kJ" firstAttribute="leading" secondItem="lcX-rt-0hq" secondAttribute="leading" constant="15" id="vcO-7a-8pZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KJh-Mv-EEb"/>
                     <connections>
                         <outlet property="btnEmployee" destination="C1J-9r-pcn" id="j4c-KV-Bag"/>
                         <outlet property="btnHome" destination="goj-Rh-hwI" id="nGp-9q-ucG"/>

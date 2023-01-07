@@ -14,7 +14,7 @@ class TagsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lblTagsName: UILabel!
     
     //MARK: Variables
-    var addTags: (()->Void)?
+    var addTags: (() -> Void)?
 
     //MARK: Life Cycle
     override func awakeFromNib() {

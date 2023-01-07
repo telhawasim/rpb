@@ -22,6 +22,10 @@ class EmployeeVC: UIViewController {
         self.registerCell()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadWithAnimation()
+    }
+    
     @IBAction func tappedShowPopUp(_ sender: UIButton) {
 //        self.popUpShow.show()
     }

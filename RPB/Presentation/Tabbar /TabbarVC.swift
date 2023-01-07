@@ -49,11 +49,9 @@ extension TabbarVC {
     // MARK: Home Tabbar
     func homeTabbar() {
         let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as? HomeVC
-//        homeVC!.willMove(toParent: self)
+        //        homeVC!.willMove(toParent: self)
         
-        UIView.transition(with: containerView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            
-        }, completion: nil)
+        UIView.transition(with: containerView, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
         homeVC!.willMove(toParent: self)
         self.containerView.addSubview(homeVC!.view)
         self.addChild(homeVC!)
@@ -65,9 +63,7 @@ extension TabbarVC {
     func employeeTabbar() {
         let employeeVC = self.storyboard?.instantiateViewController(withIdentifier: "EmployeeVC") as? EmployeeVC
         
-        UIView.transition(with: containerView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            
-        }, completion: nil)
+        UIView.transition(with: containerView, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
         employeeVC!.willMove(toParent: self)
         self.containerView.addSubview(employeeVC!.view)
         self.addChild(employeeVC!)
@@ -79,6 +75,7 @@ extension TabbarVC {
     // MARK: Profile Tabbar
     func profileTabbar() {
         let settingVC = self.storyboard?.instantiateViewController(withIdentifier: "SettingVC") as? SettingVC
+        
         UIView.transition(with: containerView, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
         settingVC!.willMove(toParent: self)
         self.containerView.addSubview(settingVC!.view)
