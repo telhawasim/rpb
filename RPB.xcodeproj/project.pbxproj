@@ -521,8 +521,8 @@
 		3669A4CF295C1A07005015ED /* Create CV */ = {
 			isa = PBXGroup;
 			children = (
-				3669A4D0295C1A07005015ED /* Cells */,
 				3669A4E0295C1A07005015ED /* ResumeCV.swift */,
+				3669A4D0295C1A07005015ED /* Cells */,
 			);
 			path = "Create CV";
 			sourceTree = "<group>";
@@ -890,6 +890,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					Date,
+				);
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {

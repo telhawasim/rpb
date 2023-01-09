@@ -51,6 +51,9 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         }
     }
     
+    var listExperiences = [String]()
+    var addExperiences = [String]()
+
     //MARK: Lifecylce
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,8 +100,8 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
                     experienceModel[selectedHeader].expanded = false
                 }
             }
-            
         }
+        
         UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {self.tableView.reloadData()}, completion: nil)
     }
     
@@ -222,7 +225,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
         case .info:
             return 1
         case .experience:
-            return 0
+            return 2
         case .skills:
             return 0
         case .academics:
@@ -236,7 +239,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
         case .info:
             return infoTextFields.count
         case .experience:
-            return 0
+            return addExperiences.count
         case .skills:
             return 0
         case .academics:
@@ -247,15 +250,37 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
     //MARK: View for Header in Section
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ResumeHeaderCell.className) as! ResumeHeaderCell
-        headerView.lblHeading.text = "Basic Info"
+       
+        switch category {
+        case .info:
+            headerView.lblHeading.text = "Basic Info"
+        case .experience:
+            if section == 0 {
+                headerView.lblHeading.text = "Current Experiernce"
+                headerView.btnaddMoreCell.isHidden = true
+            } else  if section == 1 {
+                headerView.lblHeading.text = "Past Experiernce"
+                headerView.btnaddMoreCell.isHidden = false
+
+                headerView.addMore = {
+                    if (self.addExperiences.count < self.listExperiences.count) {
+                        self.addExperiences.append(String())
+                    }
+                    self.tableView.reloadData()
+                }
+            }
+        default:
+            break
+        }
         
         //        switch category {
         //            case .info:
+        //                  headerView.lblHeading.text = "Basic Info"
         //
         //            case .skills:
         //
         //            case .experience:
-        //
+        //                 headerView.lblHeading.text = "Basic Info"
         //            case .academics:
         //
         //            default:
@@ -280,7 +305,18 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             return cell
             
         case .experience:
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceTVCell", for: indexPath) as! ExperienceTVCell
+            
+            if indexPath.section == 0 {
+                cell.deleteStack.isHidden = true
+                cell.endDateStack.isHidden = true
+                
+            } else if indexPath.section == 1 {
+                cell.deleteStack.isHidden = false
+                cell.textView.text = addExperiences[indexPath.row]
+            }
+            
+            return cell
             
         case .skills:
             return UITableViewCell()
