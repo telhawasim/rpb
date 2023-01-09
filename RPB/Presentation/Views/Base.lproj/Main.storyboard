@@ -1758,10 +1758,14 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRB-rA-Ql5">
                                                 <rect key="frame" x="0.0" y="0.0" width="333" height="60"/>
+                                                <color key="tintColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Save &amp; Continue">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnSavePressed:" destination="1tl-FA-Ee7" eventType="touchUpInside" id="xFO-Sf-C5O"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>

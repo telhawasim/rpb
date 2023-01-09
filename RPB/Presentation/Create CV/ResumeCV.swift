@@ -7,6 +7,25 @@
 
 import UIKit
 
+struct TextFieldModel {
+    var title: String
+    var placeholder: String
+    var textValue: String = ""
+    var tag: Int = 0
+    var capitalizationType: UITextAutocapitalizationType = .none
+    
+    static func getInfoTextFields() -> [TextFieldModel] {
+        var textFields = [TextFieldModel]()
+        textFields.append(TextFieldModel(title: "Name", placeholder: "Dawid", tag: 0, capitalizationType: .words))
+        textFields.append(TextFieldModel(title: "Designation", placeholder: "UI/UX Designer", tag: 1, capitalizationType: .words))
+        textFields.append(TextFieldModel(title: "Email Address", placeholder: "dawid.name@gmail.com", tag: 2))
+        textFields.append(TextFieldModel(title: "Phone Number", placeholder: "03350438764", tag: 3))
+        textFields.append(TextFieldModel(title: "Git / Bit Bucket", placeholder: "Dawid.name@bitbucket.org", tag: 4,  capitalizationType: .words))
+        textFields.append(TextFieldModel(title: "LinkedIn", placeholder: "linkedin.com/dawid.name", tag: 5))
+        return textFields
+    }
+}
+
 class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     
     //MARK: Outlet
@@ -26,6 +45,12 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     var categoryTitle: [Category] = [.info, .experience, .skills, .academics]
     var category: Category = .info
     
+    var infoTextFields = TextFieldModel.getInfoTextFields() {
+        didSet {
+            self.validation()
+        }
+    }
+    
     //MARK: Lifecylce
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +64,8 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
                        (Section(section: "Hard Skills", rows: 1, expanded: false))]
         experienceModel = [Section(section: "Add Experience", rows: 1, expanded: true)]
         self.configureButtons()
+        self.btnSave.isEnabled = false
+        self.btnSave.backgroundColor = UIColor.systemGray
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -114,7 +141,6 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.btnSave.titleLabel?.textColor = UIColor.white
         self.btnSave.titleLabel?.text = "Save & Continue"
         self.btnSave.cornerRadiusButton(30)
-        
         self.buttonView.addShadow(shadowOpacity: 0.5)
         
         if category == .info {
@@ -130,6 +156,35 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     
     @IBAction func btnGoBack(_ sender: Any) {
         self.goBack()
+    }
+    
+    @IBAction func btnSavePressed(_ sender: Any) {
+        switch category {
+        case .info:
+            print("Info")
+        case .experience:
+            print("Experience")
+        case .skills:
+            print("Skills")
+        case .academics:
+            print("Academics")
+        }
+    }
+    
+    func validation() {
+        var isAllPopulated = false
+        
+        for textField in self.infoTextFields {
+            if textField.textValue.isEmpty {
+                isAllPopulated = false
+                break
+            } else {
+                isAllPopulated = true
+            }
+        }
+        
+        self.btnSave.isEnabled = isAllPopulated
+        self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
     }
 }
 
@@ -179,7 +234,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch category {
         case .info:
-            return 6
+            return infoTextFields.count
         case .experience:
             return 0
         case .skills:
@@ -218,8 +273,12 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
         switch category {
         case .info:
             let cell = tableView.dequeueReusableCell(withIdentifier: "BasicInfoTVCell", for: indexPath) as! BasicInfoTVCell
-            cell.configureInfoSection(index: indexPath.row)
+            cell.configure(infoTextFields[indexPath.row])
+            cell.textDidChange = { [weak self] (txtField) in
+                self?.infoTextFields[indexPath.row].textValue = txtField.text ?? ""
+            }
             return cell
+            
         case .experience:
             return UITableViewCell()
             
