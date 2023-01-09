@@ -30,11 +30,26 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPC-tN-S8k">
+                                        <rect key="frame" x="279" y="22" width="21" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="C63-rw-XXJ"/>
+                                            <constraint firstAttribute="width" constant="21" id="p9k-q0-468"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="Plus"/>
+                                        <connections>
+                                            <action selector="tappedAddMoreCell:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="faJ-KX-ugW"/>
+                                            <action selector="tappedAddMoreCell:" destination="-2" eventType="touchUpInside" id="gWA-mG-NeY"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="OOH-jT-3FK" firstAttribute="centerY" secondItem="EJl-uR-AsL" secondAttribute="centerY" id="8Ec-7O-u7c"/>
                                     <constraint firstItem="OOH-jT-3FK" firstAttribute="leading" secondItem="EJl-uR-AsL" secondAttribute="leading" constant="20" id="FTW-eI-fyg"/>
+                                    <constraint firstAttribute="trailing" secondItem="kPC-tN-S8k" secondAttribute="trailing" constant="20" id="OYO-qj-vb6"/>
                                     <constraint firstAttribute="height" constant="65" id="RQI-hE-Icm"/>
+                                    <constraint firstItem="kPC-tN-S8k" firstAttribute="centerY" secondItem="OOH-jT-3FK" secondAttribute="centerY" id="WyZ-Kn-AMG"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -55,6 +70,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btnaddMoreCell" destination="kPC-tN-S8k" id="5ew-3N-6BI"/>
                 <outlet property="headerView" destination="EJl-uR-AsL" id="PPT-yS-X0w"/>
                 <outlet property="lblHeading" destination="OOH-jT-3FK" id="OZf-nS-JKv"/>
             </connections>
@@ -62,6 +78,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Plus" width="21" height="21"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
