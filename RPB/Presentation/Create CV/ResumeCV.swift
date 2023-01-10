@@ -338,6 +338,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 
             } else if indexPath.section == 1 {
                 cell.deleteStack.isHidden = false
+                cell.endDateStack.isHidden = false
                 cell.textView.text = addExperiences[indexPath.row]
                 cell.lblCount.text = "\(indexPath.row + 1)"
             }
