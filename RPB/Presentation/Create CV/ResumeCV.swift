@@ -53,16 +53,16 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     
     var listExperiences = [String]()
     var addExperiences = [String]()
-
+    
     //MARK: Lifecylce
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureLabel()
         self.configureTableView()
         self.configureCollectionView()
-        infoModel = [(Section(section: "Basic Info", rows: 5, expanded: true)),
-                     (Section(section: "Education", rows: 5, expanded: false)),
-                     (Section(section: "Summary", rows: 1, expanded: false))]
+        //        infoModel = [(Section(section: "Basic Info", rows: 5, expanded: true)),
+        //                     (Section(section: "Education", rows: 5, expanded: false)),
+        //                     (Section(section: "Summary", rows: 1, expanded: false))]
         skillsModel = [(Section(section: "Soft Skills", rows: 1, expanded: true)),
                        (Section(section: "Hard Skills", rows: 1, expanded: false))]
         experienceModel = [Section(section: "Add Experience", rows: 1, expanded: true)]
@@ -148,6 +148,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         
         if category == .info {
             btnPreview.isHidden = true
+            self.validation()
         } else if category == .experience {
             btnPreview.isHidden = false
         } else if category == .skills {
@@ -157,23 +158,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         }
     }
     
-    @IBAction func btnGoBack(_ sender: Any) {
-        self.goBack()
-    }
-    
-    @IBAction func btnSavePressed(_ sender: Any) {
-        switch category {
-        case .info:
-            print("Info")
-        case .experience:
-            print("Experience")
-        case .skills:
-            print("Skills")
-        case .academics:
-            print("Academics")
-        }
-    }
-    
+    //MARK: Validation for textField's text is nil
     func validation() {
         var isAllPopulated = false
         
@@ -188,6 +173,51 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         
         self.btnSave.isEnabled = isAllPopulated
         self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
+    }
+    
+    //MARK: Info Tab TextField Validatiom
+    func infoTabTextFieldValidation() -> Bool {
+        let email = infoTextFields[2].textValue
+        let phone = infoTextFields[3].textValue
+        var errorMessage: String?
+        
+        if !email.isEmailValid() {
+            errorMessage = "Email address must be valid"
+        } else if phone.count < 11 {
+            errorMessage = "Phone number must be 11 digits long"
+        }
+        
+        if let errorMsg = errorMessage {
+            self.alert(message: errorMsg)
+            return false
+        }
+        return true
+    }
+    
+    @IBAction func btnGoBack(_ sender: Any) {
+        PopupView.shared.presentPopup(self, popupType: .discardInformation) { value in
+            if (value != nil) {
+                self.infoTextFields = []
+                self.goBack()
+            }
+        }
+    }
+    
+    @IBAction func btnSavePressed(_ sender: Any) {
+        switch category {
+        case .info:
+            if self.btnSave.backgroundColor == UIColor.customBlue {
+                if infoTabTextFieldValidation() {
+                    print("Info")
+                }
+            }
+        case .experience:
+            print("Experience")
+        case .skills:
+            print("Skills")
+        case .academics:
+            print("Academics")
+        }
     }
 }
 
@@ -250,10 +280,11 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
     //MARK: View for Header in Section
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ResumeHeaderCell.className) as! ResumeHeaderCell
-       
+        
         switch category {
         case .info:
             headerView.lblHeading.text = "Basic Info"
+            headerView.btnaddMoreCell.isHidden = true
         case .experience:
             if section == 0 {
                 headerView.lblHeading.text = "Current Experiernce"
@@ -261,7 +292,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             } else  if section == 1 {
                 headerView.lblHeading.text = "Past Experiernce"
                 headerView.btnaddMoreCell.isHidden = false
-
+                
                 headerView.addMore = {
                     if (self.addExperiences.count < self.listExperiences.count) {
                         self.addExperiences.append(String())

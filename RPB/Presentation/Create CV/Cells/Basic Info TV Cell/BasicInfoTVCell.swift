@@ -29,6 +29,17 @@ class BasicInfoTVCell: UITableViewCell {
         self.txtInfo.text = textFieldInfo.textValue
         self.txtInfo.tag = textFieldInfo.tag
         self.txtInfo.autocapitalizationType = textFieldInfo.capitalizationType
+        
+        if txtInfo.tag == 2 {
+            txtInfo.keyboardType = .emailAddress
+        }
+        if txtInfo.tag == 3 {
+            txtInfo.delegate = self
+            txtInfo.keyboardType = .numberPad
+        }
+        if txtInfo.tag == 4 {
+            txtInfo.keyboardType = .emailAddress
+        }
     }
     
     func checkMaxLength(textField: UITextField!, maxLength: Int) {
@@ -42,5 +53,26 @@ class BasicInfoTVCell: UITableViewCell {
 extension BasicInfoTVCell: UITextFieldDelegate {
     @objc func textFieldDidChange(_ textField: UITextField) {
         self.textDidChange?(textField)
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField.tag == 3 {
+            var startString = ""
+
+                if textField.text != nil {
+                    startString += textField.text!
+                }
+
+                startString += string
+
+            var limitNumber = startString.count
+
+                if limitNumber > 11 {
+                    return false
+                } else {
+                    return true
+                }
+        }
+        return true
     }
 }
