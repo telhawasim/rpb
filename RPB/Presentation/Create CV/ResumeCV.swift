@@ -27,7 +27,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     var category: Category = .info
     var listExperiences = [String]()
     var addExperiences = [String]()
-
+    
     //MARK: Lifecylce
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +74,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
             }
         }
         
-        UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {self.tableView.reloadData()}, completion: nil)
+        UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData()}, completion: nil)
     }
     
     //MARK: Configure Labels
@@ -100,6 +100,11 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.register(CategoryCVCell.className)
+    }
+    
+    func removeCell(index: Int) {
+        self.addExperiences.remove(at: index)
+        self.tableView.reloadData()
     }
     
     //MARK: Configure Buttons
@@ -183,7 +188,11 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
         case .info:
             return 6
         case .experience:
-            return addExperiences.count
+            if section == 0 {
+                return 1
+            } else {
+                return addExperiences.count
+            }
         case .skills:
             return 0
         case .academics:
@@ -194,41 +203,27 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
     //MARK: View for Header in Section
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ResumeHeaderCell.className) as! ResumeHeaderCell
-       
+        
         switch category {
         case .info:
             headerView.lblHeading.text = "Basic Info"
+            
         case .experience:
             if section == 0 {
                 headerView.lblHeading.text = "Current Experiernce"
                 headerView.btnaddMoreCell.isHidden = true
-            } else  if section == 1 {
+            } else {
                 headerView.lblHeading.text = "Past Experiernce"
                 headerView.btnaddMoreCell.isHidden = false
-
+                
                 headerView.addMore = {
-                    if (self.addExperiences.count < self.listExperiences.count) {
-                        self.addExperiences.append(String())
-                    }
+                    self.addExperiences.append(String())
                     self.tableView.reloadData()
                 }
             }
         default:
             break
         }
-        
-        //        switch category {
-        //            case .info:
-        //                  headerView.lblHeading.text = "Basic Info"
-        //
-        //            case .skills:
-        //
-        //            case .experience:
-        //                 headerView.lblHeading.text = "Basic Info"
-        //            case .academics:
-        //
-        //            default:
-        //        }
         return headerView
     }
     
@@ -244,6 +239,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BasicInfoTVCell", for: indexPath) as! BasicInfoTVCell
             cell.configureInfoSection(index: indexPath.row)
             return cell
+            
         case .experience:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceTVCell", for: indexPath) as! ExperienceTVCell
             
@@ -254,6 +250,14 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             } else if indexPath.section == 1 {
                 cell.deleteStack.isHidden = false
                 cell.textView.text = addExperiences[indexPath.row]
+                cell.lblCount.text = "\(indexPath.row + 1)"
+            }
+            
+            cell.deleteCell = { [weak self] in
+                guard let self = self else {return}
+                if self.addExperiences.count > 0 {
+                    self.removeCell(index: indexPath.row)
+                }
             }
             
             return cell

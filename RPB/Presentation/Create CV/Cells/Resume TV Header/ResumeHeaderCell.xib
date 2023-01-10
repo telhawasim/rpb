@@ -40,7 +40,6 @@
                                         <buttonConfiguration key="configuration" style="plain" image="Plus"/>
                                         <connections>
                                             <action selector="tappedAddMoreCell:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="faJ-KX-ugW"/>
-                                            <action selector="tappedAddMoreCell:" destination="-2" eventType="touchUpInside" id="gWA-mG-NeY"/>
                                         </connections>
                                     </button>
                                 </subviews>

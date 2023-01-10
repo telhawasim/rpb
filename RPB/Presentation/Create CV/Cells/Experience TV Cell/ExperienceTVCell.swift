@@ -19,6 +19,7 @@ class ExperienceTVCell: UITableViewCell {
     // Labels
     @IBOutlet weak var lblStartDate: UILabel!
     @IBOutlet weak var lblEndDate: UILabel!
+    @IBOutlet weak var lblCount: UILabel!
     
     // TextFields
     @IBOutlet weak var txtCompany: UITextField!
@@ -43,6 +44,7 @@ class ExperienceTVCell: UITableViewCell {
     var endDateIndex = Int()
     var startDatePicker = UIPickerView()
     var endDatePicker = UIPickerView()
+    var deleteCell: (() -> Void)?
     
     //MARK: Lifecylce
     override func awakeFromNib() {
@@ -193,6 +195,10 @@ class ExperienceTVCell: UITableViewCell {
     //            print("Data entered successfully")
     //        }
     //    }
+    
+    @IBAction func tappedDeleteCell(_ sender: Any) {
+        self.deleteCell?()
+    }
 }
 
 // MARK: UIPickerView Methods

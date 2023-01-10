@@ -63,13 +63,24 @@
                                                             <constraint firstAttribute="height" constant="17" id="WLt-wI-MhV"/>
                                                         </constraints>
                                                     </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2K-LS-sps">
+                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <connections>
+                                                            <action selector="tappedDeleteCell:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ldh-id-ian"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="cg9-a3-xZA" firstAttribute="centerX" secondItem="bs7-UB-QDY" secondAttribute="centerX" id="58K-ya-8Ue"/>
+                                                    <constraint firstAttribute="trailing" secondItem="A2K-LS-sps" secondAttribute="trailing" id="Y20-F9-MmL"/>
                                                     <constraint firstAttribute="width" constant="32" id="bUv-Ah-Knp"/>
+                                                    <constraint firstAttribute="bottom" secondItem="A2K-LS-sps" secondAttribute="bottom" id="bbm-EH-Qug"/>
                                                     <constraint firstItem="cg9-a3-xZA" firstAttribute="centerY" secondItem="bs7-UB-QDY" secondAttribute="centerY" id="btr-4s-DUx"/>
+                                                    <constraint firstItem="A2K-LS-sps" firstAttribute="leading" secondItem="bs7-UB-QDY" secondAttribute="leading" id="fgn-Vd-ylE"/>
                                                     <constraint firstAttribute="height" constant="32" id="lD2-6a-Fua"/>
+                                                    <constraint firstItem="A2K-LS-sps" firstAttribute="top" secondItem="bs7-UB-QDY" secondAttribute="top" id="rlf-jp-fbN"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -310,6 +321,7 @@
                 <outlet property="endDateStack" destination="gfl-sl-V8s" id="TTo-Q0-ize"/>
                 <outlet property="endDateView" destination="o2B-XR-9m5" id="okd-6m-z5Y"/>
                 <outlet property="experienceCountView" destination="bgn-ng-RJN" id="Az3-HS-xTH"/>
+                <outlet property="lblCount" destination="wqM-dt-Bx3" id="2dF-6V-1GE"/>
                 <outlet property="lblEndDate" destination="BjB-u6-zx6" id="nd0-4h-guP"/>
                 <outlet property="lblStartDate" destination="Pxk-LM-gGh" id="Ln4-gp-WoL"/>
                 <outlet property="startDateView" destination="Z5J-Ts-EhB" id="6bG-zi-GpK"/>
