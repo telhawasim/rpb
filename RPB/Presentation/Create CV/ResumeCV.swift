@@ -7,54 +7,6 @@
 
 import UIKit
 
-struct TextFieldModel {
-    var title: String
-    var placeholder: String
-    var textValue: String = ""
-    var tag: Int = 0
-    var capitalizationType: UITextAutocapitalizationType = .none
-    
-    static func getInfoTextFields() -> [TextFieldModel] {
-        var textFields = [TextFieldModel]()
-        textFields.append(TextFieldModel(title: "Name", placeholder: "Dawid", tag: 0, capitalizationType: .words))
-        textFields.append(TextFieldModel(title: "Designation", placeholder: "UI/UX Designer", tag: 1, capitalizationType: .words))
-        textFields.append(TextFieldModel(title: "Email Address", placeholder: "dawid.name@gmail.com", tag: 2))
-        textFields.append(TextFieldModel(title: "Phone Number", placeholder: "03350438764", tag: 3))
-        textFields.append(TextFieldModel(title: "Git / Bit Bucket", placeholder: "Dawid.name@bitbucket.org", tag: 4,  capitalizationType: .words))
-        textFields.append(TextFieldModel(title: "LinkedIn", placeholder: "linkedin.com/dawid.name", tag: 5))
-        textFields.append(TextFieldModel(title: "", placeholder: "", tag: 6))
-        return textFields
-    }
-}
-
-struct ExperienceModel {
-    var companyName: String = "Company Name"
-    var txtCompanyName: String = ""
-    var startDate: String = "Starts From"
-    var txtStartDate: String = ""
-    var endDate: String = "Ends to"
-    var txtEndDate: String = ""
-    var txtView: String = ""
-    
-    static func getExperienceTextFields() -> [ExperienceModel] {
-        var experienceFields = [ExperienceModel]()
-        experienceFields.append(ExperienceModel())
-        return experienceFields
-    }
-}
-
-struct AcademicsModel {
-    var txtDegree: String = ""
-    var txtInstitute: String = ""
-    var txtStartsFrom: String = ""
-    var txtEndsTo: String = ""
-    
-    static func getAcademicsTextFields() -> [AcademicsModel] {
-        var academicsFields = [AcademicsModel]()
-        return academicsFields
-    }
-}
-
 class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     
     //MARK: Outlet
@@ -72,8 +24,9 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     var experienceModel = [Section]()
     var selectedHeader = Int()
     var categoryTitle: [Category] = [.info, .experience, .skills, .academics]
-    var category: Category = .academics
+    var category: Category = .skills
     var addExperiences = [ExperienceModel]()
+    var addSkills = [String]()
     
     var infoTextFields = TextFieldModel.getInfoTextFields() {
         didSet {
@@ -86,6 +39,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
             self.experienceValidation()
         }
     }
+    
     var academicsTextFields = AcademicsModel.getAcademicsTextFields() {
         didSet {
             self.academicsValidation()
@@ -337,7 +291,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
         case .experience:
             return 2
         case .skills:
-            return 0
+            return 2
         case .academics:
             return 1
         }
@@ -355,7 +309,11 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 return addExperiences.count
             }
         case .skills:
-            return 0
+            if section == 0 {
+                return 1
+            } else {
+                return 1
+            }
         case .academics:
             return academicsTextFields.count
         }
@@ -382,6 +340,20 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                     self.tableView.reloadData()
                 }
             }
+        case .skills:
+            if section == 0 {
+                headerView.lblHeading.text = "Add Skills"
+                headerView.btnaddMoreCell.isHidden = true
+            } else {
+                headerView.lblHeading.text = "Add Certificates"
+                headerView.btnaddMoreCell.isHidden = false
+                
+                headerView.addMore = {
+                    self.addExperiences.append(ExperienceModel())
+                    self.tableView.reloadData()
+                }
+            }
+
         case .academics:
             headerView.lblHeading.text = "Add Qualifications"
             headerView.addMore = {
@@ -460,7 +432,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 guard let self = self else {return}
                 self.experienceTextFields[indexPath.row].txtView = txtView.text ?? ""
             }
-            
+            //cell.configure(experienceTextFields[indexPath.row])
             return cell
             
         case .skills:
