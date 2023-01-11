@@ -22,6 +22,7 @@ struct TextFieldModel {
         textFields.append(TextFieldModel(title: "Phone Number", placeholder: "03350438764", tag: 3))
         textFields.append(TextFieldModel(title: "Git / Bit Bucket", placeholder: "Dawid.name@bitbucket.org", tag: 4,  capitalizationType: .words))
         textFields.append(TextFieldModel(title: "LinkedIn", placeholder: "linkedin.com/dawid.name", tag: 5))
+        textFields.append(TextFieldModel(title: "", placeholder: "", tag: 6))
         return textFields
     }
 }
@@ -199,6 +200,25 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         return true
     }
     
+    func selectAndUpdateCV(indexPath: IndexPath) {
+        let index = categoryTitle.firstIndex(of: self.category) ?? 0
+        let previousIndex = IndexPath(item: index, section: 0)
+        self.category = self.categoryTitle[indexPath.item]
+        self.collectionView.reloadItems(at: [previousIndex, indexPath])
+        self.collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
+    }
+    
+    func updateTabelView() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData()
+                self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+                self.configureButtons()
+            }, completion: nil)
+        }
+    }
+    
+    //MARK: Go back Button Pressed
     @IBAction func btnGoBack(_ sender: Any) {
         PopupView.shared.presentPopup(self, popupType: .discardInformation) { value in
             if (value != nil) {
@@ -208,12 +228,15 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         }
     }
     
+    //MARK: Save Button Pressed
     @IBAction func btnSavePressed(_ sender: Any) {
         switch category {
         case .info:
-            if self.btnSave.backgroundColor == UIColor.customBlue {
+            if self.btnSave.isEnabled {
                 if infoTabTextFieldValidation() {
-                    print("Info")
+                    let index = IndexPath(item: 1, section: 0)
+                    self.selectAndUpdateCV(indexPath: index)
+                    self.updateTabelView()
                 }
             }
         case .experience:
@@ -222,6 +245,24 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
             print("Skills")
         case .academics:
             print("Academics")
+        }
+    }
+    
+    //MARK: Previous Button Pressed
+    @IBAction func btnPreviousPressed(_ sender: Any) {
+        switch category {
+        case .info:
+            break
+        case .experience:
+            let index = IndexPath(item: 0, section: 0)
+            self.selectAndUpdateCV(indexPath: index)
+            self.updateTabelView()
+            
+        case .skills:
+            print("Skills")
+        case .academics:
+            print("Academics")
+            
         }
     }
 }
@@ -234,20 +275,13 @@ extension ResumeCV: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCVCell", for: indexPath) as! CategoryCVCell
-        cell.lblTitle.text = categoryTitle[indexPath.row].rawValue
-        cell.isSelected = true
+        let isSelected = self.categoryTitle[indexPath.row] == category
+        cell.configure(isSelected, title: categoryTitle[indexPath.row].rawValue.capitalized)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 110.0, height: 42.0)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        category = categoryTitle[indexPath.row]
-        UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData()
-            self.configureButtons()
-        }, completion: nil)
     }
 }
 
@@ -258,7 +292,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         switch category {
         case .info:
-            return 1
+            return 2
         case .experience:
             return 2
         case .skills:
@@ -272,7 +306,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch category {
         case .info:
-            return infoTextFields.count
+            return section == 0 ? (infoTextFields.count - 1) : 1
         case .experience:
             if section == 0 {
                 return 1
@@ -292,7 +326,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
         
         switch category {
         case .info:
-            headerView.lblHeading.text = "Basic Info"
+            headerView.lblHeading.text = (section == 0) ? "Basic Info" : "Summary"
             headerView.btnaddMoreCell.isHidden = true
         case .experience:
             if section == 0 {
@@ -322,12 +356,21 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch category {
         case .info:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "BasicInfoTVCell", for: indexPath) as! BasicInfoTVCell
-            cell.configure(infoTextFields[indexPath.row])
-            cell.textDidChange = { [weak self] (txtField) in
-                self?.infoTextFields[indexPath.row].textValue = txtField.text ?? ""
+            if indexPath.section == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "BasicInfoTVCell", for: indexPath) as! BasicInfoTVCell
+                cell.configure(infoTextFields[indexPath.row])
+                cell.textDidChange = { [weak self] (txtField) in
+                    self?.infoTextFields[indexPath.row].textValue = txtField.text ?? ""
+                }
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "SummaryTVCell", for: indexPath) as! SummaryTVCell
+                cell.textDidChange = { [weak self] (txtView) in
+                    guard let self = self else {return}
+                    self.infoTextFields[self.infoTextFields.count - 1].textValue = txtView.text ?? ""
+                }
+                return cell
             }
-            return cell
             
         case .experience:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceTVCell", for: indexPath) as! ExperienceTVCell

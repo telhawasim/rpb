@@ -14,38 +14,32 @@ class CategoryCVCell: UICollectionViewCell {
     @IBOutlet weak var cellView: UIView!
     
     //MARK: Variables
-    override var isSelected: Bool {
-        didSet {
-            if isSelected {
-                self.cellView.borderWidth = 0
-                self.cellView.borderColor = UIColor.white
-                self.cellView.backgroundColor = UIColor.customBlue
-                self.lblTitle.textColor = UIColor.white
-            } else {
-                self.cellView.borderWidth = 1
-                self.cellView.borderColor = UIColor.greyE2E2E2
-                self.cellView.backgroundColor = UIColor.white
-                self.lblTitle.textColor = UIColor.black
-            }
-        }
-    }
     
     //MARK: Lifecylce
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.configureView()
-        self.configureLabel()
+        self.setupView()
     }
     
     //MARK: Configure View
-    func configureView() {
+    func setupView() {
         self.cellView.borderColor = UIColor.greyE2E2E2
         self.cellView.borderWidth = 1
         self.cellView.cornerRadius(22)
     }
     
-    func configureLabel() {
+    func configure(_ isSelected: Bool, title: String) {
+        self.setupCellState(isSelected)
+        self.lblTitle.text = title
         self.lblTitle.font = UIFont.montserratRegular(14)
+        
+    }
+    
+    func setupCellState(_ isSelected: Bool) {
+        self.cellView.borderWidth = isSelected ? 0 : 1
+        self.cellView.borderColor = isSelected ? UIColor.white : UIColor.greyE2E2E2
+        self.cellView.backgroundColor = isSelected ? UIColor.customBlue : UIColor.white
+        self.lblTitle.textColor = isSelected ? UIColor.white :  UIColor.black
         
     }
 

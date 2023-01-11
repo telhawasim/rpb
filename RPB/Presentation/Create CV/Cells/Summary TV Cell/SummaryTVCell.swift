@@ -8,12 +8,13 @@
 import UIKit
 
 class SummaryTVCell: UITableViewCell {
+    
     //MARK: Outlet
     @IBOutlet weak var summaryView: UIView!
     @IBOutlet weak var textView: UITextView!
     
-    
     //MARK: Variables
+    var textDidChange: ((UITextView) -> Void)?
     
     //MARK: Lifecylce
     override func awakeFromNib() {
@@ -31,11 +32,12 @@ class SummaryTVCell: UITableViewCell {
     func configureTextView() {
         self.textView.delegate = self
         textView.addPadding(size: 10)
-        textView.text = "Description"
+        textView.text = "Write Here"
         textView.textColor = UIColor.lightGray
     }
 }
 
+//MARK: UITextView Methods
 extension SummaryTVCell: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
@@ -46,8 +48,11 @@ extension SummaryTVCell: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "Description"
+            self.textDidChange?(textView)
+            textView.text = "Write Here"
             textView.textColor = UIColor.lightGray
+        } else if textView.text != "" && textView.text != "Write Here" {
+            self.textDidChange?(textView)
         }
     }
 }

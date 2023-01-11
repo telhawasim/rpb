@@ -1755,6 +1755,9 @@
                                                 <state key="normal" title="Previous">
                                                     <color key="titleColor" name=" Color 5557D4"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnPreviousPressed:" destination="1tl-FA-Ee7" eventType="touchUpInside" id="b2a-Mm-Llz"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRB-rA-Ql5">
                                                 <rect key="frame" x="0.0" y="0.0" width="333" height="60"/>
