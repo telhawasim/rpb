@@ -27,6 +27,24 @@ struct TextFieldModel {
     }
 }
 
+struct ExperienceModel {
+    var title: String
+    var placeholder: String
+    var textValue: String = ""
+    var tag: Int = 0
+    var capitalizationType: UITextAutocapitalizationType = .none
+    
+    static func getExperienceTextFields() -> [ExperienceModel] {
+        var experienceFields = [ExperienceModel]()
+        experienceFields.append(ExperienceModel(title: "Company Name", placeholder: "Synavos", tag: 0, capitalizationType: .words))
+        experienceFields.append(ExperienceModel(title: "Starts Form", placeholder: "2018", tag: 1, capitalizationType: .words))
+        experienceFields.append(ExperienceModel(title: "Ends To", placeholder: "2020", tag: 2))
+        experienceFields.append(ExperienceModel(title: "Phone Number", placeholder: "03350438764", tag: 3))
+        experienceFields.append(ExperienceModel(title: "", placeholder: "TextView", tag: 4,  capitalizationType: .words))
+        return experienceFields
+    }
+}
+
 class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     
     //MARK: Outlet
@@ -52,7 +70,6 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         }
     }
     
-    var listExperiences = [String]()
     var addExperiences = [String]()
     
     //MARK: Lifecylce
