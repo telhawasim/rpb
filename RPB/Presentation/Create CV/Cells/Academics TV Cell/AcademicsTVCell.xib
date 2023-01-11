@@ -48,6 +48,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="ic_delete_cell"/>
+                                <connections>
+                                    <action selector="btnDeletePressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dN5-4S-t9f"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7CZ-Ph-j5R">
                                 <rect key="frame" x="0.0" y="40" width="320" height="298"/>
@@ -243,6 +246,10 @@
                 <outlet property="lblInstitute" destination="WP7-du-ZZM" id="4ql-Ar-oFm"/>
                 <outlet property="lblStartsFrom" destination="mTc-2H-WEo" id="jh5-Zn-Wvx"/>
                 <outlet property="lblView" destination="LrT-Ti-eD6" id="pXk-gS-4xh"/>
+                <outlet property="txtDegree" destination="XZj-1Y-MDy" id="QEr-xg-ath"/>
+                <outlet property="txtEndsTo" destination="McD-fP-6Pj" id="hxd-BG-hB8"/>
+                <outlet property="txtInstitute" destination="FKf-ru-ngU" id="9C3-ns-eX8"/>
+                <outlet property="txtStartsFrom" destination="oCh-O5-wE2" id="R6u-Vp-tSW"/>
             </connections>
             <point key="canvasLocation" x="25.954198473282442" y="134.50704225352112"/>
         </tableViewCell>

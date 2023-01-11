@@ -44,4 +44,10 @@ class BaseVC: UIViewController {
         let tabbarVC  = UIStoryboard.getVC(from: .main, ResumeCV.className)
         self.navigationController?.pushViewController(tabbarVC, animated: true)
     }
+    
+    //MARK: Go to Preview CV Screen
+    func goToPreviewCV() {
+        let tabbarVC  = UIStoryboard.getVC(from: .main, CVPreviewVC.className)
+        self.navigationController?.pushViewController(tabbarVC, animated: true)
+    }
 }

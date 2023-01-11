@@ -50,7 +50,7 @@ struct AcademicsModel {
     var txtEndsTo: String = ""
     
     static func getAcademicsTextFields() -> [AcademicsModel] {
-        var academicsFields = [AcademicsModel]()
+        let academicsFields = [AcademicsModel]()
         return academicsFields
     }
 }
@@ -106,12 +106,6 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.btnSave.backgroundColor = UIColor.systemGray
     }
     
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        let selectedIndexPath = IndexPath(item: 3, section: 0)
-    //        collectionView.selectItem(at: selectedIndexPath, animated: false, scrollPosition: .left)
-    //        tableView.reloadData()
-    //    }
-    
     //MARK: Configure Labels
     func configureLabel() {
         self.lblTitle.font = UIFont.montserratMedium(24)
@@ -143,6 +137,13 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.tableView.reloadData()
     }
     
+    func removeCellAcademics(index: Int) {
+        self.academicsTextFields.remove(at: index)
+        UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData()
+        }, completion: nil)
+        
+    }
+    
     //MARK: Configure Buttons
     func configureButtons() {
         self.btnPreview.borderWidth = 1
@@ -167,6 +168,10 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         } else if category == .skills {
             btnPreview.isHidden = false
         } else {
+            if academicsTextFields.isEmpty {
+                btnSave.isEnabled = true
+                btnSave.backgroundColor = UIColor.customBlue
+            }
             btnPreview.isHidden = false
         }
     }
@@ -281,11 +286,21 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
                 }
             }
         case .experience:
-            print("Experience")
+            if self.btnSave.isEnabled {
+                let index = IndexPath(item: 1, section: 0)
+                self.selectAndUpdateCV(indexPath: index)
+                self.updateTabelView()
+            }
         case .skills:
-            print("Skills")
+            if self.btnSave.isEnabled {
+                let index = IndexPath(item: 1, section: 0)
+                self.selectAndUpdateCV(indexPath: index)
+                self.updateTabelView()
+            }
         case .academics:
-            print("Academics")
+            if self.btnSave.isEnabled {
+                self.goToPreviewCV()
+            }
         }
     }
     
@@ -298,12 +313,16 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
             let index = IndexPath(item: 0, section: 0)
             self.selectAndUpdateCV(indexPath: index)
             self.updateTabelView()
-            
         case .skills:
             print("Skills")
+            let index = IndexPath(item: 1, section: 0)
+            self.selectAndUpdateCV(indexPath: index)
+            self.updateTabelView()
         case .academics:
-            print("Academics")
-            
+            print("Skills")
+            let index = IndexPath(item: 2, section: 0)
+            self.selectAndUpdateCV(indexPath: index)
+//            self.updateTabelView()
         }
     }
 }
@@ -386,10 +405,10 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             headerView.lblHeading.text = "Add Qualifications"
             headerView.addMore = {
                 self.academicsTextFields.append(AcademicsModel())
-                UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData()
+                UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                    self.tableView.reloadData()
                     self.tableView.scrollToRow(at: IndexPath(row: self.academicsTextFields.count-1, section: 0), at: .top, animated: false)
                 }, completion: nil)
-                self.tableView.reloadData()
             }
         default:
             break
@@ -469,6 +488,31 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
         case .academics:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AcademicsTVCell", for: indexPath) as! AcademicsTVCell
             cell.lblCount.text = "\(indexPath.row + 1)"
+            cell.delegate = self
+            cell.configure(data: academicsTextFields[indexPath.row])
+            
+            cell.textDegreeDidChange = { [weak self] (txtField) in
+                self?.academicsTextFields[indexPath.row].txtDegree = txtField.text ?? ""
+            }
+            
+            cell.textInstituteDidChange = { [weak self] (txtField) in
+                self?.academicsTextFields[indexPath.row].txtInstitute = txtField.text ?? ""
+            }
+            
+            cell.textStartDateDidChange = { [weak self] (txtField) in
+                self?.academicsTextFields[indexPath.row].txtStartsFrom = txtField.text ?? ""
+            }
+            
+            cell.textEndDateDidChange = { [weak self] (txtField) in
+                guard let self = self else {return}
+                self.academicsTextFields[indexPath.row].txtEndsTo = txtField.text ?? ""
+            }
+            cell.deleteCell = { [weak self] in
+                guard let self = self else {return}
+                if self.academicsTextFields.count > 0 {
+                    self.removeCellAcademics(index: indexPath.row)
+                }
+            }
             return cell
         }
     }
