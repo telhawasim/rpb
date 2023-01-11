@@ -41,12 +41,6 @@ class BasicInfoTVCell: UITableViewCell {
             txtInfo.keyboardType = .emailAddress
         }
     }
-    
-    func checkMaxLength(textField: UITextField!, maxLength: Int) {
-        if (textField.text!.count > maxLength) {
-            textField.deleteBackward()
-        }
-    }
 }
 
 //MARK: TexiField Methods
@@ -65,7 +59,7 @@ extension BasicInfoTVCell: UITextFieldDelegate {
 
                 startString += string
 
-            var limitNumber = startString.count
+            let limitNumber = startString.count
 
                 if limitNumber > 11 {
                     return false
