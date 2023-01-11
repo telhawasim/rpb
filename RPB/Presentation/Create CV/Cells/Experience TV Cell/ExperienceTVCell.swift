@@ -45,6 +45,10 @@ class ExperienceTVCell: UITableViewCell {
     var startDatePicker = UIPickerView()
     var endDatePicker = UIPickerView()
     var deleteCell: (() -> Void)?
+    var textComapnyDidChange: ((UITextField) -> Void)?
+    var textStartDateDidChange: ((UITextField) -> Void)?
+    var textEndDateDidChange: ((UITextField) -> Void)?
+    var textViewDidChange: ((UITextView) -> Void)?
     
     //MARK: Lifecylce
     override func awakeFromNib() {
@@ -54,6 +58,9 @@ class ExperienceTVCell: UITableViewCell {
         self.configureTextFields()
         self.configurePickerforYear()
         self.configureTextView()
+        self.txtCompany.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        self.txtStartDate.addTarget(self, action: #selector(self.textStartDateDidChange(_:)), for: .editingChanged)
+        self.txtEndDate.addTarget(self, action: #selector(self.textEndDateDidChange(_:)), for: .editingChanged)
     }
     
     //MARK: Configure Labels
@@ -95,6 +102,13 @@ class ExperienceTVCell: UITableViewCell {
         for loop in stride(from: currentYear, through: 2000, by: -1) {
             years.append("\(loop)")
         }
+    }
+    
+    func configure(_ textFieldInfo: ExperienceModel) {
+        self.txtCompany.text = textFieldInfo.companyName
+        self.txtStartDate.text = textFieldInfo.startDate
+        self.txtEndDate.text = textFieldInfo.endDate
+        self.textView.text = textFieldInfo.txtView
     }
     
     //MARK: Configure PickerView for EndYear
@@ -244,6 +258,18 @@ extension ExperienceTVCell: UIPickerViewDelegate, UIPickerViewDataSource {
 
 // MARK: TextField Methods
 extension ExperienceTVCell: UITextFieldDelegate {
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        self.textComapnyDidChange?(textField)
+    }
+    
+    @objc func textStartDateDidChange(_ textField: UITextField) {
+        self.textStartDateDidChange?(textField)
+    }
+    
+    @objc func textEndDateDidChange(_ textField: UITextField) {
+        self.textEndDateDidChange?(textField)
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         //  self.dropDownAnimation(imageView: dropDownList, image: "arrow_up", index: textField.tag)
     }
@@ -264,13 +290,11 @@ extension ExperienceTVCell: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "Description"
+            self.textViewDidChange?(textView)
+            textView.text = "Write Here"
             textView.textColor = UIColor.lightGray
+        } else if textView.text != "" && textView.text != "Write Here" {
+            self.textViewDidChange?(textView)
         }
     }
-    
-    //    func textViewDidChange(_ textView: UITextView) {
-    //        self.adjustTextViewHeight()
-    //    }
-    
 }

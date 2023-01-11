@@ -28,19 +28,17 @@ struct TextFieldModel {
 }
 
 struct ExperienceModel {
-    var title: String
-    var placeholder: String
-    var textValue: String = ""
-    var tag: Int = 0
-    var capitalizationType: UITextAutocapitalizationType = .none
+    var companyName: String = "Company Name"
+    var txtCompanyName: String = ""
+    var startDate: String = "Starts From"
+    var txtStartDate: String = ""
+    var endDate: String = "Ends to"
+    var txtEndDate: String = ""
+    var txtView: String = ""
     
     static func getExperienceTextFields() -> [ExperienceModel] {
         var experienceFields = [ExperienceModel]()
-        experienceFields.append(ExperienceModel(title: "Company Name", placeholder: "Synavos", tag: 0, capitalizationType: .words))
-        experienceFields.append(ExperienceModel(title: "Starts Form", placeholder: "2018", tag: 1, capitalizationType: .words))
-        experienceFields.append(ExperienceModel(title: "Ends To", placeholder: "2020", tag: 2))
-        experienceFields.append(ExperienceModel(title: "Phone Number", placeholder: "03350438764", tag: 3))
-        experienceFields.append(ExperienceModel(title: "", placeholder: "TextView", tag: 4,  capitalizationType: .words))
+        experienceFields.append(ExperienceModel())
         return experienceFields
     }
 }
@@ -62,7 +60,8 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     var experienceModel = [Section]()
     var selectedHeader = Int()
     var categoryTitle: [Category] = [.info, .experience, .skills, .academics]
-    var category: Category = .info
+    var category: Category = .experience
+    var addExperiences = [ExperienceModel]()
     
     var infoTextFields = TextFieldModel.getInfoTextFields() {
         didSet {
@@ -70,7 +69,11 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         }
     }
     
-    var addExperiences = [String]()
+    var experienceTextFields = ExperienceModel.getExperienceTextFields() {
+        didSet {
+            self.experienceValidation()
+        }
+    }
     
     //MARK: Lifecylce
     override func viewDidLoad() {
@@ -187,6 +190,23 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         
         for textField in self.infoTextFields {
             if textField.textValue.isEmpty {
+                isAllPopulated = false
+                break
+            } else {
+                isAllPopulated = true
+            }
+        }
+        
+        self.btnSave.isEnabled = isAllPopulated
+        self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
+    }
+    
+    //MARK: Validation for textField's text is nil
+    func experienceValidation() {
+        var isAllPopulated = false
+        
+        for textField in self.experienceTextFields {
+            if textField.txtCompanyName.isEmpty || textField.txtStartDate.isEmpty || textField.txtEndDate.isEmpty || textField.txtView.isEmpty {
                 isAllPopulated = false
                 break
             } else {
@@ -354,7 +374,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 headerView.btnaddMoreCell.isHidden = false
                 
                 headerView.addMore = {
-                    self.addExperiences.append(String())
+                    self.addExperiences.append(ExperienceModel())
                     self.tableView.reloadData()
                 }
             }
@@ -376,9 +396,11 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             if indexPath.section == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "BasicInfoTVCell", for: indexPath) as! BasicInfoTVCell
                 cell.configure(infoTextFields[indexPath.row])
+                
                 cell.textDidChange = { [weak self] (txtField) in
                     self?.infoTextFields[indexPath.row].textValue = txtField.text ?? ""
                 }
+                
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SummaryTVCell", for: indexPath) as! SummaryTVCell
@@ -399,7 +421,6 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             } else if indexPath.section == 1 {
                 cell.deleteStack.isHidden = false
                 cell.endDateStack.isHidden = false
-                cell.textView.text = addExperiences[indexPath.row]
                 cell.lblCount.text = "\(indexPath.row + 1)"
             }
             
@@ -408,6 +429,23 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 if self.addExperiences.count > 0 {
                     self.removeCell(index: indexPath.row)
                 }
+            }
+            
+            cell.textComapnyDidChange = { [weak self] (txtField) in
+                self?.experienceTextFields[indexPath.row].txtCompanyName = txtField.text ?? ""
+            }
+            
+            cell.textStartDateDidChange = { [weak self] (txtField) in
+                self?.experienceTextFields[indexPath.row].txtStartDate = txtField.text ?? ""
+            }
+            
+            cell.textEndDateDidChange = { [weak self] (txtField) in
+                self?.experienceTextFields[indexPath.row].txtEndDate = txtField.text ?? ""
+            }
+            
+            cell.textViewDidChange = { [weak self] (txtView) in
+                guard let self = self else {return}
+                self.experienceTextFields[indexPath.row].txtView = txtView.text ?? ""
             }
             
             return cell
