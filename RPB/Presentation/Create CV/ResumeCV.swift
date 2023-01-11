@@ -72,7 +72,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     var experienceModel = [Section]()
     var selectedHeader = Int()
     var categoryTitle: [Category] = [.info, .experience, .skills, .academics]
-    var category: Category = .experience
+    var category: Category = .academics
     var addExperiences = [ExperienceModel]()
     
     var infoTextFields = TextFieldModel.getInfoTextFields() {
@@ -91,8 +91,6 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
             self.academicsValidation()
         }
     }
-    
-    var addExperiences = [String]()
     
     //MARK: Lifecylce
     override func viewDidLoad() {
@@ -196,6 +194,17 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         
         for textField in self.experienceTextFields {
             if textField.txtCompanyName.isEmpty || textField.txtStartDate.isEmpty || textField.txtEndDate.isEmpty || textField.txtView.isEmpty {
+                isAllPopulated = false
+                break
+            } else {
+                isAllPopulated = true
+            }
+        }
+        
+        self.btnSave.isEnabled = isAllPopulated
+        self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
+    }
+    
     //MARK: Validation for Academics textField's text is nil
     func academicsValidation() {
         var isAllPopulated = false
@@ -459,6 +468,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             
         case .academics:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AcademicsTVCell", for: indexPath) as! AcademicsTVCell
+            cell.lblCount.text = "\(indexPath.row + 1)"
             return cell
         }
     }
