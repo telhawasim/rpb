@@ -63,6 +63,10 @@
 		3637D77C2962C40A0086A699 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3637D77B2962C40A0086A699 /* Montserrat-Thin.ttf */; };
 		3637D7802962CBF20086A699 /* TagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3637D77E2962CBF20086A699 /* TagsTableViewCell.swift */; };
 		3637D7812962CBF20086A699 /* TagsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3637D77F2962CBF20086A699 /* TagsTableViewCell.xib */; };
+		363B25A4296EE770002EEC14 /* AddSkillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363B25A2296EE770002EEC14 /* AddSkillsTableViewCell.swift */; };
+		363B25A5296EE770002EEC14 /* AddSkillsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 363B25A3296EE770002EEC14 /* AddSkillsTableViewCell.xib */; };
+		363B25A9296EF0D1002EEC14 /* AddCertificatesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363B25A7296EF0D1002EEC14 /* AddCertificatesTableViewCell.swift */; };
+		363B25AA296EF0D1002EEC14 /* AddCertificatesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 363B25A8296EF0D1002EEC14 /* AddCertificatesTableViewCell.xib */; };
 		365010DA2955ADE1003F3262 /* TabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365010D92955ADE1003F3262 /* TabbarVC.swift */; };
 		365010DD2955CBD2003F3262 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365010DC2955CBD2003F3262 /* TableView.swift */; };
 		365010E42955EC33003F3262 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365010E32955EC33003F3262 /* SettingVC.swift */; };
@@ -172,6 +176,10 @@
 		3637D77B2962C40A0086A699 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
 		3637D77E2962CBF20086A699 /* TagsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsTableViewCell.swift; sourceTree = "<group>"; };
 		3637D77F2962CBF20086A699 /* TagsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsTableViewCell.xib; sourceTree = "<group>"; };
+		363B25A2296EE770002EEC14 /* AddSkillsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSkillsTableViewCell.swift; sourceTree = "<group>"; };
+		363B25A3296EE770002EEC14 /* AddSkillsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSkillsTableViewCell.xib; sourceTree = "<group>"; };
+		363B25A7296EF0D1002EEC14 /* AddCertificatesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCertificatesTableViewCell.swift; sourceTree = "<group>"; };
+		363B25A8296EF0D1002EEC14 /* AddCertificatesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCertificatesTableViewCell.xib; sourceTree = "<group>"; };
 		365010D42955A3D4003F3262 /* RPB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		365010D52955A3D4003F3262 /* RPBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		365010D62955A3D4003F3262 /* RPBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -499,6 +507,24 @@
 			path = "Tags TV Cell";
 			sourceTree = "<group>";
 		};
+		363B25A1296EE730002EEC14 /* Skills TV Cell */ = {
+			isa = PBXGroup;
+			children = (
+				363B25A2296EE770002EEC14 /* AddSkillsTableViewCell.swift */,
+				363B25A3296EE770002EEC14 /* AddSkillsTableViewCell.xib */,
+			);
+			path = "Skills TV Cell";
+			sourceTree = "<group>";
+		};
+		363B25A6296EF033002EEC14 /* Certificates */ = {
+			isa = PBXGroup;
+			children = (
+				363B25A7296EF0D1002EEC14 /* AddCertificatesTableViewCell.swift */,
+				363B25A8296EF0D1002EEC14 /* AddCertificatesTableViewCell.xib */,
+			);
+			path = Certificates;
+			sourceTree = "<group>";
+		};
 		365010D72955A84D003F3262 /* Custom Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -543,6 +569,8 @@
 		3669A4D0295C1A07005015ED /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				363B25A6296EF033002EEC14 /* Certificates */,
+				363B25A1296EE730002EEC14 /* Skills TV Cell */,
 				090C3476296EA2110066A1EB /* Academics TV Cell */,
 				09B11BE12966FE9800E93177 /* Category CV Cell */,
 				3637D77D2962CBC90086A699 /* Tags TV Cell */,
@@ -953,10 +981,12 @@
 				36F8AB6E295AE90500CA9CFA /* LaunchScreen.storyboard in Resources */,
 				36F8AB76295B0B8D00CA9CFA /* TagsCollectionViewCell.xib in Resources */,
 				3601D375295DC2F8008B1F02 /* HardSkillsTextTableViewCell.xib in Resources */,
+				363B25AA296EF0D1002EEC14 /* AddCertificatesTableViewCell.xib in Resources */,
 				090441CC295595BF0088941F /* Main.storyboard in Resources */,
 				09B11BE52966FF0000E93177 /* CategoryCVCell.xib in Resources */,
 				090441CD295595D60088941F /* Montserrat-SemiBold.otf in Resources */,
 				090441CE295595D90088941F /* Montserrat-Regular.otf in Resources */,
+				363B25A5296EE770002EEC14 /* AddSkillsTableViewCell.xib in Resources */,
 				36220191295DA96100B2CC3D /* EducationTableViewCell.xib in Resources */,
 				090441CF295595DB0088941F /* Montserrat-Bold.otf in Resources */,
 				36220188295D801300B2CC3D /* ExperienceTableViewCell.xib in Resources */,
@@ -1134,11 +1164,13 @@
 				090441B22955920E0088941F /* CustomColor.swift in Sources */,
 				090441B32955920E0088941F /* CustomFont.swift in Sources */,
 				3669A4E4295C1A07005015ED /* ResumeHeaderCell.swift in Sources */,
+				363B25A9296EF0D1002EEC14 /* AddCertificatesTableViewCell.swift in Sources */,
 				3636F30529547728001D886A /* HomeVC.swift in Sources */,
 				3601D371295DB4D5008B1F02 /* UILabel.swift in Sources */,
 				3669A4E8295C1A07005015ED /* DobTVCell.swift in Sources */,
 				36F8AB75295B0B8D00CA9CFA /* TagsCollectionViewCell.swift in Sources */,
 				098C8D52295EB0CC00E064A1 /* ExperienceTVCell.swift in Sources */,
+				363B25A4296EE770002EEC14 /* AddSkillsTableViewCell.swift in Sources */,
 				3669A4E1295C1A07005015ED /* SummaryTVCell.swift in Sources */,
 				365010E42955EC33003F3262 /* SettingVC.swift in Sources */,
 				3601D369295DABAA008B1F02 /* SkillsTableViewCell.swift in Sources */,

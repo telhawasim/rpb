@@ -42,8 +42,8 @@ class ExperienceTVCell: UITableViewCell {
     var years = [String]()
     var endDate = [String]()
     var endDateIndex = Int()
-    var startDatePicker = UIPickerView()
-    var endDatePicker = UIPickerView()
+    var startYearPicker = UIPickerView()
+    var endYearPicker = UIPickerView()
     var deleteCell: (() -> Void)?
     var textComapnyDidChange: ((UITextField) -> Void)?
     var textStartDateDidChange: ((UITextField) -> Void)?
@@ -80,9 +80,10 @@ class ExperienceTVCell: UITableViewCell {
     
     //MARK: Configure UIPickerView
     func configurePicker() {
-        self.startDatePicker.delegate = self
-        self.txtStartDate.inputView = startDatePicker
-        self.endDatePicker.delegate = self
+        self.startYearPicker.delegate = self
+        self.endYearPicker.delegate = self
+        self.txtStartDate.inputView = startYearPicker
+        self.txtEndDate.inputView = endYearPicker
     }
     
     //MARK: Configure TextFields
@@ -105,9 +106,9 @@ class ExperienceTVCell: UITableViewCell {
     }
     
     func configure(_ textFieldInfo: ExperienceModel) {
-        self.txtCompany.text = textFieldInfo.companyName
-        self.txtStartDate.text = textFieldInfo.startDate
-        self.txtEndDate.text = textFieldInfo.endDate
+        self.txtCompany.text = textFieldInfo.txtCompanyName
+        self.txtStartDate.text = textFieldInfo.txtStartDate
+        self.txtEndDate.text = textFieldInfo.txtEndDate
         self.textView.text = textFieldInfo.txtView
     }
     
@@ -222,35 +223,28 @@ extension ExperienceTVCell: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        switch pickerView {
-        case startDatePicker:
-            return months.count
-        case endDatePicker:
-            return months.count
-        default:
-            return 0
-            
+        if pickerView == startYearPicker {
+            return years.count
+        } else {
+            return years.count
         }
     }
     
     func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        switch pickerView {
-        case startDatePicker:
-            return months[row]
-        case endDatePicker:
-            return endDate[row]
-        default:
-            return ""
+        if pickerView == startYearPicker {
+            return years[row]
+        } else {
+            return years[row]
         }
     }
     
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        if pickerView == startDatePicker {
-            txtStartDate.text = months[row]
-            endDateIndex = row
-        } else if pickerView == endDatePicker {
-            txtEndDate.text = endDate[row]
+        if pickerView == startYearPicker {
+            txtStartDate.text =  years[row]
+            self.textStartDateDidChange(txtStartDate)
+        } else {
+            txtEndDate.text = years[row]
+            self.textEndDateDidChange(txtEndDate)
         }
         delegate?.dismissPicker()
     }
