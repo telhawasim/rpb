@@ -45,6 +45,18 @@ struct ExperienceModel {
     }
 }
 
+struct AcademicsModel {
+    var txtDegree: String = ""
+    var txtInstitute: String = ""
+    var txtStartsFrom: String = ""
+    var txtEndsTo: String = ""
+    
+    static func getAcademicsTextFields() -> [AcademicsModel] {
+        var academicsFields = [AcademicsModel]()
+        return academicsFields
+    }
+}
+
 class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     
     //MARK: Outlet
@@ -62,11 +74,17 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     var experienceModel = [Section]()
     var selectedHeader = Int()
     var categoryTitle: [Category] = [.info, .experience, .skills, .academics]
-    var category: Category = .info
+    var category: Category = .academics
     
     var infoTextFields = TextFieldModel.getInfoTextFields() {
         didSet {
             self.validation()
+        }
+    }
+    
+    var academicsTextFields = AcademicsModel.getAcademicsTextFields() {
+        didSet {
+            self.academicsValidation()
         }
     }
     
@@ -78,9 +96,6 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.configureLabel()
         self.configureTableView()
         self.configureCollectionView()
-        //        infoModel = [(Section(section: "Basic Info", rows: 5, expanded: true)),
-        //                     (Section(section: "Education", rows: 5, expanded: false)),
-        //                     (Section(section: "Summary", rows: 1, expanded: false))]
         skillsModel = [(Section(section: "Soft Skills", rows: 1, expanded: true)),
                        (Section(section: "Hard Skills", rows: 1, expanded: false))]
         experienceModel = [Section(section: "Add Experience", rows: 1, expanded: true)]
@@ -89,39 +104,11 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.btnSave.backgroundColor = UIColor.systemGray
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        let selectedIndexPath = IndexPath(item: 0, section: 0)
-        collectionView.selectItem(at: selectedIndexPath, animated: false, scrollPosition: .left)
-        tableView.reloadData()
-    }
-    
-    @objc func tapInfoSection(_ gesture: UITapGestureRecognizer) {
-        if let viewTag = gesture.view?.tag {
-            selectedHeader = viewTag
-            switch infoType {
-            case .info:
-                if infoModel[selectedHeader].expanded == false {
-                    infoModel[selectedHeader].expanded = true
-                } else {
-                    infoModel[selectedHeader].expanded = false
-                }
-            case .skills:
-                if skillsModel[selectedHeader].expanded == false {
-                    skillsModel[selectedHeader].expanded = true
-                } else {
-                    skillsModel[selectedHeader].expanded = false
-                }
-            case .experience:
-                if experienceModel[selectedHeader].expanded == false {
-                    experienceModel[selectedHeader].expanded = true
-                } else {
-                    experienceModel[selectedHeader].expanded = false
-                }
-            }
-        }
-        
-        UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData()}, completion: nil)
-    }
+    //    override func viewWillAppear(_ animated: Bool) {
+    //        let selectedIndexPath = IndexPath(item: 3, section: 0)
+    //        collectionView.selectItem(at: selectedIndexPath, animated: false, scrollPosition: .left)
+    //        tableView.reloadData()
+    //    }
     
     //MARK: Configure Labels
     func configureLabel() {
@@ -138,6 +125,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.tableView.register(DobTVCell.className)
         self.tableView.register(TagsTableViewCell.className)
         self.tableView.register(ExperienceTVCell.className)
+        self.tableView.register(AcademicsTVCell.className)
         self.tableView.register(UINib(nibName: ResumeHeaderCell.className, bundle: nil), forHeaderFooterViewReuseIdentifier: ResumeHeaderCell.className)
     }
     
@@ -181,12 +169,29 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         }
     }
     
-    //MARK: Validation for textField's text is nil
+    //MARK: Validation for Info textField's text is nil
     func validation() {
         var isAllPopulated = false
         
         for textField in self.infoTextFields {
             if textField.textValue.isEmpty {
+                isAllPopulated = false
+                break
+            } else {
+                isAllPopulated = true
+            }
+        }
+        
+        self.btnSave.isEnabled = isAllPopulated
+        self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
+    }
+    
+    //MARK: Validation for Academics textField's text is nil
+    func academicsValidation() {
+        var isAllPopulated = false
+        
+        for textField in self.academicsTextFields {
+            if textField.txtDegree.isEmpty || textField.txtInstitute.isEmpty || textField.txtStartsFrom.isEmpty || textField.txtEndsTo.isEmpty {
                 isAllPopulated = false
                 break
             } else {
@@ -315,7 +320,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
         case .skills:
             return 0
         case .academics:
-            return 0
+            return 1
         }
     }
     
@@ -333,7 +338,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
         case .skills:
             return 0
         case .academics:
-            return 0
+            return academicsTextFields.count
         }
     }
     
@@ -357,6 +362,15 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                     self.addExperiences.append(String())
                     self.tableView.reloadData()
                 }
+            }
+        case .academics:
+            headerView.lblHeading.text = "Add Qualifications"
+            headerView.addMore = {
+                self.academicsTextFields.append(AcademicsModel())
+                UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData()
+                    self.tableView.scrollToRow(at: IndexPath(row: self.academicsTextFields.count-1, section: 0), at: .top, animated: false)
+                }, completion: nil)
+                self.tableView.reloadData()
             }
         default:
             break
@@ -416,7 +430,8 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
             
         case .academics:
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AcademicsTVCell", for: indexPath) as! AcademicsTVCell
+            return cell
         }
     }
 }

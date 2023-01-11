@@ -23,6 +23,8 @@
 		090441D0295595F70088941F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3695504A29519AA0009AEB62 /* Assets.xcassets */; };
 		090441D5295597980088941F /* EmployeesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36FE65FA2954A0A3003E9CC0 /* EmployeesTableViewCell.xib */; };
 		090441D9295599F50088941F /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 090441D8295599F50088941F /* Montserrat-Medium.otf */; };
+		090C3479296EA2340066A1EB /* AcademicsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090C3477296EA2340066A1EB /* AcademicsTVCell.swift */; };
+		090C347A296EA2340066A1EB /* AcademicsTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090C3478296EA2340066A1EB /* AcademicsTVCell.xib */; };
 		09283D2229531B8A00256FD8 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09283D2129531B8A00256FD8 /* ServerConfig.swift */; };
 		0941311C2955B3E8008AC5CA /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941311B2955B3E8008AC5CA /* BaseVC.swift */; };
 		0941311F2955B55F008AC5CA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941311E2955B55F008AC5CA /* String.swift */; };
@@ -122,6 +124,8 @@
 		090441AE2955920E0088941F /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		090441B12955920E0088941F /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		090441D8295599F50088941F /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
+		090C3477296EA2340066A1EB /* AcademicsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademicsTVCell.swift; sourceTree = "<group>"; };
+		090C3478296EA2340066A1EB /* AcademicsTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcademicsTVCell.xib; sourceTree = "<group>"; };
 		09283D1E29531A8C00256FD8 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
 		09283D1F29531A9700256FD8 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
 		09283D2129531B8A00256FD8 /* ServerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
@@ -351,6 +355,15 @@
 			path = Utils/Extensions/UITextField;
 			sourceTree = "<group>";
 		};
+		090C3476296EA2110066A1EB /* Academics TV Cell */ = {
+			isa = PBXGroup;
+			children = (
+				090C3477296EA2340066A1EB /* AcademicsTVCell.swift */,
+				090C3478296EA2340066A1EB /* AcademicsTVCell.xib */,
+			);
+			path = "Academics TV Cell";
+			sourceTree = "<group>";
+		};
 		0941311A2955B3CD008AC5CA /* BaseVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,6 +543,7 @@
 		3669A4D0295C1A07005015ED /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				090C3476296EA2110066A1EB /* Academics TV Cell */,
 				09B11BE12966FE9800E93177 /* Category CV Cell */,
 				3637D77D2962CBC90086A699 /* Tags TV Cell */,
 				098C8D4F295EB0A600E064A1 /* Experience TV Cell */,
@@ -947,6 +961,7 @@
 				090441CF295595DB0088941F /* Montserrat-Bold.otf in Resources */,
 				36220188295D801300B2CC3D /* ExperienceTableViewCell.xib in Resources */,
 				3679BDCE295DC821005A532F /* SoftSkillTextTableViewCell.xib in Resources */,
+				090C347A296EA2340066A1EB /* AcademicsTVCell.xib in Resources */,
 				3601D36E295DAC6F008B1F02 /* ContactTableViewCell.xib in Resources */,
 				3637D7812962CBF20086A699 /* TagsTableViewCell.xib in Resources */,
 				094131372955F0F0008AC5CA /* ProfileTVCell.xib in Resources */,
@@ -1141,6 +1156,7 @@
 				36220190295DA96100B2CC3D /* EducationTableViewCell.swift in Sources */,
 				3695504229519A9E009AEB62 /* AppDelegate.swift in Sources */,
 				3622018C295DA8C100B2CC3D /* EventDescriptionTableViewCell.swift in Sources */,
+				090C3479296EA2340066A1EB /* AcademicsTVCell.swift in Sources */,
 				098D04F829598065001C2F05 /* CameraHandler.swift in Sources */,
 				090441B92955920E0088941F /* UITextField.swift in Sources */,
 				090441B82955920E0088941F /* UIImageView.swift in Sources */,
