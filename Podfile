@@ -18,5 +18,4 @@ target 'RPB' do
   
   pod 'IQKeyboardManagerSwift'
   pod 'SwiftLint'
-  pod 'TextViewMaster'
 end

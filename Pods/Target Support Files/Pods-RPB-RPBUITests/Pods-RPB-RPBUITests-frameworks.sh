@@ -177,35 +177,27 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/TextViewMaster/TextViewMaster.framework"
 fi
 if [[ "$CONFIGURATION" == "DebugDEV" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/TextViewMaster/TextViewMaster.framework"
 fi
 if [[ "$CONFIGURATION" == "DebugPRODUCTION" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/TextViewMaster/TextViewMaster.framework"
 fi
 if [[ "$CONFIGURATION" == "DebugQA" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/TextViewMaster/TextViewMaster.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/TextViewMaster/TextViewMaster.framework"
 fi
 if [[ "$CONFIGURATION" == "ReleaseDEV" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/TextViewMaster/TextViewMaster.framework"
 fi
 if [[ "$CONFIGURATION" == "ReleasePRODUCTION" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/TextViewMaster/TextViewMaster.framework"
 fi
 if [[ "$CONFIGURATION" == "ReleaseQA" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/TextViewMaster/TextViewMaster.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
