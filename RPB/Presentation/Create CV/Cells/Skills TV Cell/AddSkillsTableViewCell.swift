@@ -21,13 +21,16 @@ class AddSkillsTableViewCell: UITableViewCell {
     //MARK: Variables
     var deleteCell: (() -> Void)?
     var textSkillsDidChange: ((UITextField) -> Void)?
+    var sliderPercentage: ((UILabel) -> Void)?
+    var sliderData: ((UISlider) -> Void)?
 
     //MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         self.configureFont()
-        self.slider.maximumTrackTintColor = UIColor.white
+        self.slider.maximumTrackTintColor = UIColor.blueF8F9FF
         self.slider.minimumTrackTintColor = UIColor.blueEAEDFE
+        self.slider.value = 0.0
         self.txtSkill.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
     
@@ -42,6 +45,12 @@ class AddSkillsTableViewCell: UITableViewCell {
         self.setViews()
     }
     
+    func configure(data: SkillsModel) {
+        self.txtSkill.text = data.txtSkills
+        self.lblPercentage.text = data.txtPercentage
+        self.slider.value = data.slider
+    }
+    
     func setViews() {
         self.countView.isCircularView()
         self.countView.backgroundColor = UIColor.blueF1F1FF
@@ -52,8 +61,10 @@ class AddSkillsTableViewCell: UITableViewCell {
     }
     
     @IBAction func sliderDidChange(_ sender: UISlider) {
-        var value = Int(sender.value)
+        let value = Int(sender.value)
         self.lblPercentage.text = "\(value) %"
+        self.sliderPercentage?(lblPercentage)
+        self.sliderData?(slider)
     }
 }
 
@@ -71,4 +82,3 @@ extension AddSkillsTableViewCell: UITextFieldDelegate {
         // self.dropDownAnimation(imageView: dropDownList, image: "arrow_down", index: textField.tag)
     }
 }
-

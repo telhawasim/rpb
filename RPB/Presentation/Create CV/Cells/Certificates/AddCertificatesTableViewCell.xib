@@ -53,45 +53,25 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zxb-v4-4nH">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddC-o2-fdv">
                                                 <rect key="frame" x="288" y="9" width="32" height="32"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Delete" translatesAutoresizingMaskIntoConstraints="NO" id="DF0-GB-KtF">
-                                                        <rect key="frame" x="9.6666666666666856" y="7.6666666666666679" width="13" height="17"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="13" id="0sm-E5-GVr"/>
-                                                            <constraint firstAttribute="height" constant="17" id="ujc-NT-Qr5"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPb-xN-1Bh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="cPb-xN-1Bh" firstAttribute="leading" secondItem="Zxb-v4-4nH" secondAttribute="leading" id="Miz-lM-z7V"/>
-                                                    <constraint firstItem="cPb-xN-1Bh" firstAttribute="top" secondItem="Zxb-v4-4nH" secondAttribute="top" id="UWq-Za-hiR"/>
-                                                    <constraint firstAttribute="width" constant="32" id="Uvb-dB-LRs"/>
-                                                    <constraint firstItem="DF0-GB-KtF" firstAttribute="centerY" secondItem="Zxb-v4-4nH" secondAttribute="centerY" id="W5v-8B-AtS"/>
-                                                    <constraint firstAttribute="bottom" secondItem="cPb-xN-1Bh" secondAttribute="bottom" id="aff-5i-UHE"/>
-                                                    <constraint firstItem="DF0-GB-KtF" firstAttribute="centerX" secondItem="Zxb-v4-4nH" secondAttribute="centerX" id="cYR-1H-zec"/>
-                                                    <constraint firstAttribute="height" constant="32" id="f4l-TB-oDa"/>
-                                                    <constraint firstAttribute="trailing" secondItem="cPb-xN-1Bh" secondAttribute="trailing" id="jj7-kP-dqK"/>
+                                                    <constraint firstAttribute="height" constant="32" id="iki-sa-dxo"/>
+                                                    <constraint firstAttribute="width" constant="32" id="ryD-Q6-JFV"/>
                                                 </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="16"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="ic_delete_cell"/>
+                                                <connections>
+                                                    <action selector="btnDeletePressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lNB-Kd-eoK"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Zxb-v4-4nH" secondAttribute="trailing" id="No5-gp-8x1"/>
-                                            <constraint firstItem="Zxb-v4-4nH" firstAttribute="centerY" secondItem="e46-TN-gCU" secondAttribute="centerY" id="apL-qT-gqj"/>
+                                            <constraint firstAttribute="trailing" secondItem="ddC-o2-fdv" secondAttribute="trailing" id="9Ly-bt-xRF"/>
                                             <constraint firstItem="8Yv-sP-chQ" firstAttribute="centerY" secondItem="8lw-mc-Idh" secondAttribute="centerY" id="kI9-ll-Qw2"/>
                                             <constraint firstItem="8Yv-sP-chQ" firstAttribute="leading" secondItem="8lw-mc-Idh" secondAttribute="leading" id="kbj-zz-afE"/>
+                                            <constraint firstItem="ddC-o2-fdv" firstAttribute="centerY" secondItem="e46-TN-gCU" secondAttribute="centerY" id="zM2-Ry-Acn"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -376,7 +356,6 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="deleteView" destination="Zxb-v4-4nH" id="0FY-3I-gJV"/>
                 <outlet property="experienceCountView" destination="8Yv-sP-chQ" id="V20-6D-UVi"/>
                 <outlet property="lblCount" destination="e46-TN-gCU" id="neM-Q8-bKN"/>
                 <outlet property="lblCourseName" destination="8l0-uJ-BBN" id="WEC-MG-Ph5"/>
@@ -392,8 +371,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Delete" width="14" height="19"/>
         <image name="calendar" width="16" height="16"/>
+        <image name="ic_delete_cell" width="32" height="32"/>
         <namedColor name="Color E1E5E8">
             <color red="0.88235294117647056" green="0.89803921568627454" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

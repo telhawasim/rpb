@@ -24,8 +24,8 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     var experienceModel = [Section]()
     var selectedHeader = Int()
     var categoryTitle: [Category] = [.info, .experience, .skills, .academics]
-    var category: Category = .skills
-    var addExperiences = [ExperienceModel]()
+    var category: Category = .info
+//    var addExperiences = [ExperienceModel]()
     var addSkills = [String]()
     
     var infoTextFields = TextFieldModel.getInfoTextFields() {
@@ -43,6 +43,18 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     var academicsTextFields = AcademicsModel.getAcademicsTextFields() {
         didSet {
             self.academicsValidation()
+        }
+    }
+    
+    var skillsTextFields = SkillsModel.getSkillsData() {
+        didSet {
+            self.skillsValidation()
+        }
+    }
+    
+    var certificatesTextField = AcademicsModel.getAcademicsTextFields() {
+        didSet {
+            self.certificatesValidation()
         }
     }
     
@@ -89,7 +101,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     }
     
     func removeCell(index: Int) {
-        self.addExperiences.remove(at: index)
+        self.experienceTextFields.remove(at: index)
         self.tableView.reloadData()
     }
     
@@ -97,7 +109,17 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.academicsTextFields.remove(at: index)
         UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData()
         }, completion: nil)
-
+    }
+    
+    func removeCellSkills(index: Int) {
+        self.skillsTextFields.remove(at: index)
+        UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData()
+        }, completion: nil)
+    }
+    
+    func removeCellCertificates(index: Int) {
+        self.certificatesTextField.remove(at: index)
+        self.tableView.reloadData()
     }
     
     //MARK: Configure Buttons
@@ -183,6 +205,44 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
     }
     
+    //MARK: Validation for Skills is nil
+    func skillsValidation() {
+        var isAllPopulated = false
+        
+        for textField in self.skillsTextFields {
+            if textField.txtSkills.isEmpty || textField.txtPercentage.isEmpty || textField.txtPercentage == "0 %" {
+                isAllPopulated = false
+                break
+            } else {
+                isAllPopulated = true
+            }
+        }
+        
+        self.btnSave.isEnabled = isAllPopulated
+        self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
+    }
+    
+    //MARK: Validation for Certificates is nil
+    func certificatesValidation() {
+        var isAllPopulated = false
+        
+        if !certificatesTextField.isEmpty {
+            for textField in self.certificatesTextField {
+                if textField.txtDegree.isEmpty || textField.txtInstitute.isEmpty || textField.txtStartsFrom.isEmpty || textField.txtEndsTo.isEmpty {
+                    isAllPopulated = false
+                    break
+                } else {
+                    isAllPopulated = true
+                }
+            }
+        } else {
+            isAllPopulated = true
+        }
+
+        self.btnSave.isEnabled = isAllPopulated
+        self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
+    }
+    
     //MARK: Info Tab TextField Validatiom
     func infoTabTextFieldValidation() -> Bool {
         let email = infoTextFields[2].textValue
@@ -225,6 +285,8 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         PopupView.shared.presentPopup(self, popupType: .discardInformation) { value in
             if (value != nil) {
                 self.infoTextFields = []
+                self.skillsTextFields = []
+                self.academicsTextFields = []
                 self.goBack()
             }
         }
@@ -243,13 +305,13 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
             }
         case .experience:
             if self.btnSave.isEnabled {
-                let index = IndexPath(item: 1, section: 0)
+                let index = IndexPath(item: 2, section: 0)
                 self.selectAndUpdateCV(indexPath: index)
                 self.updateTabelView()
             }
         case .skills:
             if self.btnSave.isEnabled {
-                let index = IndexPath(item: 1, section: 0)
+                let index = IndexPath(item: 3, section: 0)
                 self.selectAndUpdateCV(indexPath: index)
                 self.updateTabelView()
             }
@@ -278,7 +340,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
             print("Skills")
             let index = IndexPath(item: 2, section: 0)
             self.selectAndUpdateCV(indexPath: index)
-//            self.updateTabelView()
+            self.updateTabelView()
         }
     }
 }
@@ -327,13 +389,13 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             if section == 0 {
                 return 1
             } else {
-                return addExperiences.count
+                return experienceTextFields.count
             }
         case .skills:
             if section == 0 {
-                return 1
+                return skillsTextFields.count
             } else {
-                return 1
+                return certificatesTextField.count
             }
         case .academics:
             return academicsTextFields.count
@@ -357,22 +419,30 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 headerView.btnaddMoreCell.isHidden = false
                 
                 headerView.addMore = {
-                    self.addExperiences.append(ExperienceModel())
+                    self.experienceTextFields.append(ExperienceModel())
                     self.tableView.reloadData()
                 }
             }
         case .skills:
             if section == 0 {
                 headerView.lblHeading.text = "Add Skills"
+                headerView.addMore = {
+                    self.skillsTextFields.append(SkillsModel())
+                    
+                    UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                        self.tableView.reloadData()
+                        self.tableView.scrollToRow(at: IndexPath(row: self.skillsTextFields.count-1, section: 0), at: .top, animated: false)
+                    }, completion: nil)
+                }
             } else {
                 headerView.lblHeading.text = "Add Certificates"
                 
                 headerView.addMore = {
-                    self.addExperiences.append(ExperienceModel())
+                    self.certificatesTextField.append(AcademicsModel())
                     self.tableView.reloadData()
                 }
             }
-
+            
         case .academics:
             headerView.lblHeading.text = "Add Qualifications"
             headerView.addMore = {
@@ -382,8 +452,6 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                     self.tableView.scrollToRow(at: IndexPath(row: self.academicsTextFields.count-1, section: 0), at: .top, animated: false)
                 }, completion: nil)
             }
-        default:
-            break
         }
         return headerView
     }
@@ -430,7 +498,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             
             cell.deleteCell = { [weak self] in
                 guard let self = self else {return}
-                if self.addExperiences.count > 0 {
+                if self.experienceTextFields.count > 0 {
                     self.removeCell(index: indexPath.row)
                 }
             }
@@ -458,37 +526,67 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             
             if indexPath.section == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AddSkillsTableViewCell", for: indexPath) as! AddSkillsTableViewCell
+                cell.lblcount.text = "\(indexPath.row + 1)"
+                
+                cell.configure(data: skillsTextFields[indexPath.row])
+                
+                cell.sliderPercentage = { [weak self] (label) in
+                    guard let self = self else {return}
+                    self.skillsTextFields[indexPath.row].txtPercentage = label.text ?? ""
+                }
+                
+                cell.sliderData = { [weak self] (slider) in
+                    guard let self = self else {return}
+                    self.skillsTextFields[indexPath.row].slider = slider.value
+                }
+                
+                cell.textSkillsDidChange = { [weak self] (txtField) in
+                    guard let self = self else {return}
+                    self.skillsTextFields[indexPath.row].txtSkills = txtField.text ?? ""
+                }
+                
+                cell.deleteCell = { [weak self] in
+                    guard let self = self else {return}
+                    if self.skillsTextFields.count > 0 {
+                        self.removeCellSkills(index: indexPath.row)
+                    }
+                }
                 return cell
-
+                
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AddCertificatesTableViewCell", for: indexPath) as! AddCertificatesTableViewCell
+                
+                cell.lblCount.text = "\(indexPath.row + 1)"
+                cell.configure(data: certificatesTextField[indexPath.row])
+                cell.delegate = self
+                
+                cell.deleteCell = { [weak self] in
+                    guard let self = self else {return}
+                    if self.certificatesTextField.count > 0 {
+                        self.removeCellCertificates(index: indexPath.row)
+                    }
+                }
+                
+                cell.textCourseDidChange = { [weak self] (txtField) in
+                    self?.certificatesTextField[indexPath.row].txtDegree = txtField.text ?? ""
+                }
+                
+                cell.textInstituteDidChange = { [weak self] (txtField) in
+                    self?.certificatesTextField[indexPath.row].txtInstitute = txtField.text ?? ""
+                }
+                
+                cell.textStartDateDidChange = { [weak self] (txtField) in
+                    self?.certificatesTextField[indexPath.row].txtStartsFrom = txtField.text ?? ""
+                }
+                
+                cell.textEndDateDidChange = { [weak self] (txtField) in
+                    self?.certificatesTextField[indexPath.row].txtEndsTo = txtField.text ?? ""
+                }
                 return cell
             }
-
-//            cell.deleteCell = { [weak self] in
-//                guard let self = self else {return}
-//                if self.addExperiences.count > 0 {
-//                    self.removeCell(index: indexPath.row)
-//                }
-//            }
-//
-//            cell.textComapnyDidChange = { [weak self] (txtField) in
-//                self?.experienceTextFields[indexPath.row].txtCompanyName = txtField.text ?? ""
-//            }
-//
-//            cell.textStartDateDidChange = { [weak self] (txtField) in
-//                self?.experienceTextFields[indexPath.row].txtStartDate = txtField.text ?? ""
-//            }
-//
-//            cell.textEndDateDidChange = { [weak self] (txtField) in
-//                self?.experienceTextFields[indexPath.row].txtEndDate = txtField.text ?? ""
-//            }
-//
-//            cell.textViewDidChange = { [weak self] (txtView) in
-//                guard let self = self else {return}
-//                self.experienceTextFields[indexPath.row].txtView = txtView.text ?? ""
-//            }
-            //cell.configure(experienceTextFields[indexPath.row])
+            
+            
+            
             
         case .academics:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AcademicsTVCell", for: indexPath) as! AcademicsTVCell
@@ -537,5 +635,3 @@ extension ResumeCV: ExperienceTVCellProtocol, AddCertificatesTVCellProtocol {
         self.alert(message: errorMessage)
     }
 }
-
-

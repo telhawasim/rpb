@@ -68,6 +68,17 @@ struct ExperienceModel {
     }
 }
 
+struct SkillsModel {
+    var txtSkills: String = ""
+    var txtPercentage: String = ""
+    var slider: Float = 0.0
+    
+    static func getSkillsData() -> [SkillsModel] {
+        let skillsData = [SkillsModel]()
+        return skillsData
+    }
+}
+
 struct AcademicsModel {
     var txtDegree: String = ""
     var txtInstitute: String = ""
@@ -77,5 +88,6 @@ struct AcademicsModel {
     static func getAcademicsTextFields() -> [AcademicsModel] {
         let academicsFields = [AcademicsModel]()
         return academicsFields
+        
     }
 }
