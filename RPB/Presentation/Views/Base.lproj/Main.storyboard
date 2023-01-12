@@ -182,7 +182,7 @@
                                     <constraint firstItem="K1r-2a-uSs" firstAttribute="leading" secondItem="bww-Nt-BEX" secondAttribute="leading" constant="20" id="W0M-ES-6Sj"/>
                                     <constraint firstItem="uAU-f1-SyE" firstAttribute="leading" secondItem="bww-Nt-BEX" secondAttribute="leading" constant="20" id="Wvg-1Z-bun"/>
                                     <constraint firstItem="uAU-f1-SyE" firstAttribute="top" secondItem="K1r-2a-uSs" secondAttribute="bottom" constant="100" id="XBF-Hj-e72"/>
-                                    <constraint firstItem="bww-Nt-BEX" firstAttribute="bottom" secondItem="uAU-f1-SyE" secondAttribute="bottom" constant="9" id="d6A-oC-y1D"/>
+                                    <constraint firstItem="bww-Nt-BEX" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="uAU-f1-SyE" secondAttribute="bottom" constant="170" id="d6A-oC-y1D"/>
                                     <constraint firstItem="fcp-Sn-jKN" firstAttribute="width" secondItem="Aoe-Xw-zVn" secondAttribute="width" id="esx-ZW-R8g"/>
                                     <constraint firstItem="bww-Nt-BEX" firstAttribute="trailing" secondItem="K1r-2a-uSs" secondAttribute="trailing" constant="20" id="fM0-Nw-ASa"/>
                                     <constraint firstItem="bww-Nt-BEX" firstAttribute="trailing" secondItem="uAU-f1-SyE" secondAttribute="trailing" constant="20" id="hz1-71-k6S"/>
@@ -413,7 +413,7 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWj-b6-tCe">
-                                        <rect key="frame" x="49" y="15.666666666666659" width="237" height="18.666666666666679"/>
+                                        <rect key="frame" x="49" y="15.666666666666659" width="237" height="18.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>

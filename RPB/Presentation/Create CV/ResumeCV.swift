@@ -24,7 +24,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     var experienceModel = [Section]()
     var selectedHeader = Int()
     var categoryTitle: [Category] = [.info, .experience, .skills, .academics]
-    var category: Category = .experience
+    var category: Category = .skills
     
     var infoTextFields = TextFieldModel.getInfoTextFields() {
         didSet {
@@ -140,15 +140,21 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         
         if category == .info {
             btnPreview.isHidden = true
-            self.validation()
         } else if category == .experience {
             btnPreview.isHidden = false
         } else if category == .skills {
+            if !skillsTextFields.isEmpty && certificatesTextField.isEmpty {
+                btnSave.isEnabled = true
+                btnSave.backgroundColor = UIColor.customBlue
+            } else {
+                btnSave.isEnabled = false
+                btnSave.backgroundColor = UIColor.systemGray
+            }
             btnPreview.isHidden = false
         } else {
             if academicsTextFields.isEmpty {
-                btnSave.isEnabled = true
-                btnSave.backgroundColor = UIColor.customBlue
+                btnSave.isEnabled = false
+                btnSave.backgroundColor = UIColor.systemGray
             }
             btnPreview.isHidden = false
         }
@@ -272,7 +278,10 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     
     func updateTabelView() {
             UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData()
-//                self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+                var targetRowIndexPath = IndexPath(row: 0, section: 0)
+                if self.tableView.indexPathExists(indexPath: targetRowIndexPath) {
+                    self.tableView.scrollToRow(at: targetRowIndexPath, at: .bottom, animated: true)
+                }
                 self.configureButtons()
             }, completion: nil)
     }
@@ -489,6 +498,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             
             if indexPath.section == 0 {
                 if indexPath.row == 0 {
+                    cell.txtCompany.isUserInteractionEnabled = false
                     cell.configure(experienceTextFields[indexPath.row])
                 }
                 cell.deleteStack.isHidden = true

@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = SwiftLint;
+			productName = SwiftLint;
 		};
 /* End PBXAggregateTarget section */
 
@@ -153,7 +154,7 @@
 		973A3919E11A22D035620BA452D57035 /* Pods-RPB-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RPB-frameworks.sh"; sourceTree = "<group>"; };
 		98E321B6DEB981AB123CD2BA920403F2 /* Pods-RPBTests.releaseqa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RPBTests.releaseqa.xcconfig"; sourceTree = "<group>"; };
 		994E826CC85154BBF672B0CD3340165A /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUITextFieldView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FA656B4986F5B47A43D191AE162D66F /* Pods-RPBTests.debugdev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RPBTests.debugdev.xcconfig"; sourceTree = "<group>"; };
 		A0C0DAE80682BF343BD8B143BCC692EE /* IQKeyboardManager+UIKeyboardNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UIKeyboardNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+UIKeyboardNotification.swift"; sourceTree = "<group>"; };
 		A0D12E30017A7A0CE7F35DD99988F662 /* Pods-RPB.debugproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RPB.debugproduction.xcconfig"; sourceTree = "<group>"; };
@@ -181,7 +182,7 @@
 		DF63C1E7D2273028344C64869214DF88 /* IQKeyboardManagerConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstants.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstants.swift; sourceTree = "<group>"; };
 		EB89CF150F403F71104FF9C143E052D9 /* IQPreviousNextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQPreviousNextView.swift; path = IQKeyboardManagerSwift/IQToolbar/IQPreviousNextView.swift; sourceTree = "<group>"; };
 		F63A5C10499A9E515F7E7CB6CA6D2054 /* Pods-RPB-RPBUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RPB-RPBUITests-Info.plist"; sourceTree = "<group>"; };
-		FDE478A71603055A2C5A58ABC73B97D8 /* Pods-RPB */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-RPB"; path = Pods_RPB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDE478A71603055A2C5A58ABC73B97D8 /* Pods_RPB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RPB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEB897418E2ED5EBBB4CA391A0939870 /* IQKeyboardManager+OrientationNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+OrientationNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+OrientationNotification.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -266,7 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */,
-				FDE478A71603055A2C5A58ABC73B97D8 /* Pods-RPB */,
+				FDE478A71603055A2C5A58ABC73B97D8 /* Pods_RPB.framework */,
 				BD2C20B8550BA4247692450B8245176F /* Pods-RPB-RPBUITests */,
 				50C7E4447BF69E655EDA76EFAF3FB843 /* Pods-RPBTests */,
 			);
@@ -330,7 +331,6 @@
 			children = (
 				6D22068057068F3B6B294676A3457A98 /* Support Files */,
 			);
-			name = SwiftLint;
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
@@ -392,7 +392,6 @@
 				5F42881D915D68B01580D2446ECD6425 /* IQUIViewController+Additions.swift */,
 				3BD8D6EC01E77E1A1992404517F2834E /* Support Files */,
 			);
-			name = IQKeyboardManagerSwift;
 			path = IQKeyboardManagerSwift;
 			sourceTree = "<group>";
 		};
@@ -530,7 +529,7 @@
 			);
 			name = "Pods-RPB";
 			productName = Pods_RPB;
-			productReference = FDE478A71603055A2C5A58ABC73B97D8 /* Pods-RPB */;
+			productReference = FDE478A71603055A2C5A58ABC73B97D8 /* Pods_RPB.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
