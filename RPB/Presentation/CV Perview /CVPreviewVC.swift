@@ -13,8 +13,8 @@ class CVPreviewVC: BaseVC, UpdateCustomCell {
     @IBOutlet weak var lblViewProfile: UILabel!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblSkill: UILabel!
-    @IBOutlet weak var editView: UIView!
-    @IBOutlet weak var downloadView: UIView!
+    @IBOutlet weak var btnEdit: UIButton!
+    @IBOutlet weak var btnDownload: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: Variables
@@ -131,22 +131,23 @@ extension CVPreviewVC {
         tableView.register(SoftSkillTextTableViewCell.className)
         tableView.register(EducationTextTableViewCell.className)
 
-        self.setColors()
         self.configureFonts()
+        self.configureButtons()
     }
     
-    // MARK: Colors
-    func setColors() {
-        editView.backgroundColor = UIColor.blueF1F1FF
-        downloadView.backgroundColor = UIColor.blueF1F1FF
+    // MARK: Configure Buttons
+    func configureButtons() {
+        self.btnEdit.isCircularButton()
+        self.btnEdit.backgroundColor = UIColor.blueF1F1FF
+        self.btnDownload.backgroundColor = UIColor.blueF1F1FF
+        self.btnDownload.isCircularButton()
     }
     
     // MARK: Configure Fonts
     func configureFonts() {
         self.lblViewProfile.font = UIFont.montserratMedium(24)
-        self.lblName.font = UIFont.montserratMedium(24)
-        self.lblSkill.font = UIFont.montserratMedium(14)
-        self.lblSkill.font = UIFont.montserratMedium(14)
+        self.lblName.font = UIFont.montserratSemiBold(24)
+        self.lblSkill.font = UIFont.montserratThin(14)
     }
     
     func updateTableView(willExpand: Bool) {
