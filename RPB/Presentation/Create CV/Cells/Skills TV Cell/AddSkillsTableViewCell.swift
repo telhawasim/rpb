@@ -10,13 +10,13 @@ import UIKit
 class AddSkillsTableViewCell: UITableViewCell {
 
     //MARK: IBOutlets
-    @IBOutlet weak var experienceCountView: UIView!
-    @IBOutlet weak var deleteView: UIView!
-    @IBOutlet weak var lblCount: UILabel!
-    @IBOutlet weak var txtSkill: UITextField!
-    @IBOutlet weak var lblSkill: UILabel!
+    @IBOutlet weak var countView: UIView!
+    @IBOutlet weak var lblcount: UILabel!
+    @IBOutlet weak var lblSkills: UILabel!
+    @IBOutlet weak var lblInPercentage: UILabel!
     @IBOutlet weak var lblPercentage: UILabel!
-    @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var txtSkill: UITextField!
+    @IBOutlet weak var slider: UISlider!
     
     //MARK: Variables
     var deleteCell: (() -> Void)?
@@ -26,23 +26,34 @@ class AddSkillsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.configureFont()
+        self.slider.maximumTrackTintColor = UIColor.white
+        self.slider.minimumTrackTintColor = UIColor.blueEAEDFE
         self.txtSkill.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
     
     //MARK: Configure Labels
     func configureFont() {
-        self.lblSkill.font = UIFont.montserratRegular(16)
+        self.lblcount.font = UIFont.montserratBold(14)
+        self.lblSkills.font = UIFont.montserratRegular(16)
+        self.lblInPercentage.font = UIFont.montserratRegular(16)
         self.lblPercentage.font = UIFont.montserratRegular(16)
-        self.setColors()
+        self.txtSkill.font = UIFont.montserratRegular(16)
+        
+        self.setViews()
     }
     
-    func setColors() {
-        experienceCountView.backgroundColor = UIColor.blueF1F1FF
-        deleteView.backgroundColor = UIColor.dark6A90FF
+    func setViews() {
+        self.countView.isCircularView()
+        self.countView.backgroundColor = UIColor.blueF1F1FF
     }
     
     @IBAction func tappedDeleteCell(_ sender: Any) {
         self.deleteCell?()
+    }
+    
+    @IBAction func sliderDidChange(_ sender: UISlider) {
+        var value = Int(sender.value)
+        self.lblPercentage.text = "\(value) %"
     }
 }
 
