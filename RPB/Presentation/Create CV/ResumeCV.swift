@@ -76,6 +76,8 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.tableView.register(TagsTableViewCell.className)
         self.tableView.register(ExperienceTVCell.className)
         self.tableView.register(AcademicsTVCell.className)
+        self.tableView.register(AddSkillsTableViewCell.className)
+        self.tableView.register(AddCertificatesTableViewCell.className)
         self.tableView.register(UINib(nibName: ResumeHeaderCell.className, bundle: nil), forHeaderFooterViewReuseIdentifier: ResumeHeaderCell.className)
     }
     
@@ -95,7 +97,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.academicsTextFields.remove(at: index)
         UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData()
         }, completion: nil)
-        
+
     }
     
     //MARK: Configure Buttons
@@ -362,10 +364,8 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
         case .skills:
             if section == 0 {
                 headerView.lblHeading.text = "Add Skills"
-                headerView.btnaddMoreCell.isHidden = true
             } else {
                 headerView.lblHeading.text = "Add Certificates"
-                headerView.btnaddMoreCell.isHidden = false
                 
                 headerView.addMore = {
                     self.addExperiences.append(ExperienceModel())
@@ -455,7 +455,40 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             return cell
             
         case .skills:
-            return UITableViewCell()
+            
+            if indexPath.section == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "AddSkillsTableViewCell", for: indexPath) as! AddSkillsTableViewCell
+                return cell
+
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "AddCertificatesTableViewCell", for: indexPath) as! AddCertificatesTableViewCell
+                return cell
+            }
+
+//            cell.deleteCell = { [weak self] in
+//                guard let self = self else {return}
+//                if self.addExperiences.count > 0 {
+//                    self.removeCell(index: indexPath.row)
+//                }
+//            }
+//
+//            cell.textComapnyDidChange = { [weak self] (txtField) in
+//                self?.experienceTextFields[indexPath.row].txtCompanyName = txtField.text ?? ""
+//            }
+//
+//            cell.textStartDateDidChange = { [weak self] (txtField) in
+//                self?.experienceTextFields[indexPath.row].txtStartDate = txtField.text ?? ""
+//            }
+//
+//            cell.textEndDateDidChange = { [weak self] (txtField) in
+//                self?.experienceTextFields[indexPath.row].txtEndDate = txtField.text ?? ""
+//            }
+//
+//            cell.textViewDidChange = { [weak self] (txtView) in
+//                guard let self = self else {return}
+//                self.experienceTextFields[indexPath.row].txtView = txtView.text ?? ""
+//            }
+            //cell.configure(experienceTextFields[indexPath.row])
             
         case .academics:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AcademicsTVCell", for: indexPath) as! AcademicsTVCell
@@ -491,7 +524,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
 }
 
 //MARK: ExperienceTVCell Delegate
-extension ResumeCV: ExperienceTVCellProtocol {
+extension ResumeCV: ExperienceTVCellProtocol, AddCertificatesTVCellProtocol {
     func dismissPicker() {
         self.view.endEditing(true)
     }
@@ -504,3 +537,5 @@ extension ResumeCV: ExperienceTVCellProtocol {
         self.alert(message: errorMessage)
     }
 }
+
+
