@@ -20,10 +20,19 @@ class AddSkillsTableViewCell: UITableViewCell {
     
     //MARK: Variables
     var deleteCell: (() -> Void)?
+    var textSkillsDidChange: ((UITextField) -> Void)?
 
     //MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.configureFont()
+        self.txtSkill.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    //MARK: Configure Labels
+    func configureFont() {
+        self.lblSkill.font = UIFont.montserratRegular(16)
+        self.lblPercentage.font = UIFont.montserratRegular(16)
         self.setColors()
     }
     
@@ -36,3 +45,19 @@ class AddSkillsTableViewCell: UITableViewCell {
         self.deleteCell?()
     }
 }
+
+// MARK: TextField Methods
+extension AddSkillsTableViewCell: UITextFieldDelegate {
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        self.textSkillsDidChange?(textField)
+    }
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        //  self.dropDownAnimation(imageView: dropDownList, image: "arrow_up", index: textField.tag)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        // self.dropDownAnimation(imageView: dropDownList, image: "arrow_down", index: textField.tag)
+    }
+}
+

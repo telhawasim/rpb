@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="R6V-iJ-fA6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="409"/>
+                        <rect key="frame" x="0.0" y="15" width="320" height="409"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="271-wQ-BPV">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -369,9 +369,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="R6V-iJ-fA6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="13R-n7-cVP"/>
-                    <constraint firstAttribute="bottom" secondItem="R6V-iJ-fA6" secondAttribute="bottom" constant="30" id="Bnr-MQ-9K2"/>
-                    <constraint firstItem="R6V-iJ-fA6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fGl-PE-ZLf"/>
+                    <constraint firstItem="R6V-iJ-fA6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="fGl-PE-ZLf"/>
                     <constraint firstAttribute="trailing" secondItem="R6V-iJ-fA6" secondAttribute="trailing" id="gn3-Pz-Gqj"/>
+                    <constraint firstAttribute="bottom" secondItem="R6V-iJ-fA6" secondAttribute="bottom" constant="15" id="mc2-aN-SHJ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

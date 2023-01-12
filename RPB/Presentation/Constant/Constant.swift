@@ -75,7 +75,7 @@ struct AcademicsModel {
     var txtEndsTo: String = ""
     
     static func getAcademicsTextFields() -> [AcademicsModel] {
-        var academicsFields = [AcademicsModel]()
+        let academicsFields = [AcademicsModel]()
         return academicsFields
     }
 }
