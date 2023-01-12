@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import TextViewMaster
 
 class SummaryTVCell: UITableViewCell {
     
@@ -55,13 +54,5 @@ extension SummaryTVCell: UITextViewDelegate {
         } else if textView.text != "" && textView.text != "Write Here" {
             self.textDidChange?(textView)
         }
-    }
-}
-
-//MARK: TextView Method
-extension SummaryTVCell {
-    func setMasterTxtView() {
-       // textView.maxHeight = 500
-        textView.font = UIFont.montserratRegular(14)
     }
 }

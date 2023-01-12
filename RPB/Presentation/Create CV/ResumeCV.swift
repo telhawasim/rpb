@@ -24,9 +24,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     var experienceModel = [Section]()
     var selectedHeader = Int()
     var categoryTitle: [Category] = [.info, .experience, .skills, .academics]
-    var category: Category = .info
-//    var addExperiences = [ExperienceModel]()
-    var addSkills = [String]()
+    var category: Category = .experience
     
     var infoTextFields = TextFieldModel.getInfoTextFields() {
         didSet {
@@ -273,13 +271,10 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     }
     
     func updateTabelView() {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else {return}
             UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData()
-                self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+//                self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
                 self.configureButtons()
             }, completion: nil)
-        }
     }
     
     //MARK: Go back Button Pressed
@@ -389,9 +384,9 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             return section == 0 ? (infoTextFields.count - 1) : 1
         case .experience:
             if section == 0 {
-                return 1
+                return experienceTextFields.startIndex + 1
             } else {
-                return experienceTextFields.count
+                return experienceTextFields.count - 1
             }
         case .skills:
             if section == 0 {
@@ -427,6 +422,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             }
         case .skills:
             if section == 0 {
+                headerView.btnaddMoreCell.isHidden = false
                 headerView.lblHeading.text = "Add Skills"
                 headerView.addMore = {
                     self.skillsTextFields.append(SkillsModel())
@@ -437,6 +433,8 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                     }, completion: nil)
                 }
             } else {
+                headerView.btnaddMoreCell.isHidden = false
+
                 headerView.lblHeading.text = "Add Certificates"
                 
                 headerView.addMore = {
@@ -482,7 +480,6 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                     guard let self = self else {return}
                     self.infoTextFields[self.infoTextFields.count - 1].textValue = txtView.text ?? ""
                 }
-                cell.bounds.size.height = cell.textView.bounds.size.height
                 
                 return cell
             }
@@ -491,39 +488,61 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceTVCell", for: indexPath) as! ExperienceTVCell
             
             if indexPath.section == 0 {
+                if indexPath.row == 0 {
+                    cell.configure(experienceTextFields[indexPath.row])
+                }
                 cell.deleteStack.isHidden = true
                 cell.endDateStack.isHidden = true
                 
-            } else if indexPath.section == 1 {
+                cell.textComapnyDidChange = { [weak self] (txtField) in
+                    self?.experienceTextFields[indexPath.row].txtCompanyName = txtField.text ?? ""
+                }
+                
+                cell.textStartDateDidChange = { [weak self] (txtField) in
+                    self?.experienceTextFields[indexPath.row].txtStartDate = txtField.text ?? ""
+                }
+                
+                cell.textEndDateDidChange = { [weak self] (txtField) in
+                    self?.experienceTextFields[indexPath.row].txtEndDate = txtField.text ?? ""
+                }
+                
+                cell.textViewDidChange = { [weak self] (txtView) in
+                    guard let self = self else {return}
+                    self.experienceTextFields[indexPath.row].txtView = txtView.text ?? ""
+                }
+                
+            } else {
+                cell.configure(experienceTextFields[indexPath.row + 1])
                 cell.deleteStack.isHidden = false
                 cell.endDateStack.isHidden = false
                 cell.lblCount.text = "\(indexPath.row + 1)"
+                
+                cell.textComapnyDidChange = { [weak self] (txtField) in
+                    self?.experienceTextFields[indexPath.row+1].txtCompanyName = txtField.text ?? ""
+                }
+                
+                cell.textStartDateDidChange = { [weak self] (txtField) in
+                    self?.experienceTextFields[indexPath.row+1].txtStartDate = txtField.text ?? ""
+                }
+                
+                cell.textEndDateDidChange = { [weak self] (txtField) in
+                    self?.experienceTextFields[indexPath.row+1].txtEndDate = txtField.text ?? ""
+                }
+                
+                cell.textViewDidChange = { [weak self] (txtView) in
+                    guard let self = self else {return}
+                    self.experienceTextFields[indexPath.row+1].txtView = txtView.text ?? ""
+                }
             }
             
             cell.deleteCell = { [weak self] in
                 guard let self = self else {return}
                 if self.experienceTextFields.count > 0 {
-                    self.removeCell(index: indexPath.row)
+                    self.removeCell(index: indexPath.row+1)
                 }
             }
             
-            cell.textComapnyDidChange = { [weak self] (txtField) in
-                self?.experienceTextFields[indexPath.row].txtCompanyName = txtField.text ?? ""
-            }
             
-            cell.textStartDateDidChange = { [weak self] (txtField) in
-                self?.experienceTextFields[indexPath.row].txtStartDate = txtField.text ?? ""
-            }
-            
-            cell.textEndDateDidChange = { [weak self] (txtField) in
-                self?.experienceTextFields[indexPath.row].txtEndDate = txtField.text ?? ""
-            }
-            
-            cell.textViewDidChange = { [weak self] (txtView) in
-                guard let self = self else {return}
-                self.experienceTextFields[indexPath.row].txtView = txtView.text ?? ""
-            }
-            //cell.configure(experienceTextFields[indexPath.row])
             return cell
             
         case .skills:
@@ -588,11 +607,8 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 }
                 return cell
             }
-            
-            
-            
-            
         case .academics:
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "AcademicsTVCell", for: indexPath) as! AcademicsTVCell
             cell.lblCount.text = "\(indexPath.row + 1)"
             cell.delegate = self

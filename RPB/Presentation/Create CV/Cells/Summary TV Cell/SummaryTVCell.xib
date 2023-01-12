@@ -18,27 +18,31 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="201"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Brm-Rs-W8U" customClass="TextViewMaster" customModule="TextViewMaster">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="201"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BvR-iY-faN">
+                        <rect key="frame" x="0.0" y="30" width="320" height="171"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Brm-Rs-W8U">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="171"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="171" id="zvE-Uh-zcC"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="171" id="zvE-Uh-zcC"/>
+                            <constraint firstItem="Brm-Rs-W8U" firstAttribute="top" secondItem="BvR-iY-faN" secondAttribute="top" id="0jJ-4H-pzj"/>
+                            <constraint firstItem="Brm-Rs-W8U" firstAttribute="leading" secondItem="BvR-iY-faN" secondAttribute="leading" id="IWt-5F-hrd"/>
+                            <constraint firstAttribute="bottom" secondItem="Brm-Rs-W8U" secondAttribute="bottom" id="JmT-uC-kFo"/>
+                            <constraint firstAttribute="trailing" secondItem="Brm-Rs-W8U" secondAttribute="trailing" id="zld-VB-H8a"/>
                         </constraints>
-                        <color key="textColor" systemColor="labelColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
-                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BvR-iY-faN">
-                        <rect key="frame" x="0.0" y="30" width="320" height="171"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Brm-Rs-W8U" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="7mZ-jd-w7s"/>
-                    <constraint firstAttribute="trailing" secondItem="Brm-Rs-W8U" secondAttribute="trailing" id="9zQ-t7-m5O"/>
-                    <constraint firstItem="Brm-Rs-W8U" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Lw0-Oa-cur"/>
                     <constraint firstAttribute="trailing" secondItem="BvR-iY-faN" secondAttribute="trailing" id="UMF-gI-R3L"/>
-                    <constraint firstAttribute="bottom" secondItem="Brm-Rs-W8U" secondAttribute="bottom" id="gWE-61-PDK"/>
                     <constraint firstItem="BvR-iY-faN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="joB-2Q-yDa"/>
                     <constraint firstAttribute="bottom" secondItem="BvR-iY-faN" secondAttribute="bottom" id="mBD-nE-02M"/>
                     <constraint firstItem="BvR-iY-faN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="o3p-lV-Oi7"/>

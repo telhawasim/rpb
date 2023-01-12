@@ -59,8 +59,6 @@ class ExperienceTVCell: UITableViewCell {
         self.configurePickerforYear()
         self.configureTextView()
         self.txtCompany.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
-        self.txtStartDate.addTarget(self, action: #selector(self.textStartDateDidChange(_:)), for: .editingChanged)
-        self.txtEndDate.addTarget(self, action: #selector(self.textEndDateDidChange(_:)), for: .editingChanged)
     }
     
     //MARK: Configure Labels
@@ -241,10 +239,10 @@ extension ExperienceTVCell: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == startYearPicker {
             txtStartDate.text =  years[row]
-            self.textStartDateDidChange(txtStartDate)
+            self.textStartDateDidChange?(txtStartDate)
         } else {
             txtEndDate.text = years[row]
-            self.textEndDateDidChange(txtEndDate)
+            self.textEndDateDidChange?(txtEndDate)
         }
         delegate?.dismissPicker()
     }
@@ -254,22 +252,6 @@ extension ExperienceTVCell: UIPickerViewDelegate, UIPickerViewDataSource {
 extension ExperienceTVCell: UITextFieldDelegate {
     @objc func textFieldDidChange(_ textField: UITextField) {
         self.textComapnyDidChange?(textField)
-    }
-    
-    @objc func textStartDateDidChange(_ textField: UITextField) {
-        self.textStartDateDidChange?(textField)
-    }
-    
-    @objc func textEndDateDidChange(_ textField: UITextField) {
-        self.textEndDateDidChange?(textField)
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        //  self.dropDownAnimation(imageView: dropDownList, image: "arrow_up", index: textField.tag)
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        // self.dropDownAnimation(imageView: dropDownList, image: "arrow_down", index: textField.tag)
     }
 }
 
