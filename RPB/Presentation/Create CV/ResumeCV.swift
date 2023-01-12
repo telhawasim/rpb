@@ -24,7 +24,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     var experienceModel = [Section]()
     var selectedHeader = Int()
     var categoryTitle: [Category] = [.info, .experience, .skills, .academics]
-    var category: Category = .skills
+    var category: Category = .info
     var addExperiences = [ExperienceModel]()
     var addSkills = [String]()
     
@@ -58,6 +58,8 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.configureButtons()
         self.btnSave.isEnabled = false
         self.btnSave.backgroundColor = UIColor.systemGray
+        tableView.estimatedRowHeight = 80.0
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     //MARK: Configure Labels
@@ -412,6 +414,8 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                     guard let self = self else {return}
                     self.infoTextFields[self.infoTextFields.count - 1].textValue = txtView.text ?? ""
                 }
+                cell.bounds.size.height = cell.textView.bounds.size.height
+                
                 return cell
             }
             
@@ -532,7 +536,7 @@ extension ResumeCV: ExperienceTVCellProtocol, AddCertificatesTVCellProtocol {
     func adjustTextViewHeight() {
         self.view.layoutIfNeeded()
     }
-    
+
     func showAlert(errorMessage: String) {
         self.alert(message: errorMessage)
     }
