@@ -84,6 +84,7 @@
 		3669A4EE295C1BF7005015ED /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3669A4ED295C1BF7005015ED /* TextView.swift */; };
 		3679BDCD295DC821005A532F /* SoftSkillTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3679BDCB295DC821005A532F /* SoftSkillTextTableViewCell.swift */; };
 		3679BDCE295DC821005A532F /* SoftSkillTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3679BDCC295DC821005A532F /* SoftSkillTextTableViewCell.xib */; };
+		367C71BD296FF96F00FC1900 /* DynamicHeightTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367C71BC296FF96F00FC1900 /* DynamicHeightTableView.swift */; };
 		3695504229519A9E009AEB62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504129519A9E009AEB62 /* AppDelegate.swift */; };
 		3695504429519A9E009AEB62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504329519A9E009AEB62 /* SceneDelegate.swift */; };
 		3695504629519A9E009AEB62 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695504529519A9E009AEB62 /* LoginVC.swift */; };
@@ -200,6 +201,7 @@
 		3669A4ED295C1BF7005015ED /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		3679BDCB295DC821005A532F /* SoftSkillTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftSkillTextTableViewCell.swift; sourceTree = "<group>"; };
 		3679BDCC295DC821005A532F /* SoftSkillTextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SoftSkillTextTableViewCell.xib; sourceTree = "<group>"; };
+		367C71BC296FF96F00FC1900 /* DynamicHeightTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightTableView.swift; sourceTree = "<group>"; };
 		3695504129519A9E009AEB62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3695504329519A9E009AEB62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3695504529519A9E009AEB62 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 		090441A12955920E0088941F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				367C71BB296FF90A00FC1900 /* Dynamic Height TableView */,
 				3637D7762962B5E90086A699 /* Enums */,
 				3637D7732962B5970086A699 /* Constant */,
 				3601D36F295DB4C2008B1F02 /* See More */,
@@ -635,6 +638,14 @@
 				3669A4ED295C1BF7005015ED /* TextView.swift */,
 			);
 			path = TextView;
+			sourceTree = "<group>";
+		};
+		367C71BB296FF90A00FC1900 /* Dynamic Height TableView */ = {
+			isa = PBXGroup;
+			children = (
+				367C71BC296FF96F00FC1900 /* DynamicHeightTableView.swift */,
+			);
+			path = "Dynamic Height TableView";
 			sourceTree = "<group>";
 		};
 		3695503529519A9E009AEB62 = {
@@ -1173,6 +1184,7 @@
 				363B25A4296EE770002EEC14 /* AddSkillsTableViewCell.swift in Sources */,
 				3669A4E1295C1A07005015ED /* SummaryTVCell.swift in Sources */,
 				365010E42955EC33003F3262 /* SettingVC.swift in Sources */,
+				367C71BD296FF96F00FC1900 /* DynamicHeightTableView.swift in Sources */,
 				3601D369295DABAA008B1F02 /* SkillsTableViewCell.swift in Sources */,
 				36F8AB71295AF7D400CA9CFA /* CVPreviewVC.swift in Sources */,
 				36FE65FB2954A0A3003E9CC0 /* EmployeesTableViewCell.swift in Sources */,

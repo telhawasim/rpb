@@ -1,20 +1,24 @@
 PODS:
   - IQKeyboardManagerSwift (6.5.10)
   - SwiftLint (0.50.3)
+  - TextViewMaster (1.1.0)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
   - SwiftLint
+  - TextViewMaster
 
 SPEC REPOS:
   trunk:
     - IQKeyboardManagerSwift
     - SwiftLint
+    - TextViewMaster
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
   SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
+  TextViewMaster: 0d55e1df2e6ae8b098ac9a2be4242bcf18ea9317
 
-PODFILE CHECKSUM: 73b81c7e99c619916677a94bb3e5629fd55ac155
+PODFILE CHECKSUM: 1a05f334225432eeaaf0e30caeef4c9925f15086
 
 COCOAPODS: 1.11.3
