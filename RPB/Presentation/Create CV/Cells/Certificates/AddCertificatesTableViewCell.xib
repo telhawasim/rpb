@@ -364,7 +364,7 @@
                 <outlet property="lblStartDate" destination="PKS-XR-rme" id="JcI-BO-Sm4"/>
                 <outlet property="txtCourseName" destination="7xy-ci-qFD" id="yL4-bd-hGm"/>
                 <outlet property="txtEndDate" destination="4HP-gj-64W" id="oBu-7x-hsH"/>
-                <outlet property="txtInstitute" destination="7xy-ci-qFD" id="F7j-PH-hwR"/>
+                <outlet property="txtInstitute" destination="um0-wm-vj7" id="u4W-39-54L"/>
                 <outlet property="txtStartDate" destination="oMl-aP-0Bc" id="TD1-QB-5MZ"/>
             </connections>
             <point key="canvasLocation" x="77.862595419847324" y="132.04225352112678"/>

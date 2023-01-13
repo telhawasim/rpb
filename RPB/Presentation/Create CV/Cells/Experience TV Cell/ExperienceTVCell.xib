@@ -294,13 +294,13 @@
                                     <constraint firstAttribute="height" constant="60" id="Y9O-4p-7y8"/>
                                 </constraints>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Uq-Wo-CHO">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Job Description / Responsibilities" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Uq-Wo-CHO">
                                 <rect key="frame" x="0.0" y="358" width="320" height="153"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="153" id="yUq-T8-gOT"/>
                                 </constraints>
-                                <color key="textColor" systemColor="labelColor"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -321,6 +321,7 @@
                 <outlet property="endDateStack" destination="gfl-sl-V8s" id="TTo-Q0-ize"/>
                 <outlet property="endDateView" destination="o2B-XR-9m5" id="okd-6m-z5Y"/>
                 <outlet property="experienceCountView" destination="bgn-ng-RJN" id="Az3-HS-xTH"/>
+                <outlet property="lblCompany" destination="fmG-rD-o1q" id="w11-2b-u7x"/>
                 <outlet property="lblCount" destination="wqM-dt-Bx3" id="2dF-6V-1GE"/>
                 <outlet property="lblEndDate" destination="BjB-u6-zx6" id="nd0-4h-guP"/>
                 <outlet property="lblStartDate" destination="Pxk-LM-gGh" id="Ln4-gp-WoL"/>
@@ -339,9 +340,6 @@
         <namedColor name="Color E1E5E8">
             <color red="0.88235294117647056" green="0.89803921568627454" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

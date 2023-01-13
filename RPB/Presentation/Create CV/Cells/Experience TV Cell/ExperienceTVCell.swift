@@ -17,6 +17,7 @@ class ExperienceTVCell: UITableViewCell {
     
     //MARK: Outlets
     // Labels
+    @IBOutlet weak var lblCompany: UILabel!
     @IBOutlet weak var lblStartDate: UILabel!
     @IBOutlet weak var lblEndDate: UILabel!
     @IBOutlet weak var lblCount: UILabel!
@@ -63,6 +64,7 @@ class ExperienceTVCell: UITableViewCell {
     
     //MARK: Configure Labels
     func configureFont() {
+        self.lblCompany.font = UIFont.montserratRegular(16)
         self.lblStartDate.font = UIFont.montserratRegular(16)
         self.lblEndDate.font = UIFont.montserratRegular(16)
         self.setColors()
@@ -107,24 +109,30 @@ class ExperienceTVCell: UITableViewCell {
         self.txtCompany.text = textFieldInfo.txtCompanyName
         self.txtStartDate.text = textFieldInfo.txtStartDate
         self.txtEndDate.text = textFieldInfo.txtEndDate
-        self.textView.text = textFieldInfo.txtView
+        if textFieldInfo.txtView == "" {
+            self.textView.text = "Job Description / Responsibilities"
+            self.textView.textColor = UIColor.lightGray
+        } else {
+            self.textView.text = textFieldInfo.txtView
+        }
     }
     
     //MARK: Configure PickerView for EndYear
-    //    func configurePickerforEndYear() -> [String] {
-    //        years = []
-    //        let formatter = DateFormatter()
-    //        formatter.dateFormat = "yyyy"
-    //        let date = formatter.date(from: isoDate)!
-    //
-    //        let startYear = Int(formatter.string(from: date)) ?? 0
-    //        let currentYear = Int(formatter.string(from: Date())) ?? 0
-    //
-    //        for loop in stride(from: currentYear, through: startYear, by: -1) {
-    //            years.append("\(loop)")
-    //        }
-    //        return years
-    //    }
+        func configurePickerforEndYear() -> [String] {
+            years = []
+            let selectedStartDate = txtStartDate.text ?? ""
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy"
+            let date = formatter.date(from: selectedStartDate)!
+    
+            let startYear = Int(formatter.string(from: date)) ?? 0
+            let currentYear = Int(formatter.string(from: Date())) ?? 0
+    
+            for loop in stride(from: currentYear, through: startYear, by: -1) {
+                years.append("\(loop)")
+            }
+            return years
+        }
     
     //MARK: Configure PickerView for EndDate
     func configureEndDate() -> [String] {
@@ -135,79 +143,14 @@ class ExperienceTVCell: UITableViewCell {
         return endDate
     }
     
-    //MARK: Configure Button
-    //    func configureButton() {
-    //        self.btnSave.backgroundColor = UIColor.customBlue
-    //        self.btnSave.cornerRadiusButton(30)
-    //        self.btnSave.tintColor = UIColor.white
-    //        self.btnSave.titleLabel?.font = UIFont.montserratMedium(18)
-    //    }
-    
     //MARK: Configure TextView
     func configureTextView() {
         self.textView.delegate = self
         self.textView.addPadding(size: 10)
-        self.textView.text = "Job Description / Responsibilities"
-        self.textView.textColor = UIColor.lightGray
         self.textView.borderWidth = 1
         self.textView.borderColor = UIColor.greyE2E2E2
         self.textView.cornerRadius(10)
     }
-    
-    //MARK: Animation for DropDown Image
-    func dropDownAnimation(imageView: [UIImageView], image: String, index: Int) {
-        UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            imageView[index].image = UIImage(named: image)
-        })
-    }
-    
-    //MARK: Check Fields Validation
-    func checkValidation() -> Bool {
-        guard let startDate = txtStartDate.text,
-              let company = txtCompany.text,
-              let endDate = txtEndDate.text else {
-            return false
-        }
-        var errorMessage: String?
-        
-        if company.isEmpty {
-            errorMessage = "Please enter company name"
-        } else if startDate.isEmpty {
-            errorMessage = "Please enter start date"
-        } else if endDate.isEmpty {
-            errorMessage = "Please enter end date"
-        }
-        
-        if let errorMsg = errorMessage {
-            delegate?.showAlert(errorMessage: errorMsg)
-            return false
-        }
-        return true
-    }
-    
-    //    func adjustTextViewHeight() {
-    //        let fixedWidth = textView.frame.size.width
-    //        let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-    //        self.textViewHeight.constant = newSize.height
-    //        delegate?.adjustTextViewHeight()
-    //    }
-    
-    //MARK: IBACTION
-    //    @IBAction func isSwitchPressed(_ sender: Any) {
-    //        if btnSwitch.isOn == true {
-    //            UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: { [self] in endDateView.isHidden = true })
-    //
-    //        } else {
-    //            txtEndDate.text = nil
-    //            UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: { [self] in endDateView.isHidden = false })
-    //        }
-    //    }
-    
-    //    @IBAction func btnSavePressed(_ sender: Any) {
-    //        if checkValidation() {
-    //            print("Data entered successfully")
-    //        }
-    //    }
     
     @IBAction func tappedDeleteCell(_ sender: Any) {
         self.deleteCell?()
@@ -267,9 +210,9 @@ extension ExperienceTVCell: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             self.textViewDidChange?(textView)
-            textView.text = "Write Here"
+            textView.text = "Job Description / Responsibilities"
             textView.textColor = UIColor.lightGray
-        } else if textView.text != "" && textView.text != "Write Here" {
+        } else if textView.text != "" && textView.text != "Job Description / Responsibilities" {
             self.textViewDidChange?(textView)
         }
     }
