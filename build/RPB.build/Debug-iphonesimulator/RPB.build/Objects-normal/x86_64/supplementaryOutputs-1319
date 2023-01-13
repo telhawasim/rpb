@@ -1,0 +1,35 @@
+"/Users/telhawasim/Desktop/poc-rpg-repo/rpb/RPB/Presentation/Create CV/Cells/Basic Info TV Cell/BasicInfoTVCell.swift":
+  object: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/BasicInfoTVCell.o"
+  swift-dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/BasicInfoTVCell.swiftdeps"
+  dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/BasicInfoTVCell.d"
+  diagnostics: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/BasicInfoTVCell.dia"
+"/Users/telhawasim/Desktop/poc-rpg-repo/rpb/RPB/Presentation/Create CV/Cells/Resume TV Header/ResumeHeaderCell.swift":
+  swift-dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/ResumeHeaderCell.swiftdeps"
+  dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/ResumeHeaderCell.d"
+  object: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/ResumeHeaderCell.o"
+  diagnostics: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/ResumeHeaderCell.dia"
+"/Users/telhawasim/Desktop/poc-rpg-repo/rpb/RPB/Presentation/Tabbar /TabbarVC.swift":
+  object: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/TabbarVC.o"
+  dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/TabbarVC.d"
+  swift-dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/TabbarVC.swiftdeps"
+  diagnostics: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/TabbarVC.dia"
+"/Users/telhawasim/Desktop/poc-rpg-repo/rpb/RPB/Presentation/Utils/Extensions/Color /CustomColor.swift":
+  dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/CustomColor.d"
+  swift-dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/CustomColor.swiftdeps"
+  diagnostics: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/CustomColor.dia"
+  object: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/CustomColor.o"
+"/Users/telhawasim/Desktop/poc-rpg-repo/rpb/RPB/Presentation/Add Employee Screen/AddEmployeeVC.swift":
+  swift-dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/AddEmployeeVC.swiftdeps"
+  object: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/AddEmployeeVC.o"
+  dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/AddEmployeeVC.d"
+  diagnostics: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/AddEmployeeVC.dia"
+"/Users/telhawasim/Desktop/poc-rpg-repo/rpb/RPB/Presentation/Create CV/Cells/Certificates/AddCertificatesTableViewCell.swift":
+  object: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/AddCertificatesTableViewCell.o"
+  swift-dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/AddCertificatesTableViewCell.swiftdeps"
+  dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/AddCertificatesTableViewCell.d"
+  diagnostics: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/AddCertificatesTableViewCell.dia"
+"/Users/telhawasim/Desktop/poc-rpg-repo/rpb/RPB/Presentation/Custom Fonts/CustomFont.swift":
+  dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/CustomFont.d"
+  object: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/CustomFont.o"
+  swift-dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/CustomFont.swiftdeps"
+  diagnostics: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/CustomFont.dia"

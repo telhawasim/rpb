@@ -1,0 +1,30 @@
+"/Users/telhawasim/Desktop/poc-rpg-repo/rpb/RPB/Presentation/Utils/Extensions/UIView/UIView.swift":
+  swift-dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/UIView.swiftdeps"
+  diagnostics: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/UIView.dia"
+  dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/UIView.d"
+  object: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/UIView.o"
+"/Users/telhawasim/Desktop/poc-rpg-repo/rpb/RPB/Presentation/Create CV/ResumeCV.swift":
+  diagnostics: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/ResumeCV.dia"
+  object: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/ResumeCV.o"
+  swift-dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/ResumeCV.swiftdeps"
+  dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/ResumeCV.d"
+"/Users/telhawasim/Desktop/poc-rpg-repo/rpb/RPB/Presentation/Storyboard/Storyboard.swift":
+  swift-dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/Storyboard.swiftdeps"
+  object: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/Storyboard.o"
+  dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/Storyboard.d"
+  diagnostics: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/Storyboard.dia"
+"/Users/telhawasim/Desktop/poc-rpg-repo/rpb/RPB/Presentation/TableView/TableView.swift":
+  diagnostics: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/TableView.dia"
+  swift-dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/TableView.swiftdeps"
+  dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/TableView.d"
+  object: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/TableView.o"
+"/Users/telhawasim/Desktop/poc-rpg-repo/rpb/RPB/Presentation/Utils/Extensions/UIButton/UIButton.swift":
+  swift-dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/UIButton.swiftdeps"
+  dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/UIButton.d"
+  diagnostics: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/UIButton.dia"
+  object: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/UIButton.o"
+"/Users/telhawasim/Desktop/poc-rpg-repo/rpb/RPB/Application/SceneDelegate.swift":
+  diagnostics: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/SceneDelegate.dia"
+  dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/SceneDelegate.d"
+  swift-dependencies: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/SceneDelegate.swiftdeps"
+  object: "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/build/RPB.build/Debug-iphonesimulator/RPB.build/Objects-normal/x86_64/SceneDelegate.o"
