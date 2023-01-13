@@ -568,13 +568,13 @@ SWIFT_CLASS("_TtC3RPB26EducationTextTableViewCell")
 
 
 SWIFT_CLASS("_TtC3RPB10EmployeeVC")
-@interface EmployeeVC : UIViewController
+@interface EmployeeVC : BaseVC
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tableView;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified lblEmployee;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified txtSearch;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
-- (IBAction)tappedShowPopUp:(UIButton * _Nonnull)sender;
+- (IBAction)btnAddEmployee:(id _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -678,14 +678,13 @@ SWIFT_CLASS("_TtC3RPB27HardSkillsTextTableViewCell")
 
 
 SWIFT_CLASS("_TtC3RPB6HomeVC")
-@interface HomeVC : UIViewController
+@interface HomeVC : BaseVC
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tableView;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified lblEmployeeCount;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified lblTotalEmployee;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified lblName;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified lblEmployee;
 - (void)viewDidLoad;
-- (void)viewDidAppear:(BOOL)animated;
 - (IBAction)btnAddEmployee:(id _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;

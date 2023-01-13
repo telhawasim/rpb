@@ -14,11 +14,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ID7XR7X8sIIkhonePihCNDXYQeQ=
+		bVbRWaAtKoASvUZkgcbf4qi/jls=
 		</data>
 		<key>Modules/IQKeyboardManagerSwift.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		WgqywhR4xhQ2ffNVEqOpozem3Ug=
+		EC0zWNOxHxuHx4hju6t1g/4FU3s=
 		</data>
 		<key>Modules/IQKeyboardManagerSwift.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -26,11 +26,11 @@
 		</data>
 		<key>Modules/IQKeyboardManagerSwift.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		pw2Oc5u8uNNZjgQMr0vK9y9/JTs=
+		7NrN2SYKziRBhZBXdbBB5deSE6Y=
 		</data>
 		<key>Modules/IQKeyboardManagerSwift.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		qGshFcUqQdrF5XStTOlCqTtMDDw=
+		Uuz0BUX/pi21EzDey1BKRenYxtc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -41,6 +41,10 @@
 	<dict>
 		<key>Headers/IQKeyboardManagerSwift-Swift.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			3r/ZsuESlE2nLEZd2Dq2n0WAfIc=
+			</data>
 			<key>hash2</key>
 			<data>
 			3nYsjm51O5nnviVinJvZIF6sNuDELtuvcN3NBv4lj4k=
@@ -48,6 +52,10 @@
 		</dict>
 		<key>Headers/IQKeyboardManagerSwift-umbrella.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			0znVqa7dGVoV7MZp5fBjp9IqwvQ=
+			</data>
 			<key>hash2</key>
 			<data>
 			MirF7K0rH5JwM3rkbqxxN3Bu4jE1U2p0d5Q/i81Eq5s=
@@ -55,13 +63,21 @@
 		</dict>
 		<key>Modules/IQKeyboardManagerSwift.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			EC0zWNOxHxuHx4hju6t1g/4FU3s=
+			</data>
 			<key>hash2</key>
 			<data>
-			zjlTJd9Nbs6EyGMe62qXquDIr1Q7+JInhJHwesChEdc=
+			63WkbjiwpSjM1nwdyZLYtQ3frZZhTt0df5dFeWQy/II=
 			</data>
 		</dict>
 		<key>Modules/IQKeyboardManagerSwift.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			FSPnLbho3G+LL9smI3XgVOqBIQ4=
+			</data>
 			<key>hash2</key>
 			<data>
 			KnRdWE4y6t4QM5zi5JDptPdHFgJy1Tku+7GLkZS2aNM=
@@ -69,20 +85,32 @@
 		</dict>
 		<key>Modules/IQKeyboardManagerSwift.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			7NrN2SYKziRBhZBXdbBB5deSE6Y=
+			</data>
 			<key>hash2</key>
 			<data>
-			+V5KHlMpYpgjG/s1IQPXVkbub9/vTIZqNFaq5I8nyFM=
+			B8qzwD/qhCuHWzpEiSpRRfTqCa1pAkuQ9KjXuKgVJck=
 			</data>
 		</dict>
 		<key>Modules/IQKeyboardManagerSwift.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			Uuz0BUX/pi21EzDey1BKRenYxtc=
+			</data>
 			<key>hash2</key>
 			<data>
-			RxK9bW3OzPah+uw+rMCnlRrL5ch9LPliBRZRj79s59E=
+			qUD55qwVhy7gpM/xxBG3i4yyzUN+VHtBi4vaL35xoYI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			alLBsANIfVe9dhiTHCzZfNeIGLM=
+			</data>
 			<key>hash2</key>
 			<data>
 			0SJYP7gREsiKogGRJckjzFm4oG5aznDA2rthRgzZEGU=
