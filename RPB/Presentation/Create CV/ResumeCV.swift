@@ -285,7 +285,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     
     func updateTabelView() {
             UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData()
-                var targetRowIndexPath = IndexPath(row: 0, section: 0)
+                let targetRowIndexPath = IndexPath(row: 0, section: 0)
                 if self.tableView.indexPathExists(indexPath: targetRowIndexPath) {
                     self.tableView.scrollToRow(at: targetRowIndexPath, at: .bottom, animated: true)
                 }
