@@ -16,6 +16,5 @@ target 'RPB' do
     # Pods for testing
   end
   
-  pod 'IQKeyboardManagerSwift'
   pod 'SwiftLint'
 end
