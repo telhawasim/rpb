@@ -12,7 +12,8 @@ class EmployeeVC: UIViewController {
     // MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblEmployee: UILabel!
-
+    @IBOutlet weak var txtSearch: UITextField!
+    
     // MARK: Variables
     var popUpShow = CancelPopViewController()
 
@@ -40,6 +41,7 @@ extension EmployeeVC {
         tableView.register(EmployeesTableViewCell.className)
         self.setColors()
         self.configureFonts()
+        self.configureTextField()
     }
 
     // MARK: Colors
@@ -50,6 +52,11 @@ extension EmployeeVC {
     // MARK: Fonts
     func configureFonts() {
         lblEmployee.font = UIFont.montserratMedium(24)
+    }
+    
+    // MARK: Configure TextField
+    func configureTextField() {
+        txtSearch.attributedPlaceholder = NSAttributedString(string: "Search...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.montserratThin(14)])
     }
 }
 

@@ -74,7 +74,8 @@ struct SkillsModel {
     var slider: Float = 0.0
     
     static func getSkillsData() -> [SkillsModel] {
-        let skillsData = [SkillsModel]()
+        var skillsData = [SkillsModel]()
+        skillsData.append(SkillsModel())
         return skillsData
     }
 }

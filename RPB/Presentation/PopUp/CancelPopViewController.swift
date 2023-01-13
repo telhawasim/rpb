@@ -62,10 +62,10 @@ class CancelPopViewController: BaseVC {
     func setupUI() {
         switch popupType {
         case .discardInformation:
-            lblTitle.text = "Are you Sure?"
+            lblTitle.text = "Are You Sure?"
             lblDescription.text = "Are you sure you want to discard this information"
         case .deleteProfile:
-            lblTitle.text = "Are you Sure?"
+            lblTitle.text = "Are You Sure?"
             lblDescription.text = "You want to delete this Profile"
         default:
             print("Error")

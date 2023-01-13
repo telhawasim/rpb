@@ -214,13 +214,17 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     //MARK: Validation for Skills is nil
     func skillsValidation() {
         var isAllPopulated = false
-        
-        for textField in self.skillsTextFields {
-            if textField.txtSkills.isEmpty || textField.txtPercentage.isEmpty || textField.txtPercentage == "0 %" {
-                isAllPopulated = false
-                break
-            } else {
-                isAllPopulated = true
+        if skillsTextFields.isEmpty {
+            isAllPopulated = false
+        } else {
+            for textField in self.skillsTextFields {
+                if textField.txtSkills.isEmpty || textField.txtPercentage.isEmpty || textField.txtPercentage == "0 %" {
+                    isAllPopulated = false
+                    break
+                } else {
+                    isAllPopulated = true
+                    self.certificatesValidation()
+                }
             }
         }
         
@@ -243,6 +247,9 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
             }
         } else {
             isAllPopulated = true
+        }
+        if skillsTextFields.isEmpty && certificatesTextField.isEmpty {
+            isAllPopulated = false
         }
 
         self.btnSave.isEnabled = isAllPopulated
@@ -392,17 +399,9 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
         case .info:
             return section == 0 ? (infoTextFields.count - 1) : 1
         case .experience:
-            if section == 0 {
-                return experienceTextFields.startIndex + 1
-            } else {
-                return experienceTextFields.count - 1
-            }
+            return section == 0 ? (experienceTextFields.startIndex + 1) : (experienceTextFields.count - 1)
         case .skills:
-            if section == 0 {
-                return skillsTextFields.count
-            } else {
-                return certificatesTextField.count
-            }
+            return section == 0 ? (skillsTextFields.count) : certificatesTextField.count
         case .academics:
             return academicsTextFields.count
         }
@@ -443,12 +442,13 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 }
             } else {
                 headerView.btnaddMoreCell.isHidden = false
-
                 headerView.lblHeading.text = "Add Certificates"
-                
                 headerView.addMore = {
                     self.certificatesTextField.append(AcademicsModel())
-                    self.tableView.reloadData()
+                    UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                        self.tableView.reloadData()
+                        self.tableView.scrollToRow(at: IndexPath(row: self.certificatesTextField.count-1, section: 1), at: .top, animated: false)
+                    }, completion: nil)
                 }
             }
             

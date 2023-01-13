@@ -459,6 +459,7 @@
                     <connections>
                         <outlet property="lblEmployee" destination="nvA-Ls-lG2" id="Aqr-da-Yls"/>
                         <outlet property="tableView" destination="oyp-4C-9jx" id="oMj-qG-ef2"/>
+                        <outlet property="txtSearch" destination="sWj-b6-tCe" id="34i-gU-EjN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFg-Hy-SsX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
