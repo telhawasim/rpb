@@ -26,9 +26,9 @@ class TabbarVC: UIViewController {
         super.viewDidLoad()
         self.btnHome.tintColor = UIColor.white
         self.homeView.backgroundColor = UIColor.customBlue
-        self.homeTabbar()
         self.tabbarView.addShadow()
-        
+        self.view.layoutIfNeeded()
+        self.homeTabbar()
     }
     
     @IBAction func tappedHomeButton(_ sender: Any) {
@@ -48,15 +48,14 @@ class TabbarVC: UIViewController {
 extension TabbarVC {
     // MARK: Home Tabbar
     func homeTabbar() {
-        let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as? HomeVC
-        //        homeVC!.willMove(toParent: self)
-        
-        UIView.transition(with: containerView, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
-        homeVC!.willMove(toParent: self)
-        self.containerView.addSubview(homeVC!.view)
-        self.addChild(homeVC!)
-        homeVC!.didMove(toParent: self)
-        self.homeColor()
+            let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as? HomeVC
+            //        homeVC!.willMove(toParent: self)
+            UIView.transition(with: containerView, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
+            homeVC!.willMove(toParent: self)
+            self.containerView.addSubview(homeVC!.view)
+            self.addChild(homeVC!)
+            homeVC!.didMove(toParent: self)
+            self.homeColor()
     }
     
     // MARK: Employee Tabbar
