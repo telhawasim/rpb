@@ -39,17 +39,17 @@ extension CVPreviewVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactTableViewCell.className, for: indexPath) as? ContactTableViewCell else {
+                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
+            }
+            
+            return cell
+        } else if indexPath.row == 1 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: EventDescriptionTableViewCell.className, for: indexPath) as? EventDescriptionTableViewCell else {
                 fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
             }
             cell.updateUI()
             cell.delegate = self
-            
-            return cell
-        } else if indexPath.row == 1 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: EducationTextTableViewCell.className, for: indexPath) as? EducationTextTableViewCell else {
-                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
-            }
            
             return cell
         } else if indexPath.row == 2 {
