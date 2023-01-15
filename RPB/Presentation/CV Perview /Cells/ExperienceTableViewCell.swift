@@ -26,10 +26,10 @@ class ExperienceTableViewCell: UITableViewCell {
     
     // MARK: Colors
     func setColors() {
-        lblSkills.textColor = UIColor.customBlack
-        lblCompany.textColor = UIColor.customBlack
-        lblExperience.textColor = UIColor.customBlack
-        lblSession.textColor = UIColor.customBlack
+        lblSkills.textColor = UIColor.black222222
+        lblCompany.textColor = UIColor.black222222
+        lblExperience.textColor = UIColor.black222222
+        lblSession.textColor = UIColor.black222222
     }
 
     // MARK: Fonts

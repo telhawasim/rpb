@@ -43,8 +43,8 @@ extension HomeVC {
 
     // MARK: Set Colors
     func setColors() {
-        lblName.textColor = UIColor.customBlack
-        lblEmployee.textColor = UIColor.customBlack
+        lblName.textColor = UIColor.black222222
+        lblEmployee.textColor = UIColor.black222222
     }
 
     // MARK: Set Fonts

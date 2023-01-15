@@ -26,7 +26,7 @@ class TagsCollectionViewCell: UICollectionViewCell {
     // MARK: Colors
     func setColors() {
         tagsView.backgroundColor = UIColor.blueF2F5FF
-        lblTagsName.textColor = UIColor.customBlack
+        lblTagsName.textColor = UIColor.black222222
     }
 
     // MARK: Fonts

@@ -27,7 +27,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summaray" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcq-rZ-NlX">
-                        <rect key="frame" x="24" y="15" width="276" height="87"/>
+                        <rect key="frame" x="24" y="24" width="276" height="78"/>
                         <fontDescription key="fontDescription" name="NeuePlakText-Bold" family="Neue Plak Text" pointSize="16"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@
                     <constraint firstAttribute="bottom" secondItem="Y8o-fj-PTT" secondAttribute="bottom" constant="10" id="p6c-bn-su5"/>
                     <constraint firstItem="zcq-rZ-NlX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="pok-Yi-GhK"/>
                     <constraint firstItem="twg-OM-Opu" firstAttribute="leading" secondItem="zcq-rZ-NlX" secondAttribute="leading" id="rSN-Lp-Fyc"/>
-                    <constraint firstItem="zcq-rZ-NlX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="vZw-Fh-B94"/>
+                    <constraint firstItem="zcq-rZ-NlX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="vZw-Fh-B94"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

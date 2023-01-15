@@ -150,15 +150,12 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
             }
         } else if category == .experience {
             btnPreview.isHidden = false
+            experienceValidation()
         } else if category == .skills {
-            if !skillsTextFields.isEmpty && certificatesTextField.isEmpty {
-                btnSave.isEnabled = true
-                btnSave.backgroundColor = UIColor.customBlue
-            } else {
-                
-            }
+            skillsValidation()
             btnPreview.isHidden = false
         } else {
+            academicsValidation()
             if academicsTextFields.isEmpty {
                 btnSave.isEnabled = false
                 btnSave.backgroundColor = UIColor.systemGray
@@ -221,11 +218,13 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     //MARK: Validation for Skills is nil
     func skillsValidation() {
         var isAllPopulated = false
+        btnSave.isEnabled = false
+        btnSave.backgroundColor = UIColor.systemGray
         if skillsTextFields.isEmpty {
             isAllPopulated = false
         } else {
             for textField in self.skillsTextFields {
-                if textField.txtSkills.isEmpty || textField.txtPercentage.isEmpty || textField.txtPercentage == "0 %" {
+                if textField.txtSkills.isEmpty || textField.txtPercentage.isEmpty || textField.txtPercentage == "0 %" || textField.slider == 0.0 {
                     isAllPopulated = false
                     break
                 } else {
@@ -255,9 +254,9 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         } else {
             isAllPopulated = true
         }
-        if skillsTextFields.isEmpty && certificatesTextField.isEmpty && skillsTextFields.first?.slider == 0.0 {
-            isAllPopulated = false
-        }
+//        if skillsTextFields.isEmpty && certificatesTextField.isEmpty && skillsTextFields.first?.slider == 0.0 {
+//            isAllPopulated = false
+//        }
 
         self.btnSave.isEnabled = isAllPopulated
         self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray

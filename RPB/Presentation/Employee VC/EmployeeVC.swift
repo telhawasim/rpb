@@ -46,7 +46,7 @@ extension EmployeeVC {
 
     // MARK: Colors
     func setColors() {
-        lblEmployee.textColor = UIColor.customBlack
+        lblEmployee.textColor = UIColor.black222222
     }
 
     // MARK: Fonts

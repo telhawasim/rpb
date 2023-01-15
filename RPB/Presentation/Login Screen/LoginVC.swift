@@ -52,7 +52,7 @@ class LoginVC: BaseVC {
 extension LoginVC {
     // MARK: Set Colors
     func setColors() {
-        lbldescription.textColor = UIColor.customBlack
+        lbldescription.textColor = UIColor.black222222
     }
     
     // MARK: Configure Fonts
