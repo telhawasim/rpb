@@ -50,7 +50,8 @@ extension HomeVC {
     // MARK: Set Fonts
     func configureFonts() {
         lblName.font = UIFont.montserratMedium(34)
-        lblEmployee.font = UIFont.montserratSemiBold(24)
+        lblEmployee.font = UIFont.montserratRegular(24)
+        lblEmployeeCount.font = UIFont.montserratBold(40)
     }
 }
 

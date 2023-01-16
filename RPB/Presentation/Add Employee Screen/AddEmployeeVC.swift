@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class AddEmployeeVC: BaseVC {
 
@@ -31,7 +32,7 @@ class AddEmployeeVC: BaseVC {
 
     // MARK: Variables
     let departmentpicker = UIPickerView()
-    let departmentdata = [String](arrayLiteral: "", "Development", "Testing", "Creative", "Management")
+    let departmentdata = [String](arrayLiteral: "Development", "Testing", "Creative", "Management")
     
     // MARK: Lifecylce
     override func viewDidLoad() {
@@ -42,7 +43,7 @@ class AddEmployeeVC: BaseVC {
         self.configurePicker()
         self.configureTextField()
         self.swipeToPop()
-        
+        self.txtDepartment.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
     }
 
     // MARK: Configure Font
@@ -57,11 +58,13 @@ class AddEmployeeVC: BaseVC {
         self.lblDateOfJoining.font = UIFont.montserratSemiBold(16)
         self.txtName.font = UIFont.montserratMedium(16)
         self.txtDesignation.font = UIFont.montserratMedium(16)
+        self.txtDepartment.tintColor = .clear
         self.txtDOB.font = UIFont.montserratMedium(16)
         self.txtEmail.font = UIFont.montserratMedium(16)
         self.txtPhone.font = UIFont.montserratMedium(16)
         self.txtDepartment.font = UIFont.montserratMedium(16)
         self.txtDateOfJoining.font = UIFont.montserratMedium(16)
+        self.txtDateOfJoining.tintColor = .clear
     }
 
     // MARK: Configure Profile Picture
@@ -156,6 +159,13 @@ class AddEmployeeVC: BaseVC {
         }
         self.txtDateOfJoining.resignFirstResponder()
     }
+    
+    @objc func doneButtonClicked(_ sender: Any) {
+        if txtDepartment.text == "" {
+            self.departmentpicker.selectRow(0, inComponent: 0, animated: true)
+            self.txtDepartment.text = self.departmentdata.self[0]
+        }
+    }
 
     @IBAction func addBtnPressed(_ sender: Any) {
         if checkValidation() {
@@ -195,7 +205,7 @@ extension AddEmployeeVC: UIPickerViewDelegate, UIPickerViewDataSource {
 
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         txtDepartment.text = departmentdata[row]
-        self.view.endEditing(true)
+//        self.view.endEditing(true)
     }
 }
 
