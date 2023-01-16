@@ -18,6 +18,10 @@ class LoginVC: BaseVC {
     @IBOutlet weak var lblPassword: UILabel!
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var btnShowPassword: UIButton!
+    @IBOutlet weak var emailView: UIView!
+    @IBOutlet weak var emailLineView: UIView!
+    @IBOutlet weak var passwordView: UIView!
+    @IBOutlet weak var passwordLineView: UIView!
     
     // MARK: Variables
     var dummyEmail = "rpb@admin.com"
@@ -27,7 +31,6 @@ class LoginVC: BaseVC {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setColors()
         self.configureFonts()
     }
     
@@ -61,6 +64,7 @@ extension LoginVC {
         lblLogin.font = UIFont.montserratBold(32)
         lblEmail.font = UIFont.montserratSemiBold(16)
         lblPassword.font = UIFont.montserratSemiBold(16)
+        self.setColors()
     }
     
     // MARK: Configure Show Password Button
