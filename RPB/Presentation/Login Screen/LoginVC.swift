@@ -60,25 +60,12 @@ extension LoginVC {
     
     // MARK: Configure Fonts
     func configureFonts() {
-        lbldescription.font = UIFont.montserratRegular(16)
+        lbldescription.font = UIFont.montserratMedium(16)
+        lbldescription.textColor = UIColor.darkGray
         lblLogin.font = UIFont.montserratBold(32)
         lblEmail.font = UIFont.montserratSemiBold(16)
         lblPassword.font = UIFont.montserratSemiBold(16)
         self.setColors()
-    }
-    
-    // MARK: Configure Show Password Button
-    func configureShowPassword() {
-        let image = UIImage(named: "hide_password")
-        let selectedImage = UIImage(named: "show_password")
-        btnShowPassword.setImage(image, for: .normal)
-        btnShowPassword.setImage(selectedImage, for: .selected)
-        
-        if btnShowPassword.state == .normal {
-            txtPassword.isSecureTextEntry = true
-        } else if btnShowPassword.state == .selected {
-            txtPassword.isSecureTextEntry = false
-        }
     }
     
     // MARK: Navigation

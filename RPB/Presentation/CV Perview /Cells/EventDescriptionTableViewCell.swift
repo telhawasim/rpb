@@ -209,7 +209,7 @@ extension UILabel {
         let labelTextSize = (labelText as NSString).boundingRect(
             with: CGSize(width: frame.size.width, height: .greatestFiniteMagnitude),
             options: .usesLineFragmentOrigin,
-            attributes: [.font: font],
+            attributes: [.font: font!],
             context: nil).size
         return labelTextSize.height > bounds.size.height
     }
@@ -219,7 +219,7 @@ extension UILabel {
     var maxNumberOfLines: Int {
         let maxSize = CGSize(width: frame.size.width, height: CGFloat(MAXFLOAT))
         let text = (self.text ?? "") as NSString
-        let textHeight = text.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil).height
+        let textHeight = text.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: [.font: font!], context: nil).height
         let lineHeight = font.lineHeight
         return Int(ceil(textHeight / lineHeight))
     }
