@@ -49,7 +49,7 @@ class AddEmployeeVC: BaseVC {
     // MARK: Configure Font
     func configureFont() {
         self.lblTitle.font = UIFont.montserratMedium(24)
-        self.lblName.font = UIFont.montserratSemiBold(16)
+        self.lblName.font = UIFont.montserratSemiBold(16) //Theme.getSemiBoldFont()
         self.lblDesignation.font = UIFont.montserratSemiBold(16)
         self.lblDepartment.font = UIFont.montserratSemiBold(16)
         self.lblDOB.font = UIFont.montserratSemiBold(16)
