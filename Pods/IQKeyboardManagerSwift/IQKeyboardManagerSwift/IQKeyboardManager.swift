@@ -43,7 +43,7 @@ Codeless drop-in universal library allows to prevent issues of keyboard sliding 
     /**
      Invalid point value.
      */
-  internal static let  kIQCGPointInvalid = CGPoint.init(x: CGFloat.greatestFiniteMagnitude, y: CGFloat.greatestFiniteMagnitude)
+    internal static let  kIQCGPointInvalid = CGPoint.init(x: CGFloat.greatestFiniteMagnitude, y: CGFloat.greatestFiniteMagnitude)
 
     // MARK: UIKeyboard handling
 
@@ -53,14 +53,14 @@ Codeless drop-in universal library allows to prevent issues of keyboard sliding 
     @objc public var enable = false {
 
         didSet {
-            // If not enable, enable it.
+            //If not enable, enable it.
             if enable, !oldValue {
-                // If keyboard is currently showing. Sending a fake notification for keyboardWillHide to retain view's original position.
+                //If keyboard is currently showing. Sending a fake notification for keyboardWillHide to retain view's original position.
                 if let notification = keyboardShowNotification {
                     keyboardWillShow(notification)
                 }
                 showLog("Enabled")
-            } else if !enable, oldValue {   // If not disable, desable it.
+            } else if !enable, oldValue {   //If not disable, desable it.
                 keyboardWillHide(nil)
                 showLog("Disabled")
             }

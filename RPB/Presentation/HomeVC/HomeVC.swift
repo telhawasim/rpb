@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeVC: BaseVC {
 
     // MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -25,15 +25,10 @@ class HomeVC: UIViewController {
         self.setColors()
         self.configureFonts()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-    }
 
     // MARK: Add Employee
     @IBAction func btnAddEmployee(_ sender: Any) {
-        let tabbarVC  = UIStoryboard.getVC(from: .main, AddEmployeeVC.className)
-        self.navigationController?.pushViewController(tabbarVC, animated: true)
+        goToAddEmployee()
     }
 }
 
@@ -48,8 +43,8 @@ extension HomeVC {
 
     // MARK: Set Colors
     func setColors() {
-        lblName.textColor = UIColor.customBlack
-        lblEmployee.textColor = UIColor.customBlack
+        lblName.textColor = UIColor.black222222
+        lblEmployee.textColor = UIColor.black222222
     }
 
     // MARK: Set Fonts
@@ -73,7 +68,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let tabbarVC  = UIStoryboard.getVC(from: .main, ProfileVC.className)
-        self.navigationController?.pushViewController(tabbarVC, animated: true)
+        goToProfile()
     }
 }

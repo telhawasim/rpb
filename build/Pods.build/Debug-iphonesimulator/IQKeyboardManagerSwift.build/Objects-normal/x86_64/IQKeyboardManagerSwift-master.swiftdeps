@@ -1,0 +1,39 @@
+version: "Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)"
+options: "75b0b629cc23e98759d8f76537dc3a629eb9200373a66cb4e419aa68525325af"
+build_start_time: [1673619050, 975326061]
+build_end_time: [1673619053, 376585006]
+inputs:
+  "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Categories/IQNSArray+Sort.swift": [1672034369, 415994167]
+  ? "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Categories/IQUIScrollView+Additions.swift"
+  : [1672034369, 416384220]
+  ? "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift"
+  : [1672034369, 416745185]
+  ? "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Categories/IQUIView+Hierarchy.swift"
+  : [1672034369, 417078971]
+  ? "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Categories/IQUIViewController+Additions.swift"
+  : [1672209826, 384963035]
+  ? "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstants.swift"
+  : [1672034369, 417880535]
+  ? "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift"
+  : [1672034369, 418192625]
+  "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQKeyboardManager+Debug.swift": [1672034369, 418634414]
+  "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQKeyboardManager+Internal.swift": [1672034369, 419162273]
+  ? "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQKeyboardManager+OrientationNotification.swift"
+  : [1672034369, 419825553]
+  "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQKeyboardManager+Position.swift": [1672034369, 420843124]
+  "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQKeyboardManager+Toolbar.swift": [1672034369, 421481847]
+  ? "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQKeyboardManager+UIKeyboardNotification.swift"
+  : [1672034369, 421836853]
+  ? "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQKeyboardManager+UITextFieldViewNotification.swift"
+  : [1672034369, 422136545]
+  "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQKeyboardManager.swift": [1672209826, 385386466]
+  "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQKeyboardReturnKeyHandler.swift": [1672034369, 422780036]
+  "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQTextView/IQTextView.swift": [1672209826, 385914564]
+  "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQBarButtonItem.swift": [1672034369, 423649549]
+  "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQInvocation.swift": [1672034369, 423974514]
+  "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQPreviousNextView.swift": [1672034369, 424298763]
+  ? "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQTitleBarButtonItem.swift"
+  : [1672034369, 424584388]
+  "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQToolbar.swift": [1672034369, 424953937]
+  ? "/Users/telhawasim/Desktop/poc-rpg-repo/rpb/Pods/IQKeyboardManagerSwift/IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbar.swift"
+  : [1672034369, 425513505]

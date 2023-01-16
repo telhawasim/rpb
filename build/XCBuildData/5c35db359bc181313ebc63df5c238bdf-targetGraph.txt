@@ -1,0 +1,22 @@
+Target dependency graph (8 targets)
+IQKeyboardManagerSwift in Pods, no dependencies
+SwiftLint in Pods, no dependencies
+Pods-RPB in Pods, depends on:
+IQKeyboardManagerSwift in Pods (explicit)
+SwiftLint in Pods (explicit)
+Pods-RPB-RPBUITests in Pods, depends on:
+IQKeyboardManagerSwift in Pods (explicit)
+SwiftLint in Pods (explicit)
+Pods-RPBTests in Pods, depends on:
+Pods-RPB in Pods (explicit)
+RPB in RPB, depends on:
+Pods-RPB in Pods (implicit dependency via file 'Pods_RPB.framework' in build phase 'Link Binary')
+IQKeyboardManagerSwift in Pods (implicit dependency via options '-framework IQKeyboardManagerSwift' in build setting 'OTHER_LDFLAGS')
+RPBTests in RPB, depends on:
+RPB in RPB (explicit)
+Pods-RPBTests in Pods (implicit dependency via file 'Pods_RPBTests.framework' in build phase 'Link Binary')
+IQKeyboardManagerSwift in Pods (implicit dependency via options '-framework IQKeyboardManagerSwift' in build setting 'OTHER_LDFLAGS')
+RPBUITests in RPB, depends on:
+RPB in RPB (explicit)
+Pods-RPB-RPBUITests in Pods (implicit dependency via file 'Pods_RPB_RPBUITests.framework' in build phase 'Link Binary')
+IQKeyboardManagerSwift in Pods (implicit dependency via options '-framework IQKeyboardManagerSwift' in build setting 'OTHER_LDFLAGS')

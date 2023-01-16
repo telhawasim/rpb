@@ -8,17 +8,17 @@
 import UIKit
 
 class BaseVC: UIViewController {
-
+    
     // MARK: IBOutlets
-
+    
     // MARK: Variables
-
+    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
-
+    
     // MARK: Alert
     func alert(message: String, title: String = "Error") {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -50,4 +50,17 @@ class BaseVC: UIViewController {
         let tabbarVC  = UIStoryboard.getVC(from: .main, CVPreviewVC.className)
         self.navigationController?.pushViewController(tabbarVC, animated: true)
     }
+    
+    //MARK: Go to Add Employee Screen
+    func goToAddEmployee() {
+        let tabbarVC  = UIStoryboard.getVC(from: .main, AddEmployeeVC.className)
+        self.navigationController?.pushViewController(tabbarVC, animated: true)
+    }
+    
+    //MARK: Go to Profile Screen
+    func goToProfile() {
+        let tabbarVC  = UIStoryboard.getVC(from: .main, ProfileVC.className)
+        self.navigationController?.pushViewController(tabbarVC, animated: true)
+    }
+    
 }

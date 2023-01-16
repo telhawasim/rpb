@@ -24,9 +24,9 @@ class EmployeesTableViewCell: UITableViewCell {
 
     // MARK: Set Colors
     func setColors() {
-        lblName.textColor = UIColor.customBlack
+        lblName.textColor = UIColor.black222222
         lblSkills.textColor = UIColor.customBlue
-        lblEmail.textColor = UIColor.customBlack
+        lblEmail.textColor = UIColor.black222222
     }
 
     // MARK: Configure Fonts

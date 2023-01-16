@@ -22,7 +22,7 @@ class HardSkillsTextTableViewCell: UITableViewCell {
     
     // MARK: Colors
     func setColors() {
-        lblbHardSkills.textColor = UIColor.customBlack
+        lblbHardSkills.textColor = UIColor.black222222
     }
 
     // MARK: Fonts

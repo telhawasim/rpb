@@ -394,6 +394,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <buttonConfiguration key="configuration" style="plain" image="AddEmployee"/>
+                                <connections>
+                                    <action selector="btnAddEmployee:" destination="deZ-YE-R5c" eventType="touchUpInside" id="Yfa-vn-tkd"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Mu-S5-13c">
                                 <rect key="frame" x="20" y="124" width="335" height="50"/>

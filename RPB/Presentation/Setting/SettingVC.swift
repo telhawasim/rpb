@@ -29,11 +29,11 @@ extension SettingVC {
 
     // MARK: Set Colors
     func setColors() {
-        lblSetting.textColor = UIColor.customBlack
-        lblAccount.textColor = UIColor.customBlack
-        lblEditProfile.textColor = UIColor.customBlack
-        lblNotification.textColor = UIColor.customBlack
-        lblAppNotification.textColor = UIColor.customBlack
+        lblSetting.textColor = UIColor.black222222
+        lblAccount.textColor = UIColor.black222222
+        lblEditProfile.textColor = UIColor.black222222
+        lblNotification.textColor = UIColor.black222222
+        lblAppNotification.textColor = UIColor.black222222
         self.configureFonts()
     }
 

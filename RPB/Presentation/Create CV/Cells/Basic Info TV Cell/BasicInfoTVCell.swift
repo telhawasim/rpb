@@ -51,22 +51,13 @@ extension BasicInfoTVCell: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField.tag == 3 {
-            var startString = ""
+            let maxLength = 11
+                let currentString = (textField.text ?? "") as NSString
+                let newString = currentString.replacingCharacters(in: range, with: string)
 
-                if textField.text != nil {
-                    startString += textField.text!
-                }
-
-                startString += string
-
-            let limitNumber = startString.count
-
-                if limitNumber > 11 {
-                    return false
-                } else {
-                    return true
-                }
+                return newString.count <= maxLength
+        } else {
+            return Bool()
         }
-        return true
     }
 }

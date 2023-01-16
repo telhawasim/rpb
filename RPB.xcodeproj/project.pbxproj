@@ -886,7 +886,7 @@
 				3695503A29519A9E009AEB62 /* Sources */,
 				3695503B29519A9E009AEB62 /* Frameworks */,
 				3695503C29519A9E009AEB62 /* Resources */,
-				098FA589196C502630323D46 /* [CP] Embed Pods Frameworks */,
+				7E294BB0032AB4F62B5E106F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -924,7 +924,7 @@
 				3695505A29519AA0009AEB62 /* Sources */,
 				3695505B29519AA0009AEB62 /* Frameworks */,
 				3695505C29519AA0009AEB62 /* Resources */,
-				53B8D287AD8062B06B2BEDAA /* [CP] Embed Pods Frameworks */,
+				98D6CB869F28BB17486E435C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1038,23 +1038,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		098FA589196C502630323D46 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RPB/Pods-RPB-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RPB/Pods-RPB-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RPB/Pods-RPB-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		36187A702959CC70001CAB2B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1071,23 +1054,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
-		};
-		53B8D287AD8062B06B2BEDAA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		67AE28030CE036B0D88F9BAA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1109,6 +1075,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E294BB0032AB4F62B5E106F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RPB/Pods-RPB-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RPB/Pods-RPB-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RPB/Pods-RPB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98D6CB869F28BB17486E435C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A615A86D0334442B756D4CD0 /* [CP] Check Pods Manifest.lock */ = {

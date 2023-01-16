@@ -40,13 +40,13 @@ class EventDescriptionTableViewCell: UITableViewCell {
     
     // MARK: Colors
     func setColors() {
-        lblDescriptionHeading.textColor = UIColor.customBlack
+        lblDescriptionHeading.textColor = UIColor.black222222
         eventDescription.textColor = UIColor.black
     }
 
     // MARK: Fonts
     func configureFonts() {
-        lblDescriptionHeading.font = UIFont.montserratRegular(20)
+        lblDescriptionHeading.font = UIFont.montserratRegular(23)
         eventDescription.font = UIFont.montserratThin(14)
     }
     

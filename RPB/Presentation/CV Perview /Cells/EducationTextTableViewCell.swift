@@ -24,7 +24,7 @@ class EducationTextTableViewCell: UITableViewCell {
     
     // MARK: Colors
     func setColors() {
-        lblEducation.textColor = UIColor.customBlack
+        lblEducation.textColor = UIColor.black222222
     }
 
     // MARK: Fonts

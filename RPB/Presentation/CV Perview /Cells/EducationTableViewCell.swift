@@ -24,9 +24,9 @@ class EducationTableViewCell: UITableViewCell {
     
     // MARK: Colors
     func setColors() {
-        lblMasterText.textColor = UIColor.customBlack
-        lblMasterDegree.textColor = UIColor.customBlack
-        lblSession.textColor = UIColor.customBlack
+        lblMasterText.textColor = UIColor.black222222
+        lblMasterDegree.textColor = UIColor.black222222
+        lblSession.textColor = UIColor.black222222
     }
 
     // MARK: Fonts

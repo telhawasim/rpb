@@ -36,7 +36,7 @@ class AddSkillsTableViewCell: UITableViewCell {
     
     //MARK: Configure Labels
     func configureFont() {
-        self.lblcount.font = UIFont.montserratBold(14)
+        self.lblcount.font = UIFont.montserratSemiBold(14)
         self.lblSkills.font = UIFont.montserratRegular(16)
         self.lblInPercentage.font = UIFont.montserratRegular(16)
         self.lblPercentage.font = UIFont.montserratRegular(16)

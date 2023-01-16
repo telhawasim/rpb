@@ -156,7 +156,7 @@ extension AddCertificatesTableViewCell: UIPickerViewDelegate, UIPickerViewDataSo
 }
 
 //MARK: TextField Delegate
-extension AddCertificatesTableViewCell: UITextViewDelegate {
+extension AddCertificatesTableViewCell {
     @objc private func textFieldCourseDidChange(_ textField: UITextField) {
         self.textCourseDidChange?(textField)
     }

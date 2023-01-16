@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EmployeeVC: UIViewController {
+class EmployeeVC: BaseVC {
 
     // MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -15,38 +15,38 @@ class EmployeeVC: UIViewController {
     @IBOutlet weak var txtSearch: UITextField!
     
     // MARK: Variables
-    var popUpShow = CancelPopViewController()
 
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCell()
+        self.setColors()
+        self.configureFonts()
+        self.configureTextField()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadWithAnimation()
     }
     
-    @IBAction func tappedShowPopUp(_ sender: UIButton) {
-//        self.popUpShow.show()
+    @IBAction func btnAddEmployee(_ sender: Any) {
+        goToAddEmployee()
     }
 }
 
 // MARK: Functions
 extension EmployeeVC {
+    
     // MARK: Register Cell
     func registerCell() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(EmployeesTableViewCell.className)
-        self.setColors()
-        self.configureFonts()
-        self.configureTextField()
     }
 
     // MARK: Colors
     func setColors() {
-        lblEmployee.textColor = UIColor.customBlack
+        lblEmployee.textColor = UIColor.black222222
     }
 
     // MARK: Fonts
@@ -74,7 +74,6 @@ extension EmployeeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let tabbarVC  = UIStoryboard.getVC(from: .main, ProfileVC.className)
-        self.navigationController?.pushViewController(tabbarVC, animated: true)
+        goToProfile()
     }
 }
