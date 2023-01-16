@@ -210,10 +210,14 @@
                     <connections>
                         <outlet property="btnLogin" destination="uAU-f1-SyE" id="U1a-Xf-7Ud"/>
                         <outlet property="btnShowPassword" destination="fiI-ME-Byl" id="miY-ji-Bdr"/>
+                        <outlet property="emailLineView" destination="4fk-as-Szf" id="oUS-0k-sAO"/>
+                        <outlet property="emailView" destination="5W5-jL-NIp" id="CWn-8r-L9V"/>
                         <outlet property="lblEmail" destination="qmL-MN-HeS" id="RP1-Ur-ZDO"/>
                         <outlet property="lblLogin" destination="Ti1-ca-g4D" id="b8K-0D-vY5"/>
                         <outlet property="lblPassword" destination="iWp-I8-Po3" id="i66-7q-w6i"/>
                         <outlet property="lbldescription" destination="Lrn-To-6BU" id="dBl-a8-dW3"/>
+                        <outlet property="passwordLineView" destination="B3R-9q-hFP" id="OYC-go-vIv"/>
+                        <outlet property="passwordView" destination="NqI-NY-hd7" id="Cxz-n2-oMh"/>
                         <outlet property="txtEmail" destination="DMK-Tv-cwk" id="gXA-kb-5cf"/>
                         <outlet property="txtPassword" destination="gSg-ZU-CbS" id="oUe-tf-Pzi"/>
                     </connections>
