@@ -19,7 +19,7 @@ extension UIColor {
     }
     
     static var customBlue: UIColor {
-        return UIColor(named: " Color5557D4") ?? UIColor(red: 85.0/255.0, green: 87.0/255.0, blue: 212.0/255.0, alpha: 1.0)
+        return UIColor(named: "Color5557D4") ?? UIColor(red: 85.0/255.0, green: 87.0/255.0, blue: 212.0/255.0, alpha: 1.0)
         
     }
     
