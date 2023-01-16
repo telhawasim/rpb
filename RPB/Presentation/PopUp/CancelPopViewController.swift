@@ -44,7 +44,7 @@ class CancelPopViewController: BaseVC {
     //MARK: Configure Fonts
     func configureFont() {
         self.lblTitle.font = UIFont.montserratMedium(32)
-        self.lblDescription.font = UIFont.montserratRegular(14)
+        self.lblDescription.font = UIFont.montserratMedium(14)
         self.btnYes.titleLabel?.font = UIFont.montserratMedium(16)
         self.btnNo.titleLabel?.font = UIFont.montserratMedium(16)
     }
@@ -63,10 +63,10 @@ class CancelPopViewController: BaseVC {
         switch popupType {
         case .discardInformation:
             lblTitle.text = "Are You Sure?"
-            lblDescription.text = "Are you sure you want to discard this information"
+            lblDescription.text = "You want to discard this information."
         case .deleteProfile:
             lblTitle.text = "Are You Sure?"
-            lblDescription.text = "You want to delete this Profile"
+            lblDescription.text = "You want to delete this Profile."
         default:
             print("Error")
         }

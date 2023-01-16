@@ -60,6 +60,7 @@ class AddEmployeeVC: BaseVC {
         self.txtDesignation.font = UIFont.montserratMedium(16)
         self.txtDepartment.tintColor = .clear
         self.txtDOB.font = UIFont.montserratMedium(16)
+        self.txtDOB.tintColor = .clear
         self.txtEmail.font = UIFont.montserratMedium(16)
         self.txtPhone.font = UIFont.montserratMedium(16)
         self.txtDepartment.font = UIFont.montserratMedium(16)
@@ -116,7 +117,7 @@ class AddEmployeeVC: BaseVC {
         } else if designation.isEmpty {
             errorMessage = "Please enter designation"
         } else if department.isEmpty {
-            errorMessage = "Please enter department"
+            errorMessage = "Please select department"
         } else if dob.isEmpty {
             errorMessage = "Please enter date of birth"
         } else if email.isEmpty {
@@ -141,7 +142,7 @@ class AddEmployeeVC: BaseVC {
             var date = Date()
             date = datePicker.date
             if date.is18Plus() {
-                self.txtDOB.text = date.getFormattedDate(format: "dd-MM-yy")
+                self.txtDOB.text = date.getFormattedDate(format: "dd-MM-yyyy")
             } else {
                 self.txtDOB.text = nil
                 let errorMessage = "Employee must be 18+"
@@ -155,7 +156,7 @@ class AddEmployeeVC: BaseVC {
         if let datePicker = self.txtDateOfJoining.inputView as? UIDatePicker {
             var date = Date()
             date = datePicker.date
-            self.txtDateOfJoining.text = date.getFormattedDate(format: "dd-MM-yy")
+            self.txtDateOfJoining.text = date.getFormattedDate(format: "dd-MM-yyyy")
         }
         self.txtDateOfJoining.resignFirstResponder()
     }

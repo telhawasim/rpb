@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol ProfileDelegate {
+protocol ProfileDelegate: AnyObject {
     func openBottomSheet()
 }
 
@@ -33,7 +33,8 @@ class ProfileTVCell: UITableViewCell {
     func configLabel() {
         self.lblProfile.font = UIFont.montserratBold(18)
         self.lblDesignation.font = UIFont.montserratMedium(14)
-        self.lblDate.font = UIFont.montserratRegular(12)
+        self.lblDate.font = UIFont.montserratMedium(12)
+        self.lblDate.textColor = UIColor.black222222
         self.configView()
         self.configureColor()
     }

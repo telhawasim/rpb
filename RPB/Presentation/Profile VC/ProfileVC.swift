@@ -80,6 +80,16 @@ class ProfileVC: BaseVC {
         self.bottomSheetView.cornerRadius(20)
     }
     
+    //MARK: Bottom Sheet Close
+    func bottomSheetClose() {
+        self.mainView.backgroundColor = UIColor.clear
+        self.bottomSheetHeight.constant = 0
+        self.mainView.isUserInteractionEnabled = false
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
     //MARK: Back button on View Controller
     @IBAction func btnBack(_ sender: Any) {
         self.goBack()
@@ -92,12 +102,7 @@ class ProfileVC: BaseVC {
     
     //MARK: Back button in action sheet
     @IBAction func btnBottomSheetBack(_ sender: Any) {
-        self.mainView.backgroundColor = UIColor.clear
-        self.bottomSheetHeight.constant = 0
-        self.mainView.isUserInteractionEnabled = false
-        UIView.animate(withDuration: 0.3) {
-            self.view.layoutIfNeeded()
-        }
+        self.bottomSheetClose()
     }
     
     @IBAction func btnEditProfile(_ sender: Any) {
@@ -105,6 +110,7 @@ class ProfileVC: BaseVC {
     }
     
     @IBAction func btnDeleteProfile(_ sender: Any) {
+        self.bottomSheetClose()
         PopupView.shared.presentPopup(self, popupType: .deleteProfile)
     }
     
