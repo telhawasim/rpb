@@ -32,4 +32,4 @@ extension UIFont {
 }
 
 // Example
-// myLabel.font = UIFont.MontserratRegular(16)
+// myLabel.font = UIFont.getThinFont()

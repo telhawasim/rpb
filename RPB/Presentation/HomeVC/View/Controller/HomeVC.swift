@@ -17,12 +17,12 @@ class HomeVC: BaseVC {
     @IBOutlet weak var lblEmployee: UILabel!
 
     // MARK: Variables
-
+    private var viewModel = ProductViewModel()
+    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCell()
-        self.setColors()
         self.configureFonts()
     }
 
@@ -39,6 +39,7 @@ extension HomeVC {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(EmployeesTableViewCell.className)
+        self.initViewModel()
     }
 
     // MARK: Set Colors
@@ -52,6 +53,11 @@ extension HomeVC {
         lblName.font = UIFont.getMediumFont(size: 34)
         lblEmployee.font = UIFont.getRegularFont(size: 24)
         lblEmployeeCount.font = UIFont.getBoldFont(size: 40)
+        self.setColors()
+    }
+    
+    func initViewModel() {
+        //viewModel.fetchProducts()
     }
 }
 
@@ -59,10 +65,13 @@ extension HomeVC {
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
+       // return viewModel.products.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: EmployeesTableViewCell.className, for: indexPath) as! EmployeesTableViewCell
+//        let product = viewModel.products[indexPath.row]
+//        cell.product = product
         return cell
     }
     
