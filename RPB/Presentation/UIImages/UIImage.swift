@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+extension UIImage {
+    
+    static var dropdownArrowUp: UIImage {
+        return UIImage(named: "arrow_up") ?? UIImage()
+    }
+    static var dropdownArrowDown: UIImage {
+        return UIImage(named: "arrow_down") ?? UIImage()
+    }
+}

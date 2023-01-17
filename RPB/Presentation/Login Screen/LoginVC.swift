@@ -85,17 +85,17 @@ extension LoginVC {
         var errorMessage: String?
         
         if email.isEmpty {
-            errorMessage = "Please enter email"
+            errorMessage = Localization.Login.emailEmptyError
         } else if !(email.isEmailValid()) {
-            errorMessage = "Please enter a valid email"
+            errorMessage = Localization.Login.emailValidError
         } else if email != dummyEmail {
-            errorMessage = "Email entered is incorrect"
+            errorMessage = Localization.Login.emailIncorrectError
         } else if password.isEmpty {
-            errorMessage = "Please enter password"
+            errorMessage = Localization.Login.passwordEmptyError
         } else if password != dummyPassword {
-            errorMessage = "Password entered is incorrect"
+            errorMessage = Localization.Login.passwordIncorrectError
         } else if password.count <= 5 {
-            errorMessage = "Password must be 6 digits long"
+            errorMessage = Localization.Login.passwordLengthError
         }
         if let errorMsg = errorMessage {
             self.alert(message: errorMsg)

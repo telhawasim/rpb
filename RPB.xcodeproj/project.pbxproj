@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0901580E29759733009226AC /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0901580D29759733009226AC /* Localization.swift */; };
+		0901581129759891009226AC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0901581329759891009226AC /* Localizable.strings */; };
+		090158162975C3C9009226AC /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090158152975C3C9009226AC /* UIImage.swift */; };
 		0904419829558E920088941F /* AddEmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0904419229558DEE0088941F /* AddEmployeeVC.swift */; };
 		090441B22955920E0088941F /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090441A42955920E0088941F /* CustomColor.swift */; };
 		090441B32955920E0088941F /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090441A52955920E0088941F /* CustomFont.swift */; };
@@ -119,6 +122,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0901580D29759733009226AC /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		0901581229759891009226AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		090158152975C3C9009226AC /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		0904419229558DEE0088941F /* AddEmployeeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEmployeeVC.swift; sourceTree = "<group>"; };
 		090441A42955920E0088941F /* CustomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		090441A52955920E0088941F /* CustomFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
@@ -269,6 +275,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0901580C2975971E009226AC /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				0901580D29759733009226AC /* Localization.swift */,
+				0901581329759891009226AC /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		090158142975C3AB009226AC /* UIImages */ = {
+			isa = PBXGroup;
+			children = (
+				090158152975C3C9009226AC /* UIImage.swift */,
+			);
+			path = UIImages;
+			sourceTree = "<group>";
+		};
 		0904419129558DEE0088941F /* Add Employee Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +321,7 @@
 				090441A82955920E0088941F /* UIView */,
 				090441AB2955920E0088941F /* Date */,
 				090441AD2955920E0088941F /* UIImageView */,
+				090158142975C3AB009226AC /* UIImages */,
 				090441B02955920E0088941F /* UITextField */,
 			);
 			name = Extensions;
@@ -488,6 +512,7 @@
 		3637D7732962B5970086A699 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				0901580C2975971E009226AC /* Localization */,
 				3637D7742962B5970086A699 /* Constant.swift */,
 			);
 			path = Constant;
@@ -1000,6 +1025,7 @@
 				363B25A5296EE770002EEC14 /* AddSkillsTableViewCell.xib in Resources */,
 				36220191295DA96100B2CC3D /* EducationTableViewCell.xib in Resources */,
 				090441CF295595DB0088941F /* Montserrat-Bold.otf in Resources */,
+				0901581129759891009226AC /* Localizable.strings in Resources */,
 				36220188295D801300B2CC3D /* ExperienceTableViewCell.xib in Resources */,
 				3679BDCE295DC821005A532F /* SoftSkillTextTableViewCell.xib in Resources */,
 				090C347A296EA2340066A1EB /* AcademicsTVCell.xib in Resources */,
@@ -1192,6 +1218,7 @@
 				3601D36D295DAC6F008B1F02 /* ContactTableViewCell.swift in Sources */,
 				3669A4E6295C1A07005015ED /* EducationTVCell.swift in Sources */,
 				090441B72955920E0088941F /* Date.swift in Sources */,
+				0901580E29759733009226AC /* Localization.swift in Sources */,
 				09B11BE42966FF0000E93177 /* CategoryCVCell.swift in Sources */,
 				36220187295D801300B2CC3D /* ExperienceTableViewCell.swift in Sources */,
 				090441B62955920E0088941F /* BaseURL.swift in Sources */,
@@ -1215,6 +1242,7 @@
 				3669A4EB295C1A07005015ED /* ResumeCV.swift in Sources */,
 				36187A6F2959C10F001CAB2B /* Storyboard.swift in Sources */,
 				3695504429519A9E009AEB62 /* SceneDelegate.swift in Sources */,
+				090158162975C3C9009226AC /* UIImage.swift in Sources */,
 				090441B42955920E0088941F /* UIButton.swift in Sources */,
 				365010DD2955CBD2003F3262 /* TableView.swift in Sources */,
 			);
@@ -1253,6 +1281,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0901581329759891009226AC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0901581229759891009226AC /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		3695504729519A9E009AEB62 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

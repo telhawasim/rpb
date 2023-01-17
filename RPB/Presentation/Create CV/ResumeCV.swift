@@ -62,9 +62,6 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.configureLabel()
         self.configureTableView()
         self.configureCollectionView()
-        skillsModel = [(Section(section: "Soft Skills", rows: 1, expanded: true)),
-                       (Section(section: "Hard Skills", rows: 1, expanded: false))]
-        experienceModel = [Section(section: "Add Experience", rows: 1, expanded: true)]
         self.configureButtons()
         self.btnSave.isEnabled = false
         self.btnSave.backgroundColor = UIColor.systemGray
@@ -269,9 +266,9 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         var errorMessage: String?
         
         if !email.isEmailValid() {
-            errorMessage = "Email address must be valid"
+            errorMessage = Localization.Login.emailValidError
         } else if phone.count < 11 {
-            errorMessage = "Phone number must be 11 digits long"
+            errorMessage = Localization.AddEmployee.phoneLengthError
         }
         
         if let errorMsg = errorMessage {
@@ -351,12 +348,10 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
             self.selectAndUpdateCV(indexPath: index)
             self.updateTabelView()
         case .skills:
-            print("Skills")
             let index = IndexPath(item: 1, section: 0)
             self.selectAndUpdateCV(indexPath: index)
             self.updateTabelView()
         case .academics:
-            print("Skills")
             let index = IndexPath(item: 2, section: 0)
             self.selectAndUpdateCV(indexPath: index)
             self.updateTabelView()
@@ -371,7 +366,7 @@ extension ResumeCV: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCVCell", for: indexPath) as! CategoryCVCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCVCell.className, for: indexPath) as! CategoryCVCell
         let isSelected = self.categoryTitle[indexPath.row] == category
         cell.configure(isSelected, title: categoryTitle[indexPath.row].rawValue.capitalized)
         return cell
@@ -481,7 +476,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
         switch category {
         case .info:
             if indexPath.section == 0 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "BasicInfoTVCell", for: indexPath) as! BasicInfoTVCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: BasicInfoTVCell.className, for: indexPath) as! BasicInfoTVCell
                 cell.configure(infoTextFields[indexPath.row])
                 
                 cell.textDidChange = { [weak self] (txtField) in
@@ -490,7 +485,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 
                 return cell
             } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "SummaryTVCell", for: indexPath) as! SummaryTVCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: SummaryTVCell.className, for: indexPath) as! SummaryTVCell
                 cell.textDidChange = { [weak self] (txtView) in
                     guard let self = self else {return}
                     self.infoTextFields[self.infoTextFields.count - 1].textValue = txtView.text ?? ""
@@ -500,7 +495,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             }
             
         case .experience:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceTVCell", for: indexPath) as! ExperienceTVCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: ExperienceTVCell.className, for: indexPath) as! ExperienceTVCell
             
             if indexPath.section == 0 {
                 if indexPath.row == 0 {
@@ -566,7 +561,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
         case .skills:
             
             if indexPath.section == 0 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "AddSkillsTableViewCell", for: indexPath) as! AddSkillsTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: AddSkillsTableViewCell.className, for: indexPath) as! AddSkillsTableViewCell
                 cell.lblcount.text = "\(indexPath.row + 1)"
                 
                 cell.configure(data: skillsTextFields[indexPath.row])
@@ -596,7 +591,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 return cell
                 
             } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "AddCertificatesTableViewCell", for: indexPath) as! AddCertificatesTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: AddCertificatesTableViewCell.className, for: indexPath) as! AddCertificatesTableViewCell
                 
                 cell.lblCount.text = "\(indexPath.row + 1)"
                 cell.configure(data: certificatesTextField[indexPath.row])
@@ -628,7 +623,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             }
         case .academics:
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AcademicsTVCell", for: indexPath) as! AcademicsTVCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: AcademicsTVCell.className, for: indexPath) as! AcademicsTVCell
             cell.lblCount.text = "\(indexPath.row + 1)"
             cell.delegate = self
             cell.configure(data: academicsTextFields[indexPath.row])

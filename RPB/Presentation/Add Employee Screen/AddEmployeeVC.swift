@@ -28,7 +28,7 @@ class AddEmployeeVC: BaseVC {
     @IBOutlet weak var txtPhone: UITextField!
     @IBOutlet weak var txtDepartment: UITextField!
     @IBOutlet weak var txtDateOfJoining: UITextField!
-    @IBOutlet weak var dropDown: UIImageView!
+    @IBOutlet weak var dropDownIcon: UIImageView!
 
     // MARK: Variables
     let departmentpicker = UIPickerView()
@@ -86,7 +86,7 @@ class AddEmployeeVC: BaseVC {
         self.btnAdd.cornerRadius(30)
         self.btnAdd.backgroundColor = UIColor.customBlue
         self.btnAdd.setTitleColor(UIColor.white, for: .normal)
-        self.btnAdd.setTitle("Add", for: .normal)
+        self.btnAdd.titleLabel?.font = UIFont.montserratMedium(18)
     }
 
     // MARK: Configure TextField
@@ -113,21 +113,23 @@ class AddEmployeeVC: BaseVC {
         var errorMessage: String?
 
         if name.isEmpty {
-            errorMessage = "Please enter name"
+            errorMessage = Localization.AddEmployee.nameError
         } else if designation.isEmpty {
-            errorMessage = "Please enter designation"
+            errorMessage = Localization.AddEmployee.designationError
         } else if department.isEmpty {
-            errorMessage = "Please select department"
+            errorMessage = Localization.AddEmployee.departmentError
         } else if dob.isEmpty {
-            errorMessage = "Please enter date of birth"
+            errorMessage = Localization.AddEmployee.dobError
         } else if email.isEmpty {
-            errorMessage = "Please enter email address"
+            errorMessage = Localization.Login.emailEmptyError
         } else if !email.isEmailValid() {
-            errorMessage = "Please enter valid email address"
+            errorMessage = Localization.Login.emailValidError
         } else if phone.isEmpty {
-            errorMessage = "Please enter phone number"
+            errorMessage = Localization.AddEmployee.phoneError
+        } else if phone.count > 11 {
+            errorMessage = Localization.AddEmployee.phoneLengthError
         } else if dateOfJoining.isEmpty {
-            errorMessage = "Please enter date of joining"
+            errorMessage = Localization.AddEmployee.joiningError
         }
 
         if let errorMsg = errorMessage {
@@ -145,8 +147,7 @@ class AddEmployeeVC: BaseVC {
                 self.txtDOB.text = date.getFormattedDate(format: "dd-MM-yyyy")
             } else {
                 self.txtDOB.text = nil
-                let errorMessage = "Employee must be 18+"
-                self.alert(message: errorMessage)
+                self.alert(message: Localization.AddEmployee.employeeAgeError)
             }
         }
         self.txtDOB.resignFirstResponder()
@@ -164,13 +165,13 @@ class AddEmployeeVC: BaseVC {
     @objc func doneButtonClicked(_ sender: Any) {
         if txtDepartment.text == "" {
             self.departmentpicker.selectRow(0, inComponent: 0, animated: true)
-            self.txtDepartment.text = self.departmentdata.self[0]
+            self.txtDepartment.text = self.departmentdata.first
         }
     }
 
     @IBAction func addBtnPressed(_ sender: Any) {
         if checkValidation() {
-            print("Registered Successfully")
+            
         }
     }
 
@@ -213,11 +214,11 @@ extension AddEmployeeVC: UIPickerViewDelegate, UIPickerViewDataSource {
 // MARK: TextField Methods
 extension AddEmployeeVC: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        dropDown.image = UIImage(named: "arrow_up")
+        dropDownIcon.image = UIImage.dropdownArrowUp
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-        dropDown.image = UIImage(named: "arrow_down")
+        dropDownIcon.image = UIImage.dropdownArrowDown
     }
 
    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

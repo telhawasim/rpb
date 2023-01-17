@@ -127,10 +127,7 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTVCell.className, for: indexPath) as? ProfileTVCell else {
-            fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `ProfileTVCell`")
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTVCell.className, for: indexPath) as! ProfileTVCell
         cell.selectionStyle = .none
         cell.delegate = self
         return cell

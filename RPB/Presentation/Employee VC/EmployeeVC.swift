@@ -8,14 +8,14 @@
 import UIKit
 
 class EmployeeVC: BaseVC {
-
+    
     // MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblEmployee: UILabel!
     @IBOutlet weak var txtSearch: UITextField!
     
     // MARK: Variables
-
+    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,12 +43,12 @@ extension EmployeeVC {
         tableView.dataSource = self
         tableView.register(EmployeesTableViewCell.className)
     }
-
+    
     // MARK: Colors
     func setColors() {
         lblEmployee.textColor = UIColor.black222222
     }
-
+    
     // MARK: Fonts
     func configureFonts() {
         lblEmployee.font = UIFont.montserratMedium(24)
@@ -56,7 +56,7 @@ extension EmployeeVC {
     
     // MARK: Configure TextField
     func configureTextField() {
-        txtSearch.attributedPlaceholder = NSAttributedString(string: "Search...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black222222, NSAttributedString.Key.font: UIFont.montserratMedium(14)])
+        txtSearch.attributedPlaceholder = NSAttributedString(string: Localization.Employee.search, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black222222, NSAttributedString.Key.font: UIFont.montserratMedium(14)])
     }
 }
 
@@ -65,11 +65,9 @@ extension EmployeeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: EmployeesTableViewCell.className, for: indexPath) as? EmployeesTableViewCell else {
-        fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: EmployeesTableViewCell.className, for: indexPath) as! EmployeesTableViewCell
         return cell
     }
     
