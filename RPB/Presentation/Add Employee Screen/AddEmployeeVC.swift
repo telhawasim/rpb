@@ -113,23 +113,23 @@ class AddEmployeeVC: BaseVC {
         var errorMessage: String?
 
         if name.isEmpty {
-            errorMessage = Localization.AddEmployee.nameError
+            errorMessage = Localization.AddEmployee.kNameEmptyError
         } else if designation.isEmpty {
-            errorMessage = Localization.AddEmployee.designationError
+            errorMessage = Localization.AddEmployee.kDesignationEmptyError
         } else if department.isEmpty {
-            errorMessage = Localization.AddEmployee.departmentError
+            errorMessage = Localization.AddEmployee.kDepartmentEmptyError
         } else if dob.isEmpty {
-            errorMessage = Localization.AddEmployee.dobError
+            errorMessage = Localization.AddEmployee.kDobEmptyError
         } else if email.isEmpty {
-            errorMessage = Localization.Login.emailEmptyError
+            errorMessage = Localization.Login.kEmailEmptyError
         } else if !email.isEmailValid() {
-            errorMessage = Localization.Login.emailValidError
+            errorMessage = Localization.Login.kEmailInvalidError
         } else if phone.isEmpty {
-            errorMessage = Localization.AddEmployee.phoneError
+            errorMessage = Localization.AddEmployee.kPhoneEmptyError
         } else if phone.count > 11 {
-            errorMessage = Localization.AddEmployee.phoneLengthError
+            errorMessage = Localization.AddEmployee.kPhoneLengthError
         } else if dateOfJoining.isEmpty {
-            errorMessage = Localization.AddEmployee.joiningError
+            errorMessage = Localization.AddEmployee.kDateOfJoiningEmptyError
         }
 
         if let errorMsg = errorMessage {
@@ -147,7 +147,7 @@ class AddEmployeeVC: BaseVC {
                 self.txtDOB.text = date.getFormattedDate(format: "dd-MM-yyyy")
             } else {
                 self.txtDOB.text = nil
-                self.alert(message: Localization.AddEmployee.employeeAgeError)
+                self.alert(message: Localization.AddEmployee.kEmployeeAgeError)
             }
         }
         self.txtDOB.resignFirstResponder()

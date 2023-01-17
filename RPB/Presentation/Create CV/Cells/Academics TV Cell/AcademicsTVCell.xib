@@ -151,7 +151,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_date" translatesAutoresizingMaskIntoConstraints="NO" id="D3d-zU-5EE">
-                                                        <rect key="frame" x="288" y="19.333333333333314" width="32" height="32"/>
+                                                        <rect key="frame" x="288" y="14" width="32" height="32"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="32" id="YKs-qs-B8y"/>
                                                             <constraint firstAttribute="width" constant="32" id="ypS-Vy-5D9"/>
@@ -166,9 +166,9 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="oCh-O5-wE2" firstAttribute="top" secondItem="mTc-2H-WEo" secondAttribute="bottom" constant="1" id="7H7-q9-K3t"/>
+                                                    <constraint firstAttribute="bottom" secondItem="D3d-zU-5EE" secondAttribute="bottom" constant="5" id="Q7b-l1-U5a"/>
                                                     <constraint firstItem="oCh-O5-wE2" firstAttribute="leading" secondItem="UCR-az-8PB" secondAttribute="leading" id="SRs-nq-Xaf"/>
                                                     <constraint firstAttribute="trailing" secondItem="D3d-zU-5EE" secondAttribute="trailing" id="Vm3-Wg-6aZ"/>
-                                                    <constraint firstItem="D3d-zU-5EE" firstAttribute="centerY" secondItem="oCh-O5-wE2" secondAttribute="centerY" id="Zda-7I-ZWq"/>
                                                     <constraint firstItem="mTc-2H-WEo" firstAttribute="top" secondItem="UCR-az-8PB" secondAttribute="top" id="dk0-nd-YM8"/>
                                                     <constraint firstAttribute="trailing" secondItem="oCh-O5-wE2" secondAttribute="trailing" id="nfD-mA-wqa"/>
                                                     <constraint firstItem="mTc-2H-WEo" firstAttribute="leading" secondItem="UCR-az-8PB" secondAttribute="leading" id="qTb-fB-I0u"/>
@@ -200,7 +200,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_date" translatesAutoresizingMaskIntoConstraints="NO" id="3Ga-Nm-383">
-                                                        <rect key="frame" x="288" y="19.333333333333314" width="32" height="32"/>
+                                                        <rect key="frame" x="288" y="14" width="32" height="32"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="32" id="S8c-10-Xcs"/>
                                                             <constraint firstAttribute="width" constant="32" id="TAr-hZ-rQ4"/>
@@ -215,10 +215,10 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="kgl-Um-D2q" firstAttribute="leading" secondItem="XSY-w2-COb" secondAttribute="leading" id="PG9-Jt-fQk"/>
+                                                    <constraint firstAttribute="bottom" secondItem="3Ga-Nm-383" secondAttribute="bottom" constant="5" id="Qny-Fb-zn0"/>
                                                     <constraint firstAttribute="trailing" secondItem="3Ga-Nm-383" secondAttribute="trailing" id="WRR-6Y-Ou9"/>
                                                     <constraint firstItem="kgl-Um-D2q" firstAttribute="top" secondItem="XSY-w2-COb" secondAttribute="top" id="Z9W-xN-n5n"/>
                                                     <constraint firstItem="McD-fP-6Pj" firstAttribute="top" secondItem="kgl-Um-D2q" secondAttribute="bottom" constant="1" id="hrc-ny-v7C"/>
-                                                    <constraint firstItem="3Ga-Nm-383" firstAttribute="centerY" secondItem="McD-fP-6Pj" secondAttribute="centerY" id="jN9-Rj-Syo"/>
                                                     <constraint firstItem="McD-fP-6Pj" firstAttribute="leading" secondItem="XSY-w2-COb" secondAttribute="leading" id="kCl-gQ-sHL"/>
                                                     <constraint firstAttribute="height" constant="51" id="t8L-4d-TMV"/>
                                                     <constraint firstAttribute="trailing" secondItem="McD-fP-6Pj" secondAttribute="trailing" id="y7C-UZ-Mxl"/>

@@ -43,6 +43,8 @@ class AddCertificatesTableViewCell: UITableViewCell {
         self.configurePicker()
         self.txtCourseName.addTarget(self, action: #selector(self.textFieldCourseDidChange(_:)), for: .editingChanged)
         self.txtInstitute.addTarget(self, action: #selector(self.textFieldInstituteDidChange(_:)), for: .editingChanged)
+        self.txtStartDate.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
+        self.txtEndDate.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
     }
     
     func configure(data: AcademicsModel) {
@@ -54,10 +56,14 @@ class AddCertificatesTableViewCell: UITableViewCell {
     
     //MARK: Configure Labels
     func configureFont() {
-        self.lblCourseName.font = UIFont.getRegularFont()
-        self.lblInstitute.font = UIFont.getRegularFont()
-        self.lblStartDate.font = UIFont.getRegularFont()
-        self.lblEndsTo.font = UIFont.getRegularFont()
+        self.lblCourseName.font = UIFont.getSemiBoldFont()
+        self.txtCourseName.font = UIFont.getMediumFont()
+        self.lblInstitute.font = UIFont.getSemiBoldFont()
+        self.txtInstitute.font = UIFont.getMediumFont()
+        self.lblStartDate.font = UIFont.getSemiBoldFont()
+        self.txtStartDate.font = UIFont.getMediumFont()
+        self.lblEndsTo.font = UIFont.getSemiBoldFont()
+        self.txtEndDate.font = UIFont.getMediumFont()
         self.setColors()
     }
     
@@ -107,6 +113,23 @@ class AddCertificatesTableViewCell: UITableViewCell {
         }
         return years
     }
+    
+    @objc func doneButtonClicked(textField: UITextField) {
+        if textField == txtStartDate {
+            if txtStartDate.text == "" {
+                self.startYearPicker.selectRow(0, inComponent: 0, animated: true)
+                self.txtStartDate.text = self.configurePickerforStartYear().first
+                self.textStartDateDidChange?(txtStartDate)
+            }
+        } else {
+            if txtEndDate.text == "" {
+                self.endYearPicker.selectRow(0, inComponent: 0, animated: true)
+                self.txtEndDate.text = self.configurePickerforEndYear().first
+                self.textEndDateDidChange?(txtEndDate)
+            }
+        }
+    }
+    
     
 }
 

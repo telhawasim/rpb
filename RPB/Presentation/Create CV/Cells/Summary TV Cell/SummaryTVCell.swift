@@ -33,6 +33,7 @@ class SummaryTVCell: UITableViewCell {
         self.textView.delegate = self
         textView.addPadding(size: 20)
         textView.text = "Write Here"
+        textView.font = UIFont.getMediumFont()
         textView.textColor = UIColor.lightGray
     }
 }
