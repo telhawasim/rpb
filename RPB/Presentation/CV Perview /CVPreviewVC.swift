@@ -39,79 +39,56 @@ extension CVPreviewVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactTableViewCell.className, for: indexPath) as? ContactTableViewCell else {
-                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
-            }
-            
+            let cell = tableView.dequeueReusableCell(withIdentifier: ContactTableViewCell.className, for: indexPath) as! ContactTableViewCell
             return cell
+                    
         } else if indexPath.row == 1 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: EventDescriptionTableViewCell.className, for: indexPath) as? EventDescriptionTableViewCell else {
-                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
-            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: EventDescriptionTableViewCell.className, for: indexPath) as! EventDescriptionTableViewCell
             cell.updateUI()
             cell.delegate = self
-           
             return cell
+                    
         } else if indexPath.row == 2 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: EducationTableViewCell.className, for: indexPath) as? EducationTableViewCell else {
-                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
-            }
-           
+            let cell = tableView.dequeueReusableCell(withIdentifier: EducationTableViewCell.className, for: indexPath) as! EducationTableViewCell
             return cell
+                    
         } else if indexPath.row == 3 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: EducationTableViewCell.className, for: indexPath) as? EducationTableViewCell else {
-                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
-            }
-           
+            let cell = tableView.dequeueReusableCell(withIdentifier: EducationTableViewCell.className, for: indexPath) as! EducationTableViewCell
             return cell
+                    
         } else if indexPath.row == 4 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: SoftSkillTextTableViewCell.className, for: indexPath) as? SoftSkillTextTableViewCell else {
-                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
-            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: SoftSkillTextTableViewCell.className, for: indexPath) as! SoftSkillTextTableViewCell
            
             return cell
         } else if indexPath.row == 5 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: SkillsTableViewCell.className, for: indexPath) as? SkillsTableViewCell else {
-                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
-            }
-           
+             let cell = tableView.dequeueReusableCell(withIdentifier: SkillsTableViewCell.className, for: indexPath) as! SkillsTableViewCell
+                    
             return cell
         } else if indexPath.row == 6 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: HardSkillsTextTableViewCell.className, for: indexPath) as? HardSkillsTextTableViewCell else {
-                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
-            }
-           
+            let cell = tableView.dequeueReusableCell(withIdentifier: HardSkillsTextTableViewCell.className, for: indexPath) as! HardSkillsTextTableViewCell
             return cell
+                    
         } else if indexPath.row == 7 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: SkillsTableViewCell.className, for: indexPath) as? SkillsTableViewCell else {
-                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
-            }
-           
+            let cell = tableView.dequeueReusableCell(withIdentifier: SkillsTableViewCell.className, for: indexPath) as! SkillsTableViewCell
             return cell
             
         } else if indexPath.row == 8 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: EducationTextTableViewCell.className, for: indexPath) as? EducationTextTableViewCell else {
-                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
-            }
+             let cell = tableView.dequeueReusableCell(withIdentifier: EducationTextTableViewCell.className, for: indexPath) as! EducationTextTableViewCell
             cell.lblEducation.text = "Experience"
             cell.topConstraint.constant = 30
             cell.bottomConstraint.constant = 20
             return cell
+            
         } else if indexPath.row == 9 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ExperienceTableViewCell.className, for: indexPath) as? ExperienceTableViewCell else {
-                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
-            }
+             let cell = tableView.dequeueReusableCell(withIdentifier: ExperienceTableViewCell.className, for: indexPath) as! ExperienceTableViewCell
             
             return cell
         } else if indexPath.row == 10 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ExperienceTableViewCell.className, for: indexPath) as? ExperienceTableViewCell else {
-                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
-            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: ExperienceTableViewCell.className, for: indexPath) as! ExperienceTableViewCell
             return cell
+            
         } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactTableViewCell.className, for: indexPath) as? ContactTableViewCell else {
-                fatalError("Failed to get expected kind of reusable cell from the tableView. Expected type `EmployeesTableViewCell`")
-            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: ContactTableViewCell.className, for: indexPath) as! ContactTableViewCell
             return cell
         }
     }
