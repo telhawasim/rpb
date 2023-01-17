@@ -36,4 +36,5 @@ class EmployeesTableViewCell: UITableViewCell {
         lblEmail.font = UIFont.getMediumFont(size: 14)
         self.setColors()
     }
+    
 }
