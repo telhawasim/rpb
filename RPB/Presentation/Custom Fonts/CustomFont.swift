@@ -9,45 +9,24 @@ import Foundation
 import UIKit
 
 extension UIFont {
-    private static func customFont(name: String, size: CGFloat) -> UIFont {
-        let font = UIFont(name: name, size: size)
-        assert(font != nil, "Can't load font: \(name)")
-        return font ?? UIFont.systemFont(ofSize: size)
-    }
-
-    static func getDefaultFont() -> UIFont {
-        return UIFont.init(name: "Montserrat-Regular", size: 16.0)!
-    }
-    
-    static func getDefaultFont_Medium() -> UIFont {
-        return UIFont.init(name: "Montserrat-Medium", size: 16.0)!
-    }
-    
-    static func getDefaultFont_SemiBold() -> UIFont {
-        return UIFont.init(name: "Montserrat-SemiBold", size: 16.0)!
-    }
-    
-    static func getDefaultFont_Bold() -> UIFont {
-        return UIFont.init(name: "Montserrat-SemiBold", size: 18.0)!
-    }
     
     static func getDefaultFont_Thin() -> UIFont {
         return UIFont.init(name: "Montserrat-SemiBold", size: 14.0)!
     }
     
-    static func getRegularFont(size: CGFloat = 14.0) -> UIFont {
+    static func getRegularFont(size: CGFloat = 16.0) -> UIFont {
         return UIFont.init(name: "Montserrat-Regular", size: size)!
     }
     
-    static func getCustomFont_Medium(size: CGFloat = 14.0) -> UIFont {
+    static func getCustomFont_Medium(size: CGFloat = 16.0) -> UIFont {
         return UIFont.init(name: "Montserrat-Medium", size: size)!
     }
     
-    static func getCustomFont_SemiBold(size: CGFloat = 14.0) -> UIFont {
+    static func getCustomFont_SemiBold(size: CGFloat = 16.0) -> UIFont {
         return UIFont.init(name: "Montserrat-SemiBold", size: size)!
     }
     
-    static func getCustomFont_Bold(size: CGFloat = 14.0) -> UIFont {
+    static func getCustomFont_Bold(size: CGFloat = 18.0) -> UIFont {
         return UIFont.init(name: "Montserrat-SemiBold", size: size)!
     }
     

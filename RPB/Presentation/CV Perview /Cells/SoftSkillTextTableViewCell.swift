@@ -30,7 +30,7 @@ class SoftSkillTextTableViewCell: UITableViewCell {
     // MARK: Fonts
     func configureFonts() {
         lblSkills.font = UIFont.getRegularFont(size: 20)
-        lblSoftSkills.font = UIFont.getDefaultFont()
+        lblSoftSkills.font = UIFont.getRegularFont()
         self.setColors()
     }
 }

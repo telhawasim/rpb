@@ -124,13 +124,13 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     func configureButtons() {
         self.btnPreview.borderWidth = 1
         self.btnPreview.borderColor = UIColor.customBlue
-        self.btnPreview.titleLabel?.font = UIFont.getDefaultFont_Medium()
+        self.btnPreview.titleLabel?.font = UIFont.getCustomFont_Medium()
         self.btnPreview.titleLabel?.textColor = UIColor.customBlue
         self.btnPreview.titleLabel?.text = "Previous"
         self.btnPreview.cornerRadiusButton(30)
         
         self.btnSave.backgroundColor = UIColor.customBlue
-        self.btnSave.titleLabel?.font = UIFont.getDefaultFont_Medium()
+        self.btnSave.titleLabel?.font = UIFont.getCustomFont_Medium()
         self.btnSave.titleLabel?.textColor = UIColor.white
         self.btnSave.titleLabel?.text = "Save & Continue"
         self.btnSave.cornerRadiusButton(30)

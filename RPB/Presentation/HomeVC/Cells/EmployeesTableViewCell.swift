@@ -31,7 +31,7 @@ class EmployeesTableViewCell: UITableViewCell {
 
     // MARK: Configure Fonts
     func configureFonts() {
-        lblName.font = UIFont.getDefaultFont_Bold()
+        lblName.font = UIFont.getCustomFont_Bold()
         lblSkills.font = UIFont.getCustomFont_Medium(size: 14)
         lblEmail.font = UIFont.getCustomFont_Medium(size: 14)
         self.setColors()

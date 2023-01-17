@@ -62,7 +62,7 @@ class ProfileVC: BaseVC {
     func configureFonts() {
         self.lblName.font = UIFont.getCustomFont_Bold(size: 20)
         self.lblDesignation.font = UIFont.getCustomFont_Medium(size: 14)
-        self.lblEmail.font = UIFont.getDefaultFont()
+        self.lblEmail.font = UIFont.getRegularFont()
         self.lblProfiles.font = UIFont.getRegularFont(size: 24)
     }
     
