@@ -24,12 +24,12 @@ class EducationTextTableViewCell: UITableViewCell {
     
     // MARK: Colors
     func setColors() {
-        lblEducation.textColor = UIColor.black222222
+        lblEducation.textColor = UIColor.customBlack
     }
 
     // MARK: Fonts
     func configureFonts() {
-        lblEducation.font = UIFont.montserratRegular(20)
+        lblEducation.font = UIFont.getRegularFont(size: 20)
         self.setColors()
     }
 }

@@ -58,7 +58,7 @@ extension UIButton {
         self.setTitle(text, for: .normal)
         self.borderWidth = borderWidth
         self.borderColor = borderColor
-        self.titleLabel?.font = UIFont.montserratRegular(14)
+        self.titleLabel?.font = UIFont.getRegularFont(size: 14)
     }
     
     func inSelectedResumeCV() {

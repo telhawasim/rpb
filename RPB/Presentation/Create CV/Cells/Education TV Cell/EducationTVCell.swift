@@ -30,8 +30,8 @@ class EducationTVCell: UITableViewCell {
     }
     
     func configureLabel() {
-        self.lblDate.font = UIFont.montserratSemiBold(16)
-        self.lblYear.font = UIFont.montserratSemiBold(16)
+        self.lblDate.font = UIFont.getDefaultFont_SemiBold()
+        self.lblYear.font = UIFont.getDefaultFont_SemiBold()
     }
     
     func configurePicker() {

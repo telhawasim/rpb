@@ -15,24 +15,44 @@ extension UIFont {
         return font ?? UIFont.systemFont(ofSize: size)
     }
 
-    static func montserratRegular(_ size: Int) -> UIFont {
-        return customFont(name: "Montserrat-Regular", size: CGFloat(size))
-    }
-
-    static func montserratSemiBold(_ size: Int) -> UIFont {
-        return customFont(name: "Montserrat-SemiBold", size: CGFloat(size))
-    }
-
-    static func montserratBold(_ size: Int) -> UIFont {
-        return customFont(name: "Montserrat-Bold", size: CGFloat(size))
-    }
-
-    static func montserratMedium(_ size: Int) -> UIFont {
-        return customFont(name: "Montserrat-Medium", size: CGFloat(size))
+    static func getDefaultFont() -> UIFont {
+        return UIFont.init(name: "Montserrat-Regular", size: 16.0)!
     }
     
-    static func montserratThin(_ size: Int) -> UIFont {
-        return customFont(name: "Montserrat-Thin", size: CGFloat(size))
+    static func getDefaultFont_Medium() -> UIFont {
+        return UIFont.init(name: "Montserrat-Medium", size: 16.0)!
+    }
+    
+    static func getDefaultFont_SemiBold() -> UIFont {
+        return UIFont.init(name: "Montserrat-SemiBold", size: 16.0)!
+    }
+    
+    static func getDefaultFont_Bold() -> UIFont {
+        return UIFont.init(name: "Montserrat-SemiBold", size: 18.0)!
+    }
+    
+    static func getDefaultFont_Thin() -> UIFont {
+        return UIFont.init(name: "Montserrat-SemiBold", size: 14.0)!
+    }
+    
+    static func getRegularFont(size: CGFloat = 14.0) -> UIFont {
+        return UIFont.init(name: "Montserrat-Regular", size: size)!
+    }
+    
+    static func getCustomFont_Medium(size: CGFloat = 14.0) -> UIFont {
+        return UIFont.init(name: "Montserrat-Medium", size: size)!
+    }
+    
+    static func getCustomFont_SemiBold(size: CGFloat = 14.0) -> UIFont {
+        return UIFont.init(name: "Montserrat-SemiBold", size: size)!
+    }
+    
+    static func getCustomFont_Bold(size: CGFloat = 14.0) -> UIFont {
+        return UIFont.init(name: "Montserrat-SemiBold", size: size)!
+    }
+    
+    static func getCustomFont_Thin(size: CGFloat = 14.0) -> UIFont {
+        return UIFont.init(name: "Montserrat-Thin", size: size)!
     }
 }
 

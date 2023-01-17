@@ -26,17 +26,17 @@ class ExperienceTableViewCell: UITableViewCell {
     
     // MARK: Colors
     func setColors() {
-        lblSkills.textColor = UIColor.black222222
-        lblCompany.textColor = UIColor.black222222
-        lblExperience.textColor = UIColor.black222222
-        lblSession.textColor = UIColor.black222222
+        lblSkills.textColor = UIColor.customBlack
+        lblCompany.textColor = UIColor.customBlack
+        lblExperience.textColor = UIColor.customBlack
+        lblSession.textColor = UIColor.customBlack
     }
 
     // MARK: Fonts
     func configureFonts() {
-        lblSkills.font =  UIFont.montserratRegular(16)
-        lblCompany.font = UIFont.montserratThin(16)
-        lblExperience.font = UIFont.montserratThin(16)
-        lblSession.font = UIFont.montserratRegular(14)
+        lblSkills.font =  UIFont.getDefaultFont()
+        lblCompany.font = UIFont.getCustomFont_Thin(size: 16)
+        lblExperience.font = UIFont.getCustomFont_Thin(size: 16)
+        lblSession.font = UIFont.getRegularFont(size: 14)
     }
 }

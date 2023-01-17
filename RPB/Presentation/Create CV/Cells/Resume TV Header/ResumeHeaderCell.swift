@@ -31,7 +31,7 @@ class ResumeHeaderCell: UITableViewHeaderFooterView {
     }
     
     func configureLabel() {
-        self.lblHeading.font = UIFont.montserratMedium(20)
+        self.lblHeading.font = UIFont.getCustomFont_Medium(size: 20)
     }
     
     @IBAction func tappedAddMoreCell(_ sender: Any) {

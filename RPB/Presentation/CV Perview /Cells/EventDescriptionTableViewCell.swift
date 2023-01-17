@@ -40,14 +40,14 @@ class EventDescriptionTableViewCell: UITableViewCell {
     
     // MARK: Colors
     func setColors() {
-        lblDescriptionHeading.textColor = UIColor.black222222
+        lblDescriptionHeading.textColor = UIColor.customBlack
         eventDescription.textColor = UIColor.black
     }
 
     // MARK: Fonts
     func configureFonts() {
-        lblDescriptionHeading.font = UIFont.montserratRegular(23)
-        eventDescription.font = UIFont.montserratThin(14)
+        lblDescriptionHeading.font = UIFont.getRegularFont(size: 23)
+        eventDescription.font = UIFont.getDefaultFont_Thin()
     }
     
     func updateUI(noOfLines: Int = 3,headingFontSize: CGFloat = 15,topMargin: CGFloat = 0, bottomMargin: CGFloat = 8) {

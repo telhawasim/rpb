@@ -71,7 +71,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     
     //MARK: Configure Labels
     func configureLabel() {
-        self.lblTitle.font = UIFont.montserratMedium(24)
+        self.lblTitle.font = UIFont.getCustomFont_Medium(size: 24)
     }
     
     //MARK: Configure TableView
@@ -124,13 +124,13 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     func configureButtons() {
         self.btnPreview.borderWidth = 1
         self.btnPreview.borderColor = UIColor.customBlue
-        self.btnPreview.titleLabel?.font = UIFont.montserratMedium(16)
+        self.btnPreview.titleLabel?.font = UIFont.getDefaultFont_Medium()
         self.btnPreview.titleLabel?.textColor = UIColor.customBlue
         self.btnPreview.titleLabel?.text = "Previous"
         self.btnPreview.cornerRadiusButton(30)
         
         self.btnSave.backgroundColor = UIColor.customBlue
-        self.btnSave.titleLabel?.font = UIFont.montserratMedium(16)
+        self.btnSave.titleLabel?.font = UIFont.getDefaultFont_Medium()
         self.btnSave.titleLabel?.textColor = UIColor.white
         self.btnSave.titleLabel?.text = "Save & Continue"
         self.btnSave.cornerRadiusButton(30)

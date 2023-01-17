@@ -43,15 +43,15 @@ extension HomeVC {
 
     // MARK: Set Colors
     func setColors() {
-        lblName.textColor = UIColor.black222222
-        lblEmployee.textColor = UIColor.black222222
+        lblName.textColor = UIColor.customBlack
+        lblEmployee.textColor = UIColor.customBlack
     }
 
     // MARK: Set Fonts
     func configureFonts() {
-        lblName.font = UIFont.montserratMedium(34)
-        lblEmployee.font = UIFont.montserratRegular(24)
-        lblEmployeeCount.font = UIFont.montserratBold(40)
+        lblName.font = UIFont.getCustomFont_Medium(size: 34)
+        lblEmployee.font = UIFont.getRegularFont(size: 24)
+        lblEmployeeCount.font = UIFont.getCustomFont_Bold(size: 40)
     }
 }
 

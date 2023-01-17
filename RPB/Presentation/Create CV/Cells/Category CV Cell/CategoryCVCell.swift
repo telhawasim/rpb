@@ -31,7 +31,7 @@ class CategoryCVCell: UICollectionViewCell {
     func configure(_ isSelected: Bool, title: String) {
         self.setupCellState(isSelected)
         self.lblTitle.text = title
-        self.lblTitle.font = UIFont.montserratRegular(14)
+        self.lblTitle.font = UIFont.getRegularFont(size: 14)
         
     }
     

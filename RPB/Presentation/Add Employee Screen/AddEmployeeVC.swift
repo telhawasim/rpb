@@ -48,23 +48,23 @@ class AddEmployeeVC: BaseVC {
 
     // MARK: Configure Font
     func configureFont() {
-        self.lblTitle.font = UIFont.montserratMedium(24)
-        self.lblName.font = UIFont.montserratSemiBold(16) //Theme.getSemiBoldFont()
-        self.lblDesignation.font = UIFont.montserratSemiBold(16)
-        self.lblDepartment.font = UIFont.montserratSemiBold(16)
-        self.lblDOB.font = UIFont.montserratSemiBold(16)
-        self.lblEmail.font = UIFont.montserratSemiBold(16)
-        self.lblPhone.font = UIFont.montserratSemiBold(16)
-        self.lblDateOfJoining.font = UIFont.montserratSemiBold(16)
-        self.txtName.font = UIFont.montserratMedium(16)
-        self.txtDesignation.font = UIFont.montserratMedium(16)
+        self.lblTitle.font = UIFont.getCustomFont_Medium(size: 24)
+        self.lblName.font = UIFont.getDefaultFont_Medium() //Theme.getSemiBoldFont()
+        self.lblDesignation.font = UIFont.getDefaultFont_SemiBold()
+        self.lblDepartment.font = UIFont.getDefaultFont_SemiBold()
+        self.lblDOB.font = UIFont.getDefaultFont_SemiBold()
+        self.lblEmail.font = UIFont.getDefaultFont_SemiBold()
+        self.lblPhone.font = UIFont.getDefaultFont_SemiBold()
+        self.lblDateOfJoining.font = UIFont.getDefaultFont_SemiBold()
+        self.txtName.font = UIFont.getDefaultFont_Medium()
+        self.txtDesignation.font = UIFont.getDefaultFont_Medium()
         self.txtDepartment.tintColor = .clear
-        self.txtDOB.font = UIFont.montserratMedium(16)
+        self.txtDOB.font = UIFont.getDefaultFont_Medium()
         self.txtDOB.tintColor = .clear
-        self.txtEmail.font = UIFont.montserratMedium(16)
-        self.txtPhone.font = UIFont.montserratMedium(16)
-        self.txtDepartment.font = UIFont.montserratMedium(16)
-        self.txtDateOfJoining.font = UIFont.montserratMedium(16)
+        self.txtEmail.font = UIFont.getDefaultFont_Medium()
+        self.txtPhone.font = UIFont.getDefaultFont_Medium()
+        self.txtDepartment.font = UIFont.getDefaultFont_Medium()
+        self.txtDateOfJoining.font = UIFont.getDefaultFont_Medium()
         self.txtDateOfJoining.tintColor = .clear
     }
 

@@ -54,10 +54,10 @@ class AddCertificatesTableViewCell: UITableViewCell {
     
     //MARK: Configure Labels
     func configureFont() {
-        self.lblCourseName.font = UIFont.montserratRegular(16)
-        self.lblInstitute.font = UIFont.montserratRegular(16)
-        self.lblStartDate.font = UIFont.montserratRegular(16)
-        self.lblEndsTo.font = UIFont.montserratRegular(16)
+        self.lblCourseName.font = UIFont.getDefaultFont()
+        self.lblInstitute.font = UIFont.getDefaultFont()
+        self.lblStartDate.font = UIFont.getDefaultFont()
+        self.lblEndsTo.font = UIFont.getDefaultFont()
         self.setColors()
     }
     

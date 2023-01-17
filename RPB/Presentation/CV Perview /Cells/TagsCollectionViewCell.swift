@@ -26,12 +26,12 @@ class TagsCollectionViewCell: UICollectionViewCell {
     // MARK: Colors
     func setColors() {
         tagsView.backgroundColor = UIColor.blueF2F5FF
-        lblTagsName.textColor = UIColor.black222222
+        lblTagsName.textColor = UIColor.customBlack
     }
 
     // MARK: Fonts
     func configureFonts() {
-        lblTagsName.font = UIFont.montserratRegular(12)
+        lblTagsName.font = UIFont.getRegularFont(size: 12)
     }
     
     @IBAction func tappedRemoveTag(_ sender: Any) {
