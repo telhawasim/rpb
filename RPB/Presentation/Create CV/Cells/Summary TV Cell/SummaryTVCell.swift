@@ -31,7 +31,7 @@ class SummaryTVCell: UITableViewCell {
     
     func configureTextView() {
         self.textView.delegate = self
-        textView.addPadding(size: 10)
+        textView.addPadding(size: 20)
         textView.text = "Write Here"
         textView.textColor = UIColor.lightGray
     }

@@ -146,7 +146,7 @@ class ExperienceTVCell: UITableViewCell {
     //MARK: Configure TextView
     func configureTextView() {
         self.textView.delegate = self
-        self.textView.addPadding(size: 10)
+        self.textView.addPadding(size: 20)
         self.textView.borderWidth = 1
         self.textView.borderColor = UIColor.greyE2E2E2
         self.textView.cornerRadius(10)

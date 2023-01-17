@@ -11,6 +11,6 @@ import UIKit
 extension UITextView {
     
     func addPadding(size: CGFloat) {
-        self.textContainerInset = UIEdgeInsets(top: size, left: size, bottom: size, right: size)
+        self.textContainerInset = UIEdgeInsets(top: size, left: size-5, bottom: size, right: size)
     }
 }
