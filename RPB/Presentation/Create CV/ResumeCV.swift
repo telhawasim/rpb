@@ -25,6 +25,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     var selectedHeader = Int()
     var categoryTitle: [Category] = [.info, .experience, .skills, .academics]
     var category: Category = .info
+    var isAllPopulated = false
     
     var infoTextFields = TextFieldModel.getInfoTextFields() {
         didSet {
@@ -46,13 +47,17 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     
     var skillsTextFields = SkillsModel.getSkillsData() {
         didSet {
-            self.skillsValidation()
+            if skillsValidation() {
+                self.certificatesValidation()
+            }
         }
     }
     
     var certificatesTextField = AcademicsModel.getAcademicsTextFields() {
         didSet {
-            self.certificatesValidation()
+            if skillsValidation() {
+                self.certificatesValidation()
+            }
         }
     }
     
@@ -161,7 +166,6 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     
     //MARK: Validation for Info textField's text is nil
     func validation() {
-        var isAllPopulated = false
         
         for textField in self.infoTextFields {
             if textField.textValue.isEmpty {
@@ -178,7 +182,6 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     
     //MARK: Validation for textField's text is nil
     func experienceValidation() {
-        var isAllPopulated = false
         
         for textField in self.experienceTextFields {
             if textField.txtCompanyName.isEmpty || textField.txtStartDate.isEmpty || textField.txtEndDate.isEmpty || textField.txtView.isEmpty {
@@ -195,7 +198,6 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     
     //MARK: Validation for Academics textField's text is nil
     func academicsValidation() {
-        var isAllPopulated = false
         
         for textField in self.academicsTextFields {
             if textField.txtDegree.isEmpty || textField.txtInstitute.isEmpty || textField.txtStartsFrom.isEmpty || textField.txtEndsTo.isEmpty {
@@ -211,37 +213,43 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     }
     
     //MARK: Validation for Skills is nil
-    func skillsValidation() {
-        var isAllPopulated = false
+    func skillsValidation() -> Bool {
+        
         btnSave.isEnabled = false
         btnSave.backgroundColor = UIColor.systemGray
         if skillsTextFields.isEmpty {
             isAllPopulated = false
+            return false
         } else {
             for textField in self.skillsTextFields {
                 if textField.txtSkills.isEmpty || textField.txtPercentage.isEmpty || textField.txtPercentage == "0 %" || textField.slider == 0.0 {
                     isAllPopulated = false
-                    break
+                    self.btnSave.isEnabled = isAllPopulated
+                    self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
+                    return false
                 } else {
                     isAllPopulated = true
-                    self.certificatesValidation()
+                    self.btnSave.isEnabled = isAllPopulated
+                    self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
+                    return true
                 }
             }
         }
-        
-        self.btnSave.isEnabled = isAllPopulated
-        self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
+        return true
+
     }
     
     //MARK: Validation for Certificates is nil
     func certificatesValidation() {
-        var isAllPopulated = false
+        
+        
+        btnSave.isEnabled = false
+        btnSave.backgroundColor = UIColor.systemGray
         
         if !certificatesTextField.isEmpty {
             for textField in self.certificatesTextField {
                 if textField.txtDegree.isEmpty || textField.txtInstitute.isEmpty || textField.txtStartsFrom.isEmpty || textField.txtEndsTo.isEmpty {
                     isAllPopulated = false
-                    break
                 } else {
                     isAllPopulated = true
                 }
@@ -249,13 +257,15 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         } else {
             isAllPopulated = true
         }
-//        if skillsTextFields.isEmpty && certificatesTextField.isEmpty && skillsTextFields.first?.slider == 0.0 {
-//            isAllPopulated = false
-//        }
-
         self.btnSave.isEnabled = isAllPopulated
         self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
     }
+//        } else {
+//            isAllPopulated = true
+//        }
+//        if skillsTextFields.isEmpty && certificatesTextField.isEmpty && skillsTextFields.first?.slider == 0.0 {
+//            isAllPopulated = false
+//        }
     
     //MARK: Info Tab TextField Validatiom
     func infoTabTextFieldValidation() -> Bool {
@@ -264,9 +274,9 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         var errorMessage: String?
         
         if !email.isEmailValid() {
-            errorMessage = Localization.Login.emailValidError
+            errorMessage = Localization.Login.kEmailInvalidError
         } else if phone.count < 11 {
-            errorMessage = Localization.AddEmployee.phoneLengthError
+            errorMessage = Localization.AddEmployee.kPhoneLengthError
         }
         
         if let errorMsg = errorMessage {
@@ -584,7 +594,9 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                     if self.skillsTextFields.count > 1 {
                         self.removeCellSkills(index: indexPath.row)
                     }
-                    self.skillsValidation()
+                    if self.skillsValidation() {
+                        self.certificatesValidation()
+                    }
                 }
                 return cell
                 
@@ -599,6 +611,9 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                     guard let self = self else {return}
                     if self.certificatesTextField.count > 0 {
                         self.removeCellCertificates(index: indexPath.row)
+                    }
+                    if self.skillsValidation() {
+                        self.certificatesValidation()
                     }
                 }
                 

@@ -56,7 +56,7 @@ extension EmployeeVC {
     
     // MARK: Configure TextField
     func configureTextField() {
-        txtSearch.attributedPlaceholder = NSAttributedString(string: Localization.Employee.search, attributes: [NSAttributedString.Key.foregroundColor: UIColor.customBlack, NSAttributedString.Key.font: UIFont.getMediumFont(size: 14)])
+        txtSearch.attributedPlaceholder = NSAttributedString(string: Localization.Employee.kSearch, attributes: [NSAttributedString.Key.foregroundColor: UIColor.customBlack, NSAttributedString.Key.font: UIFont.getMediumFont(size: 14)])
     }
 }
 

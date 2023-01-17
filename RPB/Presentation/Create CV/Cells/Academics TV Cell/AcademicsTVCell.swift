@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class AcademicsTVCell: UITableViewCell {
     
@@ -42,15 +43,22 @@ class AcademicsTVCell: UITableViewCell {
         self.setupCell()
         self.txtDegree.addTarget(self, action: #selector(self.textFieldDegreeDidChange(_:)), for: .editingChanged)
         self.txtInstitute.addTarget(self, action: #selector(self.textFieldInstituteDidChange(_:)), for: .editingChanged)
+        self.txtStartsFrom.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
+        self.txtEndsTo.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
+
     }
     
     //MARK: Setup Label for Cell
     func setupCell() {
         self.lblCount.font = UIFont.getBoldFont(size: 14)
-        self.lblDegree.font = UIFont.getRegularFont()
-        self.lblInstitute.font = UIFont.getRegularFont()
-        self.lblStartsFrom.font = UIFont.getRegularFont()
-        self.lblEndsTo.font = UIFont.getRegularFont()
+        self.lblDegree.font = UIFont.getSemiBoldFont()
+        self.txtDegree.font = UIFont.getMediumFont()
+        self.lblInstitute.font = UIFont.getSemiBoldFont()
+        self.txtInstitute.font = UIFont.getMediumFont()
+        self.lblStartsFrom.font = UIFont.getSemiBoldFont()
+        self.txtStartsFrom.font = UIFont.getMediumFont()
+        self.lblEndsTo.font = UIFont.getSemiBoldFont()
+        self.txtEndsTo.font = UIFont.getMediumFont()
         
         self.lblView.cornerRadius(16)
         
@@ -95,6 +103,23 @@ class AcademicsTVCell: UITableViewCell {
             years.append("\(loop)")
         }
         return years
+    }
+    
+    @objc func doneButtonClicked(textField: UITextField) {
+        if textField == txtStartsFrom {
+            if txtStartsFrom.text == "" {
+                self.startYearPicker.selectRow(0, inComponent: 0, animated: true)
+                self.txtStartsFrom.text = self.configurePickerforStartYear().first
+                self.textStartDateDidChange?(txtStartsFrom)
+
+            }
+        } else {
+            if txtEndsTo.text == "" {
+                self.endYearPicker.selectRow(0, inComponent: 0, animated: true)
+                self.txtEndsTo.text = self.configurePickerforEndYear().first
+                self.textEndDateDidChange?(txtEndsTo)
+            }
+        }
     }
     
     //MARK: IBACTION
@@ -148,11 +173,9 @@ extension AcademicsTVCell: UIPickerViewDelegate, UIPickerViewDataSource {
         if pickerView == startYearPicker {
             txtStartsFrom.text = years[row]
             txtEndsTo.text = ""
-            delegate?.dismissPicker()
             self.textStartDateDidChange?(txtStartsFrom)
         } else {
             txtEndsTo.text = configurePickerforEndYear()[row]
-            delegate?.dismissPicker()
             self.textEndDateDidChange?(txtEndsTo)
         }
         
