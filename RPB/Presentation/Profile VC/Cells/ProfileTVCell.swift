@@ -31,7 +31,7 @@ class ProfileTVCell: UITableViewCell {
     }
 
     func configLabel() {
-        self.lblProfile.font = UIFont.getDefaultFont_Bold()
+        self.lblProfile.font = UIFont.getCustomFont_Bold()
         self.lblDesignation.font = UIFont.getCustomFont_Medium(size: 14)
         self.lblDate.font = UIFont.getCustomFont_Medium(size: 12)
         self.lblDate.textColor = UIColor.customBlack

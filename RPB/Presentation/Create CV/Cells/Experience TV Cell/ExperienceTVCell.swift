@@ -64,9 +64,9 @@ class ExperienceTVCell: UITableViewCell {
     
     //MARK: Configure Labels
     func configureFont() {
-        self.lblCompany.font = UIFont.getDefaultFont()
-        self.lblStartDate.font = UIFont.getDefaultFont()
-        self.lblEndDate.font = UIFont.getDefaultFont()
+        self.lblCompany.font = UIFont.getRegularFont()
+        self.lblStartDate.font = UIFont.getRegularFont()
+        self.lblEndDate.font = UIFont.getRegularFont()
         self.setColors()
     }
     

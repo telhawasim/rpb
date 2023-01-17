@@ -63,8 +63,8 @@ extension LoginVC {
         lbldescription.font = UIFont.getCustomFont_Medium(size: 16)
         lbldescription.textColor = UIColor.darkGray
         lblLogin.font = UIFont.getCustomFont_Bold(size: 32)
-        lblEmail.font = UIFont.getDefaultFont_SemiBold()
-        lblPassword.font = UIFont.getDefaultFont_SemiBold()
+        lblEmail.font = UIFont.getCustomFont_SemiBold()
+        lblPassword.font = UIFont.getCustomFont_SemiBold()
         self.setColors()
     }
     

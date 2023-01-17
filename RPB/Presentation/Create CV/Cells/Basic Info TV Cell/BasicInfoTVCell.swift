@@ -19,7 +19,7 @@ class BasicInfoTVCell: UITableViewCell {
     //MARK: Lifecylce
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblTitle.font = UIFont.getDefaultFont()
+        self.lblTitle.font = UIFont.getRegularFont()
         self.txtInfo.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
     

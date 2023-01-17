@@ -23,7 +23,7 @@ class DobTVCell: UITableViewCell {
     }
     
     func configureFont() {
-        self.lblDate.font = UIFont.getDefaultFont()
+        self.lblDate.font = UIFont.getRegularFont()
     }
     
     func configurePicker() {

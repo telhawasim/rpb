@@ -27,7 +27,7 @@ class HardSkillsTextTableViewCell: UITableViewCell {
 
     // MARK: Fonts
     func configureFonts() {
-        lblbHardSkills.font = UIFont.getDefaultFont()
+        lblbHardSkills.font = UIFont.getRegularFont()
         self.setColors()
     }
 }

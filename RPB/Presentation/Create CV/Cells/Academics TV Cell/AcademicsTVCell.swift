@@ -47,10 +47,10 @@ class AcademicsTVCell: UITableViewCell {
     //MARK: Setup Label for Cell
     func setupCell() {
         self.lblCount.font = UIFont.getCustomFont_Bold(size: 14)
-        self.lblDegree.font = UIFont.getDefaultFont()
-        self.lblInstitute.font = UIFont.getDefaultFont()
-        self.lblStartsFrom.font = UIFont.getDefaultFont()
-        self.lblEndsTo.font = UIFont.getDefaultFont()
+        self.lblDegree.font = UIFont.getRegularFont()
+        self.lblInstitute.font = UIFont.getRegularFont()
+        self.lblStartsFrom.font = UIFont.getRegularFont()
+        self.lblEndsTo.font = UIFont.getRegularFont()
         
         self.lblView.cornerRadius(16)
         
