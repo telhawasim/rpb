@@ -62,7 +62,7 @@ final class APIManager {
             do {
                 let products = try JSONDecoder().decode(modelType, from: data)
                 completion(.success(products))
-            }catch {
+            } catch {
                 completion(.failure(.network(error)))
             }
 
