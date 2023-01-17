@@ -47,7 +47,7 @@ class EventDescriptionTableViewCell: UITableViewCell {
     // MARK: Fonts
     func configureFonts() {
         lblDescriptionHeading.font = UIFont.getRegularFont(size: 23)
-        eventDescription.font = UIFont.getCustomFont_Thin()
+        eventDescription.font = UIFont.getThinFont()
     }
     
     func updateUI(noOfLines: Int = 3,headingFontSize: CGFloat = 15,topMargin: CGFloat = 0, bottomMargin: CGFloat = 8) {

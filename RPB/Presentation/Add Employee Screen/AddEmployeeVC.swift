@@ -48,23 +48,23 @@ class AddEmployeeVC: BaseVC {
 
     // MARK: Configure Font
     func configureFont() {
-        self.lblTitle.font = UIFont.getCustomFont_Medium(size: 24)
-        self.lblName.font = UIFont.getCustomFont_Medium()
-        self.lblDesignation.font = UIFont.getCustomFont_SemiBold()
-        self.lblDepartment.font = UIFont.getCustomFont_SemiBold()
-        self.lblDOB.font = UIFont.getCustomFont_SemiBold()
-        self.lblEmail.font = UIFont.getCustomFont_SemiBold()
-        self.lblPhone.font = UIFont.getCustomFont_SemiBold()
-        self.lblDateOfJoining.font = UIFont.getCustomFont_SemiBold()
-        self.txtName.font = UIFont.getCustomFont_Medium()
-        self.txtDesignation.font = UIFont.getCustomFont_Medium()
+        self.lblTitle.font = UIFont.getMediumFont(size: 24)
+        self.lblName.font = UIFont.getMediumFont()
+        self.lblDesignation.font = UIFont.getSemiBoldFont()
+        self.lblDepartment.font = UIFont.getSemiBoldFont()
+        self.lblDOB.font = UIFont.getSemiBoldFont()
+        self.lblEmail.font = UIFont.getSemiBoldFont()
+        self.lblPhone.font = UIFont.getSemiBoldFont()
+        self.lblDateOfJoining.font = UIFont.getSemiBoldFont()
+        self.txtName.font = UIFont.getMediumFont()
+        self.txtDesignation.font = UIFont.getMediumFont()
         self.txtDepartment.tintColor = .clear
-        self.txtDOB.font = UIFont.getCustomFont_Medium()
+        self.txtDOB.font = UIFont.getMediumFont()
         self.txtDOB.tintColor = .clear
-        self.txtEmail.font = UIFont.getCustomFont_Medium()
-        self.txtPhone.font = UIFont.getCustomFont_Medium()
-        self.txtDepartment.font = UIFont.getCustomFont_Medium()
-        self.txtDateOfJoining.font = UIFont.getCustomFont_Medium()
+        self.txtEmail.font = UIFont.getMediumFont()
+        self.txtPhone.font = UIFont.getMediumFont()
+        self.txtDepartment.font = UIFont.getMediumFont()
+        self.txtDateOfJoining.font = UIFont.getMediumFont()
         self.txtDateOfJoining.tintColor = .clear
     }
 
@@ -86,7 +86,7 @@ class AddEmployeeVC: BaseVC {
         self.btnAdd.cornerRadius(30)
         self.btnAdd.backgroundColor = UIColor.customBlue
         self.btnAdd.setTitleColor(UIColor.white, for: .normal)
-        self.btnAdd.titleLabel?.font = UIFont.getCustomFont_Medium(size: 18)
+        self.btnAdd.titleLabel?.font = UIFont.getMediumFont(size: 18)
     }
 
     // MARK: Configure TextField

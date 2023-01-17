@@ -60,8 +60,8 @@ class ProfileVC: BaseVC {
     
     // MARK: Configure Fonts
     func configureFonts() {
-        self.lblName.font = UIFont.getCustomFont_Bold(size: 20)
-        self.lblDesignation.font = UIFont.getCustomFont_Medium(size: 14)
+        self.lblName.font = UIFont.getBoldFont(size: 20)
+        self.lblDesignation.font = UIFont.getMediumFont(size: 14)
         self.lblEmail.font = UIFont.getRegularFont()
         self.lblProfiles.font = UIFont.getRegularFont(size: 24)
     }
@@ -70,13 +70,13 @@ class ProfileVC: BaseVC {
     func configureBottomSheet() {
         self.editProfileView.isCircularView()
         self.editProfileView.backgroundColor = UIColor.blueF1F1FF
-        self.lblEditProfile.font = UIFont.getCustomFont_Medium(size: 18)
+        self.lblEditProfile.font = UIFont.getMediumFont(size: 18)
         self.deleteProfileView.isCircularView()
         self.deleteProfileView.backgroundColor = UIColor.blueF1F1FF
-        self.lblDeleteProfile.font = UIFont.getCustomFont_Medium(size: 18)
+        self.lblDeleteProfile.font = UIFont.getMediumFont(size: 18)
         self.downloadProfileView.isCircularView()
         self.downloadProfileView.backgroundColor = UIColor.blueF1F1FF
-        self.lblDownloadProfile.font = UIFont.getCustomFont_Medium(size: 18)
+        self.lblDownloadProfile.font = UIFont.getMediumFont(size: 18)
         self.bottomSheetView.cornerRadius(20)
     }
     

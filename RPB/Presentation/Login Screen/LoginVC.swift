@@ -60,11 +60,11 @@ extension LoginVC {
     
     // MARK: Configure Fonts
     func configureFonts() {
-        lbldescription.font = UIFont.getCustomFont_Medium(size: 16)
+        lbldescription.font = UIFont.getMediumFont(size: 16)
         lbldescription.textColor = UIColor.darkGray
-        lblLogin.font = UIFont.getCustomFont_Bold(size: 32)
-        lblEmail.font = UIFont.getCustomFont_SemiBold()
-        lblPassword.font = UIFont.getCustomFont_SemiBold()
+        lblLogin.font = UIFont.getBoldFont(size: 32)
+        lblEmail.font = UIFont.getSemiBoldFont()
+        lblPassword.font = UIFont.getSemiBoldFont()
         self.setColors()
     }
     

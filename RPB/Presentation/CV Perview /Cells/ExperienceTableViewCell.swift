@@ -35,8 +35,8 @@ class ExperienceTableViewCell: UITableViewCell {
     // MARK: Fonts
     func configureFonts() {
         lblSkills.font =  UIFont.getRegularFont()
-        lblCompany.font = UIFont.getCustomFont_Thin(size: 16)
-        lblExperience.font = UIFont.getCustomFont_Thin(size: 16)
+        lblCompany.font = UIFont.getThinFont(size: 16)
+        lblExperience.font = UIFont.getThinFont(size: 16)
         lblSession.font = UIFont.getRegularFont(size: 14)
     }
 }

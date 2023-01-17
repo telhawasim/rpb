@@ -39,9 +39,9 @@ extension SettingVC {
     
     // MARK: Configure Fonts
     func configureFonts() {
-        self.lblAppNotification.font = UIFont.getCustomFont_Medium(size: 14)
-        self.lblSetting.font = UIFont.getCustomFont_Medium(size: 14)
-        self.lblEditProfile.font = UIFont.getCustomFont_Medium(size: 14)
+        self.lblAppNotification.font = UIFont.getMediumFont(size: 14)
+        self.lblSetting.font = UIFont.getMediumFont(size: 14)
+        self.lblEditProfile.font = UIFont.getMediumFont(size: 14)
         self.lblAccount.font = UIFont.getRegularFont(size: 18)
         self.lblNotification.font = UIFont.getRegularFont(size: 18)
     }

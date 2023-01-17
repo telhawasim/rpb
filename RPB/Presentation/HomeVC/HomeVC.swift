@@ -49,9 +49,9 @@ extension HomeVC {
 
     // MARK: Set Fonts
     func configureFonts() {
-        lblName.font = UIFont.getCustomFont_Medium(size: 34)
+        lblName.font = UIFont.getMediumFont(size: 34)
         lblEmployee.font = UIFont.getRegularFont(size: 24)
-        lblEmployeeCount.font = UIFont.getCustomFont_Bold(size: 40)
+        lblEmployeeCount.font = UIFont.getBoldFont(size: 40)
     }
 }
 

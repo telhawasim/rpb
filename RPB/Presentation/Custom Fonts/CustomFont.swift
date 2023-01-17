@@ -9,28 +9,24 @@ import Foundation
 import UIKit
 
 extension UIFont {
-    
-    static func getDefaultFont_Thin() -> UIFont {
-        return UIFont.init(name: "Montserrat-SemiBold", size: 14.0)!
-    }
-    
+
     static func getRegularFont(size: CGFloat = 16.0) -> UIFont {
         return UIFont.init(name: "Montserrat-Regular", size: size)!
     }
     
-    static func getCustomFont_Medium(size: CGFloat = 16.0) -> UIFont {
+    static func getMediumFont(size: CGFloat = 16.0) -> UIFont {
         return UIFont.init(name: "Montserrat-Medium", size: size)!
     }
     
-    static func getCustomFont_SemiBold(size: CGFloat = 16.0) -> UIFont {
+    static func getSemiBoldFont(size: CGFloat = 16.0) -> UIFont {
         return UIFont.init(name: "Montserrat-SemiBold", size: size)!
     }
     
-    static func getCustomFont_Bold(size: CGFloat = 18.0) -> UIFont {
+    static func getBoldFont(size: CGFloat = 18.0) -> UIFont {
         return UIFont.init(name: "Montserrat-SemiBold", size: size)!
     }
     
-    static func getCustomFont_Thin(size: CGFloat = 14.0) -> UIFont {
+    static func getThinFont(size: CGFloat = 14.0) -> UIFont {
         return UIFont.init(name: "Montserrat-Thin", size: size)!
     }
 }

@@ -28,13 +28,13 @@ class ContactTableViewCell: UITableViewCell {
     // MARK: Fonts
     func configureFonts() {
         lblContact.font = UIFont.getRegularFont(size: 24)
-        lblEmail.font = UIFont.getCustomFont_Medium(size: 14)
+        lblEmail.font = UIFont.getMediumFont(size: 14)
         lblEmail.textColor = UIColor.customBlack
-        lblPhone.font = UIFont.getCustomFont_Medium(size: 14)
+        lblPhone.font = UIFont.getMediumFont(size: 14)
         lblPhone.textColor = UIColor.customBlack
-        lblLinkedIn.font = UIFont.getCustomFont_Medium(size: 14)
+        lblLinkedIn.font = UIFont.getMediumFont(size: 14)
         lblLinkedIn.textColor = UIColor.customBlack
-        lblBitBucket.font = UIFont.getCustomFont_Medium(size: 14)
+        lblBitBucket.font = UIFont.getMediumFont(size: 14)
         lblBitBucket.textColor = UIColor.customBlack
     }
 }

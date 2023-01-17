@@ -43,10 +43,10 @@ class CancelPopViewController: BaseVC {
     
     //MARK: Configure Fonts
     func configureFont() {
-        self.lblTitle.font = UIFont.getCustomFont_Medium(size: 32)
-        self.lblDescription.font = UIFont.getCustomFont_Medium(size: 14)
-        self.btnYes.titleLabel?.font = UIFont.getCustomFont_Medium()
-        self.btnNo.titleLabel?.font = UIFont.getCustomFont_Medium()
+        self.lblTitle.font = UIFont.getMediumFont(size: 32)
+        self.lblDescription.font = UIFont.getMediumFont(size: 14)
+        self.btnYes.titleLabel?.font = UIFont.getMediumFont()
+        self.btnNo.titleLabel?.font = UIFont.getMediumFont()
     }
     
     //MARK: Configure Buttons

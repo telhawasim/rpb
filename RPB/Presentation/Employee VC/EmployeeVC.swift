@@ -51,12 +51,12 @@ extension EmployeeVC {
     
     // MARK: Fonts
     func configureFonts() {
-        lblEmployee.font = UIFont.getCustomFont_Medium(size: 24)
+        lblEmployee.font = UIFont.getMediumFont(size: 24)
     }
     
     // MARK: Configure TextField
     func configureTextField() {
-        txtSearch.attributedPlaceholder = NSAttributedString(string: Localization.Employee.search, attributes: [NSAttributedString.Key.foregroundColor: UIColor.customBlack, NSAttributedString.Key.font: UIFont.getCustomFont_Medium(size: 14)])
+        txtSearch.attributedPlaceholder = NSAttributedString(string: Localization.Employee.search, attributes: [NSAttributedString.Key.foregroundColor: UIColor.customBlack, NSAttributedString.Key.font: UIFont.getMediumFont(size: 14)])
     }
 }
 
