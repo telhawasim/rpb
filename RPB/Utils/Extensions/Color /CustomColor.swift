@@ -49,4 +49,4 @@ extension UIColor {
 }
 
 // Example
-// myLabel.textColor = UIColor.customGreen
+// myLabel.textColor = UIColor.customGrey
