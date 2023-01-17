@@ -18,6 +18,7 @@ var tagsArray = ["Excellent Communication", "Excellent", "Wireframe", "Design sy
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "Spetember", "Octuber", "November", "December"]
 var employmentType = ["", "Full-Time", "Part-Time", "Contract", "Overseas", "Trainee"]
 var locationType = ["", "On-Site", "Hybrid", "Remote"]
+var dummyText = "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy."
 
 struct Section {
     var section: String!
