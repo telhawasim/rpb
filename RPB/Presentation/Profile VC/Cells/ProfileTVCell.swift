@@ -31,10 +31,10 @@ class ProfileTVCell: UITableViewCell {
     }
 
     func configLabel() {
-        self.lblProfile.font = UIFont.montserratBold(18)
-        self.lblDesignation.font = UIFont.montserratMedium(14)
-        self.lblDate.font = UIFont.montserratMedium(12)
-        self.lblDate.textColor = UIColor.black222222
+        self.lblProfile.font = UIFont.getDefaultFont_Bold()
+        self.lblDesignation.font = UIFont.getCustomFont_Medium(size: 14)
+        self.lblDate.font = UIFont.getCustomFont_Medium(size: 12)
+        self.lblDate.textColor = UIColor.customBlack
         self.configView()
         self.configureColor()
     }

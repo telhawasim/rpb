@@ -24,16 +24,16 @@ class EducationTableViewCell: UITableViewCell {
     
     // MARK: Colors
     func setColors() {
-        lblMasterText.textColor = UIColor.black222222
-        lblMasterDegree.textColor = UIColor.black222222
-        lblSession.textColor = UIColor.black222222
+        lblMasterText.textColor = UIColor.customBlack
+        lblMasterDegree.textColor = UIColor.customBlack
+        lblSession.textColor = UIColor.customBlack
     }
 
     // MARK: Fonts
     func configureFonts() {
-        lblMasterText.font = UIFont.montserratRegular(14)
-        lblMasterDegree.font = UIFont.montserratThin(14)
-        lblSession.font = UIFont.montserratRegular(14)
+        lblMasterText.font = UIFont.getRegularFont(size: 14)
+        lblMasterDegree.font = UIFont.getDefaultFont_Thin()
+        lblSession.font = UIFont.getRegularFont(size: 14)
         self.setColors()
     }
 }

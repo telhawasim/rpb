@@ -46,17 +46,17 @@ extension EmployeeVC {
 
     // MARK: Colors
     func setColors() {
-        lblEmployee.textColor = UIColor.black222222
+        lblEmployee.textColor = UIColor.customBlack
     }
 
     // MARK: Fonts
     func configureFonts() {
-        lblEmployee.font = UIFont.montserratMedium(24)
+        lblEmployee.font = UIFont.getCustomFont_Medium(size: 24)
     }
     
     // MARK: Configure TextField
     func configureTextField() {
-        txtSearch.attributedPlaceholder = NSAttributedString(string: "Search...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black222222, NSAttributedString.Key.font: UIFont.montserratMedium(14)])
+        txtSearch.attributedPlaceholder = NSAttributedString(string: "Search...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.customBlack, NSAttributedString.Key.font: UIFont.getCustomFont_Medium(size: 14)])
     }
 }
 

@@ -23,14 +23,14 @@ class SoftSkillTextTableViewCell: UITableViewCell {
     
     // MARK: Colors
     func setColors() {
-        lblSkills.textColor = UIColor.black222222
-        lblSoftSkills.textColor = UIColor.black222222
+        lblSkills.textColor = UIColor.customBlack
+        lblSoftSkills.textColor = UIColor.customBlack
     }
 
     // MARK: Fonts
     func configureFonts() {
-        lblSkills.font = UIFont.montserratRegular(20)
-        lblSoftSkills.font = UIFont.montserratRegular(16)
+        lblSkills.font = UIFont.getRegularFont(size: 20)
+        lblSoftSkills.font = UIFont.getDefaultFont()
         self.setColors()
     }
 }

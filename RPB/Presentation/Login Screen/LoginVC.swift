@@ -55,16 +55,16 @@ class LoginVC: BaseVC {
 extension LoginVC {
     // MARK: Set Colors
     func setColors() {
-        lbldescription.textColor = UIColor.black222222
+        lbldescription.textColor = UIColor.customBlack
     }
     
     // MARK: Configure Fonts
     func configureFonts() {
-        lbldescription.font = UIFont.montserratMedium(16)
+        lbldescription.font = UIFont.getCustomFont_Medium(size: 16)
         lbldescription.textColor = UIColor.darkGray
-        lblLogin.font = UIFont.montserratBold(32)
-        lblEmail.font = UIFont.montserratSemiBold(16)
-        lblPassword.font = UIFont.montserratSemiBold(16)
+        lblLogin.font = UIFont.getCustomFont_Bold(size: 32)
+        lblEmail.font = UIFont.getDefaultFont_SemiBold()
+        lblPassword.font = UIFont.getDefaultFont_SemiBold()
         self.setColors()
     }
     

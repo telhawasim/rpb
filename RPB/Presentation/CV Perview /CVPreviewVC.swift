@@ -145,9 +145,9 @@ extension CVPreviewVC {
     
     // MARK: Configure Fonts
     func configureFonts() {
-        self.lblViewProfile.font = UIFont.montserratMedium(24)
-        self.lblName.font = UIFont.montserratSemiBold(24)
-        self.lblSkill.font = UIFont.montserratThin(14)
+        self.lblViewProfile.font = UIFont.getCustomFont_Medium(size: 24)
+        self.lblName.font = UIFont.getCustomFont_SemiBold(size: 24)
+        self.lblSkill.font = UIFont.getDefaultFont_Thin()
     }
     
     func updateTableView(willExpand: Bool) {

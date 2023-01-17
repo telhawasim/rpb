@@ -8,16 +8,16 @@
 import UIKit
 
 class SettingVC: UIViewController {
-
+    
     // MARK: IBOutlets
     @IBOutlet weak var lblSetting: UILabel!
     @IBOutlet weak var lblAccount: UILabel!
     @IBOutlet weak var lblEditProfile: UILabel!
     @IBOutlet weak var lblNotification: UILabel!
     @IBOutlet weak var lblAppNotification: UILabel!
-
+    
     // MARK: Variables
-
+    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,23 +26,23 @@ class SettingVC: UIViewController {
 }
 
 extension SettingVC {
-
+    
     // MARK: Set Colors
     func setColors() {
-        lblSetting.textColor = UIColor.black222222
-        lblAccount.textColor = UIColor.black222222
-        lblEditProfile.textColor = UIColor.black222222
-        lblNotification.textColor = UIColor.black222222
-        lblAppNotification.textColor = UIColor.black222222
+        lblSetting.textColor = UIColor.customBlack
+        lblAccount.textColor = UIColor.customBlack
+        lblEditProfile.textColor = UIColor.customBlack
+        lblNotification.textColor = UIColor.customBlack
+        lblAppNotification.textColor = UIColor.customBlack
         self.configureFonts()
     }
-
+    
     // MARK: Configure Fonts
     func configureFonts() {
-        self.lblAppNotification.font = UIFont.montserratMedium(14)
-        self.lblSetting.font = UIFont.montserratMedium(22)
-        self.lblEditProfile.font = UIFont.montserratMedium(14)
-        self.lblAccount.font = UIFont.montserratRegular(18)
-        self.lblNotification.font = UIFont.montserratRegular(18)
+        self.lblAppNotification.font = UIFont.getCustomFont_Medium(size: 14)
+        self.lblSetting.font = UIFont.getCustomFont_Medium(size: 14)
+        self.lblEditProfile.font = UIFont.getCustomFont_Medium(size: 14)
+        self.lblAccount.font = UIFont.getRegularFont(size: 18)
+        self.lblNotification.font = UIFont.getRegularFont(size: 18)
     }
 }
