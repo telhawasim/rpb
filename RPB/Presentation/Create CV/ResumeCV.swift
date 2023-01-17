@@ -213,7 +213,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     }
     
     //MARK: Validation for Skills is nil
-    func skillsValidation() -> Bool {
+    @discardableResult func skillsValidation() -> Bool {
         
         btnSave.isEnabled = false
         btnSave.backgroundColor = UIColor.systemGray
