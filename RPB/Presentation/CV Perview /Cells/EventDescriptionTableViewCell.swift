@@ -13,12 +13,15 @@ protocol UpdateCustomCell {
 }
 
 class EventDescriptionTableViewCell: UITableViewCell {
-
+    
     //MARK: Outlets
     @IBOutlet weak var lblDescriptionHeading: UILabel!
     @IBOutlet weak var eventDescription: UILabel!
-    @IBOutlet weak var bottomSpace: NSLayoutConstraint!
     @IBOutlet weak var readMoreButton: UIButton!
+    @IBOutlet weak var lblPerviousCompany: UILabel!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    @IBOutlet weak var middleConstraint: NSLayoutConstraint!
     
     //MARK: Variables
     var isExpanded = false
@@ -28,14 +31,9 @@ class EventDescriptionTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        setTypoGraphy()
         eventDescription.setLineSpacing()
         self.setColors()
         self.configureFonts()
-    }
-    
-    func setTypoGraphy() {
-        
     }
     
     // MARK: Colors
@@ -43,10 +41,11 @@ class EventDescriptionTableViewCell: UITableViewCell {
         lblDescriptionHeading.textColor = UIColor.customBlack
         eventDescription.textColor = UIColor.black
     }
-
+    
     // MARK: Fonts
     func configureFonts() {
-        lblDescriptionHeading.font = UIFont.getRegularFont(size: 23)
+        lblDescriptionHeading.font = UIFont.getRegularFont(size: 20)
+        lblPerviousCompany.font = UIFont.getRegularFont(size: 14)
         eventDescription.font = UIFont.getThinFont()
     }
     
@@ -60,26 +59,7 @@ class EventDescriptionTableViewCell: UITableViewCell {
         }
         eventDescription.adjustsFontSizeToFitWidth = false
         eventDescription.lineBreakMode = .byTruncatingTail
-        lblDescriptionHeading.text = "Summary"
-        
-        if (eventDescription.maxNumberOfLines > 3) {
-            readMoreButton.isHidden = false
-        } else {
-            readMoreButton.isHidden = true
-        }
-    }
-    
-    func updateViewEventUI(noOfLines: Int = 3,headingFontSize: CGFloat = 15,topMargin: CGFloat = 0, bottomMargin: CGFloat = 8) {
-        self.setDescriptionText(textString: dummyText)
-        eventDescription.setLineSpacing()
-        if (isExpanded) {
-            eventDescription.numberOfLines = 0
-        } else {
-            eventDescription.numberOfLines = noOfLines
-        }
-        eventDescription.adjustsFontSizeToFitWidth = false
-        eventDescription.lineBreakMode = .byTruncatingTail
-        lblDescriptionHeading.text = "Description"
+        //lblDescriptionHeading.text = "Summary"
         
         if (eventDescription.maxNumberOfLines > 3) {
             readMoreButton.isHidden = false
@@ -103,91 +83,6 @@ class EventDescriptionTableViewCell: UITableViewCell {
         self.eventDescription.attributedText = attributedString
     }
     
-    //    func updateUI(venue : EventVenueDetail, NoOfLines : Int = 3,headingFontSize: CGFloat = 15,topMargin :CGFloat = 0, bottomMargin : CGFloat = 8) {
-    //        if(venue.description == nil || venue.description == ""){
-    //            lblDescriptionHeading.text = ""
-    //        }
-    //        self.setDescriptionText(textString: venue.description ?? "")
-    ////        eventDescription.setLineSpacing()
-    //        if(isExpanded){
-    //            eventDescription.numberOfLines = 0
-    //        }else{
-    //            eventDescription.numberOfLines = NoOfLines
-    //        }
-    //        eventDescription.adjustsFontSizeToFitWidth = false
-    ////        eventDescription.lineBreakMode = .byTruncatingTail
-    //        if(eventDescription.maxNumberOfLines > 3)
-    //        {
-    //            readMoreButton.isHidden = false
-    //        }else{
-    //            readMoreButton.isHidden = true
-    //        }
-    //    }
-    
-    //    func updateUI(event: EventDetailViewModel) {
-    //        self.setDescriptionText(textString: event.description ?? "")
-    ////        eventDescription.setLineSpacing()
-    //        if(isExpanded){
-    //            eventDescription.numberOfLines = 0
-    //        }else{
-    //            eventDescription.numberOfLines = 3
-    //        }
-    //        eventDescription.adjustsFontSizeToFitWidth = false
-    ////        eventDescription.lineBreakMode = .byTruncatingTail
-    //
-    //        if(eventDescription.maxNumberOfLines > 3)
-    //        {
-    //            readMoreButton.isHidden = false
-    //        }else{
-    //            readMoreButton.isHidden = true
-    //        }
-    //    }
-    
-    //    func updateUI(newVenue: NewVenue) {
-    //        self.setDescriptionText(textString: newVenue.description ?? "")
-    ////        eventDescription.setLineSpacing()
-    //        if(isExpanded){
-    //            eventDescription.numberOfLines = 0
-    //        }else{
-    //            eventDescription.numberOfLines = 3
-    //        }
-    //        eventDescription.adjustsFontSizeToFitWidth = false
-    ////        eventDescription.lineBreakMode = .byTruncatingTail
-    //
-    //        if(eventDescription.maxNumberOfLines > 3)
-    //        {
-    //            readMoreButton.isHidden = false
-    //        }else{
-    //            readMoreButton.isHidden = true
-    //        }
-    //    }
-    
-    
-    //    func updateUI(event: VotingEvent) {
-    //        self.setDescriptionText(textString: event.description ?? "")
-    ////        eventDescription.setLineSpacing()
-    //        if(isExpanded){
-    //            eventDescription.numberOfLines = 0
-    //        }else{
-    //            eventDescription.numberOfLines = 3
-    //        }
-    //        eventDescription.adjustsFontSizeToFitWidth = false
-    ////        eventDescription.lineBreakMode = .byTruncatingTail
-    //
-    //        if(eventDescription.maxNumberOfLines > 3)
-    //        {
-    //            readMoreButton.isHidden = false
-    //        }else{
-    //            readMoreButton.isHidden = true
-    //        }
-    //    }
-    
-    //    func updateNotificationData(notification : NotificationData) {
-    //        lblDescriptionHeading.text = notification.notificationTitle
-    //        eventDescription.text = notification.notificationDetail
-    //        eventDescription.setLineSpacing()
-    //    }
-     
     @IBAction func readMoreButtonPressed(_ sender: Any) {
         if (readMoreButton.title(for: .normal) == "Read More") {
             isExpanded = true

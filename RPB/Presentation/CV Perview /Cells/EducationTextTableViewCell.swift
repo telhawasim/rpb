@@ -12,7 +12,6 @@ class EducationTextTableViewCell: UITableViewCell {
     //MARK: IBOutlets
     @IBOutlet weak var lblEducation: UILabel!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     //MARK: Variables
     
