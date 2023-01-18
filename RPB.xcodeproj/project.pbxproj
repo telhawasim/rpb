@@ -33,6 +33,9 @@
 		0994122A295C365100C39E5A /* CancelPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09941228295C365100C39E5A /* CancelPopViewController.swift */; };
 		0994122B295C365100C39E5A /* CancelPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09941229295C365100C39E5A /* CancelPopViewController.xib */; };
 		0994122E295C3BA900C39E5A /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0994122D295C3BA900C39E5A /* PopUpView.swift */; };
+		09DAE8F2297869FE0077CD32 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DAE8F1297869FE0077CD32 /* SettingModel.swift */; };
+		09DAE8F529786A350077CD32 /* SettingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DAE8F429786A350077CD32 /* SettingVM.swift */; };
+		09DAE8F829786A640077CD32 /* SettingBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DAE8F729786A630077CD32 /* SettingBinder.swift */; };
 		09EBFE632978614B00559095 /* EmployeeBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBFE622978614B00559095 /* EmployeeBinder.swift */; };
 		09EBFE652978630A00559095 /* EmployeeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBFE642978630A00559095 /* EmployeeVM.swift */; };
 		09EBFE672978634000559095 /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBFE662978634000559095 /* EmployeeModel.swift */; };
@@ -153,6 +156,9 @@
 		09941228295C365100C39E5A /* CancelPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelPopViewController.swift; sourceTree = "<group>"; };
 		09941229295C365100C39E5A /* CancelPopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CancelPopViewController.xib; sourceTree = "<group>"; };
 		0994122D295C3BA900C39E5A /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		09DAE8F1297869FE0077CD32 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
+		09DAE8F429786A350077CD32 /* SettingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVM.swift; sourceTree = "<group>"; };
+		09DAE8F729786A630077CD32 /* SettingBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingBinder.swift; sourceTree = "<group>"; };
 		09EBFE622978614B00559095 /* EmployeeBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeBinder.swift; sourceTree = "<group>"; };
 		09EBFE642978630A00559095 /* EmployeeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeVM.swift; sourceTree = "<group>"; };
 		09EBFE662978634000559095 /* EmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModel.swift; sourceTree = "<group>"; };
@@ -452,6 +458,30 @@
 			path = PopUpView;
 			sourceTree = "<group>";
 		};
+		09DAE8F0297869F00077CD32 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				09DAE8F1297869FE0077CD32 /* SettingModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		09DAE8F329786A170077CD32 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				09DAE8F429786A350077CD32 /* SettingVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		09DAE8F629786A570077CD32 /* Setting Binder */ = {
+			isa = PBXGroup;
+			children = (
+				09DAE8F729786A630077CD32 /* SettingBinder.swift */,
+			);
+			path = "Setting Binder";
+			sourceTree = "<group>";
+		};
 		09EBFE5D2978610000559095 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -590,9 +620,9 @@
 		365010E22955EC03003F3262 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				36E47F992976CBD00022E281 /* Model */,
+				09DAE8F0297869F00077CD32 /* Model */,
 				36E47F9A2976CBD90022E281 /* View */,
-				36E47F9C2976CBEB0022E281 /* ViewModel */,
+				09DAE8F329786A170077CD32 /* ViewModel */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -1020,16 +1050,10 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		36E47F992976CBD00022E281 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		36E47F9A2976CBD90022E281 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				09DAE8F629786A570077CD32 /* Setting Binder */,
 				36E47F9B2976CBE20022E281 /* Controller */,
 			);
 			path = View;
@@ -1041,13 +1065,6 @@
 				365010E32955EC33003F3262 /* SettingVC.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		36E47F9C2976CBEB0022E281 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		36E47F9D2976CC0F0022E281 /* Model */ = {
@@ -1553,6 +1570,7 @@
 				0941311C2955B3E8008AC5CA /* BaseVC.swift in Sources */,
 				36737CA62976F0B800163B4C /* ExperienceTableViewCell.swift in Sources */,
 				0994122E295C3BA900C39E5A /* PopUpView.swift in Sources */,
+				09DAE8F829786A640077CD32 /* SettingBinder.swift in Sources */,
 				09283D2229531B8A00256FD8 /* ServerConfig.swift in Sources */,
 				36187A6F2959C10F001CAB2B /* Storyboard.swift in Sources */,
 				3695504429519A9E009AEB62 /* SceneDelegate.swift in Sources */,
@@ -1568,7 +1586,9 @@
 				36737C5E2976EEF300163B4C /* ResumeHeaderCell.swift in Sources */,
 				365010DD2955CBD2003F3262 /* TableView.swift in Sources */,
 				36737CBD2976F17F00163B4C /* AddEmployeeVC.swift in Sources */,
+				09DAE8F529786A350077CD32 /* SettingVM.swift in Sources */,
 				36737C6D2976EF1400163B4C /* DobTVCell.swift in Sources */,
+				09DAE8F2297869FE0077CD32 /* SettingModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
