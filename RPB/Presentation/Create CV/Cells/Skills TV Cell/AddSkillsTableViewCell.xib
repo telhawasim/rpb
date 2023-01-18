@@ -100,7 +100,7 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="7Qe-jn-Q8A">
+                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="7Qe-jn-Q8A" customClass="CustomSlider" customModule="RPB" customModuleProvider="target">
                         <rect key="frame" x="1" y="178" width="318" height="36"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="kdz-NT-L3b"/>

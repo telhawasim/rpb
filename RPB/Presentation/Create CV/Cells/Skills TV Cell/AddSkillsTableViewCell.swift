@@ -16,7 +16,7 @@ class AddSkillsTableViewCell: UITableViewCell {
     @IBOutlet weak var lblInPercentage: UILabel!
     @IBOutlet weak var lblPercentage: UILabel!
     @IBOutlet weak var txtSkill: UITextField!
-    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var slider: CustomSlider!
     
     //MARK: Variables
     var deleteCell: (() -> Void)?
