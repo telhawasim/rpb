@@ -63,4 +63,10 @@ class BaseVC: UIViewController {
         self.navigationController?.pushViewController(tabbarVC, animated: true)
     }
     
+    //MARK: Go to Download Screen
+    func goToDownloadSection() {
+        let tabbarVC  = UIStoryboard.getVC(from: .main, DownloadPopupVC.className)
+        self.navigationController?.pushViewController(tabbarVC, animated: true)
+    }
+    
 }

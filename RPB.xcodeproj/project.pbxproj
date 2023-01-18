@@ -28,6 +28,7 @@
 		0978605A2978009100129EE8 /* LoginBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097860592978009100129EE8 /* LoginBinder.swift */; };
 		0978605D297800AD00129EE8 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0978605C297800AD00129EE8 /* LoginVM.swift */; };
 		0978605F2978030800129EE8 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0978605E2978030800129EE8 /* LoginModel.swift */; };
+		097C1E5329780F9D00A73351 /* DownloadPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097C1E5229780F9C00A73351 /* DownloadPopupVC.swift */; };
 		098D04F829598065001C2F05 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098D04F729598065001C2F05 /* CameraHandler.swift */; };
 		0994122A295C365100C39E5A /* CancelPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09941228295C365100C39E5A /* CancelPopViewController.swift */; };
 		0994122B295C365100C39E5A /* CancelPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09941229295C365100C39E5A /* CancelPopViewController.xib */; };
@@ -150,6 +151,7 @@
 		097860592978009100129EE8 /* LoginBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBinder.swift; sourceTree = "<group>"; };
 		0978605C297800AD00129EE8 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		0978605E2978030800129EE8 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		097C1E5229780F9C00A73351 /* DownloadPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadPopupVC.swift; sourceTree = "<group>"; };
 		098D04F729598065001C2F05 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
 		09941228295C365100C39E5A /* CancelPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelPopViewController.swift; sourceTree = "<group>"; };
 		09941229295C365100C39E5A /* CancelPopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CancelPopViewController.xib; sourceTree = "<group>"; };
@@ -421,6 +423,14 @@
 				36737CB82976F14000163B4C /* LoginVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		097C1E4F29780F4F00A73351 /* Download Profile */ = {
+			isa = PBXGroup;
+			children = (
+				097C1E5229780F9C00A73351 /* DownloadPopupVC.swift */,
+			);
+			path = "Download Profile";
 			sourceTree = "<group>";
 		};
 		098D04F629598054001C2F05 /* Add Image */ = {
@@ -745,6 +755,7 @@
 		3695507329519BED009AEB62 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				097C1E4F29780F4F00A73351 /* Download Profile */,
 				09941227295C365100C39E5A /* PopUp */,
 				3669A4CF295C1A07005015ED /* Create CV */,
 				36F8AB6F295AF78000CA9CFA /* CV Perview  */,
@@ -1527,6 +1538,7 @@
 				36E47F852976A2D60022E281 /* UIView.swift in Sources */,
 				3637D7752962B5970086A699 /* Constant.swift in Sources */,
 				36737CB12976F0B800163B4C /* ContactTableViewCell.swift in Sources */,
+				097C1E5329780F9D00A73351 /* DownloadPopupVC.swift in Sources */,
 				097860512977D55B00129EE8 /* HomeModel.swift in Sources */,
 				3669A4EE295C1BF7005015ED /* TextView.swift in Sources */,
 				36737C912976F02E00163B4C /* ProfileVC.swift in Sources */,

@@ -29,6 +29,10 @@ class CVPreviewVC: BaseVC, UpdateCustomCell {
     @IBAction func btnBack(_ sender: Any) {
         self.goBack()
     }
+    
+    @IBAction func btnDownloadTapped(_ sender: Any) {
+        goToDownloadSection()
+    }
 }
 
 // MARK: TableView Methods

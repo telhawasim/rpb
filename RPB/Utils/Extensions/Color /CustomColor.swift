@@ -46,6 +46,10 @@ extension UIColor {
     static var customGrey: UIColor {
         return UIColor(named: "ColorF1F4F5") ?? UIColor(red: 241.0/255.0, green: 244.0/255.0, blue: 245.0/255.0, alpha: 1.0)
     }
+    
+    static var blueEEEEFF: UIColor {
+        return UIColor(named: "ColorEEEEFF") ?? UIColor(red: 238.0/255.0, green: 238.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+    }
 }
 
 // Example
