@@ -12,7 +12,6 @@ class CVPreviewVC: BaseVC, UpdateCustomCell {
     //MARK: IBOutlets
     @IBOutlet weak var lblViewProfile: UILabel!
     @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var lblSkill: UILabel!
     @IBOutlet weak var btnEdit: UIButton!
     @IBOutlet weak var btnDownload: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -38,7 +37,7 @@ class CVPreviewVC: BaseVC, UpdateCustomCell {
 // MARK: TableView Methods
 extension CVPreviewVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 12
+        return 18
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,51 +47,82 @@ extension CVPreviewVC: UITableViewDelegate, UITableViewDataSource {
                     
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: EventDescriptionTableViewCell.className, for: indexPath) as! EventDescriptionTableViewCell
+            cell.middleConstraint.constant = 5
+            cell.lblPerviousCompany.isHidden = true
+            cell.lblDescriptionHeading.text = "Summary"
             cell.updateUI()
             cell.delegate = self
             return cell
-                    
         } else if indexPath.row == 2 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: EducationTableViewCell.className, for: indexPath) as! EducationTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: EducationTextTableViewCell.className, for: indexPath) as! EducationTextTableViewCell
             return cell
-                    
         } else if indexPath.row == 3 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: EducationTableViewCell.className, for: indexPath) as! EducationTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: EventDescriptionTableViewCell.className, for: indexPath) as! EventDescriptionTableViewCell
+            cell.topConstraint.constant = 10
+            cell.lblDescriptionHeading.font = UIFont.getRegularFont()
+            cell.lblDescriptionHeading.text = "IOS Developer"
+            cell.lblPerviousCompany.text = "Synavos"
+            cell.updateUI()
+            cell.delegate = self
             return cell
-                    
         } else if indexPath.row == 4 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: SoftSkillTextTableViewCell.className, for: indexPath) as! SoftSkillTextTableViewCell
-           
+            let cell = tableView.dequeueReusableCell(withIdentifier: EventDescriptionTableViewCell.className, for: indexPath) as! EventDescriptionTableViewCell
+            cell.topConstraint.constant = 0
+            cell.lblDescriptionHeading.font = UIFont.getRegularFont()
+            cell.lblDescriptionHeading.text = "IOS Developer"
+            cell.lblPerviousCompany.text = "i2c"
+            cell.updateUI()
+            cell.delegate = self
             return cell
         } else if indexPath.row == 5 {
-             let cell = tableView.dequeueReusableCell(withIdentifier: SkillsTableViewCell.className, for: indexPath) as! SkillsTableViewCell
-                    
+            let cell = tableView.dequeueReusableCell(withIdentifier: EventDescriptionTableViewCell.className, for: indexPath) as! EventDescriptionTableViewCell
+            cell.topConstraint.constant = 0
+            cell.lblDescriptionHeading.font = UIFont.getRegularFont()
+            cell.lblDescriptionHeading.text = "IOS Developer"
+            cell.lblPerviousCompany.text = "Pure Logics"
+            cell.updateUI()
+            cell.delegate = self
             return cell
         } else if indexPath.row == 6 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: HardSkillsTextTableViewCell.className, for: indexPath) as! HardSkillsTextTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: EducationTextTableViewCell.className, for: indexPath) as! EducationTextTableViewCell
+            cell.lblEducation.text = "Education"
             return cell
-                    
-        } else if indexPath.row == 7 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: SkillsTableViewCell.className, for: indexPath) as! SkillsTableViewCell
+        } else if indexPath.row  == 7 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: EducationTableViewCell.className, for: indexPath) as! EducationTableViewCell
             return cell
-            
-        } else if indexPath.row == 8 {
-             let cell = tableView.dequeueReusableCell(withIdentifier: EducationTextTableViewCell.className, for: indexPath) as! EducationTextTableViewCell
-            cell.lblEducation.text = "Experience"
-            cell.topConstraint.constant = 30
-            cell.bottomConstraint.constant = 20
+        } else if indexPath.row  == 8 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: EducationTableViewCell.className, for: indexPath) as! EducationTableViewCell
             return cell
-            
         } else if indexPath.row == 9 {
-             let cell = tableView.dequeueReusableCell(withIdentifier: ExperienceTableViewCell.className, for: indexPath) as! ExperienceTableViewCell
-            
+            let cell = tableView.dequeueReusableCell(withIdentifier: EducationTextTableViewCell.className, for: indexPath) as! EducationTextTableViewCell
+            cell.lblEducation.text = "Skills"
+            cell.topConstraint.constant = 20
             return cell
         } else if indexPath.row == 10 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: ExperienceTableViewCell.className, for: indexPath) as! ExperienceTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: SkillsTableViewCell.className, for: indexPath) as! SkillsTableViewCell
             return cell
-            
+        } else if indexPath.row == 11 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: SkillsTableViewCell.className, for: indexPath) as! SkillsTableViewCell
+            return cell
+        } else if indexPath.row == 12 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: SkillsTableViewCell.className, for: indexPath) as! SkillsTableViewCell
+            return cell
+        } else if indexPath.row == 13 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: SkillsTableViewCell.className, for: indexPath) as! SkillsTableViewCell
+            return cell
+        } else if indexPath.row == 14 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: SkillsTableViewCell.className, for: indexPath) as! SkillsTableViewCell
+            return cell
+        } else if indexPath.row == 15 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: EducationTextTableViewCell.className, for: indexPath) as! EducationTextTableViewCell
+            cell.lblEducation.text = "Certifications"
+            cell.topConstraint.constant = 20
+            return cell
+        } else if indexPath.row == 16 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: EducationTableViewCell.className, for: indexPath) as! EducationTableViewCell
+            return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: ContactTableViewCell.className, for: indexPath) as! ContactTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: EducationTableViewCell.className, for: indexPath) as! EducationTableViewCell
             return cell
         }
     }
@@ -108,8 +138,6 @@ extension CVPreviewVC {
         tableView.register(SkillsTableViewCell.className)
         tableView.register(ExperienceTableViewCell.className)
         tableView.register(ContactTableViewCell.className)
-        tableView.register(HardSkillsTextTableViewCell.className)
-        tableView.register(SoftSkillTextTableViewCell.className)
         tableView.register(EducationTextTableViewCell.className)
 
         self.configureFonts()
@@ -126,9 +154,8 @@ extension CVPreviewVC {
     
     // MARK: Configure Fonts
     func configureFonts() {
-        self.lblViewProfile.font = UIFont.getMediumFont(size: 24)
+        self.lblViewProfile.font = UIFont.getMediumFont(size: 22)
         self.lblName.font = UIFont.getSemiBoldFont(size: 24)
-        self.lblSkill.font = UIFont.getThinFont()
     }
     
     func updateTableView(willExpand: Bool) {

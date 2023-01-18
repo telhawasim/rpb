@@ -16,7 +16,6 @@ class ContactTableViewCell: UITableViewCell {
     @IBOutlet weak var lblLinkedIn: UILabel!
     @IBOutlet weak var lblBitBucket: UILabel!
 
-    
     //MARK: Variables
     
     //MARK: Life Cycle
@@ -27,7 +26,7 @@ class ContactTableViewCell: UITableViewCell {
 
     // MARK: Fonts
     func configureFonts() {
-        lblContact.font = UIFont.getRegularFont(size: 24)
+        lblContact.font = UIFont.getRegularFont(size: 22)
         lblEmail.font = UIFont.getMediumFont(size: 14)
         lblEmail.textColor = UIColor.customBlack
         lblPhone.font = UIFont.getMediumFont(size: 14)
