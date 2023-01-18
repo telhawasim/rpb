@@ -33,6 +33,9 @@
 		0994122A295C365100C39E5A /* CancelPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09941228295C365100C39E5A /* CancelPopViewController.swift */; };
 		0994122B295C365100C39E5A /* CancelPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09941229295C365100C39E5A /* CancelPopViewController.xib */; };
 		0994122E295C3BA900C39E5A /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0994122D295C3BA900C39E5A /* PopUpView.swift */; };
+		09EBFE632978614B00559095 /* EmployeeBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBFE622978614B00559095 /* EmployeeBinder.swift */; };
+		09EBFE652978630A00559095 /* EmployeeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBFE642978630A00559095 /* EmployeeVM.swift */; };
+		09EBFE672978634000559095 /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBFE662978634000559095 /* EmployeeModel.swift */; };
 		2E18A825836F0D81F77A3E51 /* Pods_RPB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3D06738362C369E89B8B28 /* Pods_RPB.framework */; };
 		3601D371295DB4D5008B1F02 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3601D370295DB4D5008B1F02 /* UILabel.swift */; };
 		36187A6F2959C10F001CAB2B /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36187A6E2959C10F001CAB2B /* Storyboard.swift */; };
@@ -150,6 +153,9 @@
 		09941228295C365100C39E5A /* CancelPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelPopViewController.swift; sourceTree = "<group>"; };
 		09941229295C365100C39E5A /* CancelPopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CancelPopViewController.xib; sourceTree = "<group>"; };
 		0994122D295C3BA900C39E5A /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		09EBFE622978614B00559095 /* EmployeeBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeBinder.swift; sourceTree = "<group>"; };
+		09EBFE642978630A00559095 /* EmployeeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeVM.swift; sourceTree = "<group>"; };
+		09EBFE662978634000559095 /* EmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModel.swift; sourceTree = "<group>"; };
 		0BA2D4D5F79B27C1E0242BBE /* Pods-RPBTests.debugdev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPBTests.debugdev.xcconfig"; path = "Target Support Files/Pods-RPBTests/Pods-RPBTests.debugdev.xcconfig"; sourceTree = "<group>"; };
 		0F2344F2CFF9BCBC3CA03F8E /* Pods-RPB-RPBUITests.releaseproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB-RPBUITests.releaseproduction.xcconfig"; path = "Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests.releaseproduction.xcconfig"; sourceTree = "<group>"; };
 		164528275600028EE2EE589C /* Pods-RPB-RPBUITests.debugqa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB-RPBUITests.debugqa.xcconfig"; path = "Target Support Files/Pods-RPB-RPBUITests/Pods-RPB-RPBUITests.debugqa.xcconfig"; sourceTree = "<group>"; };
@@ -206,7 +212,7 @@
 		36737C9D2976F0B800163B4C /* SkillsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkillsTableViewCell.swift; path = "RPB/Presentation/CV Perview /Cells/SkillsTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		36737C9F2976F0B800163B4C /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactTableViewCell.swift; path = "RPB/Presentation/CV Perview /Cells/ContactTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		36737CA12976F0B800163B4C /* EducationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EducationTableViewCell.swift; path = "RPB/Presentation/CV Perview /Cells/EducationTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
-		36737CB62976F0F000163B4C /* EmployeeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmployeeVC.swift; path = "RPB/Presentation/Employee VC/EmployeeVC.swift"; sourceTree = SOURCE_ROOT; };
+		36737CB62976F0F000163B4C /* EmployeeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmployeeVC.swift; path = "RPB/Presentation/Employee VC/View/Controller/EmployeeVC.swift"; sourceTree = SOURCE_ROOT; };
 		36737CB82976F14000163B4C /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginVC.swift; path = "RPB/Presentation/Login Screen/View/Controller/LoginVC.swift"; sourceTree = SOURCE_ROOT; };
 		36737CBA2976F16000163B4C /* CVPreviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CVPreviewVC.swift; path = "RPB/Presentation/CV Perview /CVPreviewVC.swift"; sourceTree = SOURCE_ROOT; };
 		36737CBC2976F17F00163B4C /* AddEmployeeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddEmployeeVC.swift; path = "RPB/Presentation/Add Employee Screen/AddEmployeeVC.swift"; sourceTree = SOURCE_ROOT; };
@@ -446,6 +452,47 @@
 			path = PopUpView;
 			sourceTree = "<group>";
 		};
+		09EBFE5D2978610000559095 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				09EBFE662978634000559095 /* EmployeeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		09EBFE5E2978610C00559095 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				09EBFE612978613A00559095 /* Employee Binder */,
+				09EBFE602978612300559095 /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		09EBFE5F2978611600559095 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				09EBFE642978630A00559095 /* EmployeeVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		09EBFE602978612300559095 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				36737CB62976F0F000163B4C /* EmployeeVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		09EBFE612978613A00559095 /* Employee Binder */ = {
+			isa = PBXGroup;
+			children = (
+				09EBFE622978614B00559095 /* EmployeeBinder.swift */,
+			);
+			path = "Employee Binder";
+			sourceTree = "<group>";
+		};
 		3601D36F295DB4C2008B1F02 /* See More */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,9 +529,9 @@
 		3636F30629548165001D886A /* Employee VC */ = {
 			isa = PBXGroup;
 			children = (
-				36E47F8F2976B85C0022E281 /* Model */,
-				36E47F902976B8670022E281 /* View */,
-				36E47F912976B8700022E281 /* ViewModel */,
+				09EBFE5D2978610000559095 /* Model */,
+				09EBFE5E2978610C00559095 /* View */,
+				09EBFE5F2978611600559095 /* ViewModel */,
 			);
 			path = "Employee VC";
 			sourceTree = "<group>";
@@ -940,36 +987,6 @@
 			name = UITextField;
 			path = RPB/Utils/Extensions/UITextField;
 			sourceTree = SOURCE_ROOT;
-		};
-		36E47F8F2976B85C0022E281 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		36E47F902976B8670022E281 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				36E47F932976B8A20022E281 /* Controller */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		36E47F912976B8700022E281 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		36E47F932976B8A20022E281 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				36737CB62976F0F000163B4C /* EmployeeVC.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
 		};
 		36E47F952976CB630022E281 /* Model */ = {
 			isa = PBXGroup;
@@ -1492,9 +1509,11 @@
 				36E47F7F2976A2B10022E281 /* BaseURL.swift in Sources */,
 				36E47FB02976EC250022E281 /* ProductEndPoint.swift in Sources */,
 				365010DA2955ADE1003F3262 /* TabbarVC.swift in Sources */,
+				09EBFE652978630A00559095 /* EmployeeVM.swift in Sources */,
 				090441B32955920E0088941F /* CustomFont.swift in Sources */,
 				36E47F8B2976A2F40022E281 /* UIImageView.swift in Sources */,
 				36737CB72976F0F000163B4C /* EmployeeVC.swift in Sources */,
+				09EBFE632978614B00559095 /* EmployeeBinder.swift in Sources */,
 				097860542977F7FC00129EE8 /* CustomSlider.swift in Sources */,
 				3636F30529547728001D886A /* HomeVC.swift in Sources */,
 				36737CC02976F1AE00163B4C /* ResumeCV.swift in Sources */,
@@ -1525,6 +1544,7 @@
 				36E47F852976A2D60022E281 /* UIView.swift in Sources */,
 				3637D7752962B5970086A699 /* Constant.swift in Sources */,
 				36737CB12976F0B800163B4C /* ContactTableViewCell.swift in Sources */,
+				09EBFE672978634000559095 /* EmployeeModel.swift in Sources */,
 				097C1E5329780F9D00A73351 /* DownloadPopupVC.swift in Sources */,
 				097860512977D55B00129EE8 /* HomeModel.swift in Sources */,
 				3669A4EE295C1BF7005015ED /* TextView.swift in Sources */,
