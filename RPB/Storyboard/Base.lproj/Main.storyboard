@@ -431,7 +431,7 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWj-b6-tCe">
-                                        <rect key="frame" x="49" y="15.666666666666659" width="237" height="18.666666666666679"/>
+                                        <rect key="frame" x="49" y="15.666666666666659" width="237" height="18.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -1714,7 +1714,7 @@
                                 </cells>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1R8-aZ-7Am">
-                                <rect key="frame" x="20" y="204" width="335" height="507"/>
+                                <rect key="frame" x="20" y="204" width="335" height="527"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJu-OC-fMb">
@@ -1767,7 +1767,7 @@
                             <constraint firstItem="1R8-aZ-7Am" firstAttribute="top" secondItem="l6Z-5a-vlD" secondAttribute="bottom" constant="30" id="HOs-vz-8lI"/>
                             <constraint firstItem="o2e-D6-CVy" firstAttribute="trailing" secondItem="l6Z-5a-vlD" secondAttribute="trailing" constant="20" id="LDz-Df-hRl"/>
                             <constraint firstItem="o2e-D6-CVy" firstAttribute="trailing" secondItem="1R8-aZ-7Am" secondAttribute="trailing" constant="20" id="Lyn-bh-pp7"/>
-                            <constraint firstItem="uJu-OC-fMb" firstAttribute="top" secondItem="1R8-aZ-7Am" secondAttribute="bottom" id="NQg-ZR-gZp"/>
+                            <constraint firstItem="uJu-OC-fMb" firstAttribute="top" secondItem="1R8-aZ-7Am" secondAttribute="bottom" constant="-20" id="NQg-ZR-gZp"/>
                             <constraint firstItem="IGl-94-4eJ" firstAttribute="leading" secondItem="o2e-D6-CVy" secondAttribute="leading" constant="20" id="PTq-67-4sS"/>
                             <constraint firstItem="uJu-OC-fMb" firstAttribute="leading" secondItem="o2e-D6-CVy" secondAttribute="leading" id="X8g-7a-ERO"/>
                             <constraint firstAttribute="bottom" secondItem="uJu-OC-fMb" secondAttribute="bottom" id="ksh-bd-p7Y"/>

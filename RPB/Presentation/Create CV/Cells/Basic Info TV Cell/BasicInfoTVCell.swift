@@ -38,9 +38,6 @@ class BasicInfoTVCell: UITableViewCell {
             txtInfo.delegate = self
             txtInfo.keyboardType = .numberPad
         }
-        if txtInfo.tag == 4 {
-            txtInfo.keyboardType = .emailAddress
-        }
     }
 }
 

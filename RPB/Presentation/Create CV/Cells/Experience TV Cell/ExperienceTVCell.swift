@@ -91,6 +91,8 @@ class ExperienceTVCell: UITableViewCell {
         self.txtStartDate.tag = 2
         self.txtEndDate.delegate = self
         self.txtEndDate.tag = 4
+        self.txtStartDate.tintColor = .clear
+        self.txtEndDate.tintColor = .clear
     }
     
     //MARK: Configure PickerView for StartYear
