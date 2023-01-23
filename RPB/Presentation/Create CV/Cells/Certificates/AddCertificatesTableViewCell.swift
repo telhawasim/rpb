@@ -26,7 +26,6 @@ class AddCertificatesTableViewCell: UITableViewCell {
     @IBOutlet weak var lblEndsTo: UILabel!
     
     //MARK: Variables
-    var delegate: ExperienceTVCellProtocol?
     var textCourseDidChange: ((UITextField) -> Void)?
     var textInstituteDidChange: ((UITextField) -> Void)?
     var textStartDateDidChange: ((UITextField) -> Void)?
@@ -62,8 +61,10 @@ class AddCertificatesTableViewCell: UITableViewCell {
         self.txtInstitute.font = UIFont.getMediumFont()
         self.lblStartDate.font = UIFont.getSemiBoldFont()
         self.txtStartDate.font = UIFont.getMediumFont()
+        self.txtStartDate.tintColor = .clear
         self.lblEndsTo.font = UIFont.getSemiBoldFont()
         self.txtEndDate.font = UIFont.getMediumFont()
+        self.txtEndDate.tintColor = .clear
         self.setColors()
     }
     
@@ -103,7 +104,7 @@ class AddCertificatesTableViewCell: UITableViewCell {
         let selectedYear = txtStartDate.text ?? ""
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy"
-        let date = formatter.date(from: selectedYear)!
+        guard let date = formatter.date(from: selectedYear) else {return []}
         
         let startYear = Int(formatter.string(from: date)) ?? 0
         let currentYear = Int(formatter.string(from: Date())) ?? 0
@@ -167,11 +168,9 @@ extension AddCertificatesTableViewCell: UIPickerViewDelegate, UIPickerViewDataSo
         if pickerView == startYearPicker {
             txtStartDate.text = years[row]
             txtEndDate.text = ""
-            delegate?.dismissPicker()
             self.textStartDateDidChange?(txtStartDate)
         } else {
             txtEndDate.text = configurePickerforEndYear()[row]
-            delegate?.dismissPicker()
             self.textEndDateDidChange?(txtEndDate)
         }
         

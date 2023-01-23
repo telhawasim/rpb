@@ -62,7 +62,7 @@ class AddSkillsTableViewCell: UITableViewCell {
     
     @IBAction func sliderDidChange(_ sender: UISlider) {
         let value = Int(sender.value)
-        self.lblPercentage.text = "\(value) %"
+        self.lblPercentage.text = "\(value)%"
         self.sliderPercentage?(lblPercentage)
         self.sliderData?(slider)
     }

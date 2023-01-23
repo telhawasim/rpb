@@ -214,38 +214,20 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     
     //MARK: Validation for Skills is nil
     @discardableResult func skillsValidation() -> Bool {
-        
-        btnSave.isEnabled = false
-        btnSave.backgroundColor = UIColor.systemGray
-        if skillsTextFields.isEmpty {
-            isAllPopulated = false
-            return false
-        } else {
+        isAllPopulated = true
             for textField in self.skillsTextFields {
-                if textField.txtSkills.isEmpty || textField.txtPercentage.isEmpty || textField.txtPercentage == "0 %" || textField.slider == 0.0 {
+                if textField.txtSkills.isEmpty || textField.txtPercentage.isEmpty || textField.txtPercentage == "0%" || textField.slider == 0.0 {
                     isAllPopulated = false
-                    self.btnSave.isEnabled = isAllPopulated
-                    self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
-                    return false
-                } else {
-                    isAllPopulated = true
-                    self.btnSave.isEnabled = isAllPopulated
-                    self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
-                    return true
+                    break
                 }
             }
-        }
-        return true
-
+        self.btnSave.isEnabled = isAllPopulated
+        self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
+        return isAllPopulated
     }
     
     //MARK: Validation for Certificates is nil
     func certificatesValidation() {
-        
-        
-        btnSave.isEnabled = false
-        btnSave.backgroundColor = UIColor.systemGray
-        
         if !certificatesTextField.isEmpty {
             for textField in self.certificatesTextField {
                 if textField.txtDegree.isEmpty || textField.txtInstitute.isEmpty || textField.txtStartsFrom.isEmpty || textField.txtEndsTo.isEmpty {
@@ -260,12 +242,6 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.btnSave.isEnabled = isAllPopulated
         self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
     }
-//        } else {
-//            isAllPopulated = true
-//        }
-//        if skillsTextFields.isEmpty && certificatesTextField.isEmpty && skillsTextFields.first?.slider == 0.0 {
-//            isAllPopulated = false
-//        }
     
     //MARK: Info Tab TextField Validatiom
     func infoTabTextFieldValidation() -> Bool {
@@ -605,7 +581,6 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 
                 cell.lblCount.text = "\(indexPath.row + 1)"
                 cell.configure(data: certificatesTextField[indexPath.row])
-                cell.delegate = self
                 
                 cell.deleteCell = { [weak self] in
                     guard let self = self else {return}

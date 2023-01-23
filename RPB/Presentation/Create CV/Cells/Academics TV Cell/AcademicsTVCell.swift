@@ -94,7 +94,7 @@ class AcademicsTVCell: UITableViewCell {
         let selectedYear = txtStartsFrom.text ?? ""
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy"
-        let date = formatter.date(from: selectedYear)!
+        guard let date = formatter.date(from: selectedYear) else {return []}
         
         let startYear = Int(formatter.string(from: date)) ?? 0
         let currentYear = Int(formatter.string(from: Date())) ?? 0
