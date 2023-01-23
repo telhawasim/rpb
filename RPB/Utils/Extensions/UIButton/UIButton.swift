@@ -9,33 +9,33 @@ import Foundation
 import UIKit
 
 extension UIButton {
-
+    
     @IBInspectable var borderWidthButton: CGFloat {
         get {
             return layer.borderWidth
         }
-
+        
         set {
             layer.borderWidth = newValue
         }
     }
-
+    
     @IBInspectable var cornerRadiusButton: CGFloat {
         get {
             return layer.cornerRadius
         }
-
+        
         set {
             layer.cornerRadius = newValue
         }
     }
-
+    
     @IBInspectable var borderColorButton: UIColor? {
         get {
             guard let color = layer.borderColor else { return nil }
             return UIColor(cgColor: color)
         }
-
+        
         set {
             guard let uiColor = newValue else { return }
             layer.borderColor = uiColor.cgColor
@@ -48,7 +48,7 @@ extension UIButton {
         self.layer.cornerRadius = size
         return self.layer.cornerRadius
     }
-
+    
     @discardableResult func isCircularButton() -> CGFloat {
         self.layer.cornerRadius = self.frame.height / 2
         return self.layer.cornerRadius
@@ -70,4 +70,11 @@ extension UIButton {
         self.backgroundColor = UIColor.white
         self.setTitleColor(UIColor.black, for: .normal)
     }
+    
+    func setImageTintColor(_ color: UIColor) {
+        let tintedImage = self.imageView?.image?.withRenderingMode(.alwaysTemplate)
+        self.setImage(tintedImage, for: .normal)
+        self.tintColor = color
+    }
+    
 }
