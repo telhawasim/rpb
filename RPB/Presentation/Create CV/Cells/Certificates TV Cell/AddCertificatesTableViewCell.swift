@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol AddCertificatesTVCellProtocol {
-    func dismissPicker()
-}
-
 class AddCertificatesTableViewCell: UITableViewCell {
 
     //MARK: IBOutlets
@@ -83,13 +79,13 @@ class AddCertificatesTableViewCell: UITableViewCell {
     
     //MARK: Configure PickerView for Year
     func configurePickerforStartYear() -> [String] {
-        years = []
+        var years: [String] = []
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy"
         let currentYear = Int(formatter.string(from: Date())) ?? 0
         
-        for loop in stride(from: currentYear, through: 2000, by: -1) {
-            years.append("\(loop)")
+        for year in (2000...currentYear).reversed() {
+            years.append(String(year))
         }
         return years
     }
@@ -100,17 +96,17 @@ class AddCertificatesTableViewCell: UITableViewCell {
     
     //MARK: Configure PickerView for EndYear
     func configurePickerforEndYear() -> [String] {
-        years = []
+        var years: [String] = []
         let selectedYear = txtStartDate.text ?? ""
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy"
-        guard let date = formatter.date(from: selectedYear) else {return []}
+        guard let selectedDate = formatter.date(from: selectedYear) else {return []}
         
-        let startYear = Int(formatter.string(from: date)) ?? 0
+        let startYear = Int(formatter.string(from: selectedDate)) ?? 0
         let currentYear = Int(formatter.string(from: Date())) ?? 0
         
-        for loop in stride(from: currentYear, through: startYear, by: -1) {
-            years.append("\(loop)")
+        for year in (startYear...currentYear).reversed() {
+            years.append(String(year))
         }
         return years
     }
@@ -166,7 +162,7 @@ extension AddCertificatesTableViewCell: UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == startYearPicker {
-            txtStartDate.text = years[row]
+            txtStartDate.text = configurePickerforStartYear()[row]
             txtEndDate.text = ""
             self.textStartDateDidChange?(txtStartDate)
         } else {

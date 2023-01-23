@@ -27,8 +27,6 @@ class AcademicsTVCell: UITableViewCell {
     @IBOutlet weak var txtEndsTo: UITextField!
     
     //MARK: Variables
-    var delegate: ExperienceTVCellProtocol?
-    var years = [String]()
     var startYearPicker = UIPickerView()
     var endYearPicker = UIPickerView()
     var deleteCell: (() -> Void)?
@@ -45,6 +43,7 @@ class AcademicsTVCell: UITableViewCell {
         self.txtInstitute.addTarget(self, action: #selector(self.textFieldInstituteDidChange(_:)), for: .editingChanged)
         self.txtStartsFrom.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
         self.txtEndsTo.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
+        self.txtEndsTo.isUserInteractionEnabled = false
 
     }
     
@@ -57,8 +56,10 @@ class AcademicsTVCell: UITableViewCell {
         self.txtInstitute.font = UIFont.getMediumFont()
         self.lblStartsFrom.font = UIFont.getSemiBoldFont()
         self.txtStartsFrom.font = UIFont.getMediumFont()
+        self.txtStartsFrom.tintColor = .clear
         self.lblEndsTo.font = UIFont.getSemiBoldFont()
         self.txtEndsTo.font = UIFont.getMediumFont()
+        self.txtEndsTo.tintColor = .clear
         
         self.lblView.cornerRadius(16)
         
@@ -76,47 +77,47 @@ class AcademicsTVCell: UITableViewCell {
     }
     
     //MARK: Configure PickerView for Year
-    func configurePickerforStartYear() -> [String] {
-        years = []
+    func configurePickerForStartYear() -> [String] {
+        var years: [String] = []
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy"
         let currentYear = Int(formatter.string(from: Date())) ?? 0
         
-        for loop in stride(from: currentYear, through: 2000, by: -1) {
-            years.append("\(loop)")
+        for year in (2000...currentYear).reversed() {
+            years.append(String(year))
         }
         return years
     }
     
     //MARK: Configure PickerView for EndYear
-    func configurePickerforEndYear() -> [String] {
-        years = []
+    func configurePickerForEndYear() -> [String] {
+        var years: [String] = []
         let selectedYear = txtStartsFrom.text ?? ""
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy"
-        guard let date = formatter.date(from: selectedYear) else {return []}
+        guard let selectedDate = formatter.date(from: selectedYear) else {return []}
         
-        let startYear = Int(formatter.string(from: date)) ?? 0
+        let startYear = Int(formatter.string(from: selectedDate)) ?? 0
         let currentYear = Int(formatter.string(from: Date())) ?? 0
         
-        for loop in stride(from: currentYear, through: startYear, by: -1) {
-            years.append("\(loop)")
+        for year in (startYear...currentYear).reversed() {
+            years.append(String(year))
         }
         return years
     }
     
     @objc func doneButtonClicked(textField: UITextField) {
         if textField == txtStartsFrom {
+            txtEndsTo.isUserInteractionEnabled = true
             if txtStartsFrom.text == "" {
                 self.startYearPicker.selectRow(0, inComponent: 0, animated: true)
-                self.txtStartsFrom.text = self.configurePickerforStartYear().first
+                self.txtStartsFrom.text = self.configurePickerForStartYear().first
                 self.textStartDateDidChange?(txtStartsFrom)
-
             }
         } else {
             if txtEndsTo.text == "" {
                 self.endYearPicker.selectRow(0, inComponent: 0, animated: true)
-                self.txtEndsTo.text = self.configurePickerforEndYear().first
+                self.txtEndsTo.text = self.configurePickerForEndYear().first
                 self.textEndDateDidChange?(txtEndsTo)
             }
         }
@@ -147,35 +148,35 @@ extension AcademicsTVCell: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == startYearPicker {
-            return configurePickerforStartYear().count
+            return configurePickerForStartYear().count
         } else {
             if txtStartsFrom.text == "" {
                 return 0
             } else {
-                return configurePickerforEndYear().count
+                return configurePickerForEndYear().count
             }
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == startYearPicker {
-            return configurePickerforStartYear()[row]
+            return configurePickerForStartYear()[row]
         } else {
             if txtStartsFrom.text == "" {
                 return ""
             } else {
-                return configurePickerforEndYear()[row]
+                return configurePickerForEndYear()[row]
             }
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == startYearPicker {
-            txtStartsFrom.text = years[row]
+            txtStartsFrom.text = configurePickerForStartYear()[row]
             txtEndsTo.text = ""
             self.textStartDateDidChange?(txtStartsFrom)
         } else {
-            txtEndsTo.text = configurePickerforEndYear()[row]
+            txtEndsTo.text = configurePickerForEndYear()[row]
             self.textEndDateDidChange?(txtEndsTo)
         }
         

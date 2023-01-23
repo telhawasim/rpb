@@ -8,12 +8,6 @@
 import UIKit
 import IQKeyboardManagerSwift
 
-protocol ExperienceTVCellProtocol {
-    func dismissPicker()
-    func adjustTextViewHeight()
-    func showAlert(errorMessage: String)
-}
-
 class ExperienceTVCell: UITableViewCell {
     
     //MARK: Outlets
@@ -37,7 +31,6 @@ class ExperienceTVCell: UITableViewCell {
     @IBOutlet weak var textView: UITextView!
     
     //MARK: Variables
-    var delegate: ExperienceTVCellProtocol?
     var years = [String]()
     var endDate = [String]()
     var endDateIndex = Int()
@@ -59,6 +52,7 @@ class ExperienceTVCell: UITableViewCell {
         self.txtCompany.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         self.txtStartDate.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
         self.txtEndDate.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
+        self.txtEndDate.isUserInteractionEnabled = false
     }
     
     //MARK: Configure Labels
@@ -97,33 +91,33 @@ class ExperienceTVCell: UITableViewCell {
     
     //MARK: Configure PickerView for StartYear
     func configurePickerForStartYear() -> [String] {
-        years = []
+        var years: [String] = []
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy"
         let currentYear = Int(formatter.string(from: Date())) ?? 0
         
-        for loop in stride(from: currentYear, through: 2000, by: -1) {
-            years.append("\(loop)")
+        for year in (2000...currentYear).reversed() {
+            years.append(String(year))
         }
         return years
     }
     
     //MARK: Configure PickerView for EndYear
-        func configurePickerForEndYear() -> [String] {
-            years = []
-            let selectedStartDate = txtStartDate.text ?? ""
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy"
-            guard let date = formatter.date(from: selectedStartDate) else { return [String()] }
-    
-            let startYear = Int(formatter.string(from: date)) ?? 0
-            let currentYear = Int(formatter.string(from: Date())) ?? 0
-    
-            for loop in stride(from: currentYear, through: startYear, by: -1) {
-                years.append("\(loop)")
-            }
-            return years
+    func configurePickerForEndYear() -> [String] {
+        var years: [String] = []
+        let selectedYear = txtStartDate.text ?? ""
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy"
+        guard let selectedDate = formatter.date(from: selectedYear) else {return []}
+        
+        let startYear = Int(formatter.string(from: selectedDate)) ?? 0
+        let currentYear = Int(formatter.string(from: Date())) ?? 0
+        
+        for year in (startYear...currentYear).reversed() {
+            years.append(String(year))
         }
+        return years
+    }
     
     func configure(_ textFieldInfo: ExperienceModel) {
         self.txtCompany.text = textFieldInfo.txtCompanyName
@@ -149,6 +143,7 @@ class ExperienceTVCell: UITableViewCell {
     
     @objc func doneButtonClicked(textField: UITextField) {
         if textField == txtStartDate {
+            self.txtEndDate.isUserInteractionEnabled = true
             if txtStartDate.text == "" {
                 self.startYearPicker.selectRow(0, inComponent: 0, animated: true)
                 self.txtStartDate.text = self.configurePickerForStartYear().first
