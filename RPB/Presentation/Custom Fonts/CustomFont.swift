@@ -18,6 +18,10 @@ extension UIFont {
         return UIFont.init(name: "Montserrat-Medium", size: size)!
     }
     
+    static func getMediumFont14(size: CGFloat = 14.0) -> UIFont {
+        return UIFont.init(name: "Montserrat-Medium", size: size)!
+    }
+    
     static func getSemiBoldFont(size: CGFloat = 16.0) -> UIFont {
         return UIFont.init(name: "Montserrat-SemiBold", size: size)!
     }

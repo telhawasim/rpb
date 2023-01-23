@@ -1409,13 +1409,13 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mmQ-sJ-hdB">
-                                                                <rect key="frame" x="30" y="130.99999999999997" width="223" height="102"/>
+                                                                <rect key="frame" x="30" y="130.99999999999997" width="223" height="63"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBu-XF-tPd">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="111.66666666666667" height="102"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="111.66666666666667" height="63"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4Hd-CS-RYw">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="111.66666666666667" height="102"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="111.66666666666667" height="63"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="if9-fY-sjw">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="111.66666666666667" height="24"/>
@@ -1429,6 +1429,7 @@
                                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                                 <state key="normal" image="ic_unselected_fields"/>
                                                                                                 <state key="selected" image="ic_selected"/>
+                                                                                                <buttonConfiguration key="configuration" style="plain" image="ic_unselected_fields"/>
                                                                                             </button>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVu-r2-hBv">
                                                                                                 <rect key="frame" x="30.000000000000007" y="0.0" width="81.666666666666686" height="24"/>
@@ -1450,35 +1451,8 @@
                                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                                 <state key="normal" image="ic_unselected_fields"/>
                                                                                                 <state key="selected" image="ic_selected"/>
-                                                                                                <connections>
-                                                                                                    <action selector="tappedIndividualName:" destination="Xfm-wr-2qe" eventType="touchUpInside" id="F8i-ks-iA2"/>
-                                                                                                </connections>
                                                                                             </button>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LinkedIn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnz-LZ-LAN">
-                                                                                                <rect key="frame" x="30.000000000000007" y="0.0" width="81.666666666666686" height="24"/>
-                                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                                <nil key="textColor"/>
-                                                                                                <nil key="highlightedColor"/>
-                                                                                            </label>
-                                                                                        </subviews>
-                                                                                    </stackView>
-                                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="rFf-3C-am3">
-                                                                                        <rect key="frame" x="0.0" y="78" width="111.66666666666667" height="24"/>
-                                                                                        <subviews>
-                                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZn-W5-ssL">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
-                                                                                                <constraints>
-                                                                                                    <constraint firstAttribute="width" constant="24" id="LV0-YV-POE"/>
-                                                                                                    <constraint firstAttribute="height" constant="24" id="elh-kQ-Mi9"/>
-                                                                                                </constraints>
-                                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                                <state key="normal" image="ic_unselected_fields"/>
-                                                                                                <state key="selected" image="ic_selected"/>
-                                                                                                <connections>
-                                                                                                    <action selector="tappedIndividualName:" destination="Xfm-wr-2qe" eventType="touchUpInside" id="oQ4-6k-Rpw"/>
-                                                                                                </connections>
-                                                                                            </button>
-                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Git/Bit Bucket" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIe-Se-bLl">
                                                                                                 <rect key="frame" x="30.000000000000007" y="0.0" width="81.666666666666686" height="24"/>
                                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                                 <nil key="textColor"/>
@@ -1498,7 +1472,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LH8-pg-gNb">
-                                                                        <rect key="frame" x="111.66666666666666" y="0.0" width="111.33333333333334" height="102"/>
+                                                                        <rect key="frame" x="111.66666666666666" y="0.0" width="111.33333333333334" height="63"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gpg-c9-FdJ">
                                                                                 <rect key="frame" x="32.999999999999993" y="0.0" width="78.333333333333314" height="63"/>
@@ -1515,9 +1489,6 @@
                                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                                 <state key="normal" image="ic_unselected_fields"/>
                                                                                                 <state key="selected" image="ic_selected"/>
-                                                                                                <connections>
-                                                                                                    <action selector="tappedIndividualName:" destination="Xfm-wr-2qe" eventType="touchUpInside" id="9xr-8c-aqE"/>
-                                                                                                </connections>
                                                                                             </button>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuT-t6-3QN">
                                                                                                 <rect key="frame" x="30.000000000000004" y="0.0" width="48.333333333333343" height="24"/>
@@ -1539,9 +1510,6 @@
                                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                                 <state key="normal" image="ic_unselected_fields"/>
                                                                                                 <state key="selected" image="ic_selected"/>
-                                                                                                <connections>
-                                                                                                    <action selector="tappedIndividualName:" destination="Xfm-wr-2qe" eventType="touchUpInside" id="6Lg-Io-efa"/>
-                                                                                                </connections>
                                                                                             </button>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pY-Fo-GXN">
                                                                                                 <rect key="frame" x="29.999999999999996" y="0.0" width="40.666666666666657" height="24"/>
@@ -1562,6 +1530,27 @@
                                                                     </view>
                                                                 </subviews>
                                                             </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="rFf-3C-am3">
+                                                                <rect key="frame" x="30" y="208.99999999999997" width="134" height="24"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZn-W5-ssL">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="24" id="LV0-YV-POE"/>
+                                                                            <constraint firstAttribute="height" constant="24" id="elh-kQ-Mi9"/>
+                                                                        </constraints>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" image="ic_unselected_fields"/>
+                                                                        <state key="selected" image="ic_selected"/>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Git/Bit Bucket" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIe-Se-bLl">
+                                                                        <rect key="frame" x="30" y="0.0" width="104" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="klf-89-SeK">
                                                                 <rect key="frame" x="0.0" y="244" width="283" height="48"/>
                                                                 <subviews>
@@ -1575,7 +1564,7 @@
                                                                         <state key="normal" image="ic_unselected"/>
                                                                         <state key="selected" image="ic_selected"/>
                                                                         <connections>
-                                                                            <action selector="tappedIndividual:" destination="Xfm-wr-2qe" eventType="touchUpInside" id="stC-gE-7Kx"/>
+                                                                            <action selector="tappedSelection:" destination="Xfm-wr-2qe" eventType="touchUpInside" id="LAM-iJ-qoX"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -1589,6 +1578,7 @@
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
+                                                            <constraint firstItem="rFf-3C-am3" firstAttribute="leading" secondItem="P2a-eJ-Iwp" secondAttribute="leading" constant="30" id="6F2-23-874"/>
                                                             <constraint firstAttribute="trailing" secondItem="klf-89-SeK" secondAttribute="trailing" id="BNs-Aw-wp9"/>
                                                             <constraint firstItem="KzD-cX-dsr" firstAttribute="top" secondItem="5Rg-ke-Mnz" secondAttribute="bottom" constant="11" id="DHk-9p-ze6"/>
                                                             <constraint firstItem="mmQ-sJ-hdB" firstAttribute="top" secondItem="jvw-MD-UTA" secondAttribute="bottom" constant="14" id="FxG-bG-rBF"/>
@@ -1596,6 +1586,7 @@
                                                             <constraint firstAttribute="trailing" secondItem="jvw-MD-UTA" secondAttribute="trailing" constant="40" id="QVh-0F-gvG"/>
                                                             <constraint firstAttribute="trailing" secondItem="mmQ-sJ-hdB" secondAttribute="trailing" constant="30" id="ZLw-t9-u30"/>
                                                             <constraint firstItem="jvw-MD-UTA" firstAttribute="top" secondItem="KzD-cX-dsr" secondAttribute="bottom" constant="4" id="g8W-pe-7Fg"/>
+                                                            <constraint firstItem="rFf-3C-am3" firstAttribute="top" secondItem="mmQ-sJ-hdB" secondAttribute="bottom" constant="15" id="hHg-PY-hgd"/>
                                                             <constraint firstItem="mmQ-sJ-hdB" firstAttribute="leading" secondItem="P2a-eJ-Iwp" secondAttribute="leading" constant="30" id="iMR-ov-im0"/>
                                                             <constraint firstItem="KzD-cX-dsr" firstAttribute="centerX" secondItem="5Rg-ke-Mnz" secondAttribute="centerX" id="kfc-Vv-7Xj"/>
                                                             <constraint firstAttribute="bottom" secondItem="klf-89-SeK" secondAttribute="bottom" id="l59-rb-Wwz"/>
@@ -1615,8 +1606,8 @@
                                                                     <constraint firstAttribute="height" constant="34" id="Qwy-aA-zQ8"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Individual" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zwm-Z7-POm">
-                                                                <rect key="frame" x="105.33333333333334" y="59.000000000000007" width="72.333333333333343" height="20.333333333333336"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zwm-Z7-POm">
+                                                                <rect key="frame" x="112.99999999999999" y="59.000000000000007" width="57.333333333333329" height="20.333333333333336"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -1669,9 +1660,6 @@
                                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                                 <state key="normal" image="ic_unselected_fields"/>
                                                                                                 <state key="selected" image="ic_selected"/>
-                                                                                                <connections>
-                                                                                                    <action selector="tappedIndividualName:" destination="Xfm-wr-2qe" eventType="touchUpInside" id="d51-hs-KOv"/>
-                                                                                                </connections>
                                                                                             </button>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpN-HL-9bo">
                                                                                                 <rect key="frame" x="30.000000000000007" y="0.0" width="81.666666666666686" height="24"/>
@@ -1693,9 +1681,6 @@
                                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                                 <state key="normal" image="ic_unselected_fields"/>
                                                                                                 <state key="selected" image="ic_selected"/>
-                                                                                                <connections>
-                                                                                                    <action selector="tappedIndividualName:" destination="Xfm-wr-2qe" eventType="touchUpInside" id="a1k-3k-6U1"/>
-                                                                                                </connections>
                                                                                             </button>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Web Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myo-83-Su1">
                                                                                                 <rect key="frame" x="30.000000000000007" y="0.0" width="81.666666666666686" height="24"/>
@@ -1734,9 +1719,6 @@
                                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                                 <state key="normal" image="ic_unselected_fields"/>
                                                                                                 <state key="selected" image="ic_selected"/>
-                                                                                                <connections>
-                                                                                                    <action selector="tappedIndividualName:" destination="Xfm-wr-2qe" eventType="touchUpInside" id="GOz-t6-Wo5"/>
-                                                                                                </connections>
                                                                                             </button>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrp-hj-06U">
                                                                                                 <rect key="frame" x="30.000000000000004" y="0.0" width="48.333333333333343" height="24"/>
@@ -1758,9 +1740,6 @@
                                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                                 <state key="normal" image="ic_unselected_fields"/>
                                                                                                 <state key="selected" image="ic_selected"/>
-                                                                                                <connections>
-                                                                                                    <action selector="tappedIndividualName:" destination="Xfm-wr-2qe" eventType="touchUpInside" id="cYs-c2-iJo"/>
-                                                                                                </connections>
                                                                                             </button>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ane-5H-yXn">
                                                                                                 <rect key="frame" x="29.999999999999996" y="0.0" width="62.666666666666657" height="24"/>
@@ -1782,9 +1761,6 @@
                                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                                 <state key="normal" image="ic_unselected_fields"/>
                                                                                                 <state key="selected" image="ic_selected"/>
-                                                                                                <connections>
-                                                                                                    <action selector="tappedIndividualName:" destination="Xfm-wr-2qe" eventType="touchUpInside" id="bUd-2Q-suD"/>
-                                                                                                </connections>
                                                                                             </button>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elements" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ry-BA-TIj">
                                                                                                 <rect key="frame" x="29.999999999999993" y="0.0" width="70.333333333333314" height="24"/>
@@ -1818,7 +1794,7 @@
                                                                         <state key="normal" image="ic_unselected"/>
                                                                         <state key="selected" image="ic_selected"/>
                                                                         <connections>
-                                                                            <action selector="tappedIndividual:" destination="Xfm-wr-2qe" eventType="touchUpInside" id="61b-Yc-P9i"/>
+                                                                            <action selector="tappedSelection:" destination="Xfm-wr-2qe" eventType="touchUpInside" id="LuM-7c-pZa"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -1851,7 +1827,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DH7-og-grt">
                                                         <rect key="frame" x="65" y="698.33333333333337" width="185" height="60"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="185" id="5FL-BW-rxA"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="185" id="5FL-BW-rxA"/>
                                                             <constraint firstAttribute="height" constant="60" id="gA6-mu-vdx"/>
                                                         </constraints>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1912,15 +1888,25 @@
                     <connections>
                         <outlet property="agencyBtnView" destination="Fbk-mN-1oa" id="7Vi-Pw-Atd"/>
                         <outlet property="agencyView" destination="esA-5b-pc1" id="eh4-PX-lf2"/>
+                        <outlet property="btnAgency" destination="kUr-uK-6lc" id="TZB-Nj-IvW"/>
                         <outlet property="btnDone" destination="DH7-og-grt" id="E1n-Lj-hrV"/>
                         <outlet property="btnIndividual" destination="fVY-Ne-fLm" id="7lu-74-z93"/>
-                        <outlet property="btnIndividualName" destination="C0b-y4-IJg" id="eiV-oY-q0U"/>
-                        <outlet property="btnIndividualPhone" destination="9PB-Cz-3ZA" id="b7I-bc-XIq"/>
                         <outlet property="individualBtnView" destination="klf-89-SeK" id="8Ex-8b-RsN"/>
                         <outlet property="individualView" destination="P2a-eJ-Iwp" id="fdH-xp-P00"/>
+                        <outlet property="lblAgency" destination="Zwm-Z7-POm" id="Y8N-Ja-Kcz"/>
+                        <outlet property="lblAgencyAddress" destination="ane-5H-yXn" id="iHW-6K-9qO"/>
+                        <outlet property="lblAgencyDescription" destination="2bE-AH-bav" id="hjr-lm-mxl"/>
+                        <outlet property="lblAgencyElements" destination="5Ry-BA-TIj" id="aMD-Ej-3Mz"/>
+                        <outlet property="lblAgencyEmail" destination="5cZ-7e-Ige" id="Mpj-Ga-hyF"/>
+                        <outlet property="lblAgencyLogo" destination="lpN-HL-9bo" id="36y-sg-6R1"/>
+                        <outlet property="lblAgencyPhone" destination="lrp-hj-06U" id="ETx-yx-cek"/>
+                        <outlet property="lblAgencyWebLink" destination="Myo-83-Su1" id="HVj-67-j0F"/>
                         <outlet property="lblDownloadSection" destination="Jsb-WJ-cV3" id="LNd-Oe-Bhk"/>
                         <outlet property="lblIndividual" destination="KzD-cX-dsr" id="fv8-ix-Yfo"/>
                         <outlet property="lblIndividualDescription" destination="jvw-MD-UTA" id="hH8-Ga-nzJ"/>
+                        <outlet property="lblIndividualEmail" destination="6pY-Fo-GXN" id="EqR-wT-FJ2"/>
+                        <outlet property="lblIndividualGit" destination="UIe-Se-bLl" id="b0E-Y4-UcG"/>
+                        <outlet property="lblIndividualLinkedIn" destination="cnz-LZ-LAN" id="ZZ1-e7-Oul"/>
                         <outlet property="lblIndividualName" destination="JVu-r2-hBv" id="DMG-h4-WgU"/>
                         <outlet property="lblIndividualPhone" destination="CuT-t6-3QN" id="94d-iT-aOX"/>
                         <outlet property="mainView" destination="Sdu-aO-nK1" id="gBd-Ya-I14"/>
