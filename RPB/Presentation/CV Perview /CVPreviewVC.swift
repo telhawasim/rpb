@@ -47,38 +47,44 @@ extension CVPreviewVC: UITableViewDelegate, UITableViewDataSource {
                     
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: EventDescriptionTableViewCell.className, for: indexPath) as! EventDescriptionTableViewCell
+            cell.topConstraint.constant = 20
             cell.middleConstraint.constant = 5
             cell.lblPerviousCompany.isHidden = true
+            cell.lblDescriptionHeading.font = UIFont.getRegularFont(size: 20)
             cell.lblDescriptionHeading.text = "Summary"
             cell.updateUI()
             cell.delegate = self
             return cell
         } else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: EducationTextTableViewCell.className, for: indexPath) as! EducationTextTableViewCell
+            cell.lblEducation.text = "Work Experience"
             return cell
         } else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: EventDescriptionTableViewCell.className, for: indexPath) as! EventDescriptionTableViewCell
-            cell.topConstraint.constant = 10
             cell.lblDescriptionHeading.font = UIFont.getRegularFont()
+            cell.topConstraint.constant = 10
             cell.lblDescriptionHeading.text = "IOS Developer"
+            cell.lblPerviousCompany.isHidden = false
             cell.lblPerviousCompany.text = "Synavos"
             cell.updateUI()
             cell.delegate = self
             return cell
         } else if indexPath.row == 4 {
             let cell = tableView.dequeueReusableCell(withIdentifier: EventDescriptionTableViewCell.className, for: indexPath) as! EventDescriptionTableViewCell
-            cell.topConstraint.constant = 0
             cell.lblDescriptionHeading.font = UIFont.getRegularFont()
+            cell.topConstraint.constant = 0
             cell.lblDescriptionHeading.text = "IOS Developer"
+            cell.lblPerviousCompany.isHidden = false
             cell.lblPerviousCompany.text = "i2c"
             cell.updateUI()
             cell.delegate = self
             return cell
         } else if indexPath.row == 5 {
             let cell = tableView.dequeueReusableCell(withIdentifier: EventDescriptionTableViewCell.className, for: indexPath) as! EventDescriptionTableViewCell
-            cell.topConstraint.constant = 0
             cell.lblDescriptionHeading.font = UIFont.getRegularFont()
+            cell.topConstraint.constant = 0
             cell.lblDescriptionHeading.text = "IOS Developer"
+            cell.lblPerviousCompany.isHidden = false
             cell.lblPerviousCompany.text = "Pure Logics"
             cell.updateUI()
             cell.delegate = self
@@ -86,6 +92,7 @@ extension CVPreviewVC: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.row == 6 {
             let cell = tableView.dequeueReusableCell(withIdentifier: EducationTextTableViewCell.className, for: indexPath) as! EducationTextTableViewCell
             cell.lblEducation.text = "Education"
+            cell.topConstraint.constant = 10
             return cell
         } else if indexPath.row  == 7 {
             let cell = tableView.dequeueReusableCell(withIdentifier: EducationTableViewCell.className, for: indexPath) as! EducationTableViewCell
@@ -147,8 +154,8 @@ extension CVPreviewVC {
     // MARK: Configure Buttons
     func configureButtons() {
         self.btnEdit.isCircularButton()
-        self.btnEdit.backgroundColor = UIColor.blueF1F1FF
-        self.btnDownload.backgroundColor = UIColor.blueF1F1FF
+        self.btnEdit.backgroundColor = UIColor.dark6A90FF
+        self.btnDownload.backgroundColor = UIColor.dark6A90FF
         self.btnDownload.isCircularButton()
     }
     
@@ -156,6 +163,12 @@ extension CVPreviewVC {
     func configureFonts() {
         self.lblViewProfile.font = UIFont.getMediumFont(size: 22)
         self.lblName.font = UIFont.getSemiBoldFont(size: 24)
+        
+        self.btnEdit.setImage(UIImage(named: "edit_profile"), for: .normal)
+        self.btnEdit.setImageTintColor(UIColor.white)
+        
+        self.btnDownload.setImage(UIImage(named: "download_profile"), for: .normal)
+        self.btnDownload.setImageTintColor(UIColor.white)
     }
     
     func updateTableView(willExpand: Bool) {
