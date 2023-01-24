@@ -42,7 +42,6 @@ class AddEmployeeVC: BaseVC {
         self.configureProfilePciture()
         self.configurePicker()
         self.configureTextField()
-        self.swipeToPop()
         self.txtDepartment.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
     }
     
@@ -93,11 +92,6 @@ class AddEmployeeVC: BaseVC {
     func configureTextField() {
         txtDepartment.delegate = self
         txtPhone.delegate = self
-    }
-    
-    func swipeToPop() {
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
     
     func checkValidation() -> Bool {
@@ -204,7 +198,6 @@ extension AddEmployeeVC: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         txtDepartment.text = departmentdata[row]
-        //        self.view.endEditing(true)
     }
 }
 

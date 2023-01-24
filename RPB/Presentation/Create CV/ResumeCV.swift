@@ -494,6 +494,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 
             } else {
                 cell.txtCompany.isUserInteractionEnabled = true
+                cell.txtEndDate.isUserInteractionEnabled = false
                 cell.configure(experienceTextFields[indexPath.row + 1])
                 cell.deleteStack.isHidden = false
                 cell.endDateStack.isHidden = false
@@ -564,6 +565,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 
                 cell.lblCount.text = "\(indexPath.row + 1)"
                 cell.configure(data: certificatesTextField[indexPath.row])
+                cell.txtEndDate.isUserInteractionEnabled = false
                 
                 cell.deleteCell = { [weak self] in
                     guard let self = self else {return}
@@ -594,6 +596,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: AcademicsTVCell.className, for: indexPath) as! AcademicsTVCell
             cell.lblCount.text = "\(indexPath.row + 1)"
             cell.configure(data: academicsTextFields[indexPath.row])
+            cell.txtEndsTo.isUserInteractionEnabled = false
             
             cell.textDegreeDidChange = { [weak self] (txtField) in
                 self?.academicsTextFields[indexPath.row].txtDegree = txtField.text ?? ""

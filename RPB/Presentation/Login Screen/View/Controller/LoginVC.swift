@@ -34,7 +34,7 @@ class LoginVC: BaseVC {
     
     // MARK: Login Button
     @IBAction func tappedLoginButton(_ sender: Any) {
-        self.viewModel?.checkValidation()
+        self.viewModel?.goToMain()
     }
     
     @IBAction func tappedShowPassword(_ sender: Any) {

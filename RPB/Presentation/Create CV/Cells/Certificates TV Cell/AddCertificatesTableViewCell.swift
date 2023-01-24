@@ -30,7 +30,7 @@ class AddCertificatesTableViewCell: UITableViewCell {
     var endYearPicker = UIPickerView()
     var deleteCell: (() -> Void)?
     var years = [String]()
-
+    
     //MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,7 +40,6 @@ class AddCertificatesTableViewCell: UITableViewCell {
         self.txtInstitute.addTarget(self, action: #selector(self.textFieldInstituteDidChange(_:)), for: .editingChanged)
         self.txtStartDate.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
         self.txtEndDate.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
-        self.txtEndDate.isUserInteractionEnabled = false
     }
     
     func configure(data: AcademicsModel) {
@@ -68,9 +67,13 @@ class AddCertificatesTableViewCell: UITableViewCell {
     //MARK: Configure UIPicker
     func configurePicker() {
         self.startYearPicker.delegate = self
+        self.startYearPicker.dataSource = self
         self.endYearPicker.delegate = self
+        self.endYearPicker.dataSource = self
         self.txtStartDate.inputView = startYearPicker
         self.txtEndDate.inputView = endYearPicker
+        self.txtStartDate.delegate = self
+        self.txtEndDate.delegate = self
     }
     
     //MARK: Colors
@@ -89,10 +92,6 @@ class AddCertificatesTableViewCell: UITableViewCell {
             years.append(String(year))
         }
         return years
-    }
-    
-    @IBAction func btnDeletePressed(_ sender: Any) {
-        self.deleteCell?()
     }
     
     //MARK: Configure PickerView for EndYear
@@ -115,20 +114,23 @@ class AddCertificatesTableViewCell: UITableViewCell {
     @objc func doneButtonClicked(textField: UITextField) {
         self.txtEndDate.isUserInteractionEnabled = true
         if textField == txtStartDate {
-            if txtStartDate.text == "" {
-                self.startYearPicker.selectRow(0, inComponent: 0, animated: true)
-                self.txtStartDate.text = self.configurePickerforStartYear().first
-                self.textStartDateDidChange?(txtStartDate)
-            }
+            let selectedRow = startYearPicker.selectedRow(inComponent: 0)
+            let selectedValue = startYearPicker.delegate?.pickerView?(startYearPicker, titleForRow: selectedRow, forComponent: 0)
+            self.txtStartDate.text = selectedValue
+            self.txtEndDate.text = ""
+            self.textStartDateDidChange?(txtStartDate)
         } else {
-            if txtEndDate.text == "" {
-                self.endYearPicker.selectRow(0, inComponent: 0, animated: true)
-                self.txtEndDate.text = self.configurePickerforEndYear().first
-                self.textEndDateDidChange?(txtEndDate)
-            }
+            let selectedRow = endYearPicker.selectedRow(inComponent: 0)
+            let selectedValue = endYearPicker.delegate?.pickerView?(endYearPicker, titleForRow: selectedRow, forComponent: 0)
+            self.txtEndDate.text = selectedValue
+            self.textEndDateDidChange?(txtEndDate)
         }
     }
     
+    //MARK: IBACTION
+    @IBAction func btnDeletePressed(_ sender: Any) {
+        self.deleteCell?()
+    }
     
 }
 
@@ -161,27 +163,24 @@ extension AddCertificatesTableViewCell: UIPickerViewDelegate, UIPickerViewDataSo
             }
         }
     }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == startYearPicker {
-            txtStartDate.text = configurePickerforStartYear()[row]
-            txtEndDate.text = ""
-            self.textStartDateDidChange?(txtStartDate)
-        } else {
-            txtEndDate.text = configurePickerforEndYear()[row]
-            self.textEndDateDidChange?(txtEndDate)
-        }
-        
-    }
 }
 
 //MARK: TextField Delegate
-extension AddCertificatesTableViewCell {
+extension AddCertificatesTableViewCell: UITextFieldDelegate {
     @objc private func textFieldCourseDidChange(_ textField: UITextField) {
         self.textCourseDidChange?(textField)
     }
     
     @objc private func textFieldInstituteDidChange(_ textField: UITextField) {
         self.textInstituteDidChange?(textField)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == txtStartDate {
+            if txtStartDate.text == "" {
+                txtEndDate.text = ""
+            }
+        }
+        self.txtEndDate.isUserInteractionEnabled = true
     }
 }

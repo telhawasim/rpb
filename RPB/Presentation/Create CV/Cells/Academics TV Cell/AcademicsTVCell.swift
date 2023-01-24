@@ -43,8 +43,6 @@ class AcademicsTVCell: UITableViewCell {
         self.txtInstitute.addTarget(self, action: #selector(self.textFieldInstituteDidChange(_:)), for: .editingChanged)
         self.txtStartsFrom.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
         self.txtEndsTo.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
-        self.txtEndsTo.isUserInteractionEnabled = false
-
     }
     
     //MARK: Setup Label for Cell
@@ -67,6 +65,8 @@ class AcademicsTVCell: UITableViewCell {
         self.endYearPicker.delegate = self
         self.txtStartsFrom.inputView = startYearPicker
         self.txtEndsTo.inputView = endYearPicker
+        self.txtStartsFrom.delegate = self
+        self.txtEndsTo.delegate = self
     }
     
     func configure(data: AcademicsModel) {
@@ -108,18 +108,16 @@ class AcademicsTVCell: UITableViewCell {
     
     @objc func doneButtonClicked(textField: UITextField) {
         if textField == txtStartsFrom {
-            txtEndsTo.isUserInteractionEnabled = true
-            if txtStartsFrom.text == "" {
-                self.startYearPicker.selectRow(0, inComponent: 0, animated: true)
-                self.txtStartsFrom.text = self.configurePickerForStartYear().first
-                self.textStartDateDidChange?(txtStartsFrom)
-            }
+            let selectedRow = startYearPicker.selectedRow(inComponent: 0)
+            let selectedValue = startYearPicker.delegate?.pickerView?(startYearPicker, titleForRow: selectedRow, forComponent: 0)
+            self.txtStartsFrom.text = selectedValue
+            self.txtEndsTo.text = ""
+            self.textStartDateDidChange?(txtStartsFrom)
         } else {
-            if txtEndsTo.text == "" {
-                self.endYearPicker.selectRow(0, inComponent: 0, animated: true)
-                self.txtEndsTo.text = self.configurePickerForEndYear().first
-                self.textEndDateDidChange?(txtEndsTo)
-            }
+            let selectedRow = endYearPicker.selectedRow(inComponent: 0)
+            let selectedValue = endYearPicker.delegate?.pickerView?(endYearPicker, titleForRow: selectedRow, forComponent: 0)
+            self.txtEndsTo.text = selectedValue
+            self.textEndDateDidChange?(txtEndsTo)
         }
     }
     
@@ -130,13 +128,22 @@ class AcademicsTVCell: UITableViewCell {
 }
 
 //MARK: TextField Delegate
-extension AcademicsTVCell: UITextViewDelegate {
+extension AcademicsTVCell: UITextFieldDelegate {
     @objc private func textFieldDegreeDidChange(_ textField: UITextField) {
         self.textDegreeDidChange?(textField)
     }
     
     @objc private func textFieldInstituteDidChange(_ textField: UITextField) {
         self.textInstituteDidChange?(textField)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == txtStartsFrom {
+            if txtStartsFrom.text == "" {
+                txtEndsTo.text = ""
+            }
+        }
+        self.txtEndsTo.isUserInteractionEnabled = true
     }
 }
 
@@ -168,17 +175,5 @@ extension AcademicsTVCell: UIPickerViewDelegate, UIPickerViewDataSource {
                 return configurePickerForEndYear()[row]
             }
         }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == startYearPicker {
-            txtStartsFrom.text = configurePickerForStartYear()[row]
-            txtEndsTo.text = ""
-            self.textStartDateDidChange?(txtStartsFrom)
-        } else {
-            txtEndsTo.text = configurePickerForEndYear()[row]
-            self.textEndDateDidChange?(txtEndsTo)
-        }
-        
     }
 }
