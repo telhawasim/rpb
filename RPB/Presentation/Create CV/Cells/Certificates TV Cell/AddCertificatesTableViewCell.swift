@@ -42,6 +42,17 @@ class AddCertificatesTableViewCell: UITableViewCell {
         self.txtEndDate.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        for loop in 0..<startYearPicker.numberOfComponents {
+            startYearPicker.selectRow(0, inComponent: loop, animated: true)
+        }
+        for loop in 0..<endYearPicker.numberOfComponents {
+            endYearPicker.selectRow(0, inComponent: loop, animated: true)
+        }
+    }
+    
     func configure(data: AcademicsModel) {
         self.txtCourseName.text = data.txtDegree
         self.txtInstitute.text = data.txtInstitute

@@ -54,6 +54,17 @@ class ExperienceTVCell: UITableViewCell {
         self.txtEndDate.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        for loop in 0..<startYearPicker.numberOfComponents {
+            startYearPicker.selectRow(0, inComponent: loop, animated: true)
+        }
+        for loop in 0..<endYearPicker.numberOfComponents {
+            endYearPicker.selectRow(0, inComponent: loop, animated: true)
+        }
+    }
+    
     //MARK: Configure Labels
     func configureFont() {
         self.lblCompany.font = UIFont.getSemiBoldFont()
@@ -81,9 +92,7 @@ class ExperienceTVCell: UITableViewCell {
     //MARK: Configure TextFields
     func configureTextFields() {
         self.txtStartDate.delegate = self
-        self.txtStartDate.tag = 2
         self.txtEndDate.delegate = self
-        self.txtEndDate.tag = 4
         self.txtStartDate.tintColor = .clear
         self.txtEndDate.tintColor = .clear
     }

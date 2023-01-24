@@ -45,6 +45,17 @@ class AcademicsTVCell: UITableViewCell {
         self.txtEndsTo.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        for loop in 0..<startYearPicker.numberOfComponents {
+            startYearPicker.selectRow(0, inComponent: loop, animated: true)
+        }
+        for loop in 0..<endYearPicker.numberOfComponents {
+            endYearPicker.selectRow(0, inComponent: loop, animated: true)
+        }
+    }
+    
     //MARK: Setup Label for Cell
     func setupCell() {
         self.lblCount.font = UIFont.getBoldFont(size: 14)
