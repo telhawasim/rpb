@@ -123,6 +123,7 @@ class ResumeCV: BaseVC {
             experienceValidation()
         } else if category == .skills {
             btnPreview.isHidden = false
+            skillsValidation()
         } else {
             academicsValidation()
             if academicsTextFields.isEmpty {
@@ -148,6 +149,11 @@ class ResumeCV: BaseVC {
         }, completion: nil)
     }
     
+    func setupButton(isPopulated: Bool) {
+        self.btnSave.isEnabled = isPopulated
+        self.btnSave.backgroundColor = isPopulated ? UIColor.customBlue : UIColor.systemGray
+    }
+    
     //MARK: Validation for Info textField's text is nil
     func infoValidation() {
         for textField in self.infoTextFields {
@@ -158,8 +164,7 @@ class ResumeCV: BaseVC {
                 isAllPopulated = true
             }
         }
-        self.btnSave.isEnabled = isAllPopulated
-        self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
+        self.setupButton(isPopulated: isAllPopulated)
     }
     
     //MARK: Validation for textField's text is nil
@@ -173,9 +178,7 @@ class ResumeCV: BaseVC {
                 isAllPopulated = true
             }
         }
-        
-        self.btnSave.isEnabled = isAllPopulated
-        self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
+        self.setupButton(isPopulated: isAllPopulated)
     }
     
     //MARK: Validation for Academics textField's text is nil
@@ -189,9 +192,7 @@ class ResumeCV: BaseVC {
                 isAllPopulated = true
             }
         }
-        
-        self.btnSave.isEnabled = isAllPopulated
-        self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
+        self.setupButton(isPopulated: isAllPopulated)
     }
     
     //MARK: Validation for Skills is nil
@@ -203,8 +204,7 @@ class ResumeCV: BaseVC {
                     break
                 }
             }
-        self.btnSave.isEnabled = isAllPopulated
-        self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
+        self.setupButton(isPopulated: isAllPopulated)
         return isAllPopulated
     }
     
@@ -221,8 +221,8 @@ class ResumeCV: BaseVC {
         } else {
             isAllPopulated = true
         }
-        self.btnSave.isEnabled = isAllPopulated
-        self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
+        self.setupButton(isPopulated: isAllPopulated)
+
     }
     
     //MARK: Info Tab TextField Validatiom

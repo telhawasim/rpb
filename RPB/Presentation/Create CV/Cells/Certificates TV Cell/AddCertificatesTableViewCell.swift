@@ -40,6 +40,7 @@ class AddCertificatesTableViewCell: UITableViewCell {
         self.txtInstitute.addTarget(self, action: #selector(self.textFieldInstituteDidChange(_:)), for: .editingChanged)
         self.txtStartDate.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
         self.txtEndDate.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
+        self.txtEndDate.isUserInteractionEnabled = false
     }
     
     func configure(data: AcademicsModel) {
@@ -112,6 +113,7 @@ class AddCertificatesTableViewCell: UITableViewCell {
     }
     
     @objc func doneButtonClicked(textField: UITextField) {
+        self.txtEndDate.isUserInteractionEnabled = true
         if textField == txtStartDate {
             if txtStartDate.text == "" {
                 self.startYearPicker.selectRow(0, inComponent: 0, animated: true)
