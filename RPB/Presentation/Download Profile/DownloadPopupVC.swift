@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DownloadPopupVC: UIViewController {
+class DownloadPopupVC: BaseVC {
     
     //MARK: Outlet
     
@@ -96,6 +96,9 @@ class DownloadPopupVC: UIViewController {
         self.btnDone.cornerRadiusButton(30)
     }
     
+    @IBAction func tappedGoBack(_ sender: Any) {
+        goBack()
+    }
     
     @IBAction func tappedSelection(_ sender: UIButton) {
         if sender == btnIndividual {
@@ -114,5 +117,7 @@ class DownloadPopupVC: UIViewController {
     @IBAction func tappedIndividualPhone(_ sender: Any) {
         self.btnIndividualPhone.isSelected = !btnIndividualPhone.isSelected
     }
+    
+    
     
 }
