@@ -8,7 +8,7 @@
 import UIKit
 
 class AddCertificatesTableViewCell: UITableViewCell {
-
+    
     //MARK: IBOutlets
     @IBOutlet weak var experienceCountView: UIView!
     @IBOutlet weak var lblCount: UILabel!
@@ -30,6 +30,8 @@ class AddCertificatesTableViewCell: UITableViewCell {
     var endYearPicker = UIPickerView()
     var deleteCell: (() -> Void)?
     var years = [String]()
+    var startYears: [String] = []
+    var endYears: [String] = []
     
     //MARK: Life Cycle
     override func awakeFromNib() {
@@ -40,6 +42,7 @@ class AddCertificatesTableViewCell: UITableViewCell {
         self.txtInstitute.addTarget(self, action: #selector(self.textFieldInstituteDidChange(_:)), for: .editingChanged)
         self.txtStartDate.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
         self.txtEndDate.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
+        self.startYears = configurePickerforStartYear()
     }
     
     override func prepareForReuse() {
@@ -108,18 +111,20 @@ class AddCertificatesTableViewCell: UITableViewCell {
     //MARK: Configure PickerView for EndYear
     func configurePickerforEndYear() -> [String] {
         var years: [String] = []
-        let selectedYear = txtStartDate.text ?? ""
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy"
-        guard let selectedDate = formatter.date(from: selectedYear) else {return []}
-        
-        let startYear = Int(formatter.string(from: selectedDate)) ?? 0
-        let currentYear = Int(formatter.string(from: Date())) ?? 0
-        
-        for year in (startYear...currentYear).reversed() {
-            years.append(String(year))
+        if let selectedYear = txtStartDate.text {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy"
+            guard let selectedDate = formatter.date(from: selectedYear) else {return []}
+            
+            let startYear = Int(formatter.string(from: selectedDate)) ?? 0
+            let currentYear = Int(formatter.string(from: Date())) ?? 0
+            
+            for year in (startYear...currentYear).reversed() {
+                years.append(String(year))
+            }
+            return years
         }
-        return years
+        return []
     }
     
     @objc func doneButtonClicked(textField: UITextField) {
@@ -129,6 +134,8 @@ class AddCertificatesTableViewCell: UITableViewCell {
             let selectedValue = startYearPicker.delegate?.pickerView?(startYearPicker, titleForRow: selectedRow, forComponent: 0)
             self.txtStartDate.text = selectedValue
             self.txtEndDate.text = ""
+            self.endYears = configurePickerforEndYear()
+            self.endYearPicker.reloadAllComponents()
             self.textStartDateDidChange?(txtStartDate)
         } else {
             let selectedRow = endYearPicker.selectedRow(inComponent: 0)
@@ -153,24 +160,24 @@ extension AddCertificatesTableViewCell: UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == startYearPicker {
-            return configurePickerforStartYear().count
+            return startYears.count
         } else {
             if txtStartDate.text == "" {
                 return 0
             } else {
-                return configurePickerforEndYear().count
+                return endYears.count
             }
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == startYearPicker {
-            return configurePickerforStartYear()[row]
+            return startYears[row]
         } else {
             if txtStartDate.text == "" {
                 return ""
             } else {
-                return configurePickerforEndYear()[row]
+                return endYears[row]
             }
         }
     }

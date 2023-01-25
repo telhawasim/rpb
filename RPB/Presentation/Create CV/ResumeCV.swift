@@ -134,7 +134,7 @@ class ResumeCV: BaseVC {
         }
     }
     
-    func removeCell(index: Int, cellType: CellType) {
+    func removeCell(index: Int, cellType: CellType, section: Int) {
         switch cellType {
         case .experince:
             self.experienceTextFields.remove(at: index)
@@ -145,7 +145,8 @@ class ResumeCV: BaseVC {
         case .academic:
             self.academicsTextFields.remove(at: index)
         }
-        UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData()
+        UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            self.tableView.reloadSections(IndexSet(integer: section), with: .automatic)
         }, completion: nil)
     }
     
@@ -521,7 +522,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             cell.deleteCell = { [weak self] in
                 guard let self = self else {return}
                 if self.experienceTextFields.count > 0 {
-                    self.removeCell(index: indexPath.row + 1, cellType: .experince)
+                    self.removeCell(index: indexPath.row + 1, cellType: .experince, section: indexPath.section)
                 }
                 self.experienceValidation()
             }
@@ -555,7 +556,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 cell.deleteCell = { [weak self] in
                     guard let self = self else {return}
                     if self.skillsTextFields.count > 1 {
-                        self.removeCell(index: indexPath.row, cellType: .skills)
+                        self.removeCell(index: indexPath.row, cellType: .skills, section: indexPath.section)
                     }
                 }
                 return cell
@@ -570,7 +571,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 cell.deleteCell = { [weak self] in
                     guard let self = self else {return}
                     if self.certificatesTextField.count > 0 {
-                        self.removeCell(index: indexPath.row, cellType: .certificates)
+                        self.removeCell(index: indexPath.row, cellType: .certificates, section: indexPath.section)
                     }
                 }
                 
@@ -617,7 +618,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             cell.deleteCell = { [weak self] in
                 guard let self = self else {return}
                 if self.academicsTextFields.count > 0 {
-                    self.removeCell(index: indexPath.row, cellType: .academic)
+                    self.removeCell(index: indexPath.row, cellType: .academic, section: indexPath.section)
                 }
             }
             return cell

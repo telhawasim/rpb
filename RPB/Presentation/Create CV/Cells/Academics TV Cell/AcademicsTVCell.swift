@@ -27,6 +27,8 @@ class AcademicsTVCell: UITableViewCell {
     @IBOutlet weak var txtEndsTo: UITextField!
     
     //MARK: Variables
+    var startYears: [String] = []
+    var endYears: [String] = []
     var startYearPicker = UIPickerView()
     var endYearPicker = UIPickerView()
     var deleteCell: (() -> Void)?
@@ -43,6 +45,7 @@ class AcademicsTVCell: UITableViewCell {
         self.txtInstitute.addTarget(self, action: #selector(self.textFieldInstituteDidChange(_:)), for: .editingChanged)
         self.txtStartsFrom.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
         self.txtEndsTo.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
+        self.startYears = configurePickerForStartYear()
     }
     
     override func prepareForReuse() {
@@ -103,18 +106,20 @@ class AcademicsTVCell: UITableViewCell {
     //MARK: Configure PickerView for EndYear
     func configurePickerForEndYear() -> [String] {
         var years: [String] = []
-        let selectedYear = txtStartsFrom.text ?? ""
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy"
-        guard let selectedDate = formatter.date(from: selectedYear) else {return []}
-        
-        let startYear = Int(formatter.string(from: selectedDate)) ?? 0
-        let currentYear = Int(formatter.string(from: Date())) ?? 0
-        
-        for year in (startYear...currentYear).reversed() {
-            years.append(String(year))
+        if let selectedYear = txtStartsFrom.text {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy"
+            guard let selectedDate = formatter.date(from: selectedYear) else {return []}
+            
+            let startYear = Int(formatter.string(from: selectedDate)) ?? 0
+            let currentYear = Int(formatter.string(from: Date())) ?? 0
+            
+            for year in (startYear...currentYear).reversed() {
+                years.append(String(year))
+            }
+            return years
         }
-        return years
+        return []
     }
     
     @objc func doneButtonClicked(textField: UITextField) {
@@ -123,6 +128,8 @@ class AcademicsTVCell: UITableViewCell {
             let selectedValue = startYearPicker.delegate?.pickerView?(startYearPicker, titleForRow: selectedRow, forComponent: 0)
             self.txtStartsFrom.text = selectedValue
             self.txtEndsTo.text = ""
+            self.endYears = configurePickerForEndYear()
+            self.endYearPicker.reloadAllComponents()
             self.textStartDateDidChange?(txtStartsFrom)
         } else {
             let selectedRow = endYearPicker.selectedRow(inComponent: 0)
@@ -166,24 +173,24 @@ extension AcademicsTVCell: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == startYearPicker {
-            return configurePickerForStartYear().count
+            return startYears.count
         } else {
             if txtStartsFrom.text == "" {
                 return 0
             } else {
-                return configurePickerForEndYear().count
+                return endYears.count
             }
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == startYearPicker {
-            return configurePickerForStartYear()[row]
+            return startYears[row]
         } else {
             if txtStartsFrom.text == "" {
                 return ""
             } else {
-                return configurePickerForEndYear()[row]
+                return endYears[row]
             }
         }
     }

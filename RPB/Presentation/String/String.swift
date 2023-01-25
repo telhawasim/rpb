@@ -16,4 +16,11 @@ extension String {
         let result = emailTest.evaluate(with: self)
         return result
     }
+    
+    func isLinkedInValid() -> Bool {
+        let linkedInRegex = "linkedin.com/in/[a-zA-Z0-9]+"
+        let linkedInTest = NSPredicate(format: "SELF MATCHES %@", linkedInRegex)
+        let result = linkedInTest.evaluate(with: self)
+        return result
+    }
 }

@@ -31,9 +31,8 @@ class ExperienceTVCell: UITableViewCell {
     @IBOutlet weak var textView: UITextView!
     
     //MARK: Variables
-    var years = [String]()
-    var endDate = [String]()
-    var endDateIndex = Int()
+    var startYears: [String] = []
+    var endYears: [String] = []
     var startYearPicker = UIPickerView()
     var endYearPicker = UIPickerView()
     var deleteCell: (() -> Void)?
@@ -52,6 +51,7 @@ class ExperienceTVCell: UITableViewCell {
         self.txtCompany.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         self.txtStartDate.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
         self.txtEndDate.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
+        self.startYears = configurePickerForStartYear()
     }
     
     override func prepareForReuse() {
@@ -113,18 +113,20 @@ class ExperienceTVCell: UITableViewCell {
     //MARK: Configure PickerView for EndYear
     func configurePickerForEndYear() -> [String] {
         var years: [String] = []
-        let selectedYear = txtStartDate.text ?? ""
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy"
-        guard let selectedDate = formatter.date(from: selectedYear) else {return []}
-        
-        let startYear = Int(formatter.string(from: selectedDate)) ?? 0
-        let currentYear = Int(formatter.string(from: Date())) ?? 0
-        
-        for year in (startYear...currentYear).reversed() {
-            years.append(String(year))
+        if let selectedYear = txtStartDate.text {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy"
+            guard let selectedDate = formatter.date(from: selectedYear) else {return []}
+            
+            let startYear = Int(formatter.string(from: selectedDate)) ?? 0
+            let currentYear = Int(formatter.string(from: Date())) ?? 0
+            
+            for year in (startYear...currentYear).reversed() {
+                years.append(String(year))
+            }
+            return years
         }
-        return years
+        return []
     }
     
     func configure(_ textFieldInfo: ExperienceModel) {
@@ -155,6 +157,8 @@ class ExperienceTVCell: UITableViewCell {
             let selectedValue = startYearPicker.delegate?.pickerView?(startYearPicker, titleForRow: selectedRow, forComponent: 0)
             self.txtStartDate.text = selectedValue
             self.txtEndDate.text = ""
+            self.endYears = configurePickerForEndYear()
+            self.endYearPicker.reloadAllComponents()
             self.textStartDateDidChange?(txtStartDate)
         } else {
             let selectedRow = endYearPicker.selectedRow(inComponent: 0)
@@ -177,17 +181,17 @@ extension ExperienceTVCell: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == startYearPicker {
-            return configurePickerForStartYear().count
+            return startYears.count
         } else {
-            return configurePickerForEndYear().count
+            return endYears.count
         }
     }
     
     func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == startYearPicker {
-            return configurePickerForStartYear()[row]
+            return startYears[row]
         } else {
-            return configurePickerForEndYear()[row]
+            return endYears[row]
         }
     }
 }

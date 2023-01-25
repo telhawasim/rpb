@@ -32,4 +32,8 @@ struct Localization {
     struct Employee {
         static let kSearch = NSLocalizedString("search_placeholder", comment: "Search")
     }
+    
+    struct ResumeCV {
+        static let kLinkedInInvalidError = NSLocalizedString("field_linkedIn_valid_error", comment: "LinkedIN Valid Error")
+    }
 }
