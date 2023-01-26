@@ -42,6 +42,8 @@
 		2E18A825836F0D81F77A3E51 /* Pods_RPB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3D06738362C369E89B8B28 /* Pods_RPB.framework */; };
 		3601D371295DB4D5008B1F02 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3601D370295DB4D5008B1F02 /* UILabel.swift */; };
 		36187A6F2959C10F001CAB2B /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36187A6E2959C10F001CAB2B /* Storyboard.swift */; };
+		361C870129824E5C000F7BCF /* Gilroy-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 361C870029824E5C000F7BCF /* Gilroy-Medium.ttf */; };
+		361C870329824E6E000F7BCF /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 361C870229824E6E000F7BCF /* Gilroy-Regular.ttf */; };
 		3636F30529547728001D886A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3636F30429547728001D886A /* HomeVC.swift */; };
 		3637D7752962B5970086A699 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3637D7742962B5970086A699 /* Constant.swift */; };
 		3637D7782962B5E90086A699 /* EnumExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3637D7772962B5E90086A699 /* EnumExtension.swift */; };
@@ -170,6 +172,8 @@
 		23B2FDCDEFCA66A6888B49DA /* Pods-RPB.debugqa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB.debugqa.xcconfig"; path = "Target Support Files/Pods-RPB/Pods-RPB.debugqa.xcconfig"; sourceTree = "<group>"; };
 		3601D370295DB4D5008B1F02 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		36187A6E2959C10F001CAB2B /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		361C870029824E5C000F7BCF /* Gilroy-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Medium.ttf"; sourceTree = "<group>"; };
+		361C870229824E6E000F7BCF /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.ttf"; sourceTree = "<group>"; };
 		3636F30429547728001D886A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		3637D7742962B5970086A699 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		3637D7772962B5E90086A699 /* EnumExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumExtension.swift; sourceTree = "<group>"; };
@@ -883,6 +887,8 @@
 		36C775E82952FB7F00CD4A17 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				361C870229824E6E000F7BCF /* Gilroy-Regular.ttf */,
+				361C870029824E5C000F7BCF /* Gilroy-Medium.ttf */,
 				3637D77B2962C40A0086A699 /* Montserrat-Thin.ttf */,
 				090441D8295599F50088941F /* Montserrat-Medium.otf */,
 				09283D2329531CCB00256FD8 /* Montserrat-SemiBold.otf */,
@@ -1352,9 +1358,11 @@
 				090441CD295595D60088941F /* Montserrat-SemiBold.otf in Resources */,
 				36737C862976EFAC00163B4C /* AddCertificatesTableViewCell.xib in Resources */,
 				090441CE295595D90088941F /* Montserrat-Regular.otf in Resources */,
+				361C870129824E5C000F7BCF /* Gilroy-Medium.ttf in Resources */,
 				090441CF295595DB0088941F /* Montserrat-Bold.otf in Resources */,
 				0901581129759891009226AC /* Localizable.strings in Resources */,
 				36737C772976EF8400163B4C /* AcademicsTVCell.xib in Resources */,
+				361C870329824E6E000F7BCF /* Gilroy-Regular.ttf in Resources */,
 				36737CAD2976F0B800163B4C /* EducationTextTableViewCell.xib in Resources */,
 				36737C812976EFA000163B4C /* AddSkillsTableViewCell.xib in Resources */,
 				3637D77C2962C40A0086A699 /* Montserrat-Thin.ttf in Resources */,

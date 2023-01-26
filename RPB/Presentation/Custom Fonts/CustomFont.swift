@@ -33,6 +33,14 @@ extension UIFont {
     static func getThinFont(size: CGFloat = 14.0) -> UIFont {
         return UIFont.init(name: "Montserrat-Thin", size: size)!
     }
+    
+    static func getGilroyRegularFont(size: CGFloat = 14.0) -> UIFont {
+        return UIFont.init(name: "Gilroy-Regular", size: size)!
+    }
+    
+    static func getGilroyMediumFont(size: CGFloat = 14.0) -> UIFont {
+        return UIFont.init(name: "Gilroy-Medium", size: size)!
+    }
 }
 
 // Example

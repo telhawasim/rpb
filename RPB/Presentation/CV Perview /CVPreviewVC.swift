@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CVPreviewVC: BaseVC, UpdateCustomCell {
+class CVPreviewVC: BaseVC {
     
     //MARK: IBOutlets
     @IBOutlet weak var lblViewProfile: UILabel!
@@ -17,12 +17,12 @@ class CVPreviewVC: BaseVC, UpdateCustomCell {
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: Variables
+    var tags = ReadMoreModel.getTags()
     
     //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCell()
-        self.updateTableView(willExpand: false)
     }
     
     @IBAction func btnBack(_ sender: Any) {
@@ -44,14 +44,14 @@ extension CVPreviewVC: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: ContactTableViewCell.className, for: indexPath) as! ContactTableViewCell
             return cell
-                    
+            
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: EventDescriptionTableViewCell.className, for: indexPath) as! EventDescriptionTableViewCell
             cell.topConstraint.constant = 20
-            cell.middleConstraint.constant = 5
+            cell.middleConstraint.constant = 20
             cell.lblPerviousCompany.isHidden = true
             cell.lblDescriptionHeading.font = UIFont.getRegularFont(size: 20)
-            cell.lblDescriptionHeading.text = "Summary"
+            cell.configure(tags[indexPath.row - 1], index: indexPath.row - 1)
             cell.updateUI()
             cell.delegate = self
             return cell
@@ -63,9 +63,8 @@ extension CVPreviewVC: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: EventDescriptionTableViewCell.className, for: indexPath) as! EventDescriptionTableViewCell
             cell.lblDescriptionHeading.font = UIFont.getRegularFont()
             cell.topConstraint.constant = 10
-            cell.lblDescriptionHeading.text = "IOS Developer"
             cell.lblPerviousCompany.isHidden = false
-            cell.lblPerviousCompany.text = "Synavos"
+            cell.configure(tags[indexPath.row - 2], index: indexPath.row - 2)
             cell.updateUI()
             cell.delegate = self
             return cell
@@ -73,9 +72,8 @@ extension CVPreviewVC: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: EventDescriptionTableViewCell.className, for: indexPath) as! EventDescriptionTableViewCell
             cell.lblDescriptionHeading.font = UIFont.getRegularFont()
             cell.topConstraint.constant = 0
-            cell.lblDescriptionHeading.text = "IOS Developer"
             cell.lblPerviousCompany.isHidden = false
-            cell.lblPerviousCompany.text = "i2c"
+            cell.configure(tags[indexPath.row - 2], index: indexPath.row - 2)
             cell.updateUI()
             cell.delegate = self
             return cell
@@ -83,9 +81,10 @@ extension CVPreviewVC: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: EventDescriptionTableViewCell.className, for: indexPath) as! EventDescriptionTableViewCell
             cell.lblDescriptionHeading.font = UIFont.getRegularFont()
             cell.topConstraint.constant = 0
-            cell.lblDescriptionHeading.text = "IOS Developer"
+            // cell.lblDescriptionHeading.text = "IOS Developer"
             cell.lblPerviousCompany.isHidden = false
-            cell.lblPerviousCompany.text = "Pure Logics"
+            // cell.lblPerviousCompany.text = "Pure Logics"
+            cell.configure(tags[indexPath.row - 2], index: indexPath.row - 2)
             cell.updateUI()
             cell.delegate = self
             return cell
@@ -127,9 +126,11 @@ extension CVPreviewVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if indexPath.row == 16 {
             let cell = tableView.dequeueReusableCell(withIdentifier: EducationTableViewCell.className, for: indexPath) as! EducationTableViewCell
+            cell.lblMasterText.text = "Google UX Specialization"
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: EducationTableViewCell.className, for: indexPath) as! EducationTableViewCell
+            cell.lblMasterText.text = "Google UX Specialization"
             return cell
         }
     }
@@ -146,7 +147,7 @@ extension CVPreviewVC {
         tableView.register(ExperienceTableViewCell.className)
         tableView.register(ContactTableViewCell.className)
         tableView.register(EducationTextTableViewCell.className)
-
+        
         self.configureFonts()
         self.configureButtons()
     }
@@ -170,11 +171,11 @@ extension CVPreviewVC {
         self.btnDownload.setImage(UIImage(named: "download_profile"), for: .normal)
         self.btnDownload.setImageTintColor(UIColor.white)
     }
-    
-    func updateTableView(willExpand: Bool) {
+}
+
+extension CVPreviewVC: EventDescriptionDelegate {
+    func didChangeExpantion(index: Int, isExpanded: Bool) {
+        self.tags[index].isExpanded = isExpanded
         self.tableView.reloadData()
-        if (!willExpand) {
-            self.tableView.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .bottom, animated: false)
-        }
     }
 }

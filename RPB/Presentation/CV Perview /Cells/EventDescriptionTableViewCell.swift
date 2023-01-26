@@ -8,8 +8,8 @@
 
 import UIKit
 
-protocol UpdateCustomCell {
-    func updateTableView(willExpand: Bool)
+protocol EventDescriptionDelegate {
+    func didChangeExpantion(index: Int, isExpanded: Bool)
 }
 
 class EventDescriptionTableViewCell: UITableViewCell {
@@ -25,7 +25,8 @@ class EventDescriptionTableViewCell: UITableViewCell {
     
     //MARK: Variables
     var isExpanded = false
-    var delegate: UpdateCustomCell?
+    var delegate: EventDescriptionDelegate?
+    var index: Int!
     
     //MARK: LifeCycle
     override func awakeFromNib() {
@@ -36,6 +37,21 @@ class EventDescriptionTableViewCell: UITableViewCell {
         self.configureFonts()
     }
     
+    func configure(_ readMore: ReadMoreModel, index: Int) {
+        self.index = index
+        self.isExpanded = readMore.isExpanded
+        self.lblDescriptionHeading.text = readMore.description
+        self.lblPerviousCompany.text = readMore.perviousCompany
+        self.readMoreButton.tag = readMore.tag 
+        self.readMoreButton.setTitle(isExpanded ? "Read Less" : "Read More", for: .normal)
+
+        if readMoreButton.tag == 1 {
+            self.lblPerviousCompany.isHidden = true
+        } else {
+            self.lblPerviousCompany.isHidden = false
+        }
+    }
+
     // MARK: Colors
     func setColors() {
         lblDescriptionHeading.textColor = UIColor.customBlack
@@ -45,8 +61,8 @@ class EventDescriptionTableViewCell: UITableViewCell {
     // MARK: Fonts
     func configureFonts() {
         lblDescriptionHeading.font = UIFont.getRegularFont(size: 20)
-        lblPerviousCompany.font = UIFont.getRegularFont(size: 14)
-        eventDescription.font = UIFont.getThinFont()
+        lblPerviousCompany.font = UIFont.getGilroyMediumFont()
+        eventDescription.font = UIFont.getGilroyRegularFont()
     }
     
     func updateUI(noOfLines: Int = 3,headingFontSize: CGFloat = 15,topMargin: CGFloat = 0, bottomMargin: CGFloat = 8) {
@@ -83,17 +99,10 @@ class EventDescriptionTableViewCell: UITableViewCell {
         self.eventDescription.attributedText = attributedString
     }
     
-    @IBAction func readMoreButtonPressed(_ sender: Any) {
-        if (readMoreButton.title(for: .normal) == "Read More") {
-            isExpanded = true
-            readMoreButton.setTitle("Read Less", for: .normal)
-        } else {
-            isExpanded = false
-            readMoreButton.setTitle("Read More", for: .normal)
-        }
-        delegate?.updateTableView(willExpand: isExpanded)
+    @IBAction func readMoreButtonPressed(_ sender: UIButton) {
+        self.isExpanded.toggle()
+        self.delegate?.didChangeExpantion(index: self.index, isExpanded: self.isExpanded)
     }
-    
 }
 
 extension UILabel {

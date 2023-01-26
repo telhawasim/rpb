@@ -52,6 +52,22 @@ struct TextFieldModel {
     }
 }
 
+struct ReadMoreModel {
+    var tag: Int
+    var isExpanded: Bool = false
+    var description: String
+    var perviousCompany: String
+
+    static func getTags() -> [ReadMoreModel] {
+        var buttonTag = [ReadMoreModel]()
+        buttonTag.append(ReadMoreModel(tag: 1,description: "Summary", perviousCompany: ""))
+        buttonTag.append(ReadMoreModel(tag: 2,description: "IOS Developer", perviousCompany: "Synavos"))
+        buttonTag.append(ReadMoreModel(tag: 3,description: "IOS Developer", perviousCompany: "i2c"))
+        buttonTag.append(ReadMoreModel(tag: 4,description: "IOS Developer", perviousCompany: "Pure Logics"))
+        return buttonTag
+    }
+}
+
 struct ExperienceModel {
     var companyName: String = "Company Name"
     var txtCompanyName: String = ""

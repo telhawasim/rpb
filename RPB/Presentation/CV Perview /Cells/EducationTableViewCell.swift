@@ -32,8 +32,8 @@ class EducationTableViewCell: UITableViewCell {
     // MARK: Fonts
     func configureFonts() {
         lblMasterText.font = UIFont.getRegularFont(size: 14)
-        lblMasterDegree.font = UIFont.getThinFont()
-        lblSession.font = UIFont.getRegularFont(size: 14)
+        lblMasterDegree.font = UIFont.getGilroyMediumFont()
+        lblSession.font = UIFont.getGilroyMediumFont()
         self.setColors()
     }
 }

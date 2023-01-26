@@ -9,9 +9,11 @@
 		<string>Montserrat-Regular.otf</string>
 		<string>Montserrat-Medium.otf</string>
 		<string>Montserrat-Thin.ttf</string>
+		<string>Gilroy-Regular.ttf</string>
+		<string>Gilroy-Medium.ttf</string>
 	</array>
-    <key>UIUserInterfaceStyle</key>
-    <string>Light</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
