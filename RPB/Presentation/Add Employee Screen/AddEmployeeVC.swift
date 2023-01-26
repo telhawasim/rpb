@@ -9,7 +9,7 @@ import UIKit
 import IQKeyboardManagerSwift
 
 class AddEmployeeVC: BaseVC {
-
+    
     // MARK: Outlet
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
@@ -29,10 +29,10 @@ class AddEmployeeVC: BaseVC {
     @IBOutlet weak var txtDepartment: UITextField!
     @IBOutlet weak var txtDateOfJoining: UITextField!
     @IBOutlet weak var dropDownIcon: UIImageView!
-
+    
     // MARK: Variables
     let departmentpicker = UIPickerView()
-    let departmentdata = [String](arrayLiteral: "Development", "Testing", "Creative", "Management")
+    let departmentdata: [String] = ["Development","Testing","Creative","Management"]
     
     // MARK: Lifecylce
     override func viewDidLoad() {
@@ -42,10 +42,9 @@ class AddEmployeeVC: BaseVC {
         self.configureProfilePciture()
         self.configurePicker()
         self.configureTextField()
-        self.swipeToPop()
         self.txtDepartment.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
     }
-
+    
     // MARK: Configure Font
     func configureFont() {
         self.lblTitle.font = UIFont.getMediumFont(size: 24)
@@ -67,12 +66,12 @@ class AddEmployeeVC: BaseVC {
         self.txtDateOfJoining.font = UIFont.getMediumFont()
         self.txtDateOfJoining.tintColor = .clear
     }
-
+    
     // MARK: Configure Profile Picture
     func configureProfilePciture() {
         self.profileImage.isCircularImage()
     }
-
+    
     // MARK: Configure Picker for Department
     func configurePicker() {
         self.departmentpicker.delegate = self
@@ -80,7 +79,7 @@ class AddEmployeeVC: BaseVC {
         self.txtDOB.setInputViewDatePicker(target: self, selector: #selector(tapDoneDOB))
         self.txtDateOfJoining.setInputViewDatePicker(target: self, selector: #selector(tabDoneJoining))
     }
-
+    
     // MARK: Configure Add Button
     func configureAddButton() {
         self.btnAdd.cornerRadius(30)
@@ -88,18 +87,13 @@ class AddEmployeeVC: BaseVC {
         self.btnAdd.setTitleColor(UIColor.white, for: .normal)
         self.btnAdd.titleLabel?.font = UIFont.getMediumFont(size: 18)
     }
-
+    
     // MARK: Configure TextField
     func configureTextField() {
         txtDepartment.delegate = self
         txtPhone.delegate = self
     }
     
-    func swipeToPop() {
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
-    }
-
     func checkValidation() -> Bool {
         guard let name = txtName.text,
               let designation = txtDesignation.text,
@@ -111,7 +105,7 @@ class AddEmployeeVC: BaseVC {
             return false
         }
         var errorMessage: String?
-
+        
         if name.isEmpty {
             errorMessage = Localization.AddEmployee.kNameEmptyError
         } else if designation.isEmpty {
@@ -131,34 +125,31 @@ class AddEmployeeVC: BaseVC {
         } else if dateOfJoining.isEmpty {
             errorMessage = Localization.AddEmployee.kDateOfJoiningEmptyError
         }
-
+        
         if let errorMsg = errorMessage {
             self.alert(message: errorMsg)
             return false
         }
         return true
     }
-
+    
     @objc func tapDoneDOB() {
-        if let datePicker = self.txtDOB.inputView as? UIDatePicker {
-            var date = Date()
-            date = datePicker.date
-            if date.is18Plus() {
-                self.txtDOB.text = date.getFormattedDate(format: "dd-MM-yyyy")
-            } else {
-                self.txtDOB.text = nil
-                self.alert(message: Localization.AddEmployee.kEmployeeAgeError)
-            }
+        guard let datePicker = self.txtDOB.inputView as? UIDatePicker else { return }
+        let date = datePicker.date
+        if !date.is18Plus() {
+            self.txtDOB.text = nil
+            self.alert(message: Localization.AddEmployee.kEmployeeAgeError)
+            return
         }
+        
+        self.txtDOB.text = date.getFormattedDate(format: "dd-MM-yyyy")
         self.txtDOB.resignFirstResponder()
     }
-
+    
     @objc func tabDoneJoining() {
-        if let datePicker = self.txtDateOfJoining.inputView as? UIDatePicker {
-            var date = Date()
-            date = datePicker.date
-            self.txtDateOfJoining.text = date.getFormattedDate(format: "dd-MM-yyyy")
-        }
+        guard let datePicker = self.txtDateOfJoining.inputView as? UIDatePicker else { return }
+        let date = datePicker.date
+        self.txtDateOfJoining.text = date.getFormattedDate(format: "dd-MM-yyyy")
         self.txtDateOfJoining.resignFirstResponder()
     }
     
@@ -168,13 +159,13 @@ class AddEmployeeVC: BaseVC {
             self.txtDepartment.text = self.departmentdata.first
         }
     }
-
+    
     @IBAction func addBtnPressed(_ sender: Any) {
         if checkValidation() {
             
         }
     }
-
+    
     @IBAction func addBtnImage(_ sender: Any) {
         CameraHandler.shared.showActionSheet(viewC: self)
         CameraHandler.shared.imagePickedBlock = { (image) in
@@ -196,18 +187,17 @@ extension AddEmployeeVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return departmentdata.count
     }
-
+    
     func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return departmentdata[row]
     }
-
+    
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         txtDepartment.text = departmentdata[row]
-//        self.view.endEditing(true)
     }
 }
 
@@ -216,18 +206,18 @@ extension AddEmployeeVC: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         dropDownIcon.image = UIImage.dropdownArrowUp
     }
-
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         dropDownIcon.image = UIImage.dropdownArrowDown
     }
-
-   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == txtPhone {
             let maxLength = 11
-                let currentString = (textField.text ?? "") as NSString
-                let newString = currentString.replacingCharacters(in: range, with: string)
-
-                return newString.count <= maxLength
+            let currentString = (textField.text ?? "") as NSString
+            let newString = currentString.replacingCharacters(in: range, with: string)
+            
+            return newString.count <= maxLength
         } else {
             return Bool()
         }

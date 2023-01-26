@@ -92,8 +92,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsS-iZ-KmW">
-                                <rect key="frame" x="270" y="0.0" width="50" height="20.333333333333332"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsS-iZ-KmW">
+                                <rect key="frame" x="294.33333333333331" y="0.0" width="25.666666666666686" height="20.333333333333332"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -101,7 +101,7 @@
                         </subviews>
                     </stackView>
                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="7Qe-jn-Q8A" customClass="CustomSlider" customModule="RPB" customModuleProvider="target">
-                        <rect key="frame" x="1" y="178" width="318" height="36"/>
+                        <rect key="frame" x="3" y="178" width="316" height="36"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="kdz-NT-L3b"/>
                         </constraints>
@@ -120,7 +120,7 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="KHK-tL-MR1" secondAttribute="trailing" id="1Yk-vf-uZ6"/>
                     <constraint firstItem="d98-Mu-lAP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8Hu-iC-Fwc"/>
-                    <constraint firstItem="7Qe-jn-Q8A" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="Ft8-ji-4UA"/>
+                    <constraint firstItem="7Qe-jn-Q8A" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Ft8-ji-4UA"/>
                     <constraint firstAttribute="trailing" secondItem="d98-Mu-lAP" secondAttribute="trailing" id="GTt-Rk-4t1"/>
                     <constraint firstAttribute="trailing" secondItem="dz1-Si-pWJ" secondAttribute="trailing" id="GUN-g9-jAb"/>
                     <constraint firstItem="dz1-Si-pWJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ur7-6c-wiw"/>

@@ -105,7 +105,7 @@ class LoginBinder: NSObject {
         return true
     }
     
-    func checkValidation() {
+    func goToMain() {
         if validation() {
             let tabbarVC  = UIStoryboard.getVC(from: .main, TabbarVC.className)
             viewController?.navigationController?.pushViewController(tabbarVC, animated: true)

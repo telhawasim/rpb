@@ -24,3 +24,5 @@
 
 "search_placeholder" = "Search...";
 
+"field_linkedIn_valid_error" = "Please enter valid linkedIn URL";
+

@@ -94,7 +94,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Syanvos" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7xy-ci-qFD">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Google Ui/Ux" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7xy-ci-qFD">
                                                 <rect key="frame" x="0.0" y="20.333333333333329" width="320" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="fxV-B7-G1e"/>
@@ -187,6 +187,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_date" translatesAutoresizingMaskIntoConstraints="NO" id="hce-6z-ckz">
+                                                <rect key="frame" x="288" y="18" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="32" id="0Na-q0-Rdt"/>
+                                                    <constraint firstAttribute="height" constant="32" id="gLe-rn-weg"/>
+                                                </constraints>
+                                            </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="2019" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oMl-aP-0Bc">
                                                 <rect key="frame" x="0.0" y="26" width="320" height="26"/>
                                                 <constraints>
@@ -210,7 +217,9 @@
                                             <constraint firstItem="oMl-aP-0Bc" firstAttribute="leading" secondItem="3Kb-vb-8ub" secondAttribute="leading" id="ds2-yK-aZw"/>
                                             <constraint firstAttribute="trailing" secondItem="oMl-aP-0Bc" secondAttribute="trailing" id="hcI-N0-Mjs"/>
                                             <constraint firstItem="PKS-XR-rme" firstAttribute="top" secondItem="3Kb-vb-8ub" secondAttribute="top" id="nHY-hL-7Oo"/>
+                                            <constraint firstItem="t2a-uh-mv4" firstAttribute="top" secondItem="hce-6z-ckz" secondAttribute="bottom" constant="9" id="nQM-js-s4R"/>
                                             <constraint firstItem="oMl-aP-0Bc" firstAttribute="top" secondItem="PKS-XR-rme" secondAttribute="bottom" constant="1" id="o5D-sN-UWn"/>
+                                            <constraint firstAttribute="trailing" secondItem="hce-6z-ckz" secondAttribute="trailing" id="pDP-vf-HpP"/>
                                             <constraint firstItem="PKS-XR-rme" firstAttribute="leading" secondItem="3Kb-vb-8ub" secondAttribute="leading" id="sab-Z6-Nks"/>
                                         </constraints>
                                     </view>
@@ -234,6 +243,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_date" translatesAutoresizingMaskIntoConstraints="NO" id="F5m-FE-oPz">
+                                                <rect key="frame" x="288" y="18" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="32" id="3ar-rc-zIO"/>
+                                                    <constraint firstAttribute="height" constant="32" id="3ra-iP-frs"/>
+                                                </constraints>
+                                            </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="2023" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4HP-gj-64W">
                                                 <rect key="frame" x="0.0" y="26" width="320" height="26"/>
                                                 <constraints>
@@ -255,6 +271,8 @@
                                             <constraint firstItem="4HP-gj-64W" firstAttribute="top" secondItem="VLx-dg-TSH" secondAttribute="bottom" constant="1" id="HQD-Ua-e3R"/>
                                             <constraint firstAttribute="trailing" secondItem="6UV-53-5fo" secondAttribute="trailing" id="M6V-aX-Y6Z"/>
                                             <constraint firstItem="VLx-dg-TSH" firstAttribute="top" secondItem="Kjf-Jr-B2p" secondAttribute="top" id="MIn-T6-OfM"/>
+                                            <constraint firstItem="6UV-53-5fo" firstAttribute="top" secondItem="F5m-FE-oPz" secondAttribute="bottom" constant="9" id="QAs-yS-mlc"/>
+                                            <constraint firstAttribute="trailing" secondItem="F5m-FE-oPz" secondAttribute="trailing" id="Qtz-14-x8e"/>
                                             <constraint firstItem="6UV-53-5fo" firstAttribute="leading" secondItem="Kjf-Jr-B2p" secondAttribute="leading" id="R2d-t4-fqG"/>
                                             <constraint firstItem="VLx-dg-TSH" firstAttribute="leading" secondItem="Kjf-Jr-B2p" secondAttribute="leading" id="Skf-qG-Ovg"/>
                                             <constraint firstAttribute="trailing" secondItem="4HP-gj-64W" secondAttribute="trailing" id="ZsJ-I5-cjP"/>
@@ -293,6 +311,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="ic_date" width="32" height="32"/>
         <image name="ic_delete_cell" width="32" height="32"/>
         <namedColor name="Color E1E5E8">
             <color red="0.88235294117647056" green="0.89803921568627454" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
+class ResumeCV: BaseVC {
     
     //MARK: Outlet
     @IBOutlet weak var lblTitle: UILabel!
@@ -18,18 +18,13 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
     @IBOutlet weak var btnSave: UIButton!
     
     //MARK: Variables
-    var infoType: InfoType = .info
-    var infoModel = [Section]()
-    var skillsModel = [Section]()
-    var experienceModel = [Section]()
-    var selectedHeader = Int()
     var categoryTitle: [Category] = [.info, .experience, .skills, .academics]
     var category: Category = .info
     var isAllPopulated = false
     
     var infoTextFields = TextFieldModel.getInfoTextFields() {
         didSet {
-            self.validation()
+            self.infoValidation()
         }
     }
     
@@ -84,9 +79,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(BasicInfoTVCell.className)
-        self.tableView.register(EducationTVCell.className)
         self.tableView.register(SummaryTVCell.className)
-        self.tableView.register(DobTVCell.className)
         self.tableView.register(TagsTableViewCell.className)
         self.tableView.register(ExperienceTVCell.className)
         self.tableView.register(AcademicsTVCell.className)
@@ -100,29 +93,6 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.register(CategoryCVCell.className)
-    }
-    
-    func removeCell(index: Int) {
-        self.experienceTextFields.remove(at: index)
-        self.tableView.reloadData()
-    }
-    
-    func removeCellAcademics(index: Int) {
-        self.academicsTextFields.remove(at: index)
-        UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData()
-        }, completion: nil)
-    }
-    
-    func removeCellSkills(index: Int) {
-        self.skillsTextFields.remove(at: index)
-        UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData()
-        }, completion: nil)
-    }
-    
-    func removeCellCertificates(index: Int) {
-        self.certificatesTextField.remove(at: index)
-        UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData()
-        }, completion: nil)
     }
     
     //MARK: Configure Buttons
@@ -152,8 +122,8 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
             btnPreview.isHidden = false
             experienceValidation()
         } else if category == .skills {
-            skillsValidation()
             btnPreview.isHidden = false
+            skillsValidation()
         } else {
             academicsValidation()
             if academicsTextFields.isEmpty {
@@ -164,9 +134,29 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         }
     }
     
+    func removeCell(index: Int, cellType: CellType, section: Int) {
+        switch cellType {
+        case .experince:
+            self.experienceTextFields.remove(at: index)
+        case .skills:
+            self.skillsTextFields.remove(at: index)
+        case .certificates:
+            self.certificatesTextField.remove(at: index)
+        case .academic:
+            self.academicsTextFields.remove(at: index)
+        }
+        UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            self.tableView.reloadSections(IndexSet(integer: section), with: .automatic)
+        }, completion: nil)
+    }
+    
+    func setupButton(isPopulated: Bool) {
+        self.btnSave.isEnabled = isPopulated
+        self.btnSave.backgroundColor = isPopulated ? UIColor.customBlue : UIColor.systemGray
+    }
+    
     //MARK: Validation for Info textField's text is nil
-    func validation() {
-        
+    func infoValidation() {
         for textField in self.infoTextFields {
             if textField.textValue.isEmpty {
                 isAllPopulated = false
@@ -175,9 +165,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
                 isAllPopulated = true
             }
         }
-        
-        self.btnSave.isEnabled = isAllPopulated
-        self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
+        self.setupButton(isPopulated: isAllPopulated)
     }
     
     //MARK: Validation for textField's text is nil
@@ -191,9 +179,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
                 isAllPopulated = true
             }
         }
-        
-        self.btnSave.isEnabled = isAllPopulated
-        self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
+        self.setupButton(isPopulated: isAllPopulated)
     }
     
     //MARK: Validation for Academics textField's text is nil
@@ -207,9 +193,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
                 isAllPopulated = true
             }
         }
-        
-        self.btnSave.isEnabled = isAllPopulated
-        self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
+        self.setupButton(isPopulated: isAllPopulated)
     }
     
     //MARK: Validation for Skills is nil
@@ -221,8 +205,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
                     break
                 }
             }
-        self.btnSave.isEnabled = isAllPopulated
-        self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
+        self.setupButton(isPopulated: isAllPopulated)
         return isAllPopulated
     }
     
@@ -239,8 +222,8 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         } else {
             isAllPopulated = true
         }
-        self.btnSave.isEnabled = isAllPopulated
-        self.btnSave.backgroundColor = isAllPopulated ? UIColor.customBlue : UIColor.systemGray
+        self.setupButton(isPopulated: isAllPopulated)
+
     }
     
     //MARK: Info Tab TextField Validatiom
@@ -270,7 +253,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         self.collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
     }
     
-    func updateTabelView() {
+    func updateTableView() {
             UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData()
                 let targetRowIndexPath = IndexPath(row: 0, section: 0)
                 if self.tableView.indexPathExists(indexPath: targetRowIndexPath) {
@@ -285,6 +268,7 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         PopupView.shared.presentPopup(self, popupType: .discardInformation) { value in
             if (value != nil) {
                 self.infoTextFields = []
+                self.experienceTextFields = []
                 self.skillsTextFields = []
                 self.academicsTextFields = []
                 self.goBack()
@@ -300,20 +284,20 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
                 if infoTabTextFieldValidation() {
                     let index = IndexPath(item: 1, section: 0)
                     self.selectAndUpdateCV(indexPath: index)
-                    self.updateTabelView()
+                    self.updateTableView()
                 }
             }
         case .experience:
             if self.btnSave.isEnabled {
                 let index = IndexPath(item: 2, section: 0)
                 self.selectAndUpdateCV(indexPath: index)
-                self.updateTabelView()
+                self.updateTableView()
             }
         case .skills:
             if self.btnSave.isEnabled {
                 let index = IndexPath(item: 3, section: 0)
                 self.selectAndUpdateCV(indexPath: index)
-                self.updateTabelView()
+                self.updateTableView()
             }
         case .academics:
             if self.btnSave.isEnabled {
@@ -330,15 +314,15 @@ class ResumeCV: BaseVC, UIGestureRecognizerDelegate {
         case .experience:
             let index = IndexPath(item: 0, section: 0)
             self.selectAndUpdateCV(indexPath: index)
-            self.updateTabelView()
+            self.updateTableView()
         case .skills:
             let index = IndexPath(item: 1, section: 0)
             self.selectAndUpdateCV(indexPath: index)
-            self.updateTabelView()
+            self.updateTableView()
         case .academics:
             let index = IndexPath(item: 2, section: 0)
             self.selectAndUpdateCV(indexPath: index)
-            self.updateTabelView()
+            self.updateTableView()
         }
     }
 }
@@ -410,7 +394,10 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 
                 headerView.addMore = {
                     self.experienceTextFields.append(ExperienceModel())
-                    self.tableView.reloadData()
+                    UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                        self.tableView.reloadData()
+                        //                        self.tableView.scrollToRow(at: IndexPath(row: self.experienceTextFields.count-1, section: 1), at: .top, animated: false)
+                    }, completion: nil)
                 }
             }
         case .skills:
@@ -508,6 +495,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 
             } else {
                 cell.txtCompany.isUserInteractionEnabled = true
+                cell.txtEndDate.isUserInteractionEnabled = false
                 cell.configure(experienceTextFields[indexPath.row + 1])
                 cell.deleteStack.isHidden = false
                 cell.endDateStack.isHidden = false
@@ -534,7 +522,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             cell.deleteCell = { [weak self] in
                 guard let self = self else {return}
                 if self.experienceTextFields.count > 0 {
-                    self.removeCell(index: indexPath.row+1)
+                    self.removeCell(index: indexPath.row + 1, cellType: .experince, section: indexPath.section)
                 }
                 self.experienceValidation()
             }
@@ -568,10 +556,7 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 cell.deleteCell = { [weak self] in
                     guard let self = self else {return}
                     if self.skillsTextFields.count > 1 {
-                        self.removeCellSkills(index: indexPath.row)
-                    }
-                    if self.skillsValidation() {
-                        self.certificatesValidation()
+                        self.removeCell(index: indexPath.row, cellType: .skills, section: indexPath.section)
                     }
                 }
                 return cell
@@ -581,14 +566,12 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 
                 cell.lblCount.text = "\(indexPath.row + 1)"
                 cell.configure(data: certificatesTextField[indexPath.row])
+                cell.txtEndDate.isUserInteractionEnabled = false
                 
                 cell.deleteCell = { [weak self] in
                     guard let self = self else {return}
                     if self.certificatesTextField.count > 0 {
-                        self.removeCellCertificates(index: indexPath.row)
-                    }
-                    if self.skillsValidation() {
-                        self.certificatesValidation()
+                        self.removeCell(index: indexPath.row, cellType: .certificates, section: indexPath.section)
                     }
                 }
                 
@@ -613,8 +596,8 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: AcademicsTVCell.className, for: indexPath) as! AcademicsTVCell
             cell.lblCount.text = "\(indexPath.row + 1)"
-            cell.delegate = self
             cell.configure(data: academicsTextFields[indexPath.row])
+            cell.txtEndsTo.isUserInteractionEnabled = false
             
             cell.textDegreeDidChange = { [weak self] (txtField) in
                 self?.academicsTextFields[indexPath.row].txtDegree = txtField.text ?? ""
@@ -635,25 +618,10 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             cell.deleteCell = { [weak self] in
                 guard let self = self else {return}
                 if self.academicsTextFields.count > 0 {
-                    self.removeCellAcademics(index: indexPath.row)
+                    self.removeCell(index: indexPath.row, cellType: .academic, section: indexPath.section)
                 }
             }
             return cell
         }
-    }
-}
-
-//MARK: ExperienceTVCell Delegate
-extension ResumeCV: ExperienceTVCellProtocol, AddCertificatesTVCellProtocol {
-    func dismissPicker() {
-        self.view.endEditing(true)
-    }
-    
-    func adjustTextViewHeight() {
-        self.view.layoutIfNeeded()
-    }
-
-    func showAlert(errorMessage: String) {
-        self.alert(message: errorMessage)
     }
 }

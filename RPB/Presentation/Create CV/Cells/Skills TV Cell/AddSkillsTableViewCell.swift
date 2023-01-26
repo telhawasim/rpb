@@ -49,6 +49,10 @@ class AddSkillsTableViewCell: UITableViewCell {
         self.txtSkill.text = data.txtSkills
         self.lblPercentage.text = data.txtPercentage
         self.slider.value = data.slider
+        
+        if lblPercentage.text == "" {
+            lblPercentage.text = "0%"
+        }
     }
     
     func setViews() {
@@ -72,13 +76,5 @@ class AddSkillsTableViewCell: UITableViewCell {
 extension AddSkillsTableViewCell: UITextFieldDelegate {
     @objc func textFieldDidChange(_ textField: UITextField) {
         self.textSkillsDidChange?(textField)
-    }
-
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        //  self.dropDownAnimation(imageView: dropDownList, image: "arrow_up", index: textField.tag)
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        // self.dropDownAnimation(imageView: dropDownList, image: "arrow_down", index: textField.tag)
     }
 }

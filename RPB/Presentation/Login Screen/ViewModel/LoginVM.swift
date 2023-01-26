@@ -25,8 +25,8 @@ class LoginVM {
         binder?.tappedShowPassword()
     }
     
-    func checkValidation() {
-        binder?.checkValidation()
+    func goToMain() {
+        binder?.goToMain()
     }
     
     deinit {

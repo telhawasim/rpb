@@ -24,7 +24,7 @@ class HomeVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.binder = HomeBinder(tableView: tableView, lblEmployeeCount: lblEmployeeCount, lblTotalEmployee: lblTotalEmployee, lblName: lblName, lblEmployee: lblEmployee, viewController: self)
+        self.binder = HomeBinder(tableView: self.tableView, lblEmployeeCount: self.lblEmployeeCount, lblTotalEmployee: self.lblTotalEmployee, lblName: self.lblName, lblEmployee: self.lblEmployee, viewController: self)
         
         self.viewModel = HomeVM(binder: self.binder!)
         

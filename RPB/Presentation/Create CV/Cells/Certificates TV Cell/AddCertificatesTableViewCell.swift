@@ -7,12 +7,8 @@
 
 import UIKit
 
-protocol AddCertificatesTVCellProtocol {
-    func dismissPicker()
-}
-
 class AddCertificatesTableViewCell: UITableViewCell {
-
+    
     //MARK: IBOutlets
     @IBOutlet weak var experienceCountView: UIView!
     @IBOutlet weak var lblCount: UILabel!
@@ -34,7 +30,9 @@ class AddCertificatesTableViewCell: UITableViewCell {
     var endYearPicker = UIPickerView()
     var deleteCell: (() -> Void)?
     var years = [String]()
-
+    var startYears: [String] = []
+    var endYears: [String] = []
+    
     //MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,6 +42,18 @@ class AddCertificatesTableViewCell: UITableViewCell {
         self.txtInstitute.addTarget(self, action: #selector(self.textFieldInstituteDidChange(_:)), for: .editingChanged)
         self.txtStartDate.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
         self.txtEndDate.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
+        self.startYears = configurePickerforStartYear()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        for loop in 0..<startYearPicker.numberOfComponents {
+            startYearPicker.selectRow(0, inComponent: loop, animated: true)
+        }
+        for loop in 0..<endYearPicker.numberOfComponents {
+            endYearPicker.selectRow(0, inComponent: loop, animated: true)
+        }
     }
     
     func configure(data: AcademicsModel) {
@@ -71,9 +81,13 @@ class AddCertificatesTableViewCell: UITableViewCell {
     //MARK: Configure UIPicker
     func configurePicker() {
         self.startYearPicker.delegate = self
+        self.startYearPicker.dataSource = self
         self.endYearPicker.delegate = self
+        self.endYearPicker.dataSource = self
         self.txtStartDate.inputView = startYearPicker
         self.txtEndDate.inputView = endYearPicker
+        self.txtStartDate.delegate = self
+        self.txtEndDate.delegate = self
     }
     
     //MARK: Colors
@@ -83,54 +97,59 @@ class AddCertificatesTableViewCell: UITableViewCell {
     
     //MARK: Configure PickerView for Year
     func configurePickerforStartYear() -> [String] {
-        years = []
+        var years: [String] = []
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy"
         let currentYear = Int(formatter.string(from: Date())) ?? 0
         
-        for loop in stride(from: currentYear, through: 2000, by: -1) {
-            years.append("\(loop)")
+        for year in (2000...currentYear).reversed() {
+            years.append(String(year))
         }
         return years
-    }
-    
-    @IBAction func btnDeletePressed(_ sender: Any) {
-        self.deleteCell?()
     }
     
     //MARK: Configure PickerView for EndYear
     func configurePickerforEndYear() -> [String] {
-        years = []
-        let selectedYear = txtStartDate.text ?? ""
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy"
-        guard let date = formatter.date(from: selectedYear) else {return []}
-        
-        let startYear = Int(formatter.string(from: date)) ?? 0
-        let currentYear = Int(formatter.string(from: Date())) ?? 0
-        
-        for loop in stride(from: currentYear, through: startYear, by: -1) {
-            years.append("\(loop)")
+        var years: [String] = []
+        if let selectedYear = txtStartDate.text {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy"
+            guard let selectedDate = formatter.date(from: selectedYear) else {return []}
+            
+            let startYear = Int(formatter.string(from: selectedDate)) ?? 0
+            let currentYear = Int(formatter.string(from: Date())) ?? 0
+            
+            for year in (startYear...currentYear).reversed() {
+                years.append(String(year))
+            }
+            return years
         }
-        return years
+        return []
     }
     
     @objc func doneButtonClicked(textField: UITextField) {
+        self.txtEndDate.isUserInteractionEnabled = true
         if textField == txtStartDate {
-            if txtStartDate.text == "" {
-                self.startYearPicker.selectRow(0, inComponent: 0, animated: true)
-                self.txtStartDate.text = self.configurePickerforStartYear().first
-                self.textStartDateDidChange?(txtStartDate)
-            }
+            let selectedRow = startYearPicker.selectedRow(inComponent: 0)
+            let selectedValue = startYearPicker.delegate?.pickerView?(startYearPicker, titleForRow: selectedRow, forComponent: 0)
+            self.txtStartDate.text = selectedValue
+            self.txtEndDate.text = ""
+            self.endYears = configurePickerforEndYear()
+            self.endYearPicker.reloadAllComponents()
+            self.txtEndDate.isUserInteractionEnabled = true
+            self.textStartDateDidChange?(txtStartDate)
         } else {
-            if txtEndDate.text == "" {
-                self.endYearPicker.selectRow(0, inComponent: 0, animated: true)
-                self.txtEndDate.text = self.configurePickerforEndYear().first
-                self.textEndDateDidChange?(txtEndDate)
-            }
+            let selectedRow = endYearPicker.selectedRow(inComponent: 0)
+            let selectedValue = endYearPicker.delegate?.pickerView?(endYearPicker, titleForRow: selectedRow, forComponent: 0)
+            self.txtEndDate.text = selectedValue
+            self.textEndDateDidChange?(txtEndDate)
         }
     }
     
+    //MARK: IBACTION
+    @IBAction func btnDeletePressed(_ sender: Any) {
+        self.deleteCell?()
+    }
     
 }
 
@@ -142,43 +161,31 @@ extension AddCertificatesTableViewCell: UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == startYearPicker {
-            return configurePickerforStartYear().count
+            return startYears.count
         } else {
             if txtStartDate.text == "" {
                 return 0
             } else {
-                return configurePickerforEndYear().count
+                return endYears.count
             }
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == startYearPicker {
-            return configurePickerforStartYear()[row]
+            return startYears[row]
         } else {
             if txtStartDate.text == "" {
                 return ""
             } else {
-                return configurePickerforEndYear()[row]
+                return endYears[row]
             }
         }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == startYearPicker {
-            txtStartDate.text = years[row]
-            txtEndDate.text = ""
-            self.textStartDateDidChange?(txtStartDate)
-        } else {
-            txtEndDate.text = configurePickerforEndYear()[row]
-            self.textEndDateDidChange?(txtEndDate)
-        }
-        
     }
 }
 
 //MARK: TextField Delegate
-extension AddCertificatesTableViewCell {
+extension AddCertificatesTableViewCell: UITextFieldDelegate {
     @objc private func textFieldCourseDidChange(_ textField: UITextField) {
         self.textCourseDidChange?(textField)
     }
