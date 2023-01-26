@@ -136,6 +136,7 @@ class AddCertificatesTableViewCell: UITableViewCell {
             self.txtEndDate.text = ""
             self.endYears = configurePickerforEndYear()
             self.endYearPicker.reloadAllComponents()
+            self.txtEndDate.isUserInteractionEnabled = true
             self.textStartDateDidChange?(txtStartDate)
         } else {
             let selectedRow = endYearPicker.selectedRow(inComponent: 0)
@@ -191,14 +192,5 @@ extension AddCertificatesTableViewCell: UITextFieldDelegate {
     
     @objc private func textFieldInstituteDidChange(_ textField: UITextField) {
         self.textInstituteDidChange?(textField)
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField == txtStartDate {
-            if txtStartDate.text == "" {
-                txtEndDate.text = ""
-            }
-        }
-        self.txtEndDate.isUserInteractionEnabled = true
     }
 }

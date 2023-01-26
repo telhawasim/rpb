@@ -159,6 +159,7 @@ class ExperienceTVCell: UITableViewCell {
             self.txtEndDate.text = ""
             self.endYears = configurePickerForEndYear()
             self.endYearPicker.reloadAllComponents()
+            self.txtEndDate.isUserInteractionEnabled = true
             self.textStartDateDidChange?(txtStartDate)
         } else {
             let selectedRow = endYearPicker.selectedRow(inComponent: 0)
@@ -202,14 +203,14 @@ extension ExperienceTVCell: UITextFieldDelegate {
         self.textComapnyDidChange?(textField)
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField == txtStartDate {
-            if txtStartDate.text == "" {
-                txtEndDate.text = ""
-            }
-        }
-        txtEndDate.isUserInteractionEnabled = true
-    }
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        if textField == txtStartDate {
+//            if txtStartDate.text == "" {
+//                txtEndDate.text = ""
+//            }
+//        }
+//        txtEndDate.isUserInteractionEnabled = true
+//    }
 }
 
 //MARK: TextView Methods

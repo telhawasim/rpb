@@ -130,6 +130,7 @@ class AcademicsTVCell: UITableViewCell {
             self.txtEndsTo.text = ""
             self.endYears = configurePickerForEndYear()
             self.endYearPicker.reloadAllComponents()
+            self.txtEndsTo.isUserInteractionEnabled = true
             self.textStartDateDidChange?(txtStartsFrom)
         } else {
             let selectedRow = endYearPicker.selectedRow(inComponent: 0)
@@ -153,15 +154,6 @@ extension AcademicsTVCell: UITextFieldDelegate {
     
     @objc private func textFieldInstituteDidChange(_ textField: UITextField) {
         self.textInstituteDidChange?(textField)
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField == txtStartsFrom {
-            if txtStartsFrom.text == "" {
-                txtEndsTo.text = ""
-            }
-        }
-        self.txtEndsTo.isUserInteractionEnabled = true
     }
 }
 
