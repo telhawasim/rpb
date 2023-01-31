@@ -29,6 +29,9 @@
 		0970A42F2989041E0001E6EF /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0970A42E2989041E0001E6EF /* ProfileModel.swift */; };
 		0970A432298904470001E6EF /* ProfleBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0970A431298904470001E6EF /* ProfleBinder.swift */; };
 		0970A43529890A170001E6EF /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0970A43429890A170001E6EF /* ProfileVM.swift */; };
+		0970A43C298929630001E6EF /* ResumeBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0970A43B298929630001E6EF /* ResumeBinder.swift */; };
+		0970A43E29892B720001E6EF /* ResumeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0970A43D29892B720001E6EF /* ResumeVM.swift */; };
+		0970A44129892BC00001E6EF /* ResumeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0970A44029892BC00001E6EF /* ResumeModel.swift */; };
 		0978604D2977D37200129EE8 /* HomeBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0978604C2977D37200129EE8 /* HomeBinder.swift */; };
 		0978604F2977D4DA00129EE8 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0978604E2977D4DA00129EE8 /* HomeVM.swift */; };
 		097860512977D55B00129EE8 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097860502977D55B00129EE8 /* HomeModel.swift */; };
@@ -159,6 +162,9 @@
 		0970A42E2989041E0001E6EF /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		0970A431298904470001E6EF /* ProfleBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfleBinder.swift; sourceTree = "<group>"; };
 		0970A43429890A170001E6EF /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
+		0970A43B298929630001E6EF /* ResumeBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeBinder.swift; sourceTree = "<group>"; };
+		0970A43D29892B720001E6EF /* ResumeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeVM.swift; sourceTree = "<group>"; };
+		0970A44029892BC00001E6EF /* ResumeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeModel.swift; sourceTree = "<group>"; };
 		0978604C2977D37200129EE8 /* HomeBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBinder.swift; sourceTree = "<group>"; };
 		0978604E2977D4DA00129EE8 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		097860502977D55B00129EE8 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
@@ -236,7 +242,7 @@
 		36737CB82976F14000163B4C /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginVC.swift; path = "RPB/Presentation/Login Screen/View/Controller/LoginVC.swift"; sourceTree = SOURCE_ROOT; };
 		36737CBA2976F16000163B4C /* CVPreviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CVPreviewVC.swift; path = "RPB/Presentation/CV Perview /CVPreviewVC.swift"; sourceTree = SOURCE_ROOT; };
 		36737CBC2976F17F00163B4C /* AddEmployeeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddEmployeeVC.swift; path = "RPB/Presentation/Add Employee Screen/View/Controller/AddEmployeeVC.swift"; sourceTree = SOURCE_ROOT; };
-		36737CBF2976F1AE00163B4C /* ResumeCV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResumeCV.swift; path = "RPB/Presentation/Create CV/ResumeCV.swift"; sourceTree = SOURCE_ROOT; };
+		36737CBF2976F1AE00163B4C /* ResumeCV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResumeCV.swift; path = "RPB/Presentation/Create CV/View/Controller/ResumeCV.swift"; sourceTree = SOURCE_ROOT; };
 		367C71BC296FF96F00FC1900 /* DynamicHeightTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightTableView.swift; sourceTree = "<group>"; };
 		3695504129519A9E009AEB62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3695504329519A9E009AEB62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -472,6 +478,64 @@
 				36737C8D2976F02000163B4C /* ProfileTVCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		0970A436298928F20001E6EF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0970A43D29892B720001E6EF /* ResumeVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0970A437298929150001E6EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0970A43A298929490001E6EF /* Resume Binder */,
+				0970A4392989293E0001E6EF /* Controller */,
+				0970A438298929280001E6EF /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0970A438298929280001E6EF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				36737C5F2976EEFD00163B4C /* Summary TV Cell */,
+				36737C822976EFAC00163B4C /* Certificates TV Cell */,
+				36737C7D2976EFA000163B4C /* Skills TV Cell */,
+				36737C782976EF9100163B4C /* Category CV Cell */,
+				36737C872976EFD100163B4C /* Tags TV Cell */,
+				36737C6E2976EF2500163B4C /* Basic Info TV Cell */,
+				36737C732976EF8400163B4C /* Academics TV Cell */,
+				36737C552976EEE300163B4C /* Experience TV Cell */,
+				36737C5A2976EEF300163B4C /* Resume TV Header */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0970A4392989293E0001E6EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				36737CBF2976F1AE00163B4C /* ResumeCV.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0970A43A298929490001E6EF /* Resume Binder */ = {
+			isa = PBXGroup;
+			children = (
+				0970A43B298929630001E6EF /* ResumeBinder.swift */,
+			);
+			path = "Resume Binder";
+			sourceTree = "<group>";
+		};
+		0970A43F29892BB50001E6EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0970A44029892BC00001E6EF /* ResumeModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		0978604B2977D36000129EE8 /* Home Binder */ = {
@@ -779,9 +843,9 @@
 		3669A4CF295C1A07005015ED /* Create CV */ = {
 			isa = PBXGroup;
 			children = (
-				36E47FA12976CC760022E281 /* Model */,
-				36E47FA22976CC7E0022E281 /* View */,
-				36E47FA42976CCA60022E281 /* ViewModel */,
+				0970A43F29892BB50001E6EF /* Model */,
+				0970A437298929150001E6EF /* View */,
+				0970A436298928F20001E6EF /* ViewModel */,
 			);
 			path = "Create CV";
 			sourceTree = "<group>";
@@ -801,7 +865,7 @@
 				36737C572976EEE300163B4C /* ExperienceTVCell.xib */,
 			);
 			name = "Experience TV Cell";
-			path = "RPB/Presentation/Create CV/Cells/Experience TV Cell";
+			path = "RPB/Presentation/Create CV/View/Cell/Experience TV Cell";
 			sourceTree = SOURCE_ROOT;
 		};
 		36737C5A2976EEF300163B4C /* Resume TV Header */ = {
@@ -811,7 +875,7 @@
 				36737C5C2976EEF300163B4C /* ResumeHeaderCell.swift */,
 			);
 			name = "Resume TV Header";
-			path = "RPB/Presentation/Create CV/Cells/Resume TV Header";
+			path = "RPB/Presentation/Create CV/View/Cell/Resume TV Header";
 			sourceTree = SOURCE_ROOT;
 		};
 		36737C5F2976EEFD00163B4C /* Summary TV Cell */ = {
@@ -821,7 +885,7 @@
 				36737C612976EEFD00163B4C /* SummaryTVCell.xib */,
 			);
 			name = "Summary TV Cell";
-			path = "RPB/Presentation/Create CV/Cells/Summary TV Cell";
+			path = "RPB/Presentation/Create CV/View/Cell/Summary TV Cell";
 			sourceTree = SOURCE_ROOT;
 		};
 		36737C6E2976EF2500163B4C /* Basic Info TV Cell */ = {
@@ -831,7 +895,7 @@
 				36737C702976EF2500163B4C /* BasicInfoTVCell.xib */,
 			);
 			name = "Basic Info TV Cell";
-			path = "RPB/Presentation/Create CV/Cells/Basic Info TV Cell";
+			path = "RPB/Presentation/Create CV/View/Cell/Basic Info TV Cell";
 			sourceTree = SOURCE_ROOT;
 		};
 		36737C732976EF8400163B4C /* Academics TV Cell */ = {
@@ -841,7 +905,7 @@
 				36737C752976EF8400163B4C /* AcademicsTVCell.xib */,
 			);
 			name = "Academics TV Cell";
-			path = "RPB/Presentation/Create CV/Cells/Academics TV Cell";
+			path = "RPB/Presentation/Create CV/View/Cell/Academics TV Cell";
 			sourceTree = SOURCE_ROOT;
 		};
 		36737C782976EF9100163B4C /* Category CV Cell */ = {
@@ -851,7 +915,7 @@
 				36737C7A2976EF9100163B4C /* CategoryCVCell.xib */,
 			);
 			name = "Category CV Cell";
-			path = "RPB/Presentation/Create CV/Cells/Category CV Cell";
+			path = "RPB/Presentation/Create CV/View/Cell/Category CV Cell";
 			sourceTree = SOURCE_ROOT;
 		};
 		36737C7D2976EFA000163B4C /* Skills TV Cell */ = {
@@ -861,7 +925,7 @@
 				36737C7F2976EFA000163B4C /* AddSkillsTableViewCell.xib */,
 			);
 			name = "Skills TV Cell";
-			path = "RPB/Presentation/Create CV/Cells/Skills TV Cell";
+			path = "RPB/Presentation/Create CV/View/Cell/Skills TV Cell";
 			sourceTree = SOURCE_ROOT;
 		};
 		36737C822976EFAC00163B4C /* Certificates TV Cell */ = {
@@ -871,7 +935,7 @@
 				36737C842976EFAC00163B4C /* AddCertificatesTableViewCell.xib */,
 			);
 			name = "Certificates TV Cell";
-			path = "RPB/Presentation/Create CV/Cells/Certificates TV Cell";
+			path = "RPB/Presentation/Create CV/View/Cell/Certificates TV Cell";
 			sourceTree = SOURCE_ROOT;
 		};
 		36737C872976EFD100163B4C /* Tags TV Cell */ = {
@@ -881,16 +945,8 @@
 				36737C892976EFD100163B4C /* TagsTableViewCell.xib */,
 			);
 			name = "Tags TV Cell";
-			path = "RPB/Presentation/Create CV/Cells/Tags TV Cell";
+			path = "RPB/Presentation/Create CV/View/Cell/Tags TV Cell";
 			sourceTree = SOURCE_ROOT;
-		};
-		36737CBE2976F19900163B4C /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				36737CBF2976F1AE00163B4C /* ResumeCV.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
 		};
 		367C71BB296FF90A00FC1900 /* Dynamic Height TableView */ = {
 			isa = PBXGroup;
@@ -1207,37 +1263,6 @@
 				36737CBA2976F16000163B4C /* CVPreviewVC.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		36E47FA12976CC760022E281 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		36E47FA22976CC7E0022E281 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				36737CBE2976F19900163B4C /* Controller */,
-				36737C5F2976EEFD00163B4C /* Summary TV Cell */,
-				36737C822976EFAC00163B4C /* Certificates TV Cell */,
-				36737C7D2976EFA000163B4C /* Skills TV Cell */,
-				36737C782976EF9100163B4C /* Category CV Cell */,
-				36737C872976EFD100163B4C /* Tags TV Cell */,
-				36737C6E2976EF2500163B4C /* Basic Info TV Cell */,
-				36737C732976EF8400163B4C /* Academics TV Cell */,
-				36737C552976EEE300163B4C /* Experience TV Cell */,
-				36737C5A2976EEF300163B4C /* Resume TV Header */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		36E47FA42976CCA60022E281 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		36F8AB6F295AF78000CA9CFA /* CV Perview  */ = {
@@ -1604,11 +1629,13 @@
 				3636F30529547728001D886A /* HomeVC.swift in Sources */,
 				36737CC02976F1AE00163B4C /* ResumeCV.swift in Sources */,
 				36737CB32976F0B800163B4C /* EducationTableViewCell.swift in Sources */,
+				0970A43C298929630001E6EF /* ResumeBinder.swift in Sources */,
 				3601D371295DB4D5008B1F02 /* UILabel.swift in Sources */,
 				36737CBB2976F16000163B4C /* CVPreviewVC.swift in Sources */,
 				36E47FB12976EC250022E281 /* EndPointType.swift in Sources */,
 				36737C8E2976F02000163B4C /* ProfileTVCell.swift in Sources */,
 				365010E42955EC33003F3262 /* SettingVC.swift in Sources */,
+				0970A44129892BC00001E6EF /* ResumeModel.swift in Sources */,
 				0970A42F2989041E0001E6EF /* ProfileModel.swift in Sources */,
 				367C71BD296FF96F00FC1900 /* DynamicHeightTableView.swift in Sources */,
 				36737C7B2976EF9200163B4C /* CategoryCVCell.swift in Sources */,
@@ -1645,6 +1672,7 @@
 				360D06142988EB5C003F91BE /* TabbarBinder.swift in Sources */,
 				09DAE8F829786A640077CD32 /* SettingBinder.swift in Sources */,
 				09283D2229531B8A00256FD8 /* ServerConfig.swift in Sources */,
+				0970A43E29892B720001E6EF /* ResumeVM.swift in Sources */,
 				36187A6F2959C10F001CAB2B /* Storyboard.swift in Sources */,
 				3695504429519A9E009AEB62 /* SceneDelegate.swift in Sources */,
 				090158162975C3C9009226AC /* UIImage.swift in Sources */,
