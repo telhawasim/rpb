@@ -23,9 +23,7 @@ class EmployeeVC: BaseVC {
         super.viewDidLoad()
 
         self.binder = EmployeeBinder(tableView: self.tableView, lblEmployee: self.lblEmployee, txtSearch: self.txtSearch, viewController: self)
-        
         self.viewModel = EmployeeVM(binder: self.binder!)
-        
         self.viewModel?.main()
     }
     

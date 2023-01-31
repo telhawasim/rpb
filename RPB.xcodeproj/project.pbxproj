@@ -41,6 +41,8 @@
 		09EBFE672978634000559095 /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EBFE662978634000559095 /* EmployeeModel.swift */; };
 		2E18A825836F0D81F77A3E51 /* Pods_RPB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3D06738362C369E89B8B28 /* Pods_RPB.framework */; };
 		3601D371295DB4D5008B1F02 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3601D370295DB4D5008B1F02 /* UILabel.swift */; };
+		360D06142988EB5C003F91BE /* TabbarBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D06132988EB5C003F91BE /* TabbarBinder.swift */; };
+		360D06162988F2D4003F91BE /* TabbarVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D06152988F2D4003F91BE /* TabbarVM.swift */; };
 		36187A6F2959C10F001CAB2B /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36187A6E2959C10F001CAB2B /* Storyboard.swift */; };
 		361C870129824E5C000F7BCF /* Gilroy-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 361C870029824E5C000F7BCF /* Gilroy-Medium.ttf */; };
 		361C870329824E6E000F7BCF /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 361C870229824E6E000F7BCF /* Gilroy-Regular.ttf */; };
@@ -167,6 +169,8 @@
 		2324538490149D208DA077A6 /* Pods-RPBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPBTests.release.xcconfig"; path = "Target Support Files/Pods-RPBTests/Pods-RPBTests.release.xcconfig"; sourceTree = "<group>"; };
 		23B2FDCDEFCA66A6888B49DA /* Pods-RPB.debugqa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPB.debugqa.xcconfig"; path = "Target Support Files/Pods-RPB/Pods-RPB.debugqa.xcconfig"; sourceTree = "<group>"; };
 		3601D370295DB4D5008B1F02 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		360D06132988EB5C003F91BE /* TabbarBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarBinder.swift; sourceTree = "<group>"; };
+		360D06152988F2D4003F91BE /* TabbarVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarVM.swift; sourceTree = "<group>"; };
 		36187A6E2959C10F001CAB2B /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		361C870029824E5C000F7BCF /* Gilroy-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Medium.ttf"; sourceTree = "<group>"; };
 		361C870229824E6E000F7BCF /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.ttf"; sourceTree = "<group>"; };
@@ -534,6 +538,46 @@
 			path = "CV Perview Binder";
 			sourceTree = "<group>";
 		};
+		360D060E2988E943003F91BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		360D060F2988E94A003F91BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				360D06122988EB20003F91BE /* Tabbar Binder */,
+				360D06112988E95F003F91BE /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		360D06102988E951003F91BE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				360D06152988F2D4003F91BE /* TabbarVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		360D06112988E95F003F91BE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				365010D92955ADE1003F3262 /* TabbarVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		360D06122988EB20003F91BE /* Tabbar Binder */ = {
+			isa = PBXGroup;
+			children = (
+				360D06132988EB5C003F91BE /* TabbarBinder.swift */,
+			);
+			path = "Tabbar Binder";
+			sourceTree = "<group>";
+		};
 		36187A6D2959C0EC001CAB2B /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,7 +644,9 @@
 		365010D82955ADC2003F3262 /* Tabbar  */ = {
 			isa = PBXGroup;
 			children = (
-				365010D92955ADE1003F3262 /* TabbarVC.swift */,
+				360D060E2988E943003F91BE /* Model */,
+				360D060F2988E94A003F91BE /* View */,
+				360D06102988E951003F91BE /* ViewModel */,
 			);
 			path = "Tabbar ";
 			sourceTree = "<group>";
@@ -1529,6 +1575,7 @@
 				0978604F2977D4DA00129EE8 /* HomeVM.swift in Sources */,
 				36E47F822976A2C30022E281 /* UIButton.swift in Sources */,
 				3695504229519A9E009AEB62 /* AppDelegate.swift in Sources */,
+				360D06162988F2D4003F91BE /* TabbarVM.swift in Sources */,
 				0978605A2978009100129EE8 /* LoginBinder.swift in Sources */,
 				36737C582976EEE300163B4C /* ExperienceTVCell.swift in Sources */,
 				098D04F829598065001C2F05 /* CameraHandler.swift in Sources */,
@@ -1545,6 +1592,7 @@
 				0941311C2955B3E8008AC5CA /* BaseVC.swift in Sources */,
 				36737CA62976F0B800163B4C /* ExperienceTableViewCell.swift in Sources */,
 				0994122E295C3BA900C39E5A /* PopUpView.swift in Sources */,
+				360D06142988EB5C003F91BE /* TabbarBinder.swift in Sources */,
 				09DAE8F829786A640077CD32 /* SettingBinder.swift in Sources */,
 				09283D2229531B8A00256FD8 /* ServerConfig.swift in Sources */,
 				36187A6F2959C10F001CAB2B /* Storyboard.swift in Sources */,
@@ -1740,7 +1788,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -1773,7 +1821,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -1948,7 +1996,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -2076,7 +2124,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -2210,7 +2258,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -2338,7 +2386,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -2472,7 +2520,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -2600,7 +2648,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";

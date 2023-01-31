@@ -8,11 +8,12 @@
 import Foundation
 
 class HomeVM {
-    
+
+    //MARK: Variables
     weak var binder: HomeBinder?
-    
     private var model: HomeModel?
     
+    //MARK: Init
     init(binder: HomeBinder) {
         self.binder = binder
         self.model = HomeModel()
@@ -26,11 +27,9 @@ class HomeVM {
     
     func addEmpployeeButton() {
         binder?.addEmpployeeButton()
-
     }
     
     deinit {
         self.model = nil
-//        self.binder = nil
     }
 }
