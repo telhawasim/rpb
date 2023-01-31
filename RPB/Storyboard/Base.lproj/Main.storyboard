@@ -1253,6 +1253,7 @@
                         <outlet property="lblName" destination="HhW-ah-Uz0" id="7IS-br-T3M"/>
                         <outlet property="lblProfiles" destination="wLx-6X-KYo" id="K5E-Ke-l2G"/>
                         <outlet property="mainView" destination="Clv-vh-mev" id="Dhf-rC-STs"/>
+                        <outlet property="overallView" destination="cD4-hk-BoJ" id="u6C-8R-7iB"/>
                         <outlet property="profilePicture" destination="idd-kJ-AS2" id="G7v-KP-Vl8"/>
                         <outlet property="tableView" destination="6ug-fd-dIY" id="i4Y-Q6-oAY"/>
                     </connections>

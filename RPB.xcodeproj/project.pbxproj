@@ -25,6 +25,10 @@
 		0970A41F2988E5650001E6EF /* AddEmployeeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0970A41E2988E5650001E6EF /* AddEmployeeVM.swift */; };
 		0970A4222988E59E0001E6EF /* AddEmployeeBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0970A4212988E59D0001E6EF /* AddEmployeeBinder.swift */; };
 		0970A4272988F44A0001E6EF /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0970A4262988F44A0001E6EF /* AlertHandler.swift */; };
+		0970A42D298903F90001E6EF /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0970A42C298903F90001E6EF /* ProfileVC.swift */; };
+		0970A42F2989041E0001E6EF /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0970A42E2989041E0001E6EF /* ProfileModel.swift */; };
+		0970A432298904470001E6EF /* ProfleBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0970A431298904470001E6EF /* ProfleBinder.swift */; };
+		0970A43529890A170001E6EF /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0970A43429890A170001E6EF /* ProfileVM.swift */; };
 		0978604D2977D37200129EE8 /* HomeBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0978604C2977D37200129EE8 /* HomeBinder.swift */; };
 		0978604F2977D4DA00129EE8 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0978604E2977D4DA00129EE8 /* HomeVM.swift */; };
 		097860512977D55B00129EE8 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097860502977D55B00129EE8 /* HomeModel.swift */; };
@@ -78,7 +82,6 @@
 		36737C8B2976EFD100163B4C /* TagsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36737C892976EFD100163B4C /* TagsTableViewCell.xib */; };
 		36737C8E2976F02000163B4C /* ProfileTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36737C8C2976F02000163B4C /* ProfileTVCell.swift */; };
 		36737C8F2976F02000163B4C /* ProfileTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36737C8D2976F02000163B4C /* ProfileTVCell.xib */; };
-		36737C912976F02E00163B4C /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36737C902976F02E00163B4C /* ProfileVC.swift */; };
 		36737CA52976F0B800163B4C /* ExperienceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36737C932976F0B700163B4C /* ExperienceTableViewCell.xib */; };
 		36737CA62976F0B800163B4C /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36737C942976F0B700163B4C /* ExperienceTableViewCell.swift */; };
 		36737CA72976F0B800163B4C /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36737C952976F0B800163B4C /* ContactTableViewCell.xib */; };
@@ -152,6 +155,10 @@
 		0970A41E2988E5650001E6EF /* AddEmployeeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeVM.swift; sourceTree = "<group>"; };
 		0970A4212988E59D0001E6EF /* AddEmployeeBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeBinder.swift; sourceTree = "<group>"; };
 		0970A4262988F44A0001E6EF /* AlertHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
+		0970A42C298903F90001E6EF /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		0970A42E2989041E0001E6EF /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		0970A431298904470001E6EF /* ProfleBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfleBinder.swift; sourceTree = "<group>"; };
+		0970A43429890A170001E6EF /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
 		0978604C2977D37200129EE8 /* HomeBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBinder.swift; sourceTree = "<group>"; };
 		0978604E2977D4DA00129EE8 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		097860502977D55B00129EE8 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
@@ -211,9 +218,8 @@
 		36737C842976EFAC00163B4C /* AddCertificatesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCertificatesTableViewCell.xib; sourceTree = "<group>"; };
 		36737C882976EFD100163B4C /* TagsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsTableViewCell.swift; sourceTree = "<group>"; };
 		36737C892976EFD100163B4C /* TagsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagsTableViewCell.xib; sourceTree = "<group>"; };
-		36737C8C2976F02000163B4C /* ProfileTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTVCell.swift; path = "RPB/Presentation/Profile VC/Cells/ProfileTVCell.swift"; sourceTree = SOURCE_ROOT; };
-		36737C8D2976F02000163B4C /* ProfileTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileTVCell.xib; path = "RPB/Presentation/Profile VC/Cells/ProfileTVCell.xib"; sourceTree = SOURCE_ROOT; };
-		36737C902976F02E00163B4C /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileVC.swift; path = "RPB/Presentation/Profile VC/ProfileVC.swift"; sourceTree = SOURCE_ROOT; };
+		36737C8C2976F02000163B4C /* ProfileTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTVCell.swift; path = "RPB/Presentation/Profile VC/View/Cell/ProfileTVCell.swift"; sourceTree = SOURCE_ROOT; };
+		36737C8D2976F02000163B4C /* ProfileTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileTVCell.xib; path = "RPB/Presentation/Profile VC/View/Cell/ProfileTVCell.xib"; sourceTree = SOURCE_ROOT; };
 		36737C932976F0B700163B4C /* ExperienceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExperienceTableViewCell.xib; path = "RPB/Presentation/CV Perview /Cells/ExperienceTableViewCell.xib"; sourceTree = SOURCE_ROOT; };
 		36737C942976F0B700163B4C /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExperienceTableViewCell.swift; path = "RPB/Presentation/CV Perview /Cells/ExperienceTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		36737C952976F0B800163B4C /* ContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactTableViewCell.xib; path = "RPB/Presentation/CV Perview /Cells/ContactTableViewCell.xib"; sourceTree = SOURCE_ROOT; };
@@ -415,6 +421,57 @@
 				0970A4212988E59D0001E6EF /* AddEmployeeBinder.swift */,
 			);
 			path = "Add Employee Binder";
+			sourceTree = "<group>";
+		};
+		0970A428298903A10001E6EF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0970A43429890A170001E6EF /* ProfileVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0970A429298903A70001E6EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0970A433298904500001E6EF /* Cell */,
+				0970A4302989043A0001E6EF /* Profile Binder */,
+				0970A42B298903B40001E6EF /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0970A42A298903AE0001E6EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0970A42E2989041E0001E6EF /* ProfileModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0970A42B298903B40001E6EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0970A42C298903F90001E6EF /* ProfileVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0970A4302989043A0001E6EF /* Profile Binder */ = {
+			isa = PBXGroup;
+			children = (
+				0970A431298904470001E6EF /* ProfleBinder.swift */,
+			);
+			path = "Profile Binder";
+			sourceTree = "<group>";
+		};
+		0970A433298904500001E6EF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				36737C8C2976F02000163B4C /* ProfileTVCell.swift */,
+				36737C8D2976F02000163B4C /* ProfileTVCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		0978604B2977D36000129EE8 /* Home Binder */ = {
@@ -659,9 +716,9 @@
 		3636F30729548170001D886A /* Profile VC */ = {
 			isa = PBXGroup;
 			children = (
-				36E47F952976CB630022E281 /* Model */,
-				36E47F962976CB6A0022E281 /* View */,
-				36E47F982976CB880022E281 /* ViewModel */,
+				0970A42A298903AE0001E6EF /* Model */,
+				0970A429298903A70001E6EF /* View */,
+				0970A428298903A10001E6EF /* ViewModel */,
 			);
 			path = "Profile VC";
 			sourceTree = "<group>";
@@ -1091,38 +1148,6 @@
 			name = UITextField;
 			path = RPB/Utils/Extensions/UITextField;
 			sourceTree = SOURCE_ROOT;
-		};
-		36E47F952976CB630022E281 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		36E47F962976CB6A0022E281 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				36737C8C2976F02000163B4C /* ProfileTVCell.swift */,
-				36737C8D2976F02000163B4C /* ProfileTVCell.xib */,
-				36E47F972976CB700022E281 /* Controller */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		36E47F972976CB700022E281 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				36737C902976F02E00163B4C /* ProfileVC.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		36E47F982976CB880022E281 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
 		};
 		36E47F9A2976CBD90022E281 /* View */ = {
 			isa = PBXGroup;
@@ -1575,6 +1600,7 @@
 				09EBFE632978614B00559095 /* EmployeeBinder.swift in Sources */,
 				0970A41D2988E5510001E6EF /* AddEmployeeModel.swift in Sources */,
 				097860542977F7FC00129EE8 /* CustomSlider.swift in Sources */,
+				0970A432298904470001E6EF /* ProfleBinder.swift in Sources */,
 				3636F30529547728001D886A /* HomeVC.swift in Sources */,
 				36737CC02976F1AE00163B4C /* ResumeCV.swift in Sources */,
 				36737CB32976F0B800163B4C /* EducationTableViewCell.swift in Sources */,
@@ -1583,6 +1609,7 @@
 				36E47FB12976EC250022E281 /* EndPointType.swift in Sources */,
 				36737C8E2976F02000163B4C /* ProfileTVCell.swift in Sources */,
 				365010E42955EC33003F3262 /* SettingVC.swift in Sources */,
+				0970A42F2989041E0001E6EF /* ProfileModel.swift in Sources */,
 				367C71BD296FF96F00FC1900 /* DynamicHeightTableView.swift in Sources */,
 				36737C7B2976EF9200163B4C /* CategoryCVCell.swift in Sources */,
 				36FE65FB2954A0A3003E9CC0 /* EmployeesTableViewCell.swift in Sources */,
@@ -1590,6 +1617,7 @@
 				36E47F882976A2E30022E281 /* Date.swift in Sources */,
 				3637D7782962B5E90086A699 /* EnumExtension.swift in Sources */,
 				36E47F7C2976A28C0022E281 /* CustomColor.swift in Sources */,
+				0970A42D298903F90001E6EF /* ProfileVC.swift in Sources */,
 				36737C8A2976EFD100163B4C /* TagsTableViewCell.swift in Sources */,
 				0901580E29759733009226AC /* Localization.swift in Sources */,
 				36737C802976EFA000163B4C /* AddSkillsTableViewCell.swift in Sources */,
@@ -1610,7 +1638,6 @@
 				097860512977D55B00129EE8 /* HomeModel.swift in Sources */,
 				0970A4222988E59E0001E6EF /* AddEmployeeBinder.swift in Sources */,
 				3669A4EE295C1BF7005015ED /* TextView.swift in Sources */,
-				36737C912976F02E00163B4C /* ProfileVC.swift in Sources */,
 				36737CB92976F14000163B4C /* LoginVC.swift in Sources */,
 				0941311C2955B3E8008AC5CA /* BaseVC.swift in Sources */,
 				36737CA62976F0B800163B4C /* ExperienceTableViewCell.swift in Sources */,
@@ -1628,6 +1655,7 @@
 				0978605D297800AD00129EE8 /* LoginVM.swift in Sources */,
 				36E47F6B2976978E0022E281 /* APIManager.swift in Sources */,
 				36737CAE2976F0B800163B4C /* EducationTextTableViewCell.swift in Sources */,
+				0970A43529890A170001E6EF /* ProfileVM.swift in Sources */,
 				36737C712976EF2600163B4C /* BasicInfoTVCell.swift in Sources */,
 				36737C762976EF8400163B4C /* AcademicsTVCell.swift in Sources */,
 				36737C5E2976EEF300163B4C /* ResumeHeaderCell.swift in Sources */,
