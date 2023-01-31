@@ -67,16 +67,6 @@ class LoginBinder: NSObject {
         isShowPassword = !isShowPassword
     }
     
-    // MARK: Alert
-    func alert(message: String, title: String = "Error") {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "OK", style: .default) { (action) in
-            print("")
-        }
-        alertController.addAction(alertAction)
-        viewController?.present(alertController, animated: true, completion: nil)
-    }
-    
     //MARK: Validation
     func validation() -> Bool {
         guard let email = txtEmail?.text,
@@ -99,7 +89,7 @@ class LoginBinder: NSObject {
             errorMessage = Localization.Login.kPasswordLengthError
         }
         if let errorMsg = errorMessage {
-            self.alert(message: errorMsg)
+            AlertHandler.shared.alert(message: errorMsg)
             return false
         }
         return true
