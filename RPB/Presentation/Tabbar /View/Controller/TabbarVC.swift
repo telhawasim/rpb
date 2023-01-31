@@ -37,14 +37,14 @@ class TabbarVC: UIViewController {
     }
     
     @IBAction func tappedHomeButton(_ sender: Any) {
-        self.tabbarbinder?.homeTabbar()
+        self.viewModel?.homeTabbarButton()
     }
     
     @IBAction func tappedEmplooyesButton(_ sender: Any) {
-        self.tabbarbinder?.employeeTabbar()
+        self.viewModel?.employeeTabbarButton()
     }
     
     @IBAction func taappedProfile(_ sender: Any) {
-        self.tabbarbinder?.profileTabbar()
+        self.viewModel?.settingTabbarButton()
     }
 }
