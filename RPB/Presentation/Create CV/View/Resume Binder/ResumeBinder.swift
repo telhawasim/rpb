@@ -1,23 +1,34 @@
 //
-//  ResumeCV.swift
+//  ResumeBinder.swift
 //  RPB
 //
-//  Created by Telha Wasim on 26/12/2022.
+//  Created by Telha Wasim on 31/01/2023.
 //
 
+import Foundation
 import UIKit
 
-class ResumeCV: BaseVC {
-    
-    //MARK: Outlet
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var buttonView: UIView!
-    @IBOutlet weak var btnPreview: UIButton!
-    @IBOutlet weak var btnSave: UIButton!
+class ResumeBinder: NSObject {
     
     //MARK: Variables
+    weak var lblTitle: UILabel?
+    weak var collectionView: UICollectionView?
+    weak var tableView: UITableView?
+    weak var buttonView: UIView?
+    weak var btnPreview: UIButton?
+    weak var btnSave: UIButton?
+    weak var viewController: UIViewController?
+    
+    init(lblTitle: UILabel, collectionView: UICollectionView, tableView: UITableView, buttonView: UIView, btnPreview: UIButton, btnSave: UIButton, viewController: UIViewController) {
+        self.lblTitle = lblTitle
+        self.collectionView = collectionView
+        self.tableView = tableView
+        self.buttonView = buttonView
+        self.btnPreview = btnPreview
+        self.btnSave = btnSave
+        self.viewController = viewController
+    }
+    
     var categoryTitle: [Category] = [.info, .experience, .skills, .academics]
     var category: Category = .info
     var isAllPopulated = false
@@ -56,81 +67,68 @@ class ResumeCV: BaseVC {
         }
     }
     
-    //MARK: Lifecylce
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.configureLabel()
-        self.configureTableView()
-        self.configureCollectionView()
-        self.configureButtons()
-        self.btnSave.isEnabled = false
-        self.btnSave.backgroundColor = UIColor.systemGray
-        tableView.estimatedRowHeight = 80.0
-        tableView.rowHeight = UITableView.automaticDimension
-    }
-    
     //MARK: Configure Labels
     func configureLabel() {
-        self.lblTitle.font = UIFont.getMediumFont(size: 24)
+        self.lblTitle?.font = UIFont.getMediumFont(size: 24)
     }
     
     //MARK: Configure TableView
     func configureTableView() {
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.register(BasicInfoTVCell.className)
-        self.tableView.register(SummaryTVCell.className)
-        self.tableView.register(TagsTableViewCell.className)
-        self.tableView.register(ExperienceTVCell.className)
-        self.tableView.register(AcademicsTVCell.className)
-        self.tableView.register(AddSkillsTableViewCell.className)
-        self.tableView.register(AddCertificatesTableViewCell.className)
-        self.tableView.register(UINib(nibName: ResumeHeaderCell.className, bundle: nil), forHeaderFooterViewReuseIdentifier: ResumeHeaderCell.className)
+        self.tableView?.delegate = self
+        self.tableView?.dataSource = self
+        self.tableView?.register(BasicInfoTVCell.className)
+        self.tableView?.register(SummaryTVCell.className)
+        self.tableView?.register(TagsTableViewCell.className)
+        self.tableView?.register(ExperienceTVCell.className)
+        self.tableView?.register(AcademicsTVCell.className)
+        self.tableView?.register(AddSkillsTableViewCell.className)
+        self.tableView?.register(AddCertificatesTableViewCell.className)
+        self.tableView?.register(UINib(nibName: ResumeHeaderCell.className, bundle: nil), forHeaderFooterViewReuseIdentifier: ResumeHeaderCell.className)
     }
     
     //MARK: Configure CollectionView
     func configureCollectionView() {
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
-        self.collectionView.register(CategoryCVCell.className)
+        self.collectionView?.delegate = self
+        self.collectionView?.dataSource = self
+        self.collectionView?.register(CategoryCVCell.className)
     }
     
     //MARK: Configure Buttons
     func configureButtons() {
-        self.btnPreview.borderWidth = 1
-        self.btnPreview.borderColor = UIColor.customBlue
-        self.btnPreview.titleLabel?.font = UIFont.getMediumFont()
-        self.btnPreview.titleLabel?.textColor = UIColor.customBlue
-        self.btnPreview.cornerRadiusButton(30)
+        self.btnPreview?.borderWidth = 1
+        self.btnPreview?.borderColor = UIColor.customBlue
+        self.btnPreview?.titleLabel?.font = UIFont.getMediumFont()
+        self.btnPreview?.titleLabel?.textColor = UIColor.customBlue
+        self.btnPreview?.cornerRadiusButton(30)
         
-        self.btnSave.backgroundColor = UIColor.customBlue
-        self.btnSave.titleLabel?.font = UIFont.getMediumFont()
-        self.btnSave.titleLabel?.textColor = UIColor.white
-        self.btnSave.cornerRadiusButton(30)
-        self.buttonView.addShadow(shadowOpacity: 0.5)
+        self.btnSave?.backgroundColor = UIColor.customBlue
+        self.btnSave?.titleLabel?.font = UIFont.getMediumFont()
+        self.btnSave?.titleLabel?.textColor = UIColor.white
+        self.btnSave?.cornerRadiusButton(30)
+        self.buttonView?.addShadow(shadowOpacity: 0.5)
         
         if category == .info {
-            btnPreview.isHidden = true
+            btnPreview?.isHidden = true
             if infoTextFields.isEmpty {
-                btnSave.isEnabled = false
-                btnSave.backgroundColor = UIColor.systemGray
+                btnSave?.isEnabled = false
+                btnSave?.backgroundColor = UIColor.systemGray
             } else {
-                btnSave.isEnabled = true
-                btnSave.backgroundColor = UIColor.customBlue
+                btnSave?.isEnabled = true
+                btnSave?.backgroundColor = UIColor.customBlue
             }
         } else if category == .experience {
-            btnPreview.isHidden = false
+            btnPreview?.isHidden = false
             experienceValidation()
         } else if category == .skills {
-            btnPreview.isHidden = false
+            btnPreview?.isHidden = false
             skillsValidation()
         } else {
             academicsValidation()
             if academicsTextFields.isEmpty {
-                btnSave.isEnabled = false
-                btnSave.backgroundColor = UIColor.systemGray
+                btnSave?.isEnabled = false
+                btnSave?.backgroundColor = UIColor.systemGray
             }
-            btnPreview.isHidden = false
+            btnPreview?.isHidden = false
         }
     }
     
@@ -145,14 +143,14 @@ class ResumeCV: BaseVC {
         case .academic:
             self.academicsTextFields.remove(at: index)
         }
-        UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            self.tableView.reloadSections(IndexSet(integer: section), with: .automatic)
+        UIView.transition(with: self.tableView ?? UITableView(), duration: 0.3, options: .transitionCrossDissolve, animations: {
+            self.tableView?.reloadSections(IndexSet(integer: section), with: .automatic)
         }, completion: nil)
     }
     
     func setupButton(isPopulated: Bool) {
-        self.btnSave.isEnabled = isPopulated
-        self.btnSave.backgroundColor = isPopulated ? UIColor.customBlue : UIColor.systemGray
+        self.btnSave?.isEnabled = isPopulated
+        self.btnSave?.backgroundColor = isPopulated ? UIColor.customBlue : UIColor.systemGray
     }
     
     //MARK: Validation for Info textField's text is nil
@@ -199,12 +197,12 @@ class ResumeCV: BaseVC {
     //MARK: Validation for Skills is nil
     @discardableResult func skillsValidation() -> Bool {
         isAllPopulated = true
-            for textField in self.skillsTextFields {
-                if textField.txtSkills.isEmpty || textField.txtPercentage.isEmpty || textField.txtPercentage == "0%" || textField.slider == 0.0 {
-                    isAllPopulated = false
-                    break
-                }
+        for textField in self.skillsTextFields {
+            if textField.txtSkills.isEmpty || textField.txtPercentage.isEmpty || textField.txtPercentage == "0%" || textField.slider == 0.0 {
+                isAllPopulated = false
+                break
             }
+        }
         self.setupButton(isPopulated: isAllPopulated)
         return isAllPopulated
     }
@@ -223,7 +221,7 @@ class ResumeCV: BaseVC {
             isAllPopulated = true
         }
         self.setupButton(isPopulated: isAllPopulated)
-
+        
     }
     
     //MARK: Info Tab TextField Validatiom
@@ -239,7 +237,7 @@ class ResumeCV: BaseVC {
         }
         
         if let errorMsg = errorMessage {
-            self.alert(message: errorMsg)
+            AlertHandler.shared.alert(message: errorMsg)
             return false
         }
         return true
@@ -249,38 +247,27 @@ class ResumeCV: BaseVC {
         let index = categoryTitle.firstIndex(of: self.category) ?? 0
         let previousIndex = IndexPath(item: index, section: 0)
         self.category = self.categoryTitle[indexPath.item]
-        self.collectionView.reloadItems(at: [previousIndex, indexPath])
-        self.collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
+        self.collectionView?.reloadItems(at: [previousIndex, indexPath])
+        self.collectionView?.scrollToItem(at: indexPath, at: .left, animated: true)
     }
     
     func updateTableView() {
-            UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData()
-                let targetRowIndexPath = IndexPath(row: 0, section: 0)
-                if self.tableView.indexPathExists(indexPath: targetRowIndexPath) {
-                    self.tableView.scrollToRow(at: targetRowIndexPath, at: .top, animated: true)
+        UIView.transition(with: self.tableView ?? UITableView(), duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView?.reloadData()
+            let targetRowIndexPath = IndexPath(row: 0, section: 0)
+            if let tableView = self.tableView {
+                if tableView.indexPathExists(indexPath: targetRowIndexPath) {
+                    tableView.scrollToRow(at: targetRowIndexPath, at: .top, animated: true)
                 }
-                self.configureButtons()
-            }, completion: nil)
-    }
-    
-    //MARK: Go back Button Pressed
-    @IBAction func btnGoBack(_ sender: Any) {
-        PopupView.shared.presentPopup(self, popupType: .discardInformation) { value in
-            if (value != nil) {
-                self.infoTextFields = []
-                self.experienceTextFields = []
-                self.skillsTextFields = []
-                self.academicsTextFields = []
-                self.goBack()
             }
-        }
+            self.configureButtons()
+        }, completion: nil)
     }
     
-    //MARK: Save Button Pressed
-    @IBAction func btnSavePressed(_ sender: Any) {
+    func saveButtonPressed() {
+        guard let btnSave = self.btnSave else {return}
         switch category {
         case .info:
-            if self.btnSave.isEnabled {
+            if btnSave.isEnabled {
                 if infoTabTextFieldValidation() {
                     let index = IndexPath(item: 1, section: 0)
                     self.selectAndUpdateCV(indexPath: index)
@@ -288,26 +275,26 @@ class ResumeCV: BaseVC {
                 }
             }
         case .experience:
-            if self.btnSave.isEnabled {
+            if btnSave.isEnabled {
                 let index = IndexPath(item: 2, section: 0)
                 self.selectAndUpdateCV(indexPath: index)
                 self.updateTableView()
             }
         case .skills:
-            if self.btnSave.isEnabled {
+            if btnSave.isEnabled {
                 let index = IndexPath(item: 3, section: 0)
                 self.selectAndUpdateCV(indexPath: index)
                 self.updateTableView()
             }
         case .academics:
-            if self.btnSave.isEnabled {
-                self.goToPreviewCV()
+            if btnSave.isEnabled {
+                let tabbarVC  = UIStoryboard.getVC(from: .main, CVPreviewVC.className)
+                self.viewController?.navigationController?.pushViewController(tabbarVC, animated: true)
             }
         }
     }
     
-    //MARK: Previous Button Pressed
-    @IBAction func btnPreviousPressed(_ sender: Any) {
+    func previousButtonPressed() {
         switch category {
         case .info:
             break
@@ -325,10 +312,22 @@ class ResumeCV: BaseVC {
             self.updateTableView()
         }
     }
+    
+    func goBackPressed() {
+        PopupView.shared.presentPopup(self.viewController ?? UIViewController(), popupType: .discardInformation) { value in
+            if (value != nil) {
+                self.infoTextFields = []
+                self.experienceTextFields = []
+                self.skillsTextFields = []
+                self.academicsTextFields = []
+                self.viewController?.navigationController?.popViewController(animated: true)
+            }
+        }
+    }
 }
 
 //MARK: CollectionView Methods
-extension ResumeCV: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension ResumeBinder: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categoryTitle.count
     }
@@ -346,7 +345,7 @@ extension ResumeCV: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
 }
 
 //MARK: TableView Methods
-extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
+extension ResumeBinder: UITableViewDelegate, UITableViewDataSource {
     
     //MARK: Number of Sections
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -394,8 +393,8 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 
                 headerView.addMore = {
                     self.experienceTextFields.append(ExperienceModel())
-                    UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-                        self.tableView.reloadData()
+                    UIView.transition(with: self.tableView!, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                        self.tableView?.reloadData()
                         //                        self.tableView.scrollToRow(at: IndexPath(row: self.experienceTextFields.count-1, section: 1), at: .top, animated: false)
                     }, completion: nil)
                 }
@@ -407,9 +406,9 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 headerView.addMore = {
                     self.skillsTextFields.append(SkillsModel())
                     
-                    UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-                        self.tableView.reloadData()
-                        self.tableView.scrollToRow(at: IndexPath(row: self.skillsTextFields.count-1, section: 0), at: .top, animated: false)
+                    UIView.transition(with: self.tableView!, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                        self.tableView?.reloadData()
+                        self.tableView?.scrollToRow(at: IndexPath(row: self.skillsTextFields.count-1, section: 0), at: .top, animated: false)
                     }, completion: nil)
                 }
             } else {
@@ -417,9 +416,9 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
                 headerView.lblHeading.text = "Add Certificates"
                 headerView.addMore = {
                     self.certificatesTextField.append(AcademicsModel())
-                    UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-                        self.tableView.reloadData()
-                        self.tableView.scrollToRow(at: IndexPath(row: self.certificatesTextField.count-1, section: 1), at: .top, animated: false)
+                    UIView.transition(with: self.tableView!, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                        self.tableView?.reloadData()
+                        self.tableView?.scrollToRow(at: IndexPath(row: self.certificatesTextField.count-1, section: 1), at: .top, animated: false)
                     }, completion: nil)
                 }
             }
@@ -428,9 +427,9 @@ extension ResumeCV: UITableViewDelegate, UITableViewDataSource {
             headerView.lblHeading.text = "Add Qualifications"
             headerView.addMore = {
                 self.academicsTextFields.append(AcademicsModel())
-                UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-                    self.tableView.reloadData()
-                    self.tableView.scrollToRow(at: IndexPath(row: self.academicsTextFields.count-1, section: 0), at: .top, animated: false)
+                UIView.transition(with: self.tableView!, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                    self.tableView?.reloadData()
+                    self.tableView?.scrollToRow(at: IndexPath(row: self.academicsTextFields.count-1, section: 0), at: .top, animated: false)
                 }, completion: nil)
             }
         }
