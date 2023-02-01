@@ -263,6 +263,14 @@ class ResumeBinder: NSObject {
         }, completion: nil)
     }
     
+    //MARK: Reload TableView and scroll to row with Transition
+    func reloadAndScrollTableView(count: Int, section: Int) {
+        UIView.transition(with: self.tableView!, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            self.tableView?.reloadData()
+            self.tableView?.scrollToRow(at: IndexPath(row: count-1, section: section), at: .none, animated: false)
+        }, completion: nil)
+    }
+    
     func saveButtonPressed() {
         guard let btnSave = self.btnSave else {return}
         switch category {
@@ -405,21 +413,14 @@ extension ResumeBinder: UITableViewDelegate, UITableViewDataSource {
                 headerView.lblHeading.text = "Add Skills"
                 headerView.addMore = {
                     self.skillsTextFields.append(SkillsModel())
-                    
-                    UIView.transition(with: self.tableView!, duration: 0.3, options: .transitionCrossDissolve, animations: {
-                        self.tableView?.reloadData()
-                        self.tableView?.scrollToRow(at: IndexPath(row: self.skillsTextFields.count-1, section: 0), at: .top, animated: false)
-                    }, completion: nil)
+                    self.reloadAndScrollTableView(count: self.skillsTextFields.count, section: section)
                 }
             } else {
                 headerView.btnaddMoreCell.isHidden = false
                 headerView.lblHeading.text = "Add Certificates"
                 headerView.addMore = {
                     self.certificatesTextField.append(AcademicsModel())
-                    UIView.transition(with: self.tableView!, duration: 0.3, options: .transitionCrossDissolve, animations: {
-                        self.tableView?.reloadData()
-                        self.tableView?.scrollToRow(at: IndexPath(row: self.certificatesTextField.count-1, section: 1), at: .top, animated: false)
-                    }, completion: nil)
+                    self.reloadAndScrollTableView(count: self.certificatesTextField.count, section: section)
                 }
             }
             
@@ -427,10 +428,7 @@ extension ResumeBinder: UITableViewDelegate, UITableViewDataSource {
             headerView.lblHeading.text = "Add Qualifications"
             headerView.addMore = {
                 self.academicsTextFields.append(AcademicsModel())
-                UIView.transition(with: self.tableView!, duration: 0.3, options: .transitionCrossDissolve, animations: {
-                    self.tableView?.reloadData()
-                    self.tableView?.scrollToRow(at: IndexPath(row: self.academicsTextFields.count-1, section: 0), at: .top, animated: false)
-                }, completion: nil)
+                self.reloadAndScrollTableView(count: self.academicsTextFields.count, section: section)
             }
         }
         return headerView

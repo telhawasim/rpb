@@ -2110,7 +2110,7 @@
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7Ry-Qm-MeR" secondAttribute="trailing" constant="20" symbolic="YES" id="zUE-wV-aJM"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l6Z-5a-vlD">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l6Z-5a-vlD">
                                 <rect key="frame" x="20" y="85" width="374" height="42"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
