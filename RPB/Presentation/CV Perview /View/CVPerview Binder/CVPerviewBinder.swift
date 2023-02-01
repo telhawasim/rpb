@@ -1,41 +1,36 @@
 //
-//  CVPreviewVC.swift
+//  CVPerviewBinder.swift
 //  RPB
 //
-//  Created by Bilal Nisar on 27/12/2022.
+//  Created by Bilal Nisar on 01/02/2023.
 //
 
-import UIKit
+import Foundation
 
-class CVPreviewVC: BaseVC {
+class CVPerviewBider: NSObject {
     
     //MARK: IBOutlets
-    @IBOutlet weak var lblViewProfile: UILabel!
-    @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var btnEdit: UIButton!
-    @IBOutlet weak var btnDownload: UIButton!
-    @IBOutlet weak var tableView: UITableView!
+    weak var lblViewProfile: UILabel?
+    weak var lblName: UILabel?
+    weak var btnEdit: UIButton?
+    weak var btnDownload: UIButton?
+    weak var tableView: UITableView?
     
     //MARK: Variables
     var tags = ReadMoreModel.getTags()
     
-    //MARK: Life Cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.registerCell()
-    }
-    
-    @IBAction func btnBack(_ sender: Any) {
-        self.goBack()
-    }
-    
-    @IBAction func btnDownloadTapped(_ sender: Any) {
-        goToDownloadSection()
+    //MARK: Initialzation
+    init(lblViewProfile: UILabel, lblName: UILabel, btnEdit: UIButton, btnDownload: UIButton, tableView: UITableView) {
+        self.lblViewProfile = lblViewProfile
+        self.lblName = lblName
+        self.btnEdit = btnEdit
+        self.btnDownload = btnDownload
+        self.tableView = tableView
     }
 }
 
 // MARK: TableView Methods
-extension CVPreviewVC: UITableViewDelegate, UITableViewDataSource {
+extension CVPerviewBider: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 18
     }
@@ -136,17 +131,17 @@ extension CVPreviewVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension CVPreviewVC {
+extension CVPerviewBider {
     //MARK: Register Cell
     func registerCell() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(EventDescriptionTableViewCell.className)
-        tableView.register(EducationTableViewCell.className)
-        tableView.register(SkillsTableViewCell.className)
-        tableView.register(ExperienceTableViewCell.className)
-        tableView.register(ContactTableViewCell.className)
-        tableView.register(EducationTextTableViewCell.className)
+        tableView?.delegate = self
+        tableView?.dataSource = self
+        tableView?.register(EventDescriptionTableViewCell.className)
+        tableView?.register(EducationTableViewCell.className)
+        tableView?.register(SkillsTableViewCell.className)
+        tableView?.register(ExperienceTableViewCell.className)
+        tableView?.register(ContactTableViewCell.className)
+        tableView?.register(EducationTextTableViewCell.className)
         
         self.configureFonts()
         self.configureButtons()
@@ -154,28 +149,29 @@ extension CVPreviewVC {
     
     // MARK: Configure Buttons
     func configureButtons() {
-        self.btnEdit.isCircularButton()
-        self.btnEdit.backgroundColor = UIColor.dark6A90FF
-        self.btnDownload.backgroundColor = UIColor.dark6A90FF
-        self.btnDownload.isCircularButton()
+        self.btnEdit?.isCircularButton()
+        self.btnEdit?.backgroundColor = UIColor.dark6A90FF
+        self.btnDownload?.backgroundColor = UIColor.dark6A90FF
+        self.btnDownload?.isCircularButton()
     }
     
     // MARK: Configure Fonts
     func configureFonts() {
-        self.lblViewProfile.font = UIFont.getMediumFont(size: 22)
-        self.lblName.font = UIFont.getSemiBoldFont(size: 24)
+        self.lblViewProfile?.font = UIFont.getMediumFont(size: 22)
+        self.lblName?.font = UIFont.getSemiBoldFont(size: 24)
         
-        self.btnEdit.setImage(UIImage(named: "edit_profile"), for: .normal)
-        self.btnEdit.setImageTintColor(UIColor.white)
+        self.btnEdit?.setImage(UIImage(named: "edit_profile"), for: .normal)
+        self.btnEdit?.setImageTintColor(UIColor.white)
         
-        self.btnDownload.setImage(UIImage(named: "download_profile"), for: .normal)
-        self.btnDownload.setImageTintColor(UIColor.white)
+        self.btnDownload?.setImage(UIImage(named: "download_profile"), for: .normal)
+        self.btnDownload?.setImageTintColor(UIColor.white)
     }
 }
 
-extension CVPreviewVC: EventDescriptionDelegate {
+extension CVPerviewBider: EventDescriptionDelegate {
     func didChangeExpantion(index: Int, isExpanded: Bool) {
         self.tags[index].isExpanded = isExpanded
-        self.tableView.reloadData()
+        self.tableView?.reloadData()
     }
 }
+
