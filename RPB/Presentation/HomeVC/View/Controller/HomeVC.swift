@@ -27,7 +27,6 @@ class HomeVC: BaseVC {
         self.binder = HomeBinder(tableView: self.tableView, lblEmployeeCount: self.lblEmployeeCount, lblTotalEmployee: self.lblTotalEmployee, lblName: self.lblName, lblEmployee: self.lblEmployee, viewController: self)
         
         self.viewModel = HomeVM(binder: self.binder!)
-        
         self.viewModel?.main()
     }
 
