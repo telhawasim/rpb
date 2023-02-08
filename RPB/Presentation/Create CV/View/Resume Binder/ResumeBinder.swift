@@ -35,35 +35,48 @@ class ResumeBinder: NSObject {
     
     var infoTextFields = TextFieldModel.getInfoTextFields() {
         didSet {
-            self.infoValidation()
+            self.validationFields(for: .info)
         }
     }
     
     var experienceTextFields = ExperienceModel.getExperienceTextFields() {
         didSet {
-            self.experienceValidation()
+            self.validationFields(for: .experience)
         }
     }
     
     var academicsTextFields = AcademicsModel.getAcademicsTextFields() {
         didSet {
-            self.academicsValidation()
+            self.validationFields(for: .academics)
         }
     }
     
     var skillsTextFields = SkillsModel.getSkillsData() {
         didSet {
-            if skillsValidation() {
-                self.certificatesValidation()
-            }
+            self.validationFields(for: .skills)
         }
     }
     
     var certificatesTextField = AcademicsModel.getAcademicsTextFields() {
         didSet {
-            if skillsValidation() {
+            self.validationFields(for: .certificates)
+        }
+    }
+    
+    func validationFields(for property: ValidationType) {
+        switch property {
+        case .info:
+            self.infoValidation()
+        case .experience:
+            self.experienceValidation()
+        case .skills:
+            self.skillsValidation()
+        case .certificates:
+            if self.skillsValidation() {
                 self.certificatesValidation()
             }
+        case .academics:
+            self.academicsValidation()
         }
     }
     

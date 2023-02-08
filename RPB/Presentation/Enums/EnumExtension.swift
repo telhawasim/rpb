@@ -21,3 +21,11 @@ enum CellType {
     case certificates
     case academic
 }
+
+enum ValidationType {
+    case info
+    case experience
+    case skills
+    case certificates
+    case academics
+}
