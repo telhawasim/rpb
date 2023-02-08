@@ -26,13 +26,14 @@ struct TextFieldModel {
     var textValue: String = ""
     var tag: Int = 0
     var capitalizationType: UITextAutocapitalizationType = .none
+    var keyboardType: UIKeyboardType = .default
     
     static func getInfoTextFields() -> [TextFieldModel] {
         var textFields = [TextFieldModel]()
         textFields.append(TextFieldModel(title: "Name", placeholder: "Dawid", tag: 0, capitalizationType: .words))
         textFields.append(TextFieldModel(title: "Designation", placeholder: "UI/UX Designer", tag: 1, capitalizationType: .words))
-        textFields.append(TextFieldModel(title: "Email Address", placeholder: "dawid.name@gmail.com", tag: 2))
-        textFields.append(TextFieldModel(title: "Phone Number", placeholder: "03350438764", tag: 3))
+        textFields.append(TextFieldModel(title: "Email Address", placeholder: "dawid.name@gmail.com", tag: 2, keyboardType: .emailAddress))
+        textFields.append(TextFieldModel(title: "Phone Number", placeholder: "03350438764", tag: 3, keyboardType: .numberPad))
         textFields.append(TextFieldModel(title: "Git / Bit Bucket", placeholder: "Dawid.name@bitbucket.org", tag: 4,  capitalizationType: .words))
         textFields.append(TextFieldModel(title: "LinkedIn", placeholder: "linkedin.com/dawid.name", tag: 5))
         textFields.append(TextFieldModel(title: "", placeholder: "", tag: 6))

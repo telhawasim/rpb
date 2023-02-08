@@ -122,13 +122,7 @@ class ResumeBinder: NSObject {
         
         if category == .info {
             btnPreview?.isHidden = true
-            if infoTextFields.isEmpty {
-                btnSave?.isEnabled = false
-                btnSave?.backgroundColor = UIColor.systemGray
-            } else {
-                btnSave?.isEnabled = true
-                btnSave?.backgroundColor = UIColor.customBlue
-            }
+            infoValidation()
         } else if category == .experience {
             btnPreview?.isHidden = false
             experienceValidation()

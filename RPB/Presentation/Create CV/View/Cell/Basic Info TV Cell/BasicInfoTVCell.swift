@@ -30,13 +30,10 @@ class BasicInfoTVCell: UITableViewCell {
         self.txtInfo.text = textFieldInfo.textValue
         self.txtInfo.tag = textFieldInfo.tag
         self.txtInfo.autocapitalizationType = textFieldInfo.capitalizationType
+        self.txtInfo.keyboardType = textFieldInfo.keyboardType
         
-        if txtInfo.tag == 2 {
-            txtInfo.keyboardType = .emailAddress
-        }
         if txtInfo.tag == 3 {
             txtInfo.delegate = self
-            txtInfo.keyboardType = .numberPad
         }
     }
 }
@@ -55,7 +52,7 @@ extension BasicInfoTVCell: UITextFieldDelegate {
 
                 return newString.count <= maxLength
         } else {
-            return Bool()
+            return true
         }
     }
 }
