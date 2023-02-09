@@ -38,4 +38,3 @@ class CVPreviewVC: BaseVC {
         goToDownloadSection()
     }
 }
-

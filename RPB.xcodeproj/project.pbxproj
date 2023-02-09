@@ -110,7 +110,15 @@
 		36DCD2EE298A4CBB006C5D57 /* EducationTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DCD2E2298A4CBB006C5D57 /* EducationTextTableViewCell.swift */; };
 		36DCD2F3298A4D08006C5D57 /* CVPerviewBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DCD2F2298A4D08006C5D57 /* CVPerviewBinder.swift */; };
 		36DCD2F5298A4D1B006C5D57 /* CVPerviewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DCD2F4298A4D1B006C5D57 /* CVPerviewVM.swift */; };
-		36E47F6B2976978E0022E281 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E47F6A2976978E0022E281 /* APIManager.swift */; };
+		36E0D1C22994CF6F002DBBAA /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E0D1C12994CF6F002DBBAA /* UserService.swift */; };
+		36E0D1C52994D07A002DBBAA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E0D1C42994D07A002DBBAA /* NetworkManager.swift */; };
+		36E0D1C72994D0C4002DBBAA /* ResponseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E0D1C62994D0C4002DBBAA /* ResponseManager.swift */; };
+		36E0D1CA2994D184002DBBAA /* URI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E0D1C92994D184002DBBAA /* URI.swift */; };
+		36E0D1CD2994D30D002DBBAA /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E0D1CC2994D30D002DBBAA /* Login.swift */; };
+		36E0D1D12994D3AB002DBBAA /* RpbError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E0D1D02994D3AB002DBBAA /* RpbError.swift */; };
+		36E0D1D42994D43F002DBBAA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E0D1D32994D43F002DBBAA /* Constants.swift */; };
+		36E0D1D92994D9C6002DBBAA /* ConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E0D1D82994D9C6002DBBAA /* ConfigurationManager.swift */; };
+		36E0D1DC2994DB27002DBBAA /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E0D1DB2994DB27002DBBAA /* APIError.swift */; };
 		36E47F7C2976A28C0022E281 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E47F7B2976A28C0022E281 /* CustomColor.swift */; };
 		36E47F7F2976A2B10022E281 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E47F7E2976A2B00022E281 /* BaseURL.swift */; };
 		36E47F822976A2C30022E281 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E47F812976A2C30022E281 /* UIButton.swift */; };
@@ -118,8 +126,6 @@
 		36E47F882976A2E30022E281 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E47F872976A2E30022E281 /* Date.swift */; };
 		36E47F8B2976A2F40022E281 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E47F8A2976A2F40022E281 /* UIImageView.swift */; };
 		36E47F8E2976A3070022E281 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E47F8D2976A3070022E281 /* UITextField.swift */; };
-		36E47FB02976EC250022E281 /* ProductEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E47FAE2976EC250022E281 /* ProductEndPoint.swift */; };
-		36E47FB12976EC250022E281 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E47FAF2976EC250022E281 /* EndPointType.swift */; };
 		36F8AB6E295AE90500CA9CFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36F8AB6D295AE90500CA9CFA /* LaunchScreen.storyboard */; };
 		36F8AB7A295B29A100CA9CFA /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F8AB79295B29A100CA9CFA /* CollectionView.swift */; };
 		36FE65FB2954A0A3003E9CC0 /* EmployeesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FE65F92954A0A3003E9CC0 /* EmployeesTableViewCell.swift */; };
@@ -256,7 +262,15 @@
 		36DCD2E2298A4CBB006C5D57 /* EducationTextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationTextTableViewCell.swift; sourceTree = "<group>"; };
 		36DCD2F2298A4D08006C5D57 /* CVPerviewBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPerviewBinder.swift; sourceTree = "<group>"; };
 		36DCD2F4298A4D1B006C5D57 /* CVPerviewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPerviewVM.swift; sourceTree = "<group>"; };
-		36E47F6A2976978E0022E281 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		36E0D1C12994CF6F002DBBAA /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		36E0D1C42994D07A002DBBAA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		36E0D1C62994D0C4002DBBAA /* ResponseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseManager.swift; sourceTree = "<group>"; };
+		36E0D1C92994D184002DBBAA /* URI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URI.swift; sourceTree = "<group>"; };
+		36E0D1CC2994D30D002DBBAA /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		36E0D1D02994D3AB002DBBAA /* RpbError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RpbError.swift; sourceTree = "<group>"; };
+		36E0D1D32994D43F002DBBAA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		36E0D1D82994D9C6002DBBAA /* ConfigurationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationManager.swift; sourceTree = "<group>"; };
+		36E0D1DB2994DB27002DBBAA /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		36E47F7B2976A28C0022E281 /* CustomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		36E47F7E2976A2B00022E281 /* BaseURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		36E47F812976A2C30022E281 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
@@ -264,8 +278,6 @@
 		36E47F872976A2E30022E281 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		36E47F8A2976A2F40022E281 /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		36E47F8D2976A3070022E281 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
-		36E47FAE2976EC250022E281 /* ProductEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductEndPoint.swift; sourceTree = "<group>"; };
-		36E47FAF2976EC250022E281 /* EndPointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		36F8AB6D295AE90500CA9CFA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36F8AB79295B29A100CA9CFA /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		36FE65F92954A0A3003E9CC0 /* EmployeesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesTableViewCell.swift; sourceTree = "<group>"; };
@@ -1126,6 +1138,73 @@
 			path = "CVPerview Binder";
 			sourceTree = "<group>";
 		};
+		36E0D1BF2994CF12002DBBAA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				36E0D1C32994CFED002DBBAA /* Manager */,
+				36E0D1C02994CF5A002DBBAA /* UserService */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		36E0D1C02994CF5A002DBBAA /* UserService */ = {
+			isa = PBXGroup;
+			children = (
+				36E0D1C12994CF6F002DBBAA /* UserService.swift */,
+			);
+			path = UserService;
+			sourceTree = "<group>";
+		};
+		36E0D1C32994CFED002DBBAA /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				36E0D1C42994D07A002DBBAA /* NetworkManager.swift */,
+				36E0D1C62994D0C4002DBBAA /* ResponseManager.swift */,
+				36E0D1D82994D9C6002DBBAA /* ConfigurationManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		36E0D1C82994D163002DBBAA /* URI */ = {
+			isa = PBXGroup;
+			children = (
+				36E0D1C92994D184002DBBAA /* URI.swift */,
+			);
+			path = URI;
+			sourceTree = "<group>";
+		};
+		36E0D1CB2994D2D8002DBBAA /* API Routes */ = {
+			isa = PBXGroup;
+			children = (
+				36E0D1CC2994D30D002DBBAA /* Login.swift */,
+			);
+			path = "API Routes";
+			sourceTree = "<group>";
+		};
+		36E0D1CF2994D36E002DBBAA /* RPB Error Handling */ = {
+			isa = PBXGroup;
+			children = (
+				36E0D1D02994D3AB002DBBAA /* RpbError.swift */,
+			);
+			path = "RPB Error Handling";
+			sourceTree = "<group>";
+		};
+		36E0D1D22994D41A002DBBAA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				36E0D1D32994D43F002DBBAA /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		36E0D1DA2994DB0F002DBBAA /* Api Error */ = {
+			isa = PBXGroup;
+			children = (
+				36E0D1DB2994DB27002DBBAA /* APIError.swift */,
+			);
+			path = "Api Error";
+			sourceTree = "<group>";
+		};
 		36E47F582976945D0022E281 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -1171,20 +1250,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		36E47F64297697440022E281 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				36E47FAF2976EC250022E281 /* EndPointType.swift */,
-				36E47FAE2976EC250022E281 /* ProductEndPoint.swift */,
-			);
-			path = Utility;
-			sourceTree = "<group>";
-		};
 		36E47F692976978E0022E281 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				36E47F64297697440022E281 /* Utility */,
-				36E47F6A2976978E0022E281 /* APIManager.swift */,
+				36E0D1DA2994DB0F002DBBAA /* Api Error */,
+				36E0D1D22994D41A002DBBAA /* Constants */,
+				36E0D1CF2994D36E002DBBAA /* RPB Error Handling */,
+				36E0D1CB2994D2D8002DBBAA /* API Routes */,
+				36E0D1C82994D163002DBBAA /* URI */,
+				36E0D1BF2994CF12002DBBAA /* Classes */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1625,16 +1699,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				0941311F2955B55F008AC5CA /* String.swift in Sources */,
+				36E0D1CD2994D30D002DBBAA /* Login.swift in Sources */,
 				36DCD2E6298A4CBB006C5D57 /* EducationTableViewCell.swift in Sources */,
 				0978604D2977D37200129EE8 /* HomeBinder.swift in Sources */,
 				36737C852976EFAC00163B4C /* AddCertificatesTableViewCell.swift in Sources */,
+				36E0D1D42994D43F002DBBAA /* Constants.swift in Sources */,
 				0994122A295C365100C39E5A /* CancelPopViewController.swift in Sources */,
 				36F8AB7A295B29A100CA9CFA /* CollectionView.swift in Sources */,
 				36E47F7F2976A2B10022E281 /* BaseURL.swift in Sources */,
-				36E47FB02976EC250022E281 /* ProductEndPoint.swift in Sources */,
 				365010DA2955ADE1003F3262 /* TabbarVC.swift in Sources */,
 				09EBFE652978630A00559095 /* EmployeeVM.swift in Sources */,
 				090441B32955920E0088941F /* CustomFont.swift in Sources */,
+				36E0D1C72994D0C4002DBBAA /* ResponseManager.swift in Sources */,
+				36E0D1DC2994DB27002DBBAA /* APIError.swift in Sources */,
 				36E47F8B2976A2F40022E281 /* UIImageView.swift in Sources */,
 				36737CB72976F0F000163B4C /* EmployeeVC.swift in Sources */,
 				09EBFE632978614B00559095 /* EmployeeBinder.swift in Sources */,
@@ -1643,10 +1720,10 @@
 				0970A432298904470001E6EF /* ProfleBinder.swift in Sources */,
 				3636F30529547728001D886A /* HomeVC.swift in Sources */,
 				36737CC02976F1AE00163B4C /* ResumeCV.swift in Sources */,
+				36E0D1C52994D07A002DBBAA /* NetworkManager.swift in Sources */,
 				0970A43C298929630001E6EF /* ResumeBinder.swift in Sources */,
 				3601D371295DB4D5008B1F02 /* UILabel.swift in Sources */,
 				36737CBB2976F16000163B4C /* CVPreviewVC.swift in Sources */,
-				36E47FB12976EC250022E281 /* EndPointType.swift in Sources */,
 				36737C8E2976F02000163B4C /* ProfileTVCell.swift in Sources */,
 				365010E42955EC33003F3262 /* SettingVC.swift in Sources */,
 				36DCD2E3298A4CBB006C5D57 /* ContactTableViewCell.swift in Sources */,
@@ -1655,6 +1732,7 @@
 				367C71BD296FF96F00FC1900 /* DynamicHeightTableView.swift in Sources */,
 				36DCD2EC298A4CBB006C5D57 /* EventDescriptionTableViewCell.swift in Sources */,
 				36737C7B2976EF9200163B4C /* CategoryCVCell.swift in Sources */,
+				36E0D1C22994CF6F002DBBAA /* UserService.swift in Sources */,
 				36FE65FB2954A0A3003E9CC0 /* EmployeesTableViewCell.swift in Sources */,
 				0978605F2978030800129EE8 /* LoginModel.swift in Sources */,
 				36E47F882976A2E30022E281 /* Date.swift in Sources */,
@@ -1667,7 +1745,9 @@
 				0978604F2977D4DA00129EE8 /* HomeVM.swift in Sources */,
 				36E47F822976A2C30022E281 /* UIButton.swift in Sources */,
 				3695504229519A9E009AEB62 /* AppDelegate.swift in Sources */,
+				36E0D1CA2994D184002DBBAA /* URI.swift in Sources */,
 				360D06162988F2D4003F91BE /* TabbarVM.swift in Sources */,
+				36E0D1D12994D3AB002DBBAA /* RpbError.swift in Sources */,
 				0978605A2978009100129EE8 /* LoginBinder.swift in Sources */,
 				36737C582976EEE300163B4C /* ExperienceTVCell.swift in Sources */,
 				098D04F829598065001C2F05 /* CameraHandler.swift in Sources */,
@@ -1694,12 +1774,12 @@
 				36737C622976EEFD00163B4C /* SummaryTVCell.swift in Sources */,
 				36DCD2F5298A4D1B006C5D57 /* CVPerviewVM.swift in Sources */,
 				0978605D297800AD00129EE8 /* LoginVM.swift in Sources */,
-				36E47F6B2976978E0022E281 /* APIManager.swift in Sources */,
 				0970A43529890A170001E6EF /* ProfileVM.swift in Sources */,
 				36DCD2EE298A4CBB006C5D57 /* EducationTextTableViewCell.swift in Sources */,
 				36737C712976EF2600163B4C /* BasicInfoTVCell.swift in Sources */,
 				36737C762976EF8400163B4C /* AcademicsTVCell.swift in Sources */,
 				36DCD2ED298A4CBB006C5D57 /* SkillsTableViewCell.swift in Sources */,
+				36E0D1D92994D9C6002DBBAA /* ConfigurationManager.swift in Sources */,
 				36DCD2F3298A4D08006C5D57 /* CVPerviewBinder.swift in Sources */,
 				36737C5E2976EEF300163B4C /* ResumeHeaderCell.swift in Sources */,
 				365010DD2955CBD2003F3262 /* TableView.swift in Sources */,
@@ -1884,7 +1964,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -1917,7 +1997,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -2092,7 +2172,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -2220,7 +2300,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -2354,7 +2434,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -2482,7 +2562,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -2616,7 +2696,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
@@ -2744,7 +2824,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8GKH78N8MS;
+				DEVELOPMENT_TEAM = 4C39L2R9YT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RPB/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";

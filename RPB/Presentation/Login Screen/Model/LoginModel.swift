@@ -7,6 +7,7 @@
 
 import Foundation
 
-struct LoginModel {
+struct SignUpResponse : Codable {
     
 }
+
