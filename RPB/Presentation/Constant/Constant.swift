@@ -68,7 +68,7 @@ struct ExperienceModel {
     
     static func getExperienceTextFields() -> [ExperienceModel] {
         var experienceFields = [ExperienceModel]()
-        experienceFields.append(ExperienceModel(txtCompanyName: "Synavos", txtEndDate: "2012"))
+        experienceFields.append(ExperienceModel(txtCompanyName: "Synavos Solutions", txtEndDate: "2012"))
         
         return experienceFields
     }

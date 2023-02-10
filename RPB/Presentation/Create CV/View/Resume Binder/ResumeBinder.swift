@@ -162,12 +162,13 @@ class ResumeBinder: NSObject {
     
     //MARK: Validation for Info textField's text is nil
     func infoValidation() {
-        for textField in self.infoTextFields {
+        let indicesToCheck = [0, 1, 2, 3, infoTextFields.count - 1]
+        isAllPopulated = true
+        for index in indicesToCheck {
+            let textField = infoTextFields[index]
             if textField.textValue.isEmpty {
                 isAllPopulated = false
                 break
-            } else {
-                isAllPopulated = true
             }
         }
         self.setupButton(isPopulated: isAllPopulated)

@@ -83,11 +83,12 @@ class LoginBinder: NSObject {
             errorMessage = Localization.Login.kEmailIncorrectError
         } else if password.isEmpty {
             errorMessage = Localization.Login.kPasswordEmptyError
-        } else if password != dummyPassword {
-            errorMessage = Localization.Login.kPasswordIncorrectError
         } else if password.count <= 5 {
             errorMessage = Localization.Login.kPasswordLengthError
+        } else if password != dummyPassword {
+            errorMessage = Localization.Login.kPasswordIncorrectError
         }
+        
         if let errorMsg = errorMessage {
             AlertHandler.shared.alert(message: errorMsg)
             return false
