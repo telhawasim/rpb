@@ -32,6 +32,10 @@ class EmployeeVM {
         binder?.goToAddEmployee()
     }
     
+    func setIsLoading() {
+        binder?.isLoading = false
+    }
+    
     deinit {
         self.model = nil
     }

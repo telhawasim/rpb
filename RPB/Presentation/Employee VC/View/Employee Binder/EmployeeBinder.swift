@@ -22,6 +22,13 @@ class EmployeeBinder: NSObject {
         self.viewController = viewController
     }
     
+    var isLoading = true {
+        didSet {
+            tableView?.isUserInteractionEnabled = !isLoading
+            tableView?.reloadWithAnimation()
+        }
+    }
+    
     // MARK: Colors
     func setColors() {
         self.lblEmployee?.textColor = UIColor.customBlack
@@ -69,5 +76,9 @@ extension EmployeeBinder: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tabbarVC = UIStoryboard.getVC(from: .main, ProfileVC.className)
         self.viewController?.navigationController?.pushViewController(tabbarVC, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.setTemplateWithSubviews(isLoading, animate: true, viewBackgroundColor: .systemBackground)
     }
 }

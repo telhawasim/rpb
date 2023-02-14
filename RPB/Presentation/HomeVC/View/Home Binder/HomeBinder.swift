@@ -22,9 +22,12 @@ class HomeBinder: NSObject {
     var isLoading = true {
         didSet {
             tableView?.isUserInteractionEnabled = !isLoading
-            tableView?.reloadData()
+            tableView?.reloadWithAnimation()
+            incrementedValue()
         }
     }
+    var startValue: Int = 0
+    var endValue: Int = 50
     
     init(tableView: UITableView, lblEmployeeCount: UILabel, lblTotalEmployee: UILabel, lblName: UILabel, lblEmployee: UILabel, viewController: UIViewController) {
         self.tableView = tableView
@@ -65,6 +68,19 @@ class HomeBinder: NSObject {
     func addEmpployeeButton() {
         let tabbarVC  = UIStoryboard.getVC(from: .main, AddEmployeeVC.className)
         self.viewController?.navigationController?.pushViewController(tabbarVC, animated: true)
+    }
+    
+    func incrementedValue() {
+        startValue += 1
+        
+        lblEmployeeCount?.text = "\(startValue)"
+        if startValue >= endValue {
+            return
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.01) {
+            self.incrementedValue()
+        }
     }
 }
 

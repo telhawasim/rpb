@@ -27,8 +27,11 @@ class EmployeeVC: BaseVC {
         self.viewModel?.main()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.viewModel?.loadTableViewAnimation()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+            self.viewModel?.setIsLoading()
+        }
     }
     
     @IBAction func btnAddEmployee(_ sender: Any) {
