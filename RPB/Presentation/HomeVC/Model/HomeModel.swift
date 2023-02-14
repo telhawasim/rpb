@@ -8,5 +8,5 @@
 import Foundation
 
 struct HomeModel {
-    var number: Int = 10
+    var number: Int = 3
 }
