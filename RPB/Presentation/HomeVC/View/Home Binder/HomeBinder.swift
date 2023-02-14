@@ -17,6 +17,7 @@ class HomeBinder: NSObject {
     weak var lblEmployee: UILabel?
     weak var viewController: UIViewController?
     var model: HomeModel?
+    var employeeData = HomeModel.getEmployeeData()
     
     init(tableView: UITableView, lblEmployeeCount: UILabel, lblTotalEmployee: UILabel, lblName: UILabel, lblEmployee: UILabel, viewController: UIViewController) {
         self.tableView = tableView
@@ -63,13 +64,12 @@ class HomeBinder: NSObject {
 //MARK: TableView Methods
 extension HomeBinder: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model?.number ?? 0
+        return employeeData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: EmployeesTableViewCell.className, for: indexPath) as! EmployeesTableViewCell
-//        let product = viewModel.products[indexPath.row]
-//        cell.product = product
+        cell.configure(data: employeeData[indexPath.row])
         return cell
     }
     

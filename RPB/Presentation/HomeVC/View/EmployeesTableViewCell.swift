@@ -10,8 +10,9 @@ import UIKit
 class EmployeesTableViewCell: UITableViewCell {
 
     // MARK: IBOutlets
+    @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var lblSkills: UILabel!
+    @IBOutlet weak var lblDesignation: UILabel!
     @IBOutlet weak var lblEmail: UILabel!
 
     // MARK: Variables
@@ -25,16 +26,23 @@ class EmployeesTableViewCell: UITableViewCell {
     // MARK: Set Colors
     func setColors() {
         lblName.textColor = UIColor.customBlack
-        lblSkills.textColor = UIColor.customBlue
+        lblDesignation.textColor = UIColor.customBlue
         lblEmail.textColor = UIColor.customBlack
     }
 
     // MARK: Configure Fonts
     func configureFonts() {
         lblName.font = UIFont.getBoldFont()
-        lblSkills.font = UIFont.getMediumFont(size: 14)
+        lblDesignation.font = UIFont.getMediumFont(size: 14)
         lblEmail.font = UIFont.getMediumFont(size: 14)
         self.setColors()
+    }
+    
+    func configure(data: HomeModel) {
+        self.profilePicture.image = UIImage(named: data.profilePicture)
+        self.lblName.text = data.name
+        self.lblEmail.text = data.email
+        self.lblDesignation.text = data.designation
     }
     
 }

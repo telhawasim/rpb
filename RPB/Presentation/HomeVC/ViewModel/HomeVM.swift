@@ -16,13 +16,13 @@ class HomeVM {
     //MARK: Init
     init(binder: HomeBinder) {
         self.binder = binder
-        self.model = HomeModel()
+//        self.model = HomeModel()
     }
     
     func main() {
         binder?.configureFonts()
         binder?.configTableView()
-        binder?.getData(model: self.model!)
+//        binder?.getData(model: self.model!)
     }
     
     func addEmpployeeButton() {

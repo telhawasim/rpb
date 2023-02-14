@@ -87,9 +87,10 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="lblDesignation" destination="1qa-Wf-KC0" id="JvU-JO-VOw"/>
                 <outlet property="lblEmail" destination="Bq7-ef-zDT" id="PKy-tb-hGN"/>
                 <outlet property="lblName" destination="Zjq-qW-Ck8" id="w7U-Uy-BUJ"/>
-                <outlet property="lblSkills" destination="1qa-Wf-KC0" id="nxW-SY-e0b"/>
+                <outlet property="profilePicture" destination="ezq-Fy-Dwm" id="x13-J3-daS"/>
             </connections>
             <point key="canvasLocation" x="158.01526717557252" y="43.661971830985919"/>
         </tableViewCell>

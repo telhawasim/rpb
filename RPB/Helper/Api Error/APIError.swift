@@ -19,8 +19,8 @@ struct Errors: Codable {
 
     enum CodingKeys: String, CodingKey {
 
-        case field = "field"
-        case error = "error"
+        case field
+        case error
     }
 
     init(from decoder: Decoder) throws {
