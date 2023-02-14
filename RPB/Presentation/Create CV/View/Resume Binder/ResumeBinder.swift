@@ -96,7 +96,7 @@ class ResumeBinder: NSObject {
         self.tableView?.register(AcademicsTVCell.className)
         self.tableView?.register(AddSkillsTableViewCell.className)
         self.tableView?.register(AddCertificatesTableViewCell.className)
-        self.tableView?.register(UINib(nibName: ResumeHeaderCell.className, bundle: nil), forHeaderFooterViewReuseIdentifier: ResumeHeaderCell.className)
+        self.tableView?.registerHeaderFooter(ResumeHeaderCell.className)
     }
     
     //MARK: Configure CollectionView
@@ -236,19 +236,37 @@ class ResumeBinder: NSObject {
     func infoTabTextFieldValidation() -> Bool {
         let email = infoTextFields[2].textValue
         let phone = infoTextFields[3].textValue
-        var errorMessage: String?
+        var isValid = true
         
         if !email.isEmailValid() {
-            errorMessage = Localization.Login.kEmailInvalidError
-        } else if phone.count < 11 {
-            errorMessage = Localization.AddEmployee.kPhoneLengthError
+            self.setTextAfterValidation(tag: 2, color: .red)
+            isValid = false
+        } else {
+            self.setTextAfterValidation(tag: 2)
         }
-        
-        if let errorMsg = errorMessage {
-            AlertHandler.shared.alert(message: errorMsg)
-            return false
+        if phone.count < 11 {
+            self.setTextAfterValidation(tag: 3, color: .red)
+            isValid = false
+        } else {
+            self.setTextAfterValidation(tag: 3)
         }
-        return true
+        return isValid
+    }
+    
+    func setTextAfterValidation(tag: Int, color: UIColor = .black) {
+        if let phoneCellIndexPath = indexPathForTextField(withTag: tag) {
+            let cell = tableView?.cellForRow(at: phoneCellIndexPath) as? BasicInfoTVCell
+            cell?.lblTitle.textColor = color
+        }
+    }
+    
+    func indexPathForTextField(withTag tag: Int) -> IndexPath? {
+        for (index, infoTextField) in infoTextFields.enumerated() {
+            if infoTextField.tag == tag {
+                return IndexPath(row: index, section: 0)
+            }
+        }
+        return nil
     }
     
     func selectAndUpdateCV(indexPath: IndexPath) {
@@ -330,9 +348,11 @@ class ResumeBinder: NSObject {
     }
     
     func goBackPressed() {
-        PopupView.shared.presentPopup(self.viewController ?? UIViewController(), popupType: .discardInformation) { value in
+        PopupView.shared.presentPopup(self.viewController ?? UIViewController(), popupType: .discardInformation) { [self] value in
             if (value != nil) {
-                self.infoTextFields = []
+                for var index in infoTextFields {
+                    index.textValue = ""
+                }
                 self.experienceTextFields = []
                 self.skillsTextFields = []
                 self.academicsTextFields = []
