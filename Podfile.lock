@@ -1,20 +1,24 @@
 PODS:
   - IQKeyboardManagerSwift (6.5.10)
   - SwiftLint (0.50.3)
+  - UIView-Shimmer (1.0.4)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
   - SwiftLint
+  - UIView-Shimmer (~> 1.0)
 
 SPEC REPOS:
   trunk:
     - IQKeyboardManagerSwift
     - SwiftLint
+    - UIView-Shimmer
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
   SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
+  UIView-Shimmer: ff0a32c73d67c7dbdea3d9e530538b10d18aea56
 
-PODFILE CHECKSUM: dabe5223b4752e9b1057edd554bfbf74876473fb
+PODFILE CHECKSUM: 28cac5fc6dafd552f78a99210a60f8fdcb6d2b42
 
 COCOAPODS: 1.11.3

@@ -18,5 +18,6 @@ target 'RPB' do
   
   pod 'IQKeyboardManagerSwift'
   pod 'SwiftLint'
+  pod 'UIView-Shimmer', '~> 1.0'
 
 end

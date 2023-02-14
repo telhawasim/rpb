@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import UIView_Shimmer
 
-class EmployeesTableViewCell: UITableViewCell {
+class EmployeesTableViewCell: UITableViewCell, ShimmeringViewProtocol {
 
     // MARK: IBOutlets
     @IBOutlet weak var profilePicture: UIImageView!
@@ -16,7 +17,14 @@ class EmployeesTableViewCell: UITableViewCell {
     @IBOutlet weak var lblEmail: UILabel!
 
     // MARK: Variables
-
+    var shimmeringAnimatedItems: [UIView] {
+        [
+            profilePicture,
+            lblName,
+            lblDesignation,
+            lblEmail
+        ]
+    }
     // MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()

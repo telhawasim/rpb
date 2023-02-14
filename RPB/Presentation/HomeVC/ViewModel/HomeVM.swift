@@ -25,6 +25,10 @@ class HomeVM {
 //        binder?.getData(model: self.model!)
     }
     
+    func setIsLoading() {
+        binder?.isLoading = false
+    }
+    
     func addEmpployeeButton() {
         binder?.addEmpployeeButton()
     }

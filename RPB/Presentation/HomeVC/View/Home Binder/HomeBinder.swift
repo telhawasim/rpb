@@ -19,6 +19,13 @@ class HomeBinder: NSObject {
     var model: HomeModel?
     var employeeData = HomeModel.getEmployeeData()
     
+    var isLoading = true {
+        didSet {
+            tableView?.isUserInteractionEnabled = !isLoading
+            tableView?.reloadData()
+        }
+    }
+    
     init(tableView: UITableView, lblEmployeeCount: UILabel, lblTotalEmployee: UILabel, lblName: UILabel, lblEmployee: UILabel, viewController: UIViewController) {
         self.tableView = tableView
         self.lblEmployeeCount = lblEmployeeCount
@@ -33,7 +40,7 @@ class HomeBinder: NSObject {
         self.lblName?.textColor = UIColor.customBlack
         self.lblEmployee?.textColor = UIColor.customBlack
     }
-
+    
     // MARK: Set Fonts
     func configureFonts() {
         self.lblName?.font = UIFont.getMediumFont(size: 34)
@@ -76,5 +83,9 @@ extension HomeBinder: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tabbarVC  = UIStoryboard.getVC(from: .main, ProfileVC.className)
         self.viewController?.navigationController?.pushViewController(tabbarVC, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.setTemplateWithSubviews(isLoading, animate: true, viewBackgroundColor: .systemBackground)
     }
 }

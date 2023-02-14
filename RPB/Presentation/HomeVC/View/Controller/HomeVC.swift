@@ -30,6 +30,13 @@ class HomeVC: BaseVC {
         
         self.viewModel?.main()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
+            self.viewModel?.setIsLoading()
+        })
+    }
 
     // MARK: Add Employee
     @IBAction func btnAddEmployee(_ sender: Any) {
