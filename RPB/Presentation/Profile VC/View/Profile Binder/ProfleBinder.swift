@@ -54,7 +54,13 @@ class ProfileBinder: NSObject {
         self.viewController = viewController
     }
     
-    var view = UIView()
+//    var view = UIView()
+    var isLoading = true {
+        didSet {
+            tableView?.isUserInteractionEnabled = !isLoading
+            tableView?.reloadWithAnimation()
+        }
+    }
         
     // MARK: Configure TableView
     func configureTableView() {
@@ -134,6 +140,10 @@ extension ProfileBinder: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tabbarVC  = UIStoryboard.getVC(from: .main, CVPreviewVC.className)
         self.viewController?.navigationController?.pushViewController(tabbarVC, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.setTemplateWithSubviews(isLoading, animate: true, viewBackgroundColor: .systemBackground)
     }
 }
 

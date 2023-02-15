@@ -36,6 +36,10 @@ class ProfileVM {
         self.binder?.tableView?.reloadWithAnimation()
     }
     
+    func setIsLoading() {
+        binder?.isLoading = false
+    }
+    
     func deleteButtonPressed() {
         self.closeButtonSheet()
         self.binder?.showPopUp()

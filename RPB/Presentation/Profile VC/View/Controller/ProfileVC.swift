@@ -44,8 +44,11 @@ class ProfileVC: BaseVC {
         viewModel?.main()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        viewModel?.reloadData()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+            self.viewModel?.setIsLoading()
+        }
     }
     
     //MARK: Back button on View Controller

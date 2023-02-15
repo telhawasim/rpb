@@ -94,6 +94,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btnOpenSheet" destination="WYI-7V-upF" id="hMA-7n-2BM"/>
                 <outlet property="iconView" destination="pMj-9V-zM5" id="h93-Hy-y29"/>
                 <outlet property="lblDate" destination="G3G-24-xsX" id="jWR-bH-kvF"/>
                 <outlet property="lblDesignation" destination="8uC-Rj-btc" id="121-yn-7NN"/>

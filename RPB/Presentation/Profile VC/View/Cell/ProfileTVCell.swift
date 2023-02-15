@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import UIView_Shimmer
 
 protocol ProfileDelegate: AnyObject {
     func openBottomSheet()
 }
 
-class ProfileTVCell: UITableViewCell {
+class ProfileTVCell: UITableViewCell, ShimmeringViewProtocol {
 
     // MARK: Outlet
     @IBOutlet weak var outerView: UIView!
@@ -19,9 +20,20 @@ class ProfileTVCell: UITableViewCell {
     @IBOutlet weak var lblDesignation: UILabel!
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var iconView: UIView!
+    @IBOutlet weak var btnOpenSheet: UIButton!
 
     // MARK: Variables
     var delegate: ProfileDelegate?
+    
+    var shimmeringAnimatedItems: [UIView] {
+        [
+            lblProfile,
+            lblDesignation,
+            lblDate,
+            iconView,
+            btnOpenSheet
+        ]
+    }
     
     // MARK: Lifecylce
 
