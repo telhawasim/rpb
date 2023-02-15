@@ -23,7 +23,6 @@ class HomeBinder: NSObject {
         didSet {
             tableView?.isUserInteractionEnabled = !isLoading
             tableView?.reloadWithAnimation()
-            incrementedValue()
         }
     }
     var startValue: Int = 0
@@ -75,6 +74,7 @@ class HomeBinder: NSObject {
         
         lblEmployeeCount?.text = "\(startValue)"
         if startValue >= endValue {
+            startValue = 0
             return
         }
         

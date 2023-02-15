@@ -31,11 +31,20 @@ class HomeVC: BaseVC {
         self.viewModel?.main()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.viewModel?.binder?.lblEmployeeCount?.text = "\(0)"
+        self.viewModel?.binder?.isLoading = true
+        self.viewModel?.binder?.tableView?.reloadData()
         DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
             self.viewModel?.setIsLoading()
+            self.viewModel?.binder?.incrementedValue()
         })
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.viewModel?.binder?.isLoading = false
     }
 
     // MARK: Add Employee

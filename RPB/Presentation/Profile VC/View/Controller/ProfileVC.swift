@@ -44,11 +44,18 @@ class ProfileVC: BaseVC {
         viewModel?.main()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.viewModel?.binder?.isLoading = true
+        self.viewModel?.binder?.tableView?.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
             self.viewModel?.setIsLoading()
-        }
+        })
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.viewModel?.binder?.isLoading = false
     }
     
     //MARK: Back button on View Controller
