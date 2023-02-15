@@ -36,11 +36,6 @@ class EmployeeVC: BaseVC {
         })
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        self.viewModel?.binder?.isLoading = false
-    }
-    
     @IBAction func btnAddEmployee(_ sender: Any) {
         self.viewModel?.goToAddEmployee()
     }

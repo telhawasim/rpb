@@ -29,6 +29,16 @@ class HomeVM {
         binder?.isLoading = false
     }
     
+    func showShimmer() {
+        self.binder?.lblEmployeeCount?.text = "\(0)"
+        self.binder?.isLoading = true
+        self.binder?.tableView?.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
+            self.setIsLoading()
+            self.binder?.incrementedValue()
+        })
+    }
+    
     func addEmpployeeButton() {
         binder?.addEmpployeeButton()
     }

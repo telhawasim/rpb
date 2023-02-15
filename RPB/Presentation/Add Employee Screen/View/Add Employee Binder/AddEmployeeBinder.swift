@@ -165,7 +165,7 @@ class AddEmployeeBinder: NSObject {
     }
     
     func showPopUp() {
-        PopupView.shared.presentPopup(viewController ?? UIViewController(), popupType: .discardInformation) { value in
+        PopupView.shared.presentCancelPopup(viewController ?? UIViewController(), popupType: .discardInformation) { value in
             if (value != nil) {
                 self.viewController?.navigationController?.popViewController(animated: true)
             }

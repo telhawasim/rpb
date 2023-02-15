@@ -18,6 +18,8 @@
 		090441D0295595F70088941F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3695504A29519AA0009AEB62 /* Assets.xcassets */; };
 		090441D5295597980088941F /* EmployeesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36FE65FA2954A0A3003E9CC0 /* EmployeesTableViewCell.xib */; };
 		090441D9295599F50088941F /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 090441D8295599F50088941F /* Montserrat-Medium.otf */; };
+		09066861299D022900B42A2B /* ProfilePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906685F299D022900B42A2B /* ProfilePopUpViewController.swift */; };
+		09066862299D022900B42A2B /* ProfilePopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09066860299D022900B42A2B /* ProfilePopUpViewController.xib */; };
 		09283D2229531B8A00256FD8 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09283D2129531B8A00256FD8 /* ServerConfig.swift */; };
 		0941311C2955B3E8008AC5CA /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941311B2955B3E8008AC5CA /* BaseVC.swift */; };
 		0941311F2955B55F008AC5CA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941311E2955B55F008AC5CA /* String.swift */; };
@@ -156,6 +158,8 @@
 		090158152975C3C9009226AC /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		090441A52955920E0088941F /* CustomFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		090441D8295599F50088941F /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
+		0906685F299D022900B42A2B /* ProfilePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePopUpViewController.swift; sourceTree = "<group>"; };
+		09066860299D022900B42A2B /* ProfilePopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilePopUpViewController.xib; sourceTree = "<group>"; };
 		09283D1E29531A8C00256FD8 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
 		09283D1F29531A9700256FD8 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
 		09283D2129531B8A00256FD8 /* ServerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
@@ -386,6 +390,24 @@
 				090158142975C3AB009226AC /* UIImages */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		0906685D299D01E700B42A2B /* Cancel PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				09941228295C365100C39E5A /* CancelPopViewController.swift */,
+				09941229295C365100C39E5A /* CancelPopViewController.xib */,
+			);
+			path = "Cancel PopUp";
+			sourceTree = "<group>";
+		};
+		0906685E299D020000B42A2B /* Profile PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				0906685F299D022900B42A2B /* ProfilePopUpViewController.swift */,
+				09066860299D022900B42A2B /* ProfilePopUpViewController.xib */,
+			);
+			path = "Profile PopUp";
 			sourceTree = "<group>";
 		};
 		0941311A2955B3CD008AC5CA /* BaseVC */ = {
@@ -631,8 +653,8 @@
 		09941227295C365100C39E5A /* PopUp */ = {
 			isa = PBXGroup;
 			children = (
-				09941228295C365100C39E5A /* CancelPopViewController.swift */,
-				09941229295C365100C39E5A /* CancelPopViewController.xib */,
+				0906685E299D020000B42A2B /* Profile PopUp */,
+				0906685D299D01E700B42A2B /* Cancel PopUp */,
 			);
 			path = PopUp;
 			sourceTree = "<group>";
@@ -1532,6 +1554,7 @@
 				36DCD2E9298A4CBB006C5D57 /* SkillsTableViewCell.xib in Resources */,
 				090441CC295595BF0088941F /* Main.storyboard in Resources */,
 				36DCD2E4298A4CBB006C5D57 /* EducationTextTableViewCell.xib in Resources */,
+				09066862299D022900B42A2B /* ProfilePopUpViewController.xib in Resources */,
 				090441CD295595D60088941F /* Montserrat-SemiBold.otf in Resources */,
 				36737C862976EFAC00163B4C /* AddCertificatesTableViewCell.xib in Resources */,
 				090441CE295595D90088941F /* Montserrat-Regular.otf in Resources */,
@@ -1744,6 +1767,7 @@
 				36737C802976EFA000163B4C /* AddSkillsTableViewCell.swift in Sources */,
 				0978604F2977D4DA00129EE8 /* HomeVM.swift in Sources */,
 				36E47F822976A2C30022E281 /* UIButton.swift in Sources */,
+				09066861299D022900B42A2B /* ProfilePopUpViewController.swift in Sources */,
 				3695504229519A9E009AEB62 /* AppDelegate.swift in Sources */,
 				36E0D1CA2994D184002DBBAA /* URI.swift in Sources */,
 				360D06162988F2D4003F91BE /* TabbarVM.swift in Sources */,

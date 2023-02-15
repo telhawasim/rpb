@@ -11,7 +11,7 @@ import UIKit
 class PopupView {
     static let shared = PopupView()
     
-    func presentPopup(_ viewController: UIViewController, popupType: PopupType?, completionHandler: PopupViewCompletionHandler? = nil) {
+    func presentCancelPopup(_ viewController: UIViewController, popupType: PopupType?, completionHandler: PopupViewCompletionHandler? = nil) {
         let cancelCV = CancelPopViewController()
         cancelCV.popupType = popupType
         cancelCV.completionHandler = completionHandler
@@ -19,5 +19,14 @@ class PopupView {
         cancelCV.modalPresentationStyle = .overCurrentContext
         viewController.view.endEditing(true)
         viewController.present(cancelCV, animated: true)
+    }
+    
+    func presentProfilePopup(_ viewController: UIViewController, completionHandler: PopupViewCompletionHandler? = nil) {
+        let profileCV = ProfilePopUpViewController()
+        profileCV.completionHandler = completionHandler
+        profileCV.modalTransitionStyle = .crossDissolve
+        profileCV.modalPresentationStyle = .overCurrentContext
+        viewController.view.endEditing(true)
+        viewController.present(profileCV, animated: true)
     }
 }

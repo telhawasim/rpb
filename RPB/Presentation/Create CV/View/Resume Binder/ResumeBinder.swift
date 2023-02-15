@@ -348,7 +348,7 @@ class ResumeBinder: NSObject {
     }
     
     func goBackPressed() {
-        PopupView.shared.presentPopup(self.viewController ?? UIViewController(), popupType: .discardInformation) { [self] value in
+        PopupView.shared.presentCancelPopup(self.viewController ?? UIViewController(), popupType: .discardInformation) { [self] value in
             if (value != nil) {
                 for var index in infoTextFields {
                     index.textValue = ""

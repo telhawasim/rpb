@@ -109,7 +109,7 @@ class ProfileBinder: NSObject {
     
     //MARK: Show PopUp
     func showPopUp() {
-        PopupView.shared.presentPopup(viewController ?? UIViewController(), popupType: .deleteProfile)
+        PopupView.shared.presentCancelPopup(viewController ?? UIViewController(), popupType: .deleteProfile)
     }
     
     //MARK: Go Back {
