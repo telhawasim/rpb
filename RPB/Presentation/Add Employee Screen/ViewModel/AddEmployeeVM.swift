@@ -25,6 +25,7 @@ class AddEmployeeVM {
         binder?.configureAddButton()
         binder?.configureTextField()
         binder?.txtDepartment?.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
+        binder?.txtDesignation?.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
         binder?.getData(model: self.model!)
     }
     

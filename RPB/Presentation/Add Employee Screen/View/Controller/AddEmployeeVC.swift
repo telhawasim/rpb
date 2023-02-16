@@ -27,7 +27,10 @@ class AddEmployeeVC: BaseVC {
     @IBOutlet weak var txtPhone: UITextField!
     @IBOutlet weak var txtDepartment: UITextField!
     @IBOutlet weak var txtDateOfJoining: UITextField!
-    @IBOutlet weak var dropDownIcon: UIImageView!
+    @IBOutlet weak var departmentIcon: UIImageView!
+    @IBOutlet weak var designationIcon: UIImageView!
+    @IBOutlet weak var dobIcon: UIImageView!
+    @IBOutlet weak var dateOfJoiningIcon: UIImageView!
     
     // MARK: Variables
     var binder: AddEmployeeBinder?
@@ -37,7 +40,7 @@ class AddEmployeeVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        binder = AddEmployeeBinder(lblTitle: self.lblTitle, profileImage: self.profileImage, lblName: self.lblName, lblDesignation: self.lblDesignation, lblDepartment: self.lblDepartment, lblDOB: self.lblDOB, lblEmail: self.lblEmail, lblPhone: self.lblPhone, lblDateOfJoining: self.lblDateOfJoining, btnAdd: self.btnAdd, txtName: self.txtName, txtDesignation: self.txtDesignation, txtDOB: self.txtDOB, txtEmail: self.txtEmail, txtPhone: self.txtPhone, txtDepartment: self.txtDepartment, txtDateOfJoining: self.txtDateOfJoining, dropDownIcon: self.dropDownIcon, viewController: self)
+        binder = AddEmployeeBinder(lblTitle: self.lblTitle, profileImage: self.profileImage, lblName: self.lblName, lblDesignation: self.lblDesignation, lblDepartment: self.lblDepartment, lblDOB: self.lblDOB, lblEmail: self.lblEmail, lblPhone: self.lblPhone, lblDateOfJoining: self.lblDateOfJoining, btnAdd: self.btnAdd, txtName: self.txtName, txtDesignation: self.txtDesignation, txtDOB: self.txtDOB, txtEmail: self.txtEmail, txtPhone: self.txtPhone, txtDepartment: self.txtDepartment, txtDateOfJoining: self.txtDateOfJoining, designationIcon: self.designationIcon, departmentIcon: self.departmentIcon, dobIcon: self.dobIcon, dateOfJoiningIcon: self.dateOfJoiningIcon, viewController: self)
         
         viewModel = AddEmployeeVM(binder: self.binder!)
         

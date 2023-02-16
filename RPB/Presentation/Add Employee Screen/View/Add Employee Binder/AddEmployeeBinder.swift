@@ -27,11 +27,14 @@ class AddEmployeeBinder: NSObject {
     weak var txtPhone: UITextField?
     weak var txtDepartment: UITextField?
     weak var txtDateOfJoining: UITextField?
-    weak var dropDownIcon: UIImageView?
+    weak var designationIcon: UIImageView?
+    weak var departmentIcon: UIImageView?
+    weak var dobIcon: UIImageView?
+    weak var dateOfJoiningIcon: UIImageView?
     weak var viewController: UIViewController?
     var model: AddEmployeeModel?
         
-    init(lblTitle: UILabel, profileImage: UIImageView, lblName: UILabel, lblDesignation: UILabel, lblDepartment: UILabel, lblDOB: UILabel, lblEmail: UILabel, lblPhone: UILabel, lblDateOfJoining: UILabel, btnAdd: UIButton, txtName: UITextField, txtDesignation: UITextField, txtDOB: UITextField, txtEmail: UITextField, txtPhone: UITextField, txtDepartment: UITextField, txtDateOfJoining: UITextField, dropDownIcon: UIImageView, viewController: UIViewController) {
+    init(lblTitle: UILabel, profileImage: UIImageView, lblName: UILabel, lblDesignation: UILabel, lblDepartment: UILabel, lblDOB: UILabel, lblEmail: UILabel, lblPhone: UILabel, lblDateOfJoining: UILabel, btnAdd: UIButton, txtName: UITextField, txtDesignation: UITextField, txtDOB: UITextField, txtEmail: UITextField, txtPhone: UITextField, txtDepartment: UITextField, txtDateOfJoining: UITextField, designationIcon: UIImageView, departmentIcon: UIImageView, dobIcon: UIImageView, dateOfJoiningIcon: UIImageView, viewController: UIViewController) {
         self.lblTitle = lblTitle
         self.profileImage = profileImage
         self.lblName = lblName
@@ -49,11 +52,16 @@ class AddEmployeeBinder: NSObject {
         self.txtPhone = txtPhone
         self.txtDepartment = txtDepartment
         self.txtDateOfJoining = txtDateOfJoining
-        self.dropDownIcon = dropDownIcon
+        self.designationIcon = designationIcon
+        self.departmentIcon = departmentIcon
+        self.dobIcon = dobIcon
+        self.dateOfJoiningIcon = dateOfJoiningIcon
         self.viewController = viewController
     }
     
+    let designationPicker = UIPickerView()
     let departmentpicker = UIPickerView()
+    let designationData: [String] = ["Graphic Designer", "Principal Designer", "Junior UI/UX Designer"]
     let departmentdata: [String] = ["Development","Testing","Creative","Management"]
     
     // MARK: Get Data
@@ -90,6 +98,8 @@ class AddEmployeeBinder: NSObject {
     
     // MARK: Configure Picker for Department
     func configurePicker() {
+        self.designationPicker.delegate = self
+        self.txtDesignation?.inputView = designationPicker
         self.departmentpicker.delegate = self
         self.txtDepartment?.inputView = departmentpicker
         self.txtDOB?.setInputViewDatePicker(target: self, selector: #selector(tapDoneDOB))
@@ -106,7 +116,10 @@ class AddEmployeeBinder: NSObject {
     
     // MARK: Configure TextField
     func configureTextField() {
+        txtDesignation?.delegate = self
         txtDepartment?.delegate = self
+        txtDOB?.delegate = self
+        txtDateOfJoining?.delegate = self
         txtPhone?.delegate = self
     }
     
@@ -197,6 +210,10 @@ class AddEmployeeBinder: NSObject {
             let selectedRow = departmentpicker.selectedRow(inComponent: 0)
             let selectedValue = departmentpicker.delegate?.pickerView?(departmentpicker, titleForRow: selectedRow, forComponent: 0)
             self.txtDepartment?.text = selectedValue
+        } else {
+            let selectedRow = designationPicker.selectedRow(inComponent: 0)
+            let selectedValue = designationPicker.delegate?.pickerView?(designationPicker, titleForRow: selectedRow, forComponent: 0)
+            self.txtDesignation?.text = selectedValue
         }
     }
 }
@@ -208,22 +225,46 @@ extension AddEmployeeBinder: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return departmentdata.count
+        if pickerView == designationPicker {
+            return designationData.count
+        } else {
+            return departmentdata.count
+        }
     }
     
     func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return departmentdata[row]
+        if pickerView == designationPicker {
+            return designationData[row]
+        } else {
+            return departmentdata[row]
+        }
     }
 }
 
 // MARK: TextField Methods
 extension AddEmployeeBinder: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        dropDownIcon?.image = UIImage.dropdownArrowUp
+        if textField == txtDesignation {
+            designationIcon?.image = UIImage.dropdownArrowUp
+        } else if textField == txtDepartment {
+            departmentIcon?.image = UIImage.dropdownArrowUp
+        } else if textField == txtDOB {
+            dobIcon?.image = UIImage.dropdownArrowUp
+        } else if textField == txtDateOfJoining {
+            dateOfJoiningIcon?.image = UIImage.dropdownArrowUp
+        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        dropDownIcon?.image = UIImage.dropdownArrowDown
+        if textField == txtDesignation {
+            designationIcon?.image = UIImage.dropdownArrowDown
+        } else if textField == txtDepartment {
+            departmentIcon?.image = UIImage.dropdownArrowDown
+        } else if textField == txtDOB {
+            dobIcon?.image = UIImage.dropdownArrowDown
+        } else if textField == txtDateOfJoining {
+            dateOfJoiningIcon?.image = UIImage.dropdownArrowDown
+        }
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -234,7 +275,7 @@ extension AddEmployeeBinder: UITextFieldDelegate {
             
             return newString.count <= maxLength
         } else {
-            return Bool()
+            return true
         }
     }
 }
