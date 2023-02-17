@@ -20,6 +20,7 @@ class AddEmployeeVM {
     }
     
     func main() {
+        binder?.configureFont()
         binder?.configureProfilePciture()
         binder?.configurePicker()
         binder?.configureAddButton()
