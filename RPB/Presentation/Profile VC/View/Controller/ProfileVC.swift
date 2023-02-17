@@ -50,6 +50,9 @@ class ProfileVC: BaseVC {
         self.viewModel?.binder?.tableView?.reloadData()
         DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
             self.viewModel?.setIsLoading()
+            UIView.animate(withDuration: 2.5) {
+                self.viewModel?.employeeData()
+            }
         })
     }
     

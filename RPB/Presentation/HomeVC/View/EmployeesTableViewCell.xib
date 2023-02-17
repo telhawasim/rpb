@@ -15,12 +15,12 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmployeesTableViewCell" rowHeight="112.33333587646484" id="KGk-i7-Jjw" customClass="EmployeesTableViewCell" customModule="RPB" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="353" height="98"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="353" height="98"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNn-zg-65K">
-                        <rect key="frame" x="0.0" y="0.0" width="353" height="97.666666666666671"/>
+                        <rect key="frame" x="0.0" y="0.0" width="353" height="98"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dawid" translatesAutoresizingMaskIntoConstraints="NO" id="ezq-Fy-Dwm">
                                 <rect key="frame" x="20" y="12" width="73" height="73"/>
@@ -67,14 +67,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="ezq-Fy-Dwm" secondAttribute="bottom" constant="12.67" id="5Yx-Lw-P1m"/>
                             <constraint firstAttribute="trailing" secondItem="WMv-q6-12W" secondAttribute="trailing" constant="20" id="9XA-jY-ASw"/>
-                            <constraint firstItem="ezq-Fy-Dwm" firstAttribute="top" secondItem="GNn-zg-65K" secondAttribute="top" constant="12" id="HRd-og-4VG"/>
-                            <constraint firstAttribute="height" constant="97.670000000000002" id="Rhj-bo-1yn"/>
                             <constraint firstItem="ezq-Fy-Dwm" firstAttribute="leading" secondItem="GNn-zg-65K" secondAttribute="leading" constant="20" id="Ru2-bf-rPF"/>
                             <constraint firstItem="WMv-q6-12W" firstAttribute="centerY" secondItem="44J-hc-rYD" secondAttribute="centerY" id="cbd-bg-cXN"/>
                             <constraint firstItem="44J-hc-rYD" firstAttribute="leading" secondItem="ezq-Fy-Dwm" secondAttribute="trailing" constant="15" id="fT3-bs-inX"/>
                             <constraint firstItem="44J-hc-rYD" firstAttribute="centerY" secondItem="ezq-Fy-Dwm" secondAttribute="centerY" id="fi6-ea-620"/>
+                            <constraint firstAttribute="bottom" secondItem="ezq-Fy-Dwm" secondAttribute="bottom" constant="13" id="nJF-n2-M2p"/>
+                            <constraint firstItem="ezq-Fy-Dwm" firstAttribute="top" secondItem="GNn-zg-65K" secondAttribute="top" constant="12" id="uIq-iT-6i0"/>
                         </constraints>
                     </view>
                 </subviews>

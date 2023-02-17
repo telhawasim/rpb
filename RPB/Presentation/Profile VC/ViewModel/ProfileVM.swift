@@ -40,6 +40,10 @@ class ProfileVM {
         binder?.isLoading = false
     }
     
+    func employeeData() {
+        binder?.populateData()
+    }
+    
     func deleteButtonPressed() {
         self.closeButtonSheet()
         self.binder?.showPopUp()

@@ -107,6 +107,12 @@ class ProfileBinder: NSObject {
         }
     }
     
+    func populateData() {
+        self.lblName?.text = "Dawid"
+        self.lblDesignation?.text = "UI/UX Designer"
+        self.lblEmail?.text = "name.surname@gmail.com"
+    }
+    
     //MARK: Show PopUp
     func showPopUp() {
         PopupView.shared.presentCancelPopup(viewController ?? UIViewController(), popupType: .deleteProfile)
