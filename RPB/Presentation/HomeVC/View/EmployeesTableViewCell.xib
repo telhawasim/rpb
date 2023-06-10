@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmployeesTableViewCell" rowHeight="112.33333587646484" id="KGk-i7-Jjw" customClass="EmployeesTableViewCell" customModule="RPB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="353" height="98"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="353" height="98"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNn-zg-65K">
+                        <rect key="frame" x="0.0" y="0.0" width="353" height="98"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dawid" translatesAutoresizingMaskIntoConstraints="NO" id="ezq-Fy-Dwm">
+                                <rect key="frame" x="20" y="12" width="73" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="9V9-Hv-EEZ"/>
+                                    <constraint firstAttribute="width" constant="73" id="KN8-RG-bzt"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="36.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                        <real key="value" value="36.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="44J-hc-rYD">
+                                <rect key="frame" x="108" y="15" width="213" height="67"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noman" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zjq-qW-Ck8">
+                                        <rect key="frame" x="0.0" y="0.0" width="54.666666666666664" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qa-Wf-KC0">
+                                        <rect key="frame" x="0.0" y="24.333333333333336" width="103.66666666666667" height="19.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" name=" Color 5557D4"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nomanakram404@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bq7-ef-zDT">
+                                        <rect key="frame" x="0.0" y="47.666666666666664" width="213" height="19.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="WMv-q6-12W">
+                                <rect key="frame" x="318" y="42.666666666666664" width="15" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="15" id="4z7-aj-c04"/>
+                                    <constraint firstAttribute="height" constant="12" id="H4i-jx-WUB"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WMv-q6-12W" secondAttribute="trailing" constant="20" id="9XA-jY-ASw"/>
+                            <constraint firstItem="ezq-Fy-Dwm" firstAttribute="leading" secondItem="GNn-zg-65K" secondAttribute="leading" constant="20" id="Ru2-bf-rPF"/>
+                            <constraint firstAttribute="trailing" secondItem="44J-hc-rYD" secondAttribute="trailing" constant="32" id="ZiN-cA-GwM"/>
+                            <constraint firstItem="WMv-q6-12W" firstAttribute="centerY" secondItem="44J-hc-rYD" secondAttribute="centerY" id="cbd-bg-cXN"/>
+                            <constraint firstItem="44J-hc-rYD" firstAttribute="leading" secondItem="ezq-Fy-Dwm" secondAttribute="trailing" constant="15" id="fT3-bs-inX"/>
+                            <constraint firstItem="44J-hc-rYD" firstAttribute="centerY" secondItem="ezq-Fy-Dwm" secondAttribute="centerY" id="fi6-ea-620"/>
+                            <constraint firstAttribute="bottom" secondItem="ezq-Fy-Dwm" secondAttribute="bottom" constant="13" id="nJF-n2-M2p"/>
+                            <constraint firstItem="ezq-Fy-Dwm" firstAttribute="top" secondItem="GNn-zg-65K" secondAttribute="top" constant="12" id="uIq-iT-6i0"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="GNn-zg-65K" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="XcD-uc-k89"/>
+                    <constraint firstItem="GNn-zg-65K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bWa-4f-lh7"/>
+                    <constraint firstAttribute="bottom" secondItem="GNn-zg-65K" secondAttribute="bottom" id="gAC-MI-qgK"/>
+                    <constraint firstAttribute="trailing" secondItem="GNn-zg-65K" secondAttribute="trailing" id="l0I-a0-r0V"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgArrow" destination="WMv-q6-12W" id="KKZ-hY-bZD"/>
+                <outlet property="lblDesignation" destination="1qa-Wf-KC0" id="JvU-JO-VOw"/>
+                <outlet property="lblEmail" destination="Bq7-ef-zDT" id="PKy-tb-hGN"/>
+                <outlet property="lblName" destination="Zjq-qW-Ck8" id="w7U-Uy-BUJ"/>
+                <outlet property="profilePicture" destination="ezq-Fy-Dwm" id="x13-J3-daS"/>
+            </connections>
+            <point key="canvasLocation" x="158.01526717557252" y="43.661971830985919"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Dawid" width="73" height="73"/>
+        <image name="arrow_right" width="8" height="14"/>
+        <namedColor name=" Color 5557D4">
+            <color red="0.33333333333333331" green="0.3411764705882353" blue="0.83137254901960789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

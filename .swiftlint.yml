@@ -1,0 +1,32 @@
+disabled_rules:
+- vertical_whitespace
+- line_length
+- function_body_length
+- cyclomatic_complexity
+- comment_spacing
+- force_cast
+- trailing_whitespace
+- unused_closure_parameter
+- inclusive_language
+- control_statement
+- comma
+- file_length
+- mark
+- for_where
+- type_body_length
+- shorthand_operator
+- implicit_getter
+- identifier_name
+- redundant_string_enum_value
+- empty_enum_arguments
+opt_in_rules:
+- opening_brace
+
+identifier_name:
+  severity: warning
+  min_length: 1
+  max_length: 80
+  
+
+excluded:
+- Pods

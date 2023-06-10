@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "closure #1 in closure #1 in AddEmployeeVM.addEmployeeInformation():AddEmployeeVM.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ProfileBinder.tableView(_:cellForRowAt:):ProfleBinder.swift">
+      </ContextState>
+      <ContextState
+         contextName = "EmployeeBinder.tableView(_:willDisplay:forRowAt:):EmployeeBinder.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ResumeCV.tapInfoSection(_:):ResumeCV.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "infoModel[selectedHeader].expanded">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

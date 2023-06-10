@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  RPB
+
+  Created by Telha Wasim on 16/01/2023.
+  
+*/
+
+"field_email_empty_error" = "Please enter email";
+"field_email_valid_error" = "Please enter a valid email";
+"field_email_incorrect_error" = "Email or password is invalid";
+"field_password_empty_error" = "Please enter password";
+"field_password_incorrect_error" = "Email or password is invalid";
+"field_password_length_error" = "Password must be 6 digits long";
+
+"field_name_empty_error" = "Please enter name";
+"field_designation_empty_error" = "Please select designation";
+"field_department_empty_error" = "Please select department";
+"field_dob_empty_error" = "Please enter date of birth";
+"field_phone_empty_error" = "Please enter phone number";
+"field_phone_validation_error" = "Please enter valid phone number";
+"field_phone_length_error" = "Phone number must be 11 digits long";
+"field_joining_empty_error" = "Please enter date of joining";
+"field_age_error" = "Employee must be 10+";
+
+"search_placeholder" = "Search...";
+
+"field_linkedIn_valid_error" = "Please enter valid linkedIn URL";
+"field_git_valid_error" = "Please enter valid git URL";
+"field_project_link_valid_error" = "Please enter valid project URL";
+"field_profile_picture_empty_error" = "Please upload profile picture";
+

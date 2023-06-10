@@ -1,0 +1,61 @@
+PODS:
+  - AlignedCollectionViewFlowLayout (1.1.2)
+  - FlagPhoneNumber (0.8.0):
+    - FlagPhoneNumber/libPhoneNumberiOS (= 0.8.0)
+  - FlagPhoneNumber/libPhoneNumberiOS (0.8.0)
+  - IQKeyboardManagerSwift (6.5.10)
+  - Kingfisher (7.6.2)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
+  - PhoneNumberKit (3.5.10):
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.5.10)
+    - PhoneNumberKit/UIKit (= 3.5.10)
+  - PhoneNumberKit/PhoneNumberKitCore (3.5.10)
+  - PhoneNumberKit/UIKit (3.5.10):
+    - PhoneNumberKit/PhoneNumberKitCore
+  - SkeletonView (1.30.4)
+  - SwiftLint (0.50.3)
+
+DEPENDENCIES:
+  - AlignedCollectionViewFlowLayout
+  - FlagPhoneNumber
+  - IQKeyboardManagerSwift
+  - Kingfisher
+  - NVActivityIndicatorView
+  - PhoneNumberKit (from `https://github.com/marmelroy/PhoneNumberKit`)
+  - SkeletonView
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - AlignedCollectionViewFlowLayout
+    - FlagPhoneNumber
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - NVActivityIndicatorView
+    - SkeletonView
+    - SwiftLint
+
+EXTERNAL SOURCES:
+  PhoneNumberKit:
+    :git: https://github.com/marmelroy/PhoneNumberKit
+
+CHECKOUT OPTIONS:
+  PhoneNumberKit:
+    :commit: 684408a1151e833ab3432cf5fa2ed715adf47d30
+    :git: https://github.com/marmelroy/PhoneNumberKit
+
+SPEC CHECKSUMS:
+  AlignedCollectionViewFlowLayout: ee2ef451e741ec08f8e0967d828001e2f051c20a
+  FlagPhoneNumber: 3712455b95f66cb0f2016fef7d9e34cddf8c7f9a
+  IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
+  Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  PhoneNumberKit: 0e34a6e8a50e4624e96a4710bc4a7211464a934e
+  SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
+  SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
+
+PODFILE CHECKSUM: 2be616b0a28fc08598a46600d6d63713c01abe94
+
+COCOAPODS: 1.11.3

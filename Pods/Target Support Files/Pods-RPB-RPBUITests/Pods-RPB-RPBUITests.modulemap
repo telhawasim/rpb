@@ -1,0 +1,6 @@
+framework module Pods_RPB_RPBUITests {
+  umbrella header "Pods-RPB-RPBUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
